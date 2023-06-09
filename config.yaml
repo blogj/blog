@@ -322,12 +322,12 @@ params:
     id: "GenshinImpact" # Twitter ID
     # 如果为 true，Hugo 将下载图片和视频并进行优化，如果你在中国大陆地区，请谨慎启用这个选项
     # If enabled, Hugo will download videos and images from the Tweet and optimize them
-    imageProcessing: true
+    imageProcessing: false
 
   # 开启图片放大功能
   # Image Zoom Plugin
   # see https://github.com/francoischalifour/medium-zoom
-  imageZoom: true
+  imageZoom: false
 
   # 图片懒加载
   # lazyload image
@@ -411,13 +411,7 @@ params:
 
   # 自动调整图片大小并兼容 Webp 格式
   # Optimize your images and SEO
-  imageProcessing:
-    cover: true
-    content: true
-    autoResize:
-      - 1080
-      - 1440
-    webp: true
+ 
 
   # 设置推特卡片样式
   opengraph:
@@ -434,5 +428,5 @@ params:
   description: "A simple, performance-first, SEO-friendly Hugo theme"
 
 build:
-  noJSConfigInAssets: true
+  noJSConfigInAssets: false
 
