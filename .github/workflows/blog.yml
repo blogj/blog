@@ -1,35 +1,54 @@
-name: deploy
+name: blog
 
-on:
-    push:
-    workflow_dispatch:
-    schedule:
-        # Runs everyday at 8:00 AM
-        - cron: "0 0 * * *"
+on: [push]
 
 jobs:
-    build:
+    deploy:
+        env:
+          HUGO_VERSION: ${{ github.sha }}
+          TZ: Asia/Shanghai
         runs-on: ubuntu-latest
+        
         steps:
-            - name: Checkout
+            - name: Git checkout
               uses: actions/checkout@v2
               with:
-                  submodules: true
-                  fetch-depth: 0
+                fetch-depth: 0
+                submodules: true
+            
+            - name: Set git config core.quotepath false # https://github.com/gohugoio/hugo/issues/9810#issuecomment-1107519804
+              run: git config --global core.quotepath false
+  
+            - name: Use Node.js
+              uses: actions/setup-node@v1
+              with:
+                node-version: '16.x'
+                
+            - name: Install Theme
+              run: cd themes/hugo-theme-luna && yarn install --production
+                
+            - name: Install PostCSS-CLI
+              run: npm install postcss-cli -g
 
-            - name: Setup Hugo
+            - name: Setup hugo
               uses: peaceiris/actions-hugo@v2
               with:
-                  hugo-version: "latest"
+                hugo-version: '0.104.0'
+                extended: true
 
-            - name: Build Web
-              run: hugo
+            - name: Build Hugo
+              run: echo "HUGO_VERSION -> $HUGO_VERSION" && hugo --config=./config.yaml --gc --minify --cleanDestinationDir
+              
+            - name: Hugo-Encrypt
+              run: cd themes/hugo-theme-luna && node ./hugo-encrypt.js
 
-            - name: Deploy Web
+            - name: Deploy
               uses: peaceiris/actions-gh-pages@v3
               with:
-                  PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-                  EXTERNAL_REPOSITORY: blogj/blogj.github.io
-                  PUBLISH_BRANCH: master
-                  PUBLISH_DIR: ./public
-                  commit_message: ${{ github.event.head_commit.message }}
+                personal_token: ${{ secrets.TOKEN }}
+                external_repository: "blogj/blogj.github.io"
+                publish_branch: main
+                publish_dir: ./public
+                force_orphan: true
+                user_name: blogj
+                user_email: i@gao4.top
