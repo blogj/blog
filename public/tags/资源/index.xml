@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>资源 on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/%E8%B5%84%E6%BA%90/</link>
+    <description>Recent content in 资源 on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Wed, 22 Dec 2021 15:27:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/%E8%B5%84%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RH 2288H v2 相关资源分享</title>
+      <link>https://blog.xiaomo.info/2021/720/</link>
+      <pubDate>Wed, 22 Dec 2021 15:27:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/720/</guid>
+      <description>分享 相关 远程java相关 点击远程控制 在win10下用ie浏览器可行 jre-7u4-windows-i586 kvm_client_windows 「NAS常用软件引导软件系统镜像」，点击链接保存，或者复制本段内容，打</description>
+    </item>
+    
+  </channel>
+</rss>

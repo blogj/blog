@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>资料 on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/%E8%B5%84%E6%96%99/</link>
+    <description>Recent content in 资料 on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Sun, 11 Sep 2022 08:11:34 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/%E8%B5%84%E6%96%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>华为2288H v2 DSM7.1 黑群晖实践</title>
+      <link>https://blog.xiaomo.info/2022/1117/</link>
+      <pubDate>Sun, 11 Sep 2022 08:11:34 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/1117/</guid>
+      <description>黑群晖软件来源 https://www.openos.org/threads/2022810dsm7-x.3529/ 黑群晖版本 引导类型为EFI 引导资源与系统安装分享 https://cloud.189.cn/t/yAfEjiRRbaMv (访问码:9c17) 2288hv2服务器默认是支持网络唤醒的 Bios界面选</description>
+    </item>
+    
+    <item>
+      <title>关于openwrt不定时断网研究与解决办法</title>
+      <link>https://blog.xiaomo.info/2022/1114/</link>
+      <pubDate>Tue, 06 Sep 2022 11:55:13 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/1114/</guid>
+      <description>三种解决断网方法 选择任意一种看能不能解决刷了 openwrt 后光猫桥接 openwrt 当主路由不定时断网问题。 第一种（推荐） 修改LCP 响应故障阈值与LCP 响应间隔 界面图</description>
+    </item>
+    
+    <item>
+      <title>Tailscale安装到ARM openwrt上</title>
+      <link>https://blog.xiaomo.info/2022/1076/</link>
+      <pubDate>Sun, 12 Jun 2022 12:09:10 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/1076/</guid>
+      <description>下载到tmp目录 1 wget https://pkgs.tailscale.com/stable/tailscale_1.26.0_arm64.tgz -P /tmp 解压压缩包并移动二进制文件 1 2 3 4 cd /tmp tar x -zvf tailscale_1.26.0_arm64.tgz cd tailscal_1.26.0_arm64 mv tailscale tailscaled /usr/sbin/ 安装依赖文件 1 2 opkg update opkg install ca-bundle kmod-tun 创建守护脚本文件 1 vim /etc/init.d/tailscale 写入如</description>
+    </item>
+    
+    <item>
+      <title>Office LTSC 专业增强版 2021个人指南</title>
+      <link>https://blog.xiaomo.info/2022/762/</link>
+      <pubDate>Thu, 26 May 2022 18:22:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/762/</guid>
+      <description>Office LTSC 专业增强版 2021个人指南 下载Office tool https://otp.landian.vip/zh-cn/ 推荐使用前三项以跳过安装 OTP 运行环境。解压使用 安装 Office LTSC 专业增强版 2021 然后双击运行 Office Tool Plus.exe ，点击 安</description>
+    </item>
+    
+    <item>
+      <title>更换ACME.sh的CA为ZeroSSL</title>
+      <link>https://blog.xiaomo.info/2022/761/</link>
+      <pubDate>Mon, 02 May 2022 15:09:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/761/</guid>
+      <description>更换ACME.sh的CA为ZeroSSL 安装ACME 1 2 3 git clone https://github.com/acmesh-official/acme.sh.git cd acme.sh ./acme.sh --install -m my@example.com 1.访问账户注册页面注册一个ZeroSSL账户 传送门：https</description>
+    </item>
+    
+    <item>
+      <title>Wg-Easy一个几分钟搞定访问局域网的wg面板</title>
+      <link>https://blog.xiaomo.info/2022/759/</link>
+      <pubDate>Fri, 22 Apr 2022 14:26:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/759/</guid>
+      <description>前言 在前面博主比较推荐tailscale这款软件也是基于Wg协议的，但兜兜转转还是回归了wireguard， 回归了传统的那种网络模型 ，或许网</description>
+    </item>
+    
+    <item>
+      <title>Headscale服务器搭建启用SSL证书</title>
+      <link>https://blog.xiaomo.info/2022/758/</link>
+      <pubDate>Tue, 12 Apr 2022 18:35:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/758/</guid>
+      <description>前言 在前些日子，写了一篇文章关于headscale服务器的，这次有更深的理解，希望谷歌出来这篇文章的朋友有所帮助 环境 系统debian11 并r</description>
+    </item>
+    
+    <item>
+      <title>Caddy安装反向代理Hugo</title>
+      <link>https://blog.xiaomo.info/2022/757/</link>
+      <pubDate>Sun, 27 Mar 2022 19:59:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/757/</guid>
+      <description>前言 记录个人的blog相关的配置 其实我就是在腾讯云服务器上安装caddy然后再反向代理各种服务 caddy安装 使用的https://teddy</description>
+    </item>
+    
+    <item>
+      <title>headscale开源服务器搭建</title>
+      <link>https://blog.xiaomo.info/2021/723/</link>
+      <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/723/</guid>
+      <description>2022年1月5日更新 GitHub仓库的文档已更新，可正常运行。 配置文件里本地ssl证书设置好了后不起效果 前言 headscale 是一款今年 2021 年出现的一款 Tailscale 控</description>
+    </item>
+    
+    <item>
+      <title>RH 2288H v2 相关资源分享</title>
+      <link>https://blog.xiaomo.info/2021/720/</link>
+      <pubDate>Wed, 22 Dec 2021 15:27:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/720/</guid>
+      <description>分享 相关 远程java相关 点击远程控制 在win10下用ie浏览器可行 jre-7u4-windows-i586 kvm_client_windows 「NAS常用软件引导软件系统镜像」，点击链接保存，或者复制本段内容，打</description>
+    </item>
+    
+    <item>
+      <title>netmaker 搭建教程 组建虚拟局域网</title>
+      <link>https://blog.xiaomo.info/2021/715/</link>
+      <pubDate>Wed, 01 Dec 2021 22:43:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/715/</guid>
+      <description>前言 参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装 官方文档地址 过程 环境 腾讯云乌班图20.04</description>
+    </item>
+    
+    <item>
+      <title>unraid6.9.2 安装群晖DSM7.0.1</title>
+      <link>https://blog.xiaomo.info/2021/707/</link>
+      <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/707/</guid>
+      <description>序言 引导驱动来源openos论坛 使用版本 DS3615xs_7.01-42218 配置 新建Linux虚拟机配置如下按照配置启动虚拟机就行，不用改什么全程图形化 虚拟机配置 详细主要配置</description>
+    </item>
+    
+    <item>
+      <title>Mirai Dice QQ机器人-to-docker搭建记录</title>
+      <link>https://blog.xiaomo.info/2021/639/</link>
+      <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/639/</guid>
+      <description>前言 网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的</description>
+    </item>
+    
+    <item>
+      <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
+      <link>https://blog.xiaomo.info/2021/629/</link>
+      <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/629/</guid>
+      <description>前言 基本上这是最简单的方式，我通过 tailscale 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能</description>
+    </item>
+    
+    <item>
+      <title>Traefik系列二-docker搭建typecho-to-traefik</title>
+      <link>https://blog.xiaomo.info/2021/615/</link>
+      <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/615/</guid>
+      <description>快速开始 1 2 3 4 5 6 7 cd /home git clone https://github.com/YianAndCode/typecho-in-docker.git cd /home/typecho-in-docker git clone https://github.com/typecho/typecho.git rm -r typecho/.git chown -R www-data:www-data typecho/ docker-compose up -d 浏览器访问http://IP:8001 如果GitHub下载过于慢的话可以替换为</description>
+    </item>
+    
+    <item>
+      <title>关于NAS的小折腾填坑</title>
+      <link>https://blog.xiaomo.info/2021/530/</link>
+      <pubDate>Tue, 18 May 2021 11:38:59 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/530/</guid>
+      <description>关于NAS的小折腾填坑 【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。 关于电信路</description>
+    </item>
+    
+    <item>
+      <title>NPS内网穿透工具学习2-服务端搭建</title>
+      <link>https://blog.xiaomo.info/2020/388/</link>
+      <pubDate>Mon, 28 Dec 2020 10:44:52 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/388/</guid>
+      <description>序言 通俗约定您已经，通晓基本的Linux知识（解压复制粘贴移动）、了解基本的网络知识（知晓什么是公网IP什么是内网IP）登录已root用户为</description>
+    </item>
+    
+    <item>
+      <title>FileRun docker-compose 安装搭建</title>
+      <link>https://blog.xiaomo.info/2020/288/</link>
+      <pubDate>Sun, 27 Sep 2020 12:17:45 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/288/</guid>
+      <description>先说一下结论，安装后感觉确实比nextcloud快，特别对于ody备份照片来说，但有一个需要注意，在2020年官方的安卓客户端已经暂停更新，</description>
+    </item>
+    
+    <item>
+      <title>Arch 安装sshd问题</title>
+      <link>https://blog.xiaomo.info/2020/196/</link>
+      <pubDate>Tue, 08 Sep 2020 08:35:26 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/196/</guid>
+      <description>启动ssh 1 systemctl restart sshd 开机自启ssh 1 systemctl enable ssh 设置root用户远程登陆 arch 远程ssh默认是禁止登陆root的 1 2 3 nano /etc/ssh/sshd.config # 添加下面一行配置 PermitRootLogin yes nano 文本编</description>
+    </item>
+    
+    <item>
+      <title>arch下网络设置2020年版本</title>
+      <link>https://blog.xiaomo.info/2020/198/</link>
+      <pubDate>Wed, 19 Aug 2020 15:46:53 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/198/</guid>
+      <description>静态IP设置 地址设置 1 ip addr change 192.168.200.187/24 dev enp3s0 修改地方enp3s0网卡名称与192.168.200.187/24注意子网掩码/24 设置网关 1 ip route add default via 192.168.200.1</description>
+    </item>
+    
+    <item>
+      <title>ventoy启动工具分享</title>
+      <link>https://blog.xiaomo.info/2020/201/</link>
+      <pubDate>Wed, 19 Aug 2020 09:02:57 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/201/</guid>
+      <description>Ventoy是一个制作可启动U盘的开源工具支持win与Linux。有了Ventoy你就无需反复地格式化U盘，你只需要把ISO文件拷贝到U盘里</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VPN on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/vpn/</link>
+    <description>Recent content in VPN on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Wed, 29 Dec 2021 14:16:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>headscale开源服务器搭建</title>
+      <link>https://blog.xiaomo.info/2021/723/</link>
+      <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/723/</guid>
+      <description>2022年1月5日更新 GitHub仓库的文档已更新，可正常运行。 配置文件里本地ssl证书设置好了后不起效果 前言 headscale 是一款今年 2021 年出现的一款 Tailscale 控</description>
+    </item>
+    
+    <item>
+      <title>折腾NAS中用的软件资源分享</title>
+      <link>https://blog.xiaomo.info/2021/686/</link>
+      <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/686/</guid>
+      <description>资源链接阿里云盘 我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀 复制这段内容打开「阿里云盘」App 即可获取 链接：ht</description>
+    </item>
+    
+    <item>
+      <title>tailscale docker上安装搭建方法</title>
+      <link>https://blog.xiaomo.info/2021/555/</link>
+      <pubDate>Thu, 20 May 2021 13:31:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/555/</guid>
+      <description>启动 1 docker run -d --restart=always --name=tailscaled -v /var/lib:/var/lib -v /dev/net/tun:/dev/net/tun --network=host --privileged fastandfearless/tailscale 登录 1 docker exec tailscaled tailscale up 查看状态 1 docker exec tailscaled tailscale status 停止tailscale容器 1 docker stop tailscaled 删除tailscale容器 1 docker rm tailscaled 参考官</description>
+    </item>
+    
+    <item>
+      <title>关于NAS的小折腾填坑</title>
+      <link>https://blog.xiaomo.info/2021/530/</link>
+      <pubDate>Tue, 18 May 2021 11:38:59 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/530/</guid>
+      <description>关于NAS的小折腾填坑 【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。 关于电信路</description>
+    </item>
+    
+    <item>
+      <title>Tailscale VPN初步安装体验</title>
+      <link>https://blog.xiaomo.info/2021/503/</link>
+      <pubDate>Thu, 13 May 2021 16:13:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/503/</guid>
+      <description>序言 初步体验是一个基于wireguard 的新的星形组网软件（功能之一），对比WGvpn最大的不同就是增加了公匙交换系统，免配置组网，只需要安</description>
+    </item>
+    
+    <item>
+      <title>ESXI 群晖下连接VPN网络报错解决</title>
+      <link>https://blog.xiaomo.info/2021/494/</link>
+      <pubDate>Thu, 29 Apr 2021 16:25:03 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/494/</guid>
+      <description>前言 我的vpn服务端搭建在openwrt软路由上使用SoftEther作为相关软件，在群晖下出现 群晖 l2tp连接失败 请检查。。。。解决办法如</description>
+    </item>
+    
+    <item>
+      <title>openwrt通过wireguard组网</title>
+      <link>https://blog.xiaomo.info/2021/444/</link>
+      <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/444/</guid>
+      <description>概念 网上找的图很好理解应该 wireguard原理就不多做解释了，我们只是人为的分客户端与服务端，因为国情在这，有时候两端不可都是可以互相访问</description>
+    </item>
+    
+    <item>
+      <title>Openwrt OpenConnect VPN 搭建设置教程</title>
+      <link>https://blog.xiaomo.info/2020/293/</link>
+      <pubDate>Wed, 30 Sep 2020 13:52:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/293/</guid>
+      <description>## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图 ![流程图](https://gao4.top/wp-cont</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/docker/</link>
+    <description>Recent content in docker on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Wed, 28 Jul 2021 13:39:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
+      <link>https://blog.xiaomo.info/2021/629/</link>
+      <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/629/</guid>
+      <description>前言 基本上这是最简单的方式，我通过 tailscale 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能</description>
+    </item>
+    
+    <item>
+      <title>Traefik系列二-docker搭建typecho-to-traefik</title>
+      <link>https://blog.xiaomo.info/2021/615/</link>
+      <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/615/</guid>
+      <description>快速开始 1 2 3 4 5 6 7 cd /home git clone https://github.com/YianAndCode/typecho-in-docker.git cd /home/typecho-in-docker git clone https://github.com/typecho/typecho.git rm -r typecho/.git chown -R www-data:www-data typecho/ docker-compose up -d 浏览器访问http://IP:8001 如果GitHub下载过于慢的话可以替换为</description>
+    </item>
+    
+    <item>
+      <title>阿里云域名 docker下申请泛域名</title>
+      <link>https://blog.xiaomo.info/2021/578/</link>
+      <pubDate>Thu, 10 Jun 2021 15:54:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/578/</guid>
+      <description>构建 1 2 3 Git pull https://github.com/monkeyWie/certbot-dns-aliyun.git cd docker docker build -t certbot-aliyun:latest . 启动容器 docker官方仓库有这个镜像 1 2 3 4 5 6 7 docker run \ --name cert \ -itd \ -v /etc/letsencrypt:/etc/letsencrypt \ -e ACCESS_KEY_ID=XXX \ -e ACCESS_KEY_SECRET=XXX \ liwei2633/certbot-aliyun 首次创建证书，根据命令</description>
+    </item>
+    
+    <item>
+      <title>FreshRSS docker-compose.yml 教程</title>
+      <link>https://blog.xiaomo.info/2021/478/</link>
+      <pubDate>Sun, 14 Mar 2021 17:30:38 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/478/</guid>
+      <description>创建docker-compose.yml文件 1 2 mkdir /home/FreshRSS &amp;amp;&amp;amp; cd /home/FreshRSS nano docker-compose.yml 填入以下内容 内容来源于官方GIthub 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
+    </item>
+    
+    <item>
+      <title>Debian国内服务器初始化</title>
+      <link>https://blog.xiaomo.info/2020/109/</link>
+      <pubDate>Thu, 06 Aug 2020 18:56:43 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/109/</guid>
+      <description>乌班图服务器版本默认ssh居然没有sftp弃之 ， centos虽然很好但总感觉软件包陈旧，燧写这篇初始化操作 更新软件包 1 apt-get update 安装阿里云源Doc</description>
+    </item>
+    
+  </channel>
+</rss>

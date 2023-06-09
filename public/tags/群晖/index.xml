@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>群晖 on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/%E7%BE%A4%E6%99%96/</link>
+    <description>Recent content in 群晖 on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Sat, 08 Jan 2022 15:02:27 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/%E7%BE%A4%E6%99%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESXI7.0 Update 2下黑群晖7.01安装</title>
+      <link>https://blog.xiaomo.info/2022/738/</link>
+      <pubDate>Sat, 08 Jan 2022 15:02:27 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/738/</guid>
+      <description>前言 只是填坑把遇到的问题写出来 相关软件分享 引导来源【12月11日更新】ESXI专用群晖7.0.1 42218引导vmxnet3 | 第 5 页 | OPE</description>
+    </item>
+    
+    <item>
+      <title>unraid6.9.2 安装群晖DSM7.0.1</title>
+      <link>https://blog.xiaomo.info/2021/707/</link>
+      <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/707/</guid>
+      <description>序言 引导驱动来源openos论坛 使用版本 DS3615xs_7.01-42218 配置 新建Linux虚拟机配置如下按照配置启动虚拟机就行，不用改什么全程图形化 虚拟机配置 详细主要配置</description>
+    </item>
+    
+    <item>
+      <title>ESXI 群晖下连接VPN网络报错解决</title>
+      <link>https://blog.xiaomo.info/2021/494/</link>
+      <pubDate>Thu, 29 Apr 2021 16:25:03 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/494/</guid>
+      <description>前言 我的vpn服务端搭建在openwrt软路由上使用SoftEther作为相关软件，在群晖下出现 群晖 l2tp连接失败 请检查。。。。解决办法如</description>
+    </item>
+    
+    <item>
+      <title>群晖开启tun模块驱动以支持tinc</title>
+      <link>https://blog.xiaomo.info/2020/164/</link>
+      <pubDate>Sun, 09 Aug 2020 09:27:29 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/164/</guid>
+      <description>登陆群晖开启ssh，在终端依次用admin用户登陆再sudo -i 进入#管理员模式 检查tun模块状态 1 lsmod | grep tun 如果结果为空，请尝试安装它 1 insmod /lib/modules/tun.ko 依</description>
+    </item>
+    
+  </channel>
+</rss>

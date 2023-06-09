@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自定义域名 on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/</link>
+    <description>Recent content in 自定义域名 on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Wed, 28 Jul 2021 13:39:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
+      <link>https://blog.xiaomo.info/2021/629/</link>
+      <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/629/</guid>
+      <description>前言 基本上这是最简单的方式，我通过 tailscale 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能</description>
+    </item>
+    
+  </channel>
+</rss>

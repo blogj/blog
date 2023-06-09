@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debian on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/debian/</link>
+    <description>Recent content in Debian on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Thu, 06 Aug 2020 18:56:43 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debian国内服务器初始化</title>
+      <link>https://blog.xiaomo.info/2020/109/</link>
+      <pubDate>Thu, 06 Aug 2020 18:56:43 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/109/</guid>
+      <description>乌班图服务器版本默认ssh居然没有sftp弃之 ， centos虽然很好但总感觉软件包陈旧，燧写这篇初始化操作 更新软件包 1 apt-get update 安装阿里云源Doc</description>
+    </item>
+    
+  </channel>
+</rss>

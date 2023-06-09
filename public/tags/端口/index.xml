@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>端口 on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/%E7%AB%AF%E5%8F%A3/</link>
+    <description>Recent content in 端口 on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Thu, 24 Jun 2021 10:32:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/%E7%AB%AF%E5%8F%A3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NGINX 非443端口http跳转https</title>
+      <link>https://blog.xiaomo.info/2021/600/</link>
+      <pubDate>Thu, 24 Jun 2021 10:32:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/600/</guid>
+      <description>关于Nginx这个web服务器软件在NAS上配置非443端口访问时候跳转https问题，默认80端口与443端口无法访问情况。 1 error_page 497 301 =307 https://$host:9443$request_uri; 添</description>
+    </item>
+    
+  </channel>
+</rss>

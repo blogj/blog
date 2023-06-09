@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wireguard on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/wireguard/</link>
+    <description>Recent content in Wireguard on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Wed, 24 Feb 2021 15:01:46 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/wireguard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>openwrt通过wireguard组网</title>
+      <link>https://blog.xiaomo.info/2021/444/</link>
+      <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/444/</guid>
+      <description>概念 网上找的图很好理解应该 wireguard原理就不多做解释了，我们只是人为的分客户端与服务端，因为国情在这，有时候两端不可都是可以互相访问</description>
+    </item>
+    
+  </channel>
+</rss>

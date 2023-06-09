@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SMB on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/smb/</link>
+    <description>Recent content in SMB on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Wed, 19 May 2021 01:51:32 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/smb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TrueNAS-SCALE SMB共享设置</title>
+      <link>https://blog.xiaomo.info/2021/538/</link>
+      <pubDate>Wed, 19 May 2021 01:51:32 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/538/</guid>
+      <description>1.打开win10 SMB1.0 SMB1.0功能 此电脑&amp;gt;卸载或更改程序&amp;gt;程序和功能&amp;gt;启用或关闭win功能 勾选? 勾选 2.添加用户 登录Tr</description>
+    </item>
+    
+  </channel>
+</rss>

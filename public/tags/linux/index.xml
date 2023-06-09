@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/linux/</link>
+    <description>Recent content in linux on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Tue, 08 Sep 2020 08:35:26 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch 安装sshd问题</title>
+      <link>https://blog.xiaomo.info/2020/196/</link>
+      <pubDate>Tue, 08 Sep 2020 08:35:26 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/196/</guid>
+      <description>启动ssh 1 systemctl restart sshd 开机自启ssh 1 systemctl enable ssh 设置root用户远程登陆 arch 远程ssh默认是禁止登陆root的 1 2 3 nano /etc/ssh/sshd.config # 添加下面一行配置 PermitRootLogin yes nano 文本编</description>
+    </item>
+    
+  </channel>
+</rss>

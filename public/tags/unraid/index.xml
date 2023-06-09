@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unraid on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/unraid/</link>
+    <description>Recent content in Unraid on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Wed, 24 Nov 2021 13:20:53 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/unraid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>unraid6.9.2 安装群晖DSM7.0.1</title>
+      <link>https://blog.xiaomo.info/2021/707/</link>
+      <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/707/</guid>
+      <description>序言 引导驱动来源openos论坛 使用版本 DS3615xs_7.01-42218 配置 新建Linux虚拟机配置如下按照配置启动虚拟机就行，不用改什么全程图形化 虚拟机配置 详细主要配置</description>
+    </item>
+    
+    <item>
+      <title>unraid 挂载webdav为本地目录</title>
+      <link>https://blog.xiaomo.info/2021/662/</link>
+      <pubDate>Wed, 04 Aug 2021 21:43:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/662/</guid>
+      <description>序言 上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不</description>
+    </item>
+    
+    <item>
+      <title>unraid6.9.2安装及UEFI引导与初始化</title>
+      <link>https://blog.xiaomo.info/2021/649/</link>
+      <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/649/</guid>
+      <description>前言 系统包来源于俄罗斯论坛 系统盘制作 系统下载 分享云盘链接 使用官方工具制作 把下载的unRAIDServer-6.9.2-x86_64_fu11</description>
+    </item>
+    
+    <item>
+      <title>Unarid 安装异星工厂并指定存档</title>
+      <link>https://blog.xiaomo.info/2021/415/</link>
+      <pubDate>Sun, 24 Jan 2021 13:46:44 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/415/</guid>
+      <description>0-1搜索factorio并添加环境变量指定存档 搜索镜像 添加相关环境变量 注意C1存档已经上传到saves目录 存档地址 配置文件修改 \tower\appdata\factorio\config ## 配置文件</description>
+    </item>
+    
+    <item>
+      <title>UNraid 安装后注意事项常见操作</title>
+      <link>https://blog.xiaomo.info/2020/234/</link>
+      <pubDate>Mon, 31 Aug 2020 13:18:41 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/234/</guid>
+      <description>引导模式 UnRaid如果不能成功引导试试换传统引导模式 修改访问iP地址 1 如果引导成功后访问不了，可能是局域网没有dhcp服务器，试试在Unr</description>
+    </item>
+    
+  </channel>
+</rss>

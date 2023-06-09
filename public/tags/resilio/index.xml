@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>resilio on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/resilio/</link>
+    <description>Recent content in resilio on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Mon, 07 Dec 2020 12:42:46 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/resilio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 下resilio同步服务安装</title>
+      <link>https://blog.xiaomo.info/2020/325/</link>
+      <pubDate>Mon, 07 Dec 2020 12:42:46 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/325/</guid>
+      <description>参考常见问题 2021年6月15日更新 网络传输速度测试一直不能满速跑，断断续续的传输，速度一直跑不上来，已弃坑 远程服务器安装后需要修改配置文件</description>
+    </item>
+    
+  </channel>
+</rss>

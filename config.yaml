@@ -1,12 +1,12 @@
-baseURL: https://gao4.top/
+baseURL: https://gao4.top
 languageCode: zh-cn
 defaultContentLanguage: zh-cn
-title: "孤岛博客"
+title: "孤岛(分享、快乐)"
 enableRobotsTXT: true
 enableEmoji: true
 theme: hugo-theme-luna
-timeout: 600000
-timeZone: Asia/Shanghai
+timeout: 60000
+timeZone: Asia/Tokyo
 
 # 可根据 Git 中的提交生成最近更新记录。
 # use git commit log to generate lastmod record
@@ -18,21 +18,24 @@ hasCJKLanguage: true
 
 # 每页显示文章数量
 # pagination size
-paginate: 10
+paginate: 20
 
 # 启用谷歌统计
-# google analytics tracking code
-# googleAnalytics: UA-98634098-1
+# Google Analytics tracking code
+googleAnalytics: UA-80824007-1
 
 # 版权信息，默认为 author.name ↓
 # default: author.name ↓
-# copyright: "" 
+copyright: "@Copyright 2023"
 
 permalinks:
-  posts: /:slug.html
+  # 文章链接的格式
+  # Format of posts links
+  posts: /:slug.html # 2019/01/01/hello-world.html
+  pages: /:slug # about.html
 
 author:
-  name: Ice-Hazymoon
+  name: xiaomo
 
 frontmatter:
   lastmod:
@@ -58,10 +61,10 @@ imaging:
   quality: 95
   anchor: smart
 
-# caches:
-#   getresource:
-#     dir: :resourceDir/_gen
-#     maxAge: 24h
+caches:
+  getresource:
+    dir: :resourceDir/_gen
+    maxAge: 24h
 
 # 隐私政策，请查看 https://gohugo.io/about/hugo-and-gdpr/
 # See https://gohugo.io/about/hugo-and-gdpr/
@@ -151,6 +154,7 @@ menu:
     - *mainMenuAbout
     - *mainMenuLinks
     - *mainMenuArchives
+    - *mainMenuTwitter
     - *mainMenuGitHub
     - *mainMenuSearch
   # 副导航 / sub-navigation
@@ -184,14 +188,14 @@ markup:
 params:
   # CDN 地址
   # CDN URL
-  publicCDN: "" # e.g. https://cdn.jsdelivr.net/gh/{{user}}/{{repo}}@latest/
+  publicCDN: ""
 
   # 在网站顶部显示标题和摘要，使用 .Site.Title 和 .Site.Params.Description
   # Display title and description at the top of the page, use .Site.Title and .Site.Params.Description
   topTitle: false
 
   # 在首页顶部创建一个通知部分
-  # Create a Announcement section at the top of the home page
+  # Create an Announcement section at the top of the home page
   announcement:
     enabled: true
     file: "README.md" # assets/README.md
@@ -202,33 +206,33 @@ params:
     enabled: true
     provider: "giscus" # custom | giscus
     giscus: &giscus
-      repo: "Ice-Hazymoon/hugo-theme-luna"
-      repoID: "R_kgDOHQOwYw"
-      category: "Comments"
-      categoryID: "DIC_kwDOHQOwY84CP0Sy"
+      repo: "houko/houko.github.io"
+      repoID: "MDEwOlJlcG9zaXRvcnk3MjYwMDMxMg=="
+      category: "General"
+      categoryID: "DIC_kwDOBFPK-M4CSvHc"
       mapping: "title"
       reactionsEnabled: 1
       emitMetadata: 0
       lazy: false
-      lang: "en"
+      lang: "zh-CN"
 
   # Rss 配置
   # RSS configuration
   rss:
     # 如果为 false，你必须设置 Output Formats，请查看：https://gohugo.io/templates/output-formats#customizing-output-formats
     # If false, you must set Output Formats, see: https://gohugo.io/templates/output-formats#customizing-output-formats
-    enabled: true
+    enabled: false
     # 是否输出全文
     # Output full text
     fullText: true
 
   # 如果为 false，你必须设置 Output Formats，请查看：https://gohugo.io/templates/output-formats#customizing-output-formats
   # If false, you must set Output Formats, see: https://gohugo.io/templates/output-formats#customizing-output-formats
-  sitemap: true
+  sitemap: false
 
   # 网站主题颜色
   # Site theme colors
-  themeColor: "#dd6065"
+  themeColor: "#00B0FF"
 
   # 设置网站为黑白模式，通常用于哀悼活动
   # Set website to black and white, usually for mourning events
@@ -245,11 +249,11 @@ params:
 
   # 标题计数器
   # Title counter
-  headlineCounter: false
+  headlineCounter: true
 
   # 固定导航栏
   # Fixed navigation bar
-  fixedNav: false
+  fixedNav: true
 
   # 网站字体
   # Site font
@@ -268,11 +272,11 @@ params:
     enabled: true
     # 网站创建时间
     # Site creation time
-    creatTime: 2020/07/16
+    creatTime: 2016/06/30
   
   #  网站创建年份
   # Site creation year
-  since: "2020"
+  since: "2016"
 
   # 显示文章过时提醒
   # show warning when outdated info detected
@@ -288,9 +292,9 @@ params:
 
   # 文章分享功能
   share:
-    twitter: false
+    twitter: true
     facebook: false
-    weibo: true
+    weibo: false
     copyLinkText: true
     qrcode: true
   
@@ -306,28 +310,28 @@ params:
 
   # 显示右上角 i18n 切换按钮
   # Display i18n toggle button
-  i18nlist: false
+  i18nlist: true
 
   # GitHub 页面设置
-  # github page
+  # GitHub page
   github:
-    id: "torvalds" # or ["torvalds", "gvanrossum"]
+    id: "houko" # GitHub user id
     minStars: 5 # 最小 star 项目 / min stars
 
   # Twitter 页面设置
   # tweet page
   twitter:
-    enabled: false
+    enabled: true
     rsshub: "https://rsshub.rssforever.com" # rsshub url, see https://github.com/DIYgod/RSSHub
-    id: "GenshinImpact" # Twitter ID
+    id: "xiaomoinfo" # Twitter ID
     # 如果为 true，Hugo 将下载图片和视频并进行优化，如果你在中国大陆地区，请谨慎启用这个选项
     # If enabled, Hugo will download videos and images from the Tweet and optimize them
-    imageProcessing: false
+    imageProcessing: true
 
   # 开启图片放大功能
   # Image Zoom Plugin
   # see https://github.com/francoischalifour/medium-zoom
-  imageZoom: false
+  imageZoom: true
 
   # 图片懒加载
   # lazyload image
@@ -339,13 +343,13 @@ params:
     enabled: true
     autoBionic: false # 自动启用 Bionic Reading / auto enable Bionic Reading
     skipLinks: false # 跳过链接 / skip links
-    excludeWords: [] # 忽略的单词 / ignored words
-    excludeNodeNames: [] # 忽略的节点名称 / ignored node names
-    excludeClasses: ['github'] # 忽略的类名 / ignored classes
+    excludeWords: [ ] # 忽略的单词 / ignored words
+    excludeNodeNames: [ ] # 忽略的节点名称 / ignored node names
+    excludeClasses: [ 'github' ] # 忽略的类名 / ignored classes
 
   # 启用谷歌翻译插件
   # enable google translate in footer
-  googleTranslate: true
+  googleTranslate: false
 
   # 优化中文排版，请参考：https://github.com/vinta/pangu.js
   # Optimize Chinese typography, see: https://github.com/vinta/pangu.js
@@ -365,7 +369,7 @@ params:
 
   # 显示文章字数
   # show word count
-  wordCount: false
+  wordCount: true
 
   # 开启文章内目录，可以在页面内单独设置
   # Show table of contents, You can enable it separately in the page
@@ -373,7 +377,7 @@ params:
     enabled: true
     # 超过这个字数后将显示目录
     # When the article word count is greater than this value, the TOC will be displayed
-    wordCount: 400 
+    wordCount: 400
 
   # 加密功能
   # encryption articles
@@ -407,20 +411,26 @@ params:
 
   # 默认文章封面图片，不会显示在内容页面
   # Default post card featured image, not displayed on content pages
-  defaultFeaturedImage: false # false | featured.png in assets folder | https://unsplash.it/1920/1080/?random={{timestamp}}
+  defaultFeaturedImage: https://unsplash.it/1920/1080/?random={{timestamp}} # false | featured.png in assets folder | https://unsplash.it/1920/1080/?random={{timestamp}}
 
   # 自动调整图片大小并兼容 Webp 格式
   # Optimize your images and SEO
- 
+  imageProcessing:
+    cover: true
+    content: true
+    autoResize:
+      - 1080
+      - 1440
+    webp: true
 
   # 设置推特卡片样式
   opengraph:
     twitter: # see https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started
       cardType: summary_large_image # summary | summary_large_image
-      site: "@Ice_Hazymoon"
+      site: "@xiaomoinfo"
     image: "featured.png" # in assets folder | false
 
-  author: Ice-Hazymoon
+  author: xiaomo
   keywords:
     - Hugo
     - Hugo Theme
@@ -428,5 +438,59 @@ params:
   description: "A simple, performance-first, SEO-friendly Hugo theme"
 
 build:
-  noJSConfigInAssets: false
+  noJSConfigInAssets: true
 
+languages:
+  zh-cn:
+    contentDir: content/zh-hans
+    languageName: 中文
+    params:
+      languageIcon: "images/i18n/zh-cn.svg" # in assets folder
+      font: "Times New Roman,Times,Heti Song,serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol"
+      twitter:
+        enabled: true
+        rsshub: "https://rsshub.rssforever.com"
+        id: "xiaomoinfo"
+        imageProcessing: true
+      github:
+        id: "houko"
+        minStars: 10
+      license:
+        enabled: true
+        name: "署名 - 非商业性使用 - 禁止演绎 4.0"
+        icon: "Cc-by-nc-nd.svg" # in assets folder
+        url: "https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh"
+      announcement:
+        enabled: true
+        file: "README.zh.md"
+      comments:
+        enabled: true
+        provider: "giscus"
+        giscus:
+          <<: *giscus
+          lang: "zh-CN"
+  en-us:
+    contentDir: content/en-us
+    languageName: English
+    params:
+      languageIcon: "images/i18n/en-us.svg" # in assets folder
+  ja:
+    contentDir: content/ja
+    languageName: 日本語
+    params:
+      languageIcon: "images/i18n/ja.svg"
+      font: "'-apple-system', BlinkMacSystemFont, 'Yu Gothic', '游ゴシック', YuGothic, '游ゴシック体', 'Noto Sans Japanese', 'ヒラギノ角ゴ Pro W3', 'メイリオ', 'Hiragino Kaku Gothic ProN', 'MS PGothic', Osaka, 'sans-serif'"
+      announcement:
+        enabled: true
+        file: "README.ja.md"
+      comments:
+        enabled: true
+        provider: "giscus"
+        giscus:
+          <<: *giscus
+          lang: "ja"
+    menu:
+      main:
+      - *mainMenuHome
+      - *mainMenuArchives
+      - *mainMenuSearch

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>openmediavault on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/openmediavault/</link>
+    <description>Recent content in openmediavault on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Sat, 08 Aug 2020 15:10:17 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/openmediavault/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>raw.githubusercontent.com拒绝访问解决办法</title>
+      <link>https://blog.xiaomo.info/2020/142/</link>
+      <pubDate>Sat, 08 Aug 2020 15:10:17 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/142/</guid>
+      <description>出现的错误 解决办法 1 2 3 4 1、访问网址 https://site.ip138.com/raw.Githubusercontent.com 2、输入：raw.githubusercontent.com 3、找到中国 香港Ip sudo vi /etc/hosts 151.101.76.133 raw.githubusercontent.com 1 2 ![](https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_150822-1024x324.jpg)</description>
+    </item>
+    
+    <item>
+      <title>openmediavault SMB共享设置</title>
+      <link>https://blog.xiaomo.info/2020/132/</link>
+      <pubDate>Sat, 08 Aug 2020 13:05:58 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/132/</guid>
+      <description>创建用户 默认的admin用户与root用户权限都设置完毕也不能登陆smb，创建一个用户就正常了 访问权限管理-用户-添加用户 添加用户 创建文件系</description>
+    </item>
+    
+  </channel>
+</rss>

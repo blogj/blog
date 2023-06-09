@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Traefik on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/traefik/</link>
+    <description>Recent content in Traefik on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Wed, 14 Jul 2021 22:47:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/traefik/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Traefik系列二-docker搭建typecho-to-traefik</title>
+      <link>https://blog.xiaomo.info/2021/615/</link>
+      <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/615/</guid>
+      <description>快速开始 1 2 3 4 5 6 7 cd /home git clone https://github.com/YianAndCode/typecho-in-docker.git cd /home/typecho-in-docker git clone https://github.com/typecho/typecho.git rm -r typecho/.git chown -R www-data:www-data typecho/ docker-compose up -d 浏览器访问http://IP:8001 如果GitHub下载过于慢的话可以替换为</description>
+    </item>
+    
+  </channel>
+</rss>

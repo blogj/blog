@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>原创教程 on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B/</link>
+    <description>Recent content in 原创教程 on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Thu, 26 May 2022 18:22:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Office LTSC 专业增强版 2021个人指南</title>
+      <link>https://blog.xiaomo.info/2022/762/</link>
+      <pubDate>Thu, 26 May 2022 18:22:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/762/</guid>
+      <description>Office LTSC 专业增强版 2021个人指南 下载Office tool https://otp.landian.vip/zh-cn/ 推荐使用前三项以跳过安装 OTP 运行环境。解压使用 安装 Office LTSC 专业增强版 2021 然后双击运行 Office Tool Plus.exe ，点击 安</description>
+    </item>
+    
+    <item>
+      <title>Wg-Easy一个几分钟搞定访问局域网的wg面板</title>
+      <link>https://blog.xiaomo.info/2022/759/</link>
+      <pubDate>Fri, 22 Apr 2022 14:26:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/759/</guid>
+      <description>前言 在前面博主比较推荐tailscale这款软件也是基于Wg协议的，但兜兜转转还是回归了wireguard， 回归了传统的那种网络模型 ，或许网</description>
+    </item>
+    
+    <item>
+      <title>RH 2288H v2 相关资源分享</title>
+      <link>https://blog.xiaomo.info/2021/720/</link>
+      <pubDate>Wed, 22 Dec 2021 15:27:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/720/</guid>
+      <description>分享 相关 远程java相关 点击远程控制 在win10下用ie浏览器可行 jre-7u4-windows-i586 kvm_client_windows 「NAS常用软件引导软件系统镜像」，点击链接保存，或者复制本段内容，打</description>
+    </item>
+    
+    <item>
+      <title>netmaker 搭建教程 组建虚拟局域网</title>
+      <link>https://blog.xiaomo.info/2021/715/</link>
+      <pubDate>Wed, 01 Dec 2021 22:43:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/715/</guid>
+      <description>前言 参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装 官方文档地址 过程 环境 腾讯云乌班图20.04</description>
+    </item>
+    
+    <item>
+      <title>netmaker win10 手动添加节点</title>
+      <link>https://blog.xiaomo.info/2021/711/</link>
+      <pubDate>Wed, 01 Dec 2021 22:21:54 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/711/</guid>
+      <description>https://github.com/gravitl/netmaker/releases 去下载netclient.exe netclient.exe 放到D盘或者C盘管理员身份运行PowerShell 运行命令</description>
+    </item>
+    
+    <item>
+      <title>unraid6.9.2 安装群晖DSM7.0.1</title>
+      <link>https://blog.xiaomo.info/2021/707/</link>
+      <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/707/</guid>
+      <description>序言 引导驱动来源openos论坛 使用版本 DS3615xs_7.01-42218 配置 新建Linux虚拟机配置如下按照配置启动虚拟机就行，不用改什么全程图形化 虚拟机配置 详细主要配置</description>
+    </item>
+    
+    <item>
+      <title>折腾NAS中用的软件资源分享</title>
+      <link>https://blog.xiaomo.info/2021/686/</link>
+      <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/686/</guid>
+      <description>资源链接阿里云盘 我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀 复制这段内容打开「阿里云盘」App 即可获取 链接：ht</description>
+    </item>
+    
+    <item>
+      <title>tailscale 中继节点 搭建教程</title>
+      <link>https://blog.xiaomo.info/2021/679/</link>
+      <pubDate>Mon, 13 Sep 2021 09:35:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/679/</guid>
+      <description>2021年10月20日更新 标题设置得不太准确，应该是中继网关，中继内网网段。 中继节点可看这篇文章 社区为 Tailscale 的自定义 DERP 服务器构建的 Docker 镜像 Fred Liang 分享</description>
+    </item>
+    
+    <item>
+      <title>Mirai Dice QQ机器人-to-docker搭建记录</title>
+      <link>https://blog.xiaomo.info/2021/639/</link>
+      <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/639/</guid>
+      <description>前言 网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的</description>
+    </item>
+    
+    <item>
+      <title>unraid 挂载webdav为本地目录</title>
+      <link>https://blog.xiaomo.info/2021/662/</link>
+      <pubDate>Wed, 04 Aug 2021 21:43:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/662/</guid>
+      <description>序言 上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不</description>
+    </item>
+    
+    <item>
+      <title>unraid6.9.2安装及UEFI引导与初始化</title>
+      <link>https://blog.xiaomo.info/2021/649/</link>
+      <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/649/</guid>
+      <description>前言 系统包来源于俄罗斯论坛 系统盘制作 系统下载 分享云盘链接 使用官方工具制作 把下载的unRAIDServer-6.9.2-x86_64_fu11</description>
+    </item>
+    
+    <item>
+      <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
+      <link>https://blog.xiaomo.info/2021/629/</link>
+      <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/629/</guid>
+      <description>前言 基本上这是最简单的方式，我通过 tailscale 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能</description>
+    </item>
+    
+    <item>
+      <title>NGINX 非443端口http跳转https</title>
+      <link>https://blog.xiaomo.info/2021/600/</link>
+      <pubDate>Thu, 24 Jun 2021 10:32:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/600/</guid>
+      <description>关于Nginx这个web服务器软件在NAS上配置非443端口访问时候跳转https问题，默认80端口与443端口无法访问情况。 1 error_page 497 301 =307 https://$host:9443$request_uri; 添</description>
+    </item>
+    
+    <item>
+      <title>阿里云域名 docker下申请泛域名</title>
+      <link>https://blog.xiaomo.info/2021/578/</link>
+      <pubDate>Thu, 10 Jun 2021 15:54:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/578/</guid>
+      <description>构建 1 2 3 Git pull https://github.com/monkeyWie/certbot-dns-aliyun.git cd docker docker build -t certbot-aliyun:latest . 启动容器 docker官方仓库有这个镜像 1 2 3 4 5 6 7 docker run \ --name cert \ -itd \ -v /etc/letsencrypt:/etc/letsencrypt \ -e ACCESS_KEY_ID=XXX \ -e ACCESS_KEY_SECRET=XXX \ liwei2633/certbot-aliyun 首次创建证书，根据命令</description>
+    </item>
+    
+    <item>
+      <title>tailscale docker上安装搭建方法</title>
+      <link>https://blog.xiaomo.info/2021/555/</link>
+      <pubDate>Thu, 20 May 2021 13:31:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/555/</guid>
+      <description>启动 1 docker run -d --restart=always --name=tailscaled -v /var/lib:/var/lib -v /dev/net/tun:/dev/net/tun --network=host --privileged fastandfearless/tailscale 登录 1 docker exec tailscaled tailscale up 查看状态 1 docker exec tailscaled tailscale status 停止tailscale容器 1 docker stop tailscaled 删除tailscale容器 1 docker rm tailscaled 参考官</description>
+    </item>
+    
+    <item>
+      <title>TrueNAS-SCALE SMB共享设置</title>
+      <link>https://blog.xiaomo.info/2021/538/</link>
+      <pubDate>Wed, 19 May 2021 01:51:32 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/538/</guid>
+      <description>1.打开win10 SMB1.0 SMB1.0功能 此电脑&amp;gt;卸载或更改程序&amp;gt;程序和功能&amp;gt;启用或关闭win功能 勾选? 勾选 2.添加用户 登录Tr</description>
+    </item>
+    
+    <item>
+      <title>关于NAS的小折腾填坑</title>
+      <link>https://blog.xiaomo.info/2021/530/</link>
+      <pubDate>Tue, 18 May 2021 11:38:59 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/530/</guid>
+      <description>关于NAS的小折腾填坑 【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。 关于电信路</description>
+    </item>
+    
+    <item>
+      <title>Tailscale VPN初步安装体验</title>
+      <link>https://blog.xiaomo.info/2021/503/</link>
+      <pubDate>Thu, 13 May 2021 16:13:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/503/</guid>
+      <description>序言 初步体验是一个基于wireguard 的新的星形组网软件（功能之一），对比WGvpn最大的不同就是增加了公匙交换系统，免配置组网，只需要安</description>
+    </item>
+    
+    <item>
+      <title>ESXI 群晖下连接VPN网络报错解决</title>
+      <link>https://blog.xiaomo.info/2021/494/</link>
+      <pubDate>Thu, 29 Apr 2021 16:25:03 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/494/</guid>
+      <description>前言 我的vpn服务端搭建在openwrt软路由上使用SoftEther作为相关软件，在群晖下出现 群晖 l2tp连接失败 请检查。。。。解决办法如</description>
+    </item>
+    
+    <item>
+      <title>FreshRSS docker-compose.yml 教程</title>
+      <link>https://blog.xiaomo.info/2021/478/</link>
+      <pubDate>Sun, 14 Mar 2021 17:30:38 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/478/</guid>
+      <description>创建docker-compose.yml文件 1 2 mkdir /home/FreshRSS &amp;amp;&amp;amp; cd /home/FreshRSS nano docker-compose.yml 填入以下内容 内容来源于官方GIthub 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
+    </item>
+    
+    <item>
+      <title>openwrt通过wireguard组网</title>
+      <link>https://blog.xiaomo.info/2021/444/</link>
+      <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/444/</guid>
+      <description>概念 网上找的图很好理解应该 wireguard原理就不多做解释了，我们只是人为的分客户端与服务端，因为国情在这，有时候两端不可都是可以互相访问</description>
+    </item>
+    
+    <item>
+      <title>Unarid 安装异星工厂并指定存档</title>
+      <link>https://blog.xiaomo.info/2021/415/</link>
+      <pubDate>Sun, 24 Jan 2021 13:46:44 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/415/</guid>
+      <description>0-1搜索factorio并添加环境变量指定存档 搜索镜像 添加相关环境变量 注意C1存档已经上传到saves目录 存档地址 配置文件修改 \tower\appdata\factorio\config ## 配置文件</description>
+    </item>
+    
+    <item>
+      <title>NPS内网穿透工具学习2-服务端搭建</title>
+      <link>https://blog.xiaomo.info/2020/388/</link>
+      <pubDate>Mon, 28 Dec 2020 10:44:52 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/388/</guid>
+      <description>序言 通俗约定您已经，通晓基本的Linux知识（解压复制粘贴移动）、了解基本的网络知识（知晓什么是公网IP什么是内网IP）登录已root用户为</description>
+    </item>
+    
+    <item>
+      <title>NPS 内网穿透工具学习记录</title>
+      <link>https://blog.xiaomo.info/2020/368/</link>
+      <pubDate>Sun, 27 Dec 2020 22:48:12 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/368/</guid>
+      <description>介绍 2021年5月18日更新 官方更新了docker安装方式，推荐用这个方法强烈推荐 地址 nps是一款轻量级、高性能、功能强大的内网穿透代理服务</description>
+    </item>
+    
+    <item>
+      <title>Linux 下resilio同步服务安装</title>
+      <link>https://blog.xiaomo.info/2020/325/</link>
+      <pubDate>Mon, 07 Dec 2020 12:42:46 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/325/</guid>
+      <description>参考常见问题 2021年6月15日更新 网络传输速度测试一直不能满速跑，断断续续的传输，速度一直跑不上来，已弃坑 远程服务器安装后需要修改配置文件</description>
+    </item>
+    
+    <item>
+      <title>Openwrt OpenConnect VPN 搭建设置教程</title>
+      <link>https://blog.xiaomo.info/2020/293/</link>
+      <pubDate>Wed, 30 Sep 2020 13:52:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/293/</guid>
+      <description>## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图 ![流程图](https://gao4.top/wp-cont</description>
+    </item>
+    
+    <item>
+      <title>UNraid 安装后注意事项常见操作</title>
+      <link>https://blog.xiaomo.info/2020/234/</link>
+      <pubDate>Mon, 31 Aug 2020 13:18:41 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/234/</guid>
+      <description>引导模式 UnRaid如果不能成功引导试试换传统引导模式 修改访问iP地址 1 如果引导成功后访问不了，可能是局域网没有dhcp服务器，试试在Unr</description>
+    </item>
+    
+    <item>
+      <title>arch下网络设置2020年版本</title>
+      <link>https://blog.xiaomo.info/2020/198/</link>
+      <pubDate>Wed, 19 Aug 2020 15:46:53 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/198/</guid>
+      <description>静态IP设置 地址设置 1 ip addr change 192.168.200.187/24 dev enp3s0 修改地方enp3s0网卡名称与192.168.200.187/24注意子网掩码/24 设置网关 1 ip route add default via 192.168.200.1</description>
+    </item>
+    
+    <item>
+      <title>Debian国内服务器初始化</title>
+      <link>https://blog.xiaomo.info/2020/109/</link>
+      <pubDate>Thu, 06 Aug 2020 18:56:43 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/109/</guid>
+      <description>乌班图服务器版本默认ssh居然没有sftp弃之 ， centos虽然很好但总感觉软件包陈旧，燧写这篇初始化操作 更新软件包 1 apt-get update 安装阿里云源Doc</description>
+    </item>
+    
+  </channel>
+</rss>

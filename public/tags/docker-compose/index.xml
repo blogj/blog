@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker-compose on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/docker-compose/</link>
+    <description>Recent content in docker-compose on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Sun, 14 Mar 2021 17:30:38 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FreshRSS docker-compose.yml 教程</title>
+      <link>https://blog.xiaomo.info/2021/478/</link>
+      <pubDate>Sun, 14 Mar 2021 17:30:38 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/478/</guid>
+      <description>创建docker-compose.yml文件 1 2 mkdir /home/FreshRSS &amp;amp;&amp;amp; cd /home/FreshRSS nano docker-compose.yml 填入以下内容 内容来源于官方GIthub 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
+    </item>
+    
+  </channel>
+</rss>

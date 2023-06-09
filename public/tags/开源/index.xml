@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开源 on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/%E5%BC%80%E6%BA%90/</link>
+    <description>Recent content in 开源 on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Wed, 29 Dec 2021 14:16:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/%E5%BC%80%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>headscale开源服务器搭建</title>
+      <link>https://blog.xiaomo.info/2021/723/</link>
+      <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/723/</guid>
+      <description>2022年1月5日更新 GitHub仓库的文档已更新，可正常运行。 配置文件里本地ssl证书设置好了后不起效果 前言 headscale 是一款今年 2021 年出现的一款 Tailscale 控</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>异星工厂 on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/%E5%BC%82%E6%98%9F%E5%B7%A5%E5%8E%82/</link>
+    <description>Recent content in 异星工厂 on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Sun, 24 Jan 2021 13:46:44 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/%E5%BC%82%E6%98%9F%E5%B7%A5%E5%8E%82/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unarid 安装异星工厂并指定存档</title>
+      <link>https://blog.xiaomo.info/2021/415/</link>
+      <pubDate>Sun, 24 Jan 2021 13:46:44 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/415/</guid>
+      <description>0-1搜索factorio并添加环境变量指定存档 搜索镜像 添加相关环境变量 注意C1存档已经上传到saves目录 存档地址 配置文件修改 \tower\appdata\factorio\config ## 配置文件</description>
+    </item>
+    
+  </channel>
+</rss>

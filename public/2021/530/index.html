@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="lang-zh-cn">
+    <head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="keywords" content="NAS,NAS物语,VPN,原创教程,资料,Hugo,Hugo Theme,Luna," /><meta name="description" content="关于NAS的小折腾填坑 【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。 关于电信路" />
+<meta itemprop="description" content="关于NAS的小折腾填坑 【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。 关于电信路" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<meta itemprop="name" content="关于NAS的小折腾填坑 - 小莫的博客-fighting(技术分享、生活随笔)" />
+<link href="https://blog.xiaomo.info/index.xml" title="关于NAS的小折腾填坑 - 小莫的博客-fighting(技术分享、生活随笔)" type="application/rss+xml" rel="alternate" />
+<title>关于NAS的小折腾填坑 - 小莫的博客-fighting(技术分享、生活随笔)</title><link rel="stylesheet" href="/main.9f99fff67042dfe998bae2d5cea6acb56f53941aa5e192944b13ea0b08c0aafe.css" integrity="sha256-n5n/9nBC3+mYuuLVzqastW9TlBql4ZKUSxPqCwjAqv4=" /><meta property="og:site_name" content="关于NAS的小折腾填坑 - 小莫的博客-fighting(技术分享、生活随笔)" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="关于NAS的小折腾填坑" />
+<meta property="og:description" content="关于NAS的小折腾填坑 【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。 关于电信路" />
+<meta property="og:url" content="https://blog.xiaomo.info/2021/530/" /><meta property="article:publisher" content="https://blog.xiaomo.info/2021/530/" /><meta property="article:published_time" content="2021-05-18T11:38:59&#43;00:00" /><meta property="article:modified_time" content="2022-12-09T21:39:44&#43;08:00" /><meta name="theme-color" content="#00B0FF" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="关于NAS的小折腾填坑 - 小莫的博客-fighting(技术分享、生活随笔)" />
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+
+<meta name="twitter:card" content="summary_large_image" /><meta name="twitter:site" content="@xiaomoinfo" />
+    <meta name="twitter:creator" content="@xiaomoinfo" /><meta name="twitter:title" content="关于NAS的小折腾填坑 - 小莫的博客-fighting(技术分享、生活随笔)" />
+<meta name="twitter:description" content="关于NAS的小折腾填坑 【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。 关于电信路" />
+<meta name="twitter:url" content="https://blog.xiaomo.info/2021/530/" /><meta name="twitter:image" content="" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /><link rel="manifest" href="/manifest.json" /><link href="/icon.png" rel="shortcut icon" />
+<link href="/icon.png" rel="Bookmark" />
+<link rel="apple-touch-icon" href="/icon.png" /><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "关于NAS的小折腾填坑",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/blog.xiaomo.info\/2021\/530\/"
+  },"genre": "posts","keywords": "NAS, NAS物语, VPN, 原创教程, 资料","wordcount": 1278 ,
+  "url": "https:\/\/blog.xiaomo.info\/2021\/530\/","datePublished": "2021-05-18T11:38:59\u002b00:00","dateModified": "2022-12-09T21:39:44\u002b08:00","license": "@Copyright 2023","author": {
+    "@type": "Person",
+    "name": "xiaomo"
+  },"description": ""
+}
+</script>
+
+
+    </head>
+
+    <body class="dark:bg-darkBg dark:text-darkText">
+        <div class="relative mx-auto shadow-lg md:max-w-4xl xl:max-w-4xl 2xl:max-w-4xl">
+            <div class="main flex flex-col justify-between bg-white dark:bg-darkFg"><header
+    class="fixed z-20 backdrop-blur-md bg-white/80 dark:bg-darkFg mx-auto w-full md:max-w-4xl xl:max-w-4xl 2xl:max-w-4xl"
+><style>
+            .typo h1,
+            .typo h2,
+            .typo h3,
+            .typo h4,
+            .typo h5,
+            .typo h6 {
+                scroll-margin-top: 100px;
+            }
+        </style><nav id="nav" class="navbar top-0 z-10 flex items-center border-b px-5 py-6 dark:border-darkBorder md:px-10">
+            <div class="route-items flex w-full items-center justify-around"><a
+                        title="首页"
+                        data-active-link="/"
+                        href="/"
+                        class=" relative flex cursor-pointer flex-col items-center text-gray-700 transition duration-150 ease-[ease]"
+                    >
+                        <i
+                            class="eva eva-home flex h-8 w-8 items-center justify-center text-3xl leading-none text-gray-500 transition duration-150 ease-[ease] dark:text-darkTextPlaceholder"
+                        ></i>
+                        <span class="mt-1 block text-xs text-gray-400 dark:text-darkText sm:text-sm md:hidden">首页</span>
+                    </a><a
+                        title="关于我"
+                        data-active-link="/about/"
+                        href="/about/"
+                        class=" relative flex cursor-pointer flex-col items-center text-gray-700 transition duration-150 ease-[ease]"
+                    >
+                        <i
+                            class="eva eva-heart flex h-8 w-8 items-center justify-center text-3xl leading-none text-gray-500 transition duration-150 ease-[ease] dark:text-darkTextPlaceholder"
+                        ></i>
+                        <span class="mt-1 block text-xs text-gray-400 dark:text-darkText sm:text-sm md:hidden">关于我</span>
+                    </a><a
+                        title="朋友们"
+                        data-active-link="/links/"
+                        href="/links/"
+                        class=" relative flex cursor-pointer flex-col items-center text-gray-700 transition duration-150 ease-[ease]"
+                    >
+                        <i
+                            class="eva eva-people flex h-8 w-8 items-center justify-center text-3xl leading-none text-gray-500 transition duration-150 ease-[ease] dark:text-darkTextPlaceholder"
+                        ></i>
+                        <span class="mt-1 block text-xs text-gray-400 dark:text-darkText sm:text-sm md:hidden">朋友们</span>
+                    </a><a
+                        title="归档"
+                        data-active-link="/archives/"
+                        href="/archives/"
+                        class=" relative flex cursor-pointer flex-col items-center text-gray-700 transition duration-150 ease-[ease]"
+                    >
+                        <i
+                            class="eva eva-bar-chart flex h-8 w-8 items-center justify-center text-3xl leading-none text-gray-500 transition duration-150 ease-[ease] dark:text-darkTextPlaceholder"
+                        ></i>
+                        <span class="mt-1 block text-xs text-gray-400 dark:text-darkText sm:text-sm md:hidden">归档</span>
+                    </a><a
+                        title="推特"
+                        data-active-link="/twitter/"
+                        href="/twitter/"
+                        class=" relative flex cursor-pointer flex-col items-center text-gray-700 transition duration-150 ease-[ease]"
+                    >
+                        <i
+                            class="eva eva-twitter flex h-8 w-8 items-center justify-center text-3xl leading-none text-gray-500 transition duration-150 ease-[ease] dark:text-darkTextPlaceholder"
+                        ></i>
+                        <span class="mt-1 block text-xs text-gray-400 dark:text-darkText sm:text-sm md:hidden">推特</span>
+                    </a><a
+                        title="GitHub"
+                        data-active-link="/github/"
+                        href="/github/"
+                        class=" relative flex cursor-pointer flex-col items-center text-gray-700 transition duration-150 ease-[ease]"
+                    >
+                        <i
+                            class="eva eva-github flex h-8 w-8 items-center justify-center text-3xl leading-none text-gray-500 transition duration-150 ease-[ease] dark:text-darkTextPlaceholder"
+                        ></i>
+                        <span class="mt-1 block text-xs text-gray-400 dark:text-darkText sm:text-sm md:hidden">GitHub</span>
+                    </a><a
+                        title="搜索"
+                        data-active-link="/search/"
+                        href="/search/"
+                        class=" relative flex cursor-pointer flex-col items-center text-gray-700 transition duration-150 ease-[ease]"
+                    >
+                        <i
+                            class="eva eva-search flex h-8 w-8 items-center justify-center text-3xl leading-none text-gray-500 transition duration-150 ease-[ease] dark:text-darkTextPlaceholder"
+                        ></i>
+                        <span class="mt-1 block text-xs text-gray-400 dark:text-darkText sm:text-sm md:hidden">搜索</span>
+                    </a>
+            </div>
+        </nav><div class="dark-mode-switch absolute right-0 top-0 z-10 cursor-pointer pr-2 pt-2 text-xl leading-none">
+    <i class="eva eva-moon opacity-20 dark:opacity-70"></i>
+</div>
+</header>
+<main class="mt-28 md:mt-20 relative flex flex-grow" id="swup"><style>:root {
+        --font:Times New Roman,Times,Heti Song,serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    }</style>
+<div class="type-posts layout- w-full"><div class="relative h-full">
+    <div class="relative h-full">
+        <div class="page-view-article flex h-full flex-col bg-white dark:bg-darkFg"><div class="relative"><div>
+    <div class="-mb-2 w-full p-6 pb-0 text-3xl md:px-10">
+        关于NAS的小折腾填坑
+    </div>
+</div>
+</div>
+<div class="article-info border-b p-6 pb-3 text-sm dark:border-darkBorder md:px-10">
+    <div>
+        <div class="mb-3 mr-4 inline-flex items-center sm:rounded-full">
+            <i class="eva eva-clock-outline mr-1"></i>
+            <span>
+                <time
+                    title="发布于 2021年5月18日 11:38:59"datetime="2021-05-18T11:38:59Z">2021年5月18日</time
+                >
+            </span>
+        </div><span class="mb-3 mr-4 inline-flex items-center sm:rounded-full">
+                    <i class="eva eva-edit-2-outline mr-1"></i>
+                    <span>
+                        <time
+                            title="最后修改于：2022年12月9日 21:39:44"datetime="2022-12-09T21:39:44+08:00">2022年12月9日</time
+                        >
+                    </span>
+                </span><div class="mb-3 mr-4 inline-flex items-center sm:rounded-full">
+                <i class="eva eva-flag-outline mr-1"></i>
+                <span>3 分钟</span>
+            </div><div class="mb-3 mr-4 inline-flex items-center sm:rounded-full">
+                <i class="eva eva-bar-chart-outline mr-1"></i>
+                <span>1278 字</span>
+            </div></div><div class="mb-3 flex items-center">
+            <i class="eva eva-pricetags-outline mr-1"></i>
+            <span class="mr-3">标签</span><a href="/tags/nas" title="NAS" class="group mr-2 flex items-center text-sm">
+                    <i class="mr-1 text-gray-400 group-hover:text-theme">#</i>
+                    <span class="text-gray-400 group-hover:text-theme">NAS</span>
+                </a><a href="/tags/nas%E7%89%A9%E8%AF%AD" title="NAS物语" class="group mr-2 flex items-center text-sm">
+                    <i class="mr-1 text-gray-400 group-hover:text-theme">#</i>
+                    <span class="text-gray-400 group-hover:text-theme">NAS物语</span>
+                </a><a href="/tags/vpn" title="VPN" class="group mr-2 flex items-center text-sm">
+                    <i class="mr-1 text-gray-400 group-hover:text-theme">#</i>
+                    <span class="text-gray-400 group-hover:text-theme">VPN</span>
+                </a><a href="/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B" title="原创教程" class="group mr-2 flex items-center text-sm">
+                    <i class="mr-1 text-gray-400 group-hover:text-theme">#</i>
+                    <span class="text-gray-400 group-hover:text-theme">原创教程</span>
+                </a><a href="/tags/%E8%B5%84%E6%96%99" title="资料" class="group mr-2 flex items-center text-sm">
+                    <i class="mr-1 text-gray-400 group-hover:text-theme">#</i>
+                    <span class="text-gray-400 group-hover:text-theme">资料</span>
+                </a></div></div>
+<aside
+            class="toc border-b border-gray-300 px-5 py-5 dark:border-darkBorder md:px-10 2xl:fixed 2xl:top-10 2xl:m-0 2xl:-ml-72 2xl:w-72 2xl:border-none 2xl:p-0 2xl:py-4 2xl:pr-4 "
+        >
+            <header>
+                <h1 class="mb-3 text-2xl font-bold 2xl:mb-4">文章目录</h1>
+            </header>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#关于电信路由器">关于电信路由器</a>
+      <ul>
+        <li><a href="#桥接后遇到的问题">桥接后遇到的问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#关于移动宽带">关于移动宽带</a>
+      <ul>
+        <li><a href="#移动ipv6速度">移动ipv6速度</a></li>
+        <li><a href="#resiliosync软件"> Resilio Sync软件</a></li>
+        <li><a href="#遇到问题">遇到问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#异地组网问题">异地组网问题</a></li>
+  </ul>
+</nav>
+        </aside><div class="border-b bg-blue-100 bg-opacity-20 p-6 dark:border-darkBorder dark:bg-darkBg md:px-10">
+            <time
+                datetime="2022-12-09T21:39:44+08:00"
+                >文章最后编辑于: <span class="mx-1 font-bold">182</span> 天前，文中所描述的信息可能已发生改变</time
+            >
+        </div><section class="article-content typo relative flex-grow px-6 py-5 md:px-10"><i title="更快的阅读" id="bionicReading" class="absolute right-0 top-0 cursor-pointer p-3"
+            ><svg class="w-4 h-4 fill-current text-gray-400" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10811" ><path d="M480 192c-19.2 0-32-12.8-32-32v-128c0-19.2 12.8-32 32-32s32 12.8 32 32v128c0 19.2-12.8 32-32 32zM160 1024c-6.4 0-19.2 0-25.6-6.4l-128-128c0-6.4-6.4-19.2-6.4-25.6s6.4-19.2 6.4-25.6l512-512c12.8-6.4 38.4-6.4 51.2 0l128 128c0 6.4 6.4 19.2 6.4 25.6s-6.4 19.2-6.4 25.6l-512 512c-6.4 6.4-19.2 6.4-25.6 6.4z m-83.2-160l83.2 83.2 467.2-467.2-83.2-83.2-467.2 467.2zM992 576h-128c-19.2 0-32-12.8-32-32s12.8-32 32-32h128c19.2 0 32 12.8 32 32s-12.8 32-32 32zM768 288c-6.4 0-19.2 0-25.6-6.4-12.8-12.8-12.8-32 0-44.8l96-96c12.8-12.8 32-12.8 44.8 0s12.8 32 0 44.8l-96 96c0 6.4-12.8 6.4-19.2 6.4zM256 288c-6.4 0-19.2 0-25.6-6.4L134.4 185.6c-6.4-12.8-6.4-38.4 0-51.2s32-12.8 44.8 0l96 96c12.8 12.8 12.8 32 0 44.8 0 12.8-12.8 12.8-19.2 12.8zM864 896c-6.4 0-19.2 0-25.6-6.4l-96-96c-12.8-12.8-12.8-32 0-44.8s32-12.8 44.8 0l96 96c12.8 12.8 12.8 32 0 44.8 0 6.4-12.8 6.4-19.2 6.4z" p-id="10812"></path><path d="M544 640c-6.4 0-19.2 0-25.6-6.4l-128-128c-6.4-12.8-6.4-38.4 0-51.2s32-12.8 44.8 0l128 128c12.8 12.8 12.8 38.4 6.4 51.2-6.4 6.4-19.2 6.4-25.6 6.4z" p-id="10813"></path></svg></i
+        >
+
+<h1 class="group " id="关于nas的小折腾填坑"
+    >关于NAS的小折腾填坑<a href="#%e5%85%b3%e4%ba%8enas%e7%9a%84%e5%b0%8f%e6%8a%98%e8%85%be%e5%a1%ab%e5%9d%91"
+        ><i class="eva eva-link ml-3 align-middle text-theme opacity-0 transition ease-in-out group-hover:opacity-100"></i></a
+></h1>
+
+<p>【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。</p>
+
+
+<h2 class="group " id="关于电信路由器"
+    >关于电信路由器<a href="#%e5%85%b3%e4%ba%8e%e7%94%b5%e4%bf%a1%e8%b7%af%e7%94%b1%e5%99%a8"
+        ><i class="eva eva-link ml-3 align-middle text-theme opacity-0 transition ease-in-out group-hover:opacity-100"></i></a
+></h2>
+
+<p>   四川电信，可以在微信公众号，给找客服切换光猫桥接模式，顺便要了公网IP，没有网上那么难，很顺利就要到了，也没有去折腾光猫破解什么的，因为网上超级密码都不正确</p>
+
+
+<h3 class="group " id="桥接后遇到的问题"
+    >桥接后遇到的问题<a href="#%e6%a1%a5%e6%8e%a5%e5%90%8e%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98"
+        ><i class="eva eva-link ml-3 align-middle text-theme opacity-0 transition ease-in-out group-hover:opacity-100"></i></a
+></h3>
+
+<p>过一天死机，重启恢复，开始怀疑固件有问题，OPenwrt固件刷到工控n2800主板上，随后换固件pfSense，还是遇到过一天死机重启恢复，应该不是固件与硬件问题随后换回OPenwrt，每天早上5点定时重启（应该是电信定时换IP问题猜测）。问题解决，用过几个月后，突然连不上DDNS（幸亏没有出现死机问题），随后发现OPenwrt固件空间满了，随后按照网上教程把剩下的30G空间重新远程ssh连上路由器分区挂载，问题解决。</p>
+
+
+<h2 class="group " id="关于移动宽带"
+    >关于移动宽带<a href="#%e5%85%b3%e4%ba%8e%e7%a7%bb%e5%8a%a8%e5%ae%bd%e5%b8%a6"
+        ><i class="eva eva-link ml-3 align-middle text-theme opacity-0 transition ease-in-out group-hover:opacity-100"></i></a
+></h2>
+
+<p>最开始移动宽带，公网iP就不要想了，不过移动居然提供了IPv6，光猫很顺利就通过网上超级密码进入后台，建议把后台截图，防止出错，很顺利设置成桥接模式，用Openwrt拨号，折腾IPv6远程访问，因为不可能每个服务都做ddns，也不现实，就用网上恩山论坛的方法在OPenwrt上安装 <strong>socat</strong>工具，桥接主路由ipv6端口到下面ipv4内网服务端口，跟端口映射是不是很像，每次重启机器需要重新设置运行命令，就放OPenwrt，web界面有一个开机启动设置的地方。使用就搜索吧<figure
+    
+>
+    <picture class="noscript-hidden"><img
+            
+            data-src="https://res.smzdm.com/images/emotions/147.gif"
+            src="/images/outload.svg"data-alt="关于NAS的小折腾填坑"data-zoomable
+            data-lazyload data-lazyload-blur
+        />
+    </picture>
+    <noscript data-lazyload-noscript>
+        <a class="after:hidden" href="https://res.smzdm.com/images/emotions/147.gif" target="_blank" rel="noopener noreferrer">
+            <picture><img
+                    src="https://res.smzdm.com/images/emotions/147.gif"alt="关于NAS的小折腾填坑"/>
+            </picture>
+        </a>
+    </noscript></figure>
+ </p>
+
+
+<h3 class="group " id="移动ipv6速度"
+    >移动ipv6速度<a href="#%e7%a7%bb%e5%8a%a8ipv6%e9%80%9f%e5%ba%a6"
+        ><i class="eva eva-link ml-3 align-middle text-theme opacity-0 transition ease-in-out group-hover:opacity-100"></i></a
+></h3>
+
+<p>挺快的，和老弟相隔一个城市200多公里，传输速度相同的移动宽带。跑到了满速100M，也就是上行12.5M/s 左右当时硬件接口是100M的，后面换电信，硬件接口千兆了就没机会测试了。</p>
+
+
+<h3 class="group " id="resiliosync软件"
+    > Resilio Sync软件<a href="#resiliosync%e8%bd%af%e4%bb%b6"
+        ><i class="eva eva-link ml-3 align-middle text-theme opacity-0 transition ease-in-out group-hover:opacity-100"></i></a
+></h3>
+
+<p>记得17年接触当时还没，懂？ 21年重新安装，据说恢复。实际测试也恢复了。</p>
+
+
+<h3 class="group " id="遇到问题"
+    >遇到问题<a href="#%e9%81%87%e5%88%b0%e9%97%ae%e9%a2%98"
+        ><i class="eva eva-link ml-3 align-middle text-theme opacity-0 transition ease-in-out group-hover:opacity-100"></i></a
+></h3>
+
+<p>docker安装一定要把网络设置为和本地一样的网络，也就是宿主机，或者给一个IP给容器，不然会走中继，没速度，有公网ip会自动打洞，不然没速度也，<strong>记得设置就是host模式</strong>，吐槽一句，unraid的docker就看个状态，详细的还是ssh吧</p>
+<p><a
+    class="link"
+    href="https://post.smzdm.com/p/ax08z5gw/pic_2/"target="_blank" rel="noopener"></a
+>
+网络模式</p>
+<p><figure
+    
+>
+    <picture class="noscript-hidden"><img
+            
+            data-src="https://gao4.top/wp-content/uploads/2021/05/Snipaste_2021-05-18_11-12-16.png"
+            src="/images/outload.svg"data-data-zoomable
+            data-lazyload data-lazyload-blur
+        />
+    </picture>
+    <noscript data-lazyload-noscript>
+        <a class="after:hidden" href="https://gao4.top/wp-content/uploads/2021/05/Snipaste_2021-05-18_11-12-16.png" target="_blank" rel="noopener noreferrer">
+            <picture><img
+                    src="https://gao4.top/wp-content/uploads/2021/05/Snipaste_2021-05-18_11-12-16.png"/>
+            </picture>
+        </a>
+    </noscript></figure>
+</p>
+<p> Resilio Sync用docker安装方式与Linux安装方式同步位置没法修改，是配置文件的限制，修改配置文件就OK了<figure
+    
+>
+    <picture class="noscript-hidden"><img
+            
+            data-src="https://res.smzdm.com/images/emotions/147.gif"
+            src="/images/outload.svg"data-alt="关于NAS的小折腾填坑"data-zoomable
+            data-lazyload data-lazyload-blur
+        />
+    </picture>
+    <noscript data-lazyload-noscript>
+        <a class="after:hidden" href="https://res.smzdm.com/images/emotions/147.gif" target="_blank" rel="noopener noreferrer">
+            <picture><img
+                    src="https://res.smzdm.com/images/emotions/147.gif"alt="关于NAS的小折腾填坑"/>
+            </picture>
+        </a>
+    </noscript></figure>
+ </p>
+<p><a
+    class="link"
+    href="https://post.smzdm.com/p/ax08z5gw/pic_3/"target="_blank" rel="noopener"><figure
+    
+>
+    <picture class="noscript-hidden"><img
+            
+            data-src="https://gao4.top/wp-content/uploads/2021/05/Snipaste_2021-01-29_15-15-24-1024x514-1.png"
+            src="/images/outload.svg"data-alt="关于NAS的小折腾填坑"data-zoomable
+            data-lazyload data-lazyload-blur
+        />
+    </picture>
+    <noscript data-lazyload-noscript>
+        <a class="after:hidden" href="https://gao4.top/wp-content/uploads/2021/05/Snipaste_2021-01-29_15-15-24-1024x514-1.png" target="_blank" rel="noopener noreferrer">
+            <picture><img
+                    src="https://gao4.top/wp-content/uploads/2021/05/Snipaste_2021-01-29_15-15-24-1024x514-1.png"alt="关于NAS的小折腾填坑"/>
+            </picture>
+        </a>
+    </noscript></figure>
+</a
+>
+</p>
+<p>遇到的问题就这么多，安装谁都会，软件的使用过程中问题就很奈斯了。</p>
+
+
+<h2 class="group " id="异地组网问题"
+    >异地组网问题<a href="#%e5%bc%82%e5%9c%b0%e7%bb%84%e7%bd%91%e9%97%ae%e9%a2%98"
+        ><i class="eva eva-link ml-3 align-middle text-theme opacity-0 transition ease-in-out group-hover:opacity-100"></i></a
+></h2>
+
+<p>有一个和另一个地方的群晖组网</p>
+<p>wireguard软件，全平台，没法动态更新ddns的域名，可以通过脚本检测断网重启接口解决，网上是这么说，我是定时重启，openwrt不知道怎么设置，没法中继互联，配置复杂？？，简直就是 就这么着吧，弃用</p>
+<p>传统的Ipsec 服务端为OPenwrt，群晖现成的接口，可惜群晖下，断线重连只最多5次，有时能连上有时不行，弃用</p>
+<p>现在用的方案tailscale，只需要登陆账号，全平台，自动打洞，支持群晖，前几天支持OPenwrt ，有一个小问题就是安装包对于arm平台的OPenwrt偏大，可能会把空间占满，只能恢复出厂了。子网服务与自建中继付费10美元/月</p>
+<p>现在还在用的方案。</p>
+<p>可能对你有所帮助，就这样吧</p>
+</section>
+<div class="flex items-center justify-center px-6 pb-5 pt-4 text-center text-xl text-gray-500 md:px-10 md:pb-10 md:pt-14"><a
+                class="mr-4 inline-flex h-5 w-5 items-center"
+                title="分享到 Twitter"
+                href="https://twitter.com/share?&text=%e5%85%b3%e4%ba%8eNAS%e7%9a%84%e5%b0%8f%e6%8a%98%e8%85%be%e5%a1%ab%e5%9d%91%20%e3%80%90%e5%86%99%e4%bd%9c%e8%af%b4%e6%98%8e%e3%80%91%ef%bc%9a%e6%ad%a4%e7%af%87%e6%96%87%e7%ab%a0%e8%b0%a8%e8%ae%b0%e6%8a%98%e8%85%beNAS%e9%80%94%e4%b8%ad%e7%9a%84%e5%b0%8f%e9%97%ae%e9%a2%98%e5%8f%af%e8%83%bd%e5%af%b9%e6%82%a8%e6%9c%89%e6%89%80%e5%b8%ae%e5%8a%a9%ef%bc%8c%e5%9b%a0%e4%b8%ba%e6%af%8f%e4%b8%aa%e4%ba%ba%e7%bd%91%e7%bb%9c%e7%8e%af%e5%a2%83%e4%b8%8d%e4%b8%80%e6%a0%b7%ef%bc%8c%e4%bd%a0%e5%8f%af%e4%bb%a5%e5%8f%82%e8%80%83%e4%b8%80%e4%b8%8b%e3%80%82%20%e5%85%b3%e4%ba%8e%e7%94%b5%e4%bf%a1%e8%b7%af&url=https://blog.xiaomo.info/2021/530/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="eva eva-twitter hover:text-theme"></i
+            ></a><i class="eva eva-copy mr-4 cursor-pointer hover:text-theme" title="复制链接" data-clipboard-text="https://blog.xiaomo.info/2021/530/"></i><div class="group relative hidden h-5 w-5 cursor-pointer sm:inline-block">
+                <i title="二维码" class="eva show-qrcode eva-smartphone hover:text-theme"></i>
+                <div
+                    class="qrcode-wrapper pointer-events-none absolute left-2/4 bottom-10 h-32 w-32 -translate-x-1/2 overflow-hidden rounded border border-gray-300 bg-white p-2 opacity-0 transition duration-300 ease-[ease] group-hover:opacity-100"
+                >
+                    <img class="h-full w-full" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://blog.xiaomo.info/2021/530/" alt="二维码" />
+                </div>
+            </div></div>
+<div class="border-b dark:border-darkBorder"></div><div class="flex justify-between px-2 py-4 text-xl md:px-6 md:text-2xl">
+    <div>
+        <a
+            href="/2021/503/"
+            title="Tailscale VPN初步安装体验"
+            class="invisible flex cursor-pointer items-center text-gray-500 transition duration-300 ease-[ease] hover:text-theme dark:text-darkTextPlaceholder dark:hover:text-darkText"style="visibility: visible;">
+            <span class="flex items-center text-5xl opacity-70 dark:bg-opacity-100">
+                <i class="eva eva-chevron-left-outline"></i>
+            </span>
+            <span>上一篇</span>
+        </a>
+    </div><div class="hidden items-center text-xs xl:flex">
+        除特殊声明外，本博客一律使用以下协议进行授权 「
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener noreferrer" class="text-theme">署名 - 非商业性使用 - 禁止演绎 4.0</a>
+        」
+    </div>
+    <div class="flex items-center text-sm xl:hidden">
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="noopener noreferrer" class="text-theme">
+            <img src="/Cc-by-nc-nd.svg" alt="署名 - 非商业性使用 - 禁止演绎 4.0" title="署名 - 非商业性使用 - 禁止演绎 4.0" class="w-24" />
+        </a>
+    </div>
+
+    <a
+        href="/2021/538/"
+        title="TrueNAS-SCALE SMB共享设置"
+        class="invisible flex cursor-pointer items-center text-gray-500 transition duration-300 ease-[ease] hover:text-theme dark:text-darkTextPlaceholder dark:hover:text-darkText"style="visibility: visible;">
+        <span>下一篇</span>
+        <span class="flex items-center text-5xl opacity-70 dark:bg-opacity-100">
+            <i class="eva eva-chevron-right-outline"></i>
+        </span>
+    </a>
+</div>
+<div class="border-t py-6 px-6 dark:border-darkBorder md:px-8">
+        <script
+        src="https://giscus.app/client.js"
+        data-repo="houko/houko.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnk3MjYwMDMxMg=="
+        data-category="General"
+        data-category-id="DIC_kwDOBFPK-M4CSvHc"
+        data-mapping="title"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        data-loading="false"
+        crossorigin="anonymous"
+        data-swup-reload-script
+        async
+    ></script>
+
+    <script data-swup-reload-script>
+        (function () {
+            addEventListener('message', e => {
+                if (event.origin !== 'https://giscus.app') return;
+                handler();
+            });
+            window.addEventListener('onThemeChange', handler);
+
+            function handler() {
+                if (document.documentElement.dataset.scheme === 'light') {
+                    setGiscusTheme('light');
+                } else {
+                    setGiscusTheme('dark');
+                }
+            }
+        })();
+
+        function setGiscusTheme(theme) {
+            let giscus = document.querySelector('iframe.giscus-frame');
+            if (giscus) {
+                giscus.contentWindow.postMessage(
+                    {
+                        giscus: {
+                            setConfig: {
+                                theme: theme,
+                            },
+                        },
+                    },
+                    'https://giscus.app'
+                );
+            }
+        }
+    </script>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+</div>
+                </main><footer>
+    <div
+        class="com-footer flex flex-col items-center border-t py-4 px-4 text-sm leading-none text-gray-600 dark:border-darkBorder dark:text-darkTextPlaceholder md:flex-row md:justify-between"
+    >
+        <div class="mb-2 flex items-center justify-between text-center md:mb-0">
+            <span class="">© 2016 - 2023</span>
+            <span class="mx-1.5 opacity-50"> | </span>由 <a data-no-swup class="mx-1 font-bold hover:text-theme" href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> <span class="text-xs opacity-70">❤</span> <a data-no-swup class="mx-1 font-bold hover:text-theme" href="https://github.com/Ice-Hazymoon/hugo-theme-luna" target="_blank" rel="noopener noreferrer">Luna</a> 驱动</div>
+
+        <div class="flex items-center"></div><div id="run-time" class="mt-2 flex-grow text-right md:mt-0">
+    <span>运行时间： </span><b id="run-time-d">0</b>
+    <span class="text-xs">天</span>
+    <b id="run-time-h">0</b>
+    <span class="text-xs">小时</span>
+    <b id="run-time-m">0</b>
+    <span class="text-xs">分钟</span>
+    <b id="run-time-s">0</b>
+    <span class="text-xs">秒</span>
+</div>
+</div>
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-80824007-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script type="text/javascript">
+window.__theme = {
+    cdn: '',
+    pjax: true ,
+    isServer: false ,
+    $version:"",
+    lang: 'zh-cn',
+    imageZoom: true ,
+    lazyload: true ,
+    bionicReading: {
+        enabled: true ,
+        skipLinks: false ,
+        autoBionic: false ,
+        excludeWords:[],
+        excludeClasses:["github"],
+        excludeNodeNames:[],
+    },
+    katex: true ,
+    search: true ,
+    backtop: true ,
+    pangu: true ,
+    autoDarkMode: false ,
+    googleAnalytics:true,
+    hugoEncrypt: {
+        wrongPasswordText: '密码错误',
+        userStorage:window['sessionStorage'],
+    },
+    console: {
+        enabled: true ,
+        leftColor: '#dd6065',
+        rightColor: '#feb462',
+        leftText: 'Hugo Theme Luna',
+        rightText: 'Powered by Hugo ❤ Luna',
+    },
+    assets: {
+        error_svg: "\/images\/error.svg",
+        search_svg: "\/images\/search.svg",
+    },
+    i18n: {
+        copy: {
+            success: "复制成功",
+            failed: "复制失败，请手动复制",
+            copyCode: "复制代码",
+        },
+        search: {
+            untitled: "无标题",
+            loadFailure: "初始化搜索引擎失败",
+            input: "请输入内容...",
+        },
+        darkMode: {
+            dark: "切换到夜间模式",
+            light: "切换到日间模式"
+        }
+    },creatTime: "2016\/06\/30"}
+</script>
+<script type="text/javascript" src="/ts/main.87f7c8b63611018af8120b2d8a793a74d38e1639b720cb8b25ef14136e2a6b22.js" defer integrity="sha256-h/fItjYRAYr4Egstink6dNOOFjm3IMuLJe8UE24qayI="></script><script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('\/sw.js');
+        });
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    
+</script>
+
+<script data-swup-reload-script>
+    
+    
+</script>
+</footer>
+</div>
+        </div><a
+        href="#nav"
+        title="返回顶部"
+        id="back-top"
+        class="fixed right-6 bottom-9 z-10 translate-y-3 scale-90 cursor-pointer rounded-full bg-white opacity-0 transition duration-300 ease-[ease] dark:bg-darkBgAccent sm:scale-100"
+    >
+        <div class="relative">
+            <div class="absolute left-0 top-0 flex h-full w-full items-center justify-center text-xl">
+                <i class="eva eva-arrow-upward-outline"></i>
+            </div>
+            <svg id="svg" width="54" height="54" viewBox="0 0 54 54" preserveAspectRatio="xMinYMin meet">
+                <circle
+                    transform="rotate(-90, 27 , 27)"
+                    style="stroke-dasharray: 157, 157; stroke-dashoffset: 157;"
+                    cx="27"
+                    cy="27"
+                    r="25"
+                    fill="none"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke="var(--theme)"
+                />
+            </svg>
+        </div>
+    </a><div id="i18nlist"></div><noscript>
+    <style>
+        .dark-mode-switch,
+        #run-time,
+        #bionicReading,
+        .noscript-hidden,
+        [data-clipboard-text],
+        [data-lazyload] {
+            display: none;
+        }
+        #back-top {
+            opacity: 1;
+        }
+        .noscript-show {
+            display: initial;
+        }
+    </style>
+</noscript>
+</body>
+</html>

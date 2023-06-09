@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>headscale on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/headscale/</link>
+    <description>Recent content in headscale on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Tue, 12 Apr 2022 18:35:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/headscale/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Headscale服务器搭建启用SSL证书</title>
+      <link>https://blog.xiaomo.info/2022/758/</link>
+      <pubDate>Tue, 12 Apr 2022 18:35:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2022/758/</guid>
+      <description>前言 在前些日子，写了一篇文章关于headscale服务器的，这次有更深的理解，希望谷歌出来这篇文章的朋友有所帮助 环境 系统debian11 并r</description>
+    </item>
+    
+    <item>
+      <title>headscale开源服务器搭建</title>
+      <link>https://blog.xiaomo.info/2021/723/</link>
+      <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/723/</guid>
+      <description>2022年1月5日更新 GitHub仓库的文档已更新，可正常运行。 配置文件里本地ssl证书设置好了后不起效果 前言 headscale 是一款今年 2021 年出现的一款 Tailscale 控</description>
+    </item>
+    
+  </channel>
+</rss>

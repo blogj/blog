@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>内网穿透 on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+    <description>Recent content in 内网穿透 on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Mon, 28 Dec 2020 10:44:52 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NPS内网穿透工具学习2-服务端搭建</title>
+      <link>https://blog.xiaomo.info/2020/388/</link>
+      <pubDate>Mon, 28 Dec 2020 10:44:52 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/388/</guid>
+      <description>序言 通俗约定您已经，通晓基本的Linux知识（解压复制粘贴移动）、了解基本的网络知识（知晓什么是公网IP什么是内网IP）登录已root用户为</description>
+    </item>
+    
+    <item>
+      <title>NPS 内网穿透工具学习记录</title>
+      <link>https://blog.xiaomo.info/2020/368/</link>
+      <pubDate>Sun, 27 Dec 2020 22:48:12 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/368/</guid>
+      <description>介绍 2021年5月18日更新 官方更新了docker安装方式，推荐用这个方法强烈推荐 地址 nps是一款轻量级、高性能、功能强大的内网穿透代理服务</description>
+    </item>
+    
+    <item>
+      <title>Tinc全球虚拟局域网搭建记录</title>
+      <link>https://blog.xiaomo.info/2020/112/</link>
+      <pubDate>Thu, 06 Aug 2020 19:10:04 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2020/112/</guid>
+      <description>安装 1 apt-get install tinc 开启IPv4转发 1 echo &amp;#34;net.ipv4.ip_forward = 1&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf &amp;amp;&amp;amp; sysctl -p 创建一个名为imlala的虚拟网络 1 mkdir -p /etc/tinc/imlala &amp;amp;&amp;amp; mkdir -p /etc/tinc/imlala/hosts 新建tinc.conf配置文件 1 vim.tiny /etc/tinc/imlala/tinc.conf 配置文</description>
+    </item>
+    
+  </channel>
+</rss>

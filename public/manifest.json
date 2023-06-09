@@ -1,12 +1,12 @@
 {
-    "theme_color": "#dd6065",
+    "theme_color": "#00B0FF",
     "background_color": "#ffffff",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "孤岛博客",
-    "short_name": "Ice-Hazymoon",
-    "description": "孤岛博客",
+    "name": "小莫的博客-fighting(技术分享、生活随笔)",
+    "short_name": "xiaomo",
+    "description": "小莫的博客-fighting(技术分享、生活随笔)",
     "icons": [
         {
             "src": "/icon_huf0db5a14d812258b8c55135f192e7308_2933_192x192_resize_catmullrom_3.png",

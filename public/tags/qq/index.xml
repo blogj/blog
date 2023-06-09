@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>QQ on 小莫的博客-fighting(技术分享、生活随笔)</title>
+    <link>https://blog.xiaomo.info/tags/qq/</link>
+    <description>Recent content in QQ on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>@Copyright 2023</copyright>
+    <lastBuildDate>Tue, 31 Aug 2021 17:20:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/qq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mirai Dice QQ机器人-to-docker搭建记录</title>
+      <link>https://blog.xiaomo.info/2021/639/</link>
+      <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
+      
+      <guid>https://blog.xiaomo.info/2021/639/</guid>
+      <description>前言 网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的</description>
+    </item>
+    
+  </channel>
+</rss>
