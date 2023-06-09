@@ -33,11 +33,11 @@ jobs:
             - name: Setup hugo
               uses: peaceiris/actions-hugo@v2
               with:
-                hugo-version: '0.104.0'
+                hugo-version: '0.113.0'
                 extended: true
 
             - name: Build Hugo
-              run: echo "HUGO_VERSION -> $HUGO_VERSION" && hugo --config=./config.yaml --gc --minify --cleanDestinationDir
+              run: hugo
               
             - name: Hugo-Encrypt
               run: cd themes/hugo-theme-luna && node ./hugo-encrypt.js
