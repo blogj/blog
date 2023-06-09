@@ -37,7 +37,7 @@ jobs:
                 extended: true
 
             - name: Build Hugo
-              run: hugo
+              run: echo "HUGO_VERSION -> $HUGO_VERSION" && hugo --gc --minify --cleanDestinationDir
               
             - name: Hugo-Encrypt
               run: cd themes/hugo-theme-luna && node ./hugo-encrypt.js
