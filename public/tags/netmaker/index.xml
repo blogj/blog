@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>netmaker on 小莫的博客-fighting(技术分享、生活随笔)</title>
-    <link>https://blog.xiaomo.info/tags/netmaker/</link>
-    <description>Recent content in netmaker on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <title>netmaker on Paper</title>
+    <link>https://gao4.top/tags/netmaker/</link>
+    <description>Recent content in netmaker on Paper</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>@Copyright 2023</copyright>
-    <lastBuildDate>Wed, 01 Dec 2021 22:43:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/netmaker/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
+    <lastBuildDate>Wed, 01 Dec 2021 22:43:00 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/netmaker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>netmaker 搭建教程 组建虚拟局域网</title>
-      <link>https://blog.xiaomo.info/2021/715/</link>
+      <link>https://gao4.top/post/715/</link>
       <pubDate>Wed, 01 Dec 2021 22:43:00 +0000</pubDate>
       
-      <guid>https://blog.xiaomo.info/2021/715/</guid>
-      <description>前言 参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装 官方文档地址 过程 环境 腾讯云乌班图20.04</description>
+      <guid>https://gao4.top/post/715/</guid>
+      <description>前言 参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装
+官方文档地址
+过程 环境 腾讯云乌班图20.04版本无任何其他网站宝塔乱七八糟软件 1 安装环境
+sudo apt-get update sudo apt-get install -y docker.io docker-compose wireguard 2开放防火墙
+sudo ufw allow proto tcp from any to any port 443 &amp;amp;&amp;amp; sudo ufw allow 53/udp &amp;amp;&amp;amp; sudo ufw allow 53/tcp &amp;amp;&amp;amp; sudo ufw allow 51821:51830/udp 开放云服务器端口切记 端口如下
+allow 443/tcp from all allow 53/udp and 53/tcp from all allow 51821-51830/udp from all 3获取docker-compose文件并修改
+wget -O docker-compose.yml https://raw.githubusercontent.com/gravitl/netmaker/master/compose/docker-compose.contained.yml sed -i &amp;#39;s/NETMAKER_BASE_DOMAIN/&amp;lt;your base domain&amp;gt;/g&amp;#39; docker-compose.</description>
     </item>
     
     <item>
       <title>netmaker win10 手动添加节点</title>
-      <link>https://blog.xiaomo.info/2021/711/</link>
+      <link>https://gao4.top/post/711/</link>
       <pubDate>Wed, 01 Dec 2021 22:21:54 +0000</pubDate>
       
-      <guid>https://blog.xiaomo.info/2021/711/</guid>
-      <description>https://github.com/gravitl/netmaker/releases 去下载netclient.exe netclient.exe 放到D盘或者C盘管理员身份运行PowerShell 运行命令</description>
+      <guid>https://gao4.top/post/711/</guid>
+      <description>https://github.com/gravitl/netmaker/releases
+去下载netclient.exe
+放到D盘或者C盘管理员身份运行PowerShell</description>
     </item>
     
   </channel>

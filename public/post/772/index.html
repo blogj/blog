@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="zh"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Openwrt WireGuard连接局域网2023 - Paper</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="搭建环境 360 T7硬件主路由 ImmortalWrt 21.02 IPV4公网 WireGuard客户端window版本 wg预分配网段192.168.105.1/24 路由器网段192.168.100.1/24 过程 特殊约定后面我把WireGuard统称为wg
+创建密钥 在window系统上安装客户端并新建两个隧道 创建接口 在网络-接口-添加新接口、创建一个名称为WG1协议为WireGuard VPN的接口 去刚刚在客户端里创建的Openwrt隧道私钥 复制到这边创建的WG1接口私钥 设置ip地址为192.168.105.1/24端口为5555,这是可自定义的可按照您需求更改 设置防火墙区域为lan区域 设置对端 添加对端-设置一个名称-复制刚刚客户端创建的Window10隧道公钥到接口 设置允许iP非常重要 例子如我客户端远程iP为192.168.105.2/24就需要设置为192.168.105.2/32 设置持续 Keep-Alive为25 其他可选设置 是必须操作的选项每次修改完接口配置都建议重启接口 然后保存并应用-点击重启接口-点击重启接口-点击重启接口 再增加一个对端（可选） 对端IP为192.168.105.3/24 需要设置允许IP为192.168.105.3/32 设置如下 设置防火墙 点击网络-防火墙-找到WAN区域-把入站与出站都设置允许 找到通信规则-添加规则设置需的端口5555 点击保存应用
+客户端设置 需要了解PrivateKey为私钥PublicKey为公钥 把两个隧道的公钥交换 并设置好AllowedIPs 一个为WG的网段一个为主路由OP的网段
+[Interface] PrivateKey = sBD2AcsmGNddmKRnZItL31lYydshHmxd5ZdVifi5Um0= Address = 192.168.105.2/24 DNS = 192.168.100.1 [Peer] PublicKey = 5ZOelbDMJkeXjGuLsVQze8sul&#43;ZnAlYUmAVpsT//hhE= AllowedIPs = 192.168.104.1/32, 192.168.100.0/24 Endpoint = 171.215.223.90:5555 PersistentKeepalive = 25 最后验证 点击连接可以看到有流量就知道通了 OP界面也有显示连接 ping测试OP与下面局域网设备也可以通过 以上操作都是远程家里OP撰写的，如有问题请留言" />
+  <meta name="author" content="Lee" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://gao4.top/main.min.css" />
+
+  
+  <script
+    defer
+    src="https://gao4.top/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://gao4.top/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/ef333c1203724d1cb48104b2679529bb?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://gao4.top/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/github.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/instagram.svg" />
+  
+  
+
+  
+  
+
+  
+  <link rel="icon" href="https://gao4.top/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://gao4.top/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.113.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Openwrt WireGuard连接局域网2023" />
+<meta property="og:description" content="搭建环境 360 T7硬件主路由 ImmortalWrt 21.02 IPV4公网 WireGuard客户端window版本 wg预分配网段192.168.105.1/24 路由器网段192.168.100.1/24 过程 特殊约定后面我把WireGuard统称为wg
+创建密钥 在window系统上安装客户端并新建两个隧道 创建接口 在网络-接口-添加新接口、创建一个名称为WG1协议为WireGuard VPN的接口 去刚刚在客户端里创建的Openwrt隧道私钥 复制到这边创建的WG1接口私钥 设置ip地址为192.168.105.1/24端口为5555,这是可自定义的可按照您需求更改 设置防火墙区域为lan区域 设置对端 添加对端-设置一个名称-复制刚刚客户端创建的Window10隧道公钥到接口 设置允许iP非常重要 例子如我客户端远程iP为192.168.105.2/24就需要设置为192.168.105.2/32 设置持续 Keep-Alive为25 其他可选设置 是必须操作的选项每次修改完接口配置都建议重启接口 然后保存并应用-点击重启接口-点击重启接口-点击重启接口 再增加一个对端（可选） 对端IP为192.168.105.3/24 需要设置允许IP为192.168.105.3/32 设置如下 设置防火墙 点击网络-防火墙-找到WAN区域-把入站与出站都设置允许 找到通信规则-添加规则设置需的端口5555 点击保存应用
+客户端设置 需要了解PrivateKey为私钥PublicKey为公钥 把两个隧道的公钥交换 并设置好AllowedIPs 一个为WG的网段一个为主路由OP的网段
+[Interface] PrivateKey = sBD2AcsmGNddmKRnZItL31lYydshHmxd5ZdVifi5Um0= Address = 192.168.105.2/24 DNS = 192.168.100.1 [Peer] PublicKey = 5ZOelbDMJkeXjGuLsVQze8sul&#43;ZnAlYUmAVpsT//hhE= AllowedIPs = 192.168.104.1/32, 192.168.100.0/24 Endpoint = 171.215.223.90:5555 PersistentKeepalive = 25 最后验证 点击连接可以看到有流量就知道通了 OP界面也有显示连接 ping测试OP与下面局域网设备也可以通过 以上操作都是远程家里OP撰写的，如有问题请留言" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gao4.top/post/772/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-06-09T11:10:08+08:00" />
+<meta property="article:modified_time" content="2023-06-09T11:10:08+08:00" />
+
+  
+  <meta itemprop="name" content="Openwrt WireGuard连接局域网2023">
+<meta itemprop="description" content="搭建环境 360 T7硬件主路由 ImmortalWrt 21.02 IPV4公网 WireGuard客户端window版本 wg预分配网段192.168.105.1/24 路由器网段192.168.100.1/24 过程 特殊约定后面我把WireGuard统称为wg
+创建密钥 在window系统上安装客户端并新建两个隧道 创建接口 在网络-接口-添加新接口、创建一个名称为WG1协议为WireGuard VPN的接口 去刚刚在客户端里创建的Openwrt隧道私钥 复制到这边创建的WG1接口私钥 设置ip地址为192.168.105.1/24端口为5555,这是可自定义的可按照您需求更改 设置防火墙区域为lan区域 设置对端 添加对端-设置一个名称-复制刚刚客户端创建的Window10隧道公钥到接口 设置允许iP非常重要 例子如我客户端远程iP为192.168.105.2/24就需要设置为192.168.105.2/32 设置持续 Keep-Alive为25 其他可选设置 是必须操作的选项每次修改完接口配置都建议重启接口 然后保存并应用-点击重启接口-点击重启接口-点击重启接口 再增加一个对端（可选） 对端IP为192.168.105.3/24 需要设置允许IP为192.168.105.3/32 设置如下 设置防火墙 点击网络-防火墙-找到WAN区域-把入站与出站都设置允许 找到通信规则-添加规则设置需的端口5555 点击保存应用
+客户端设置 需要了解PrivateKey为私钥PublicKey为公钥 把两个隧道的公钥交换 并设置好AllowedIPs 一个为WG的网段一个为主路由OP的网段
+[Interface] PrivateKey = sBD2AcsmGNddmKRnZItL31lYydshHmxd5ZdVifi5Um0= Address = 192.168.105.2/24 DNS = 192.168.100.1 [Peer] PublicKey = 5ZOelbDMJkeXjGuLsVQze8sul&#43;ZnAlYUmAVpsT//hhE= AllowedIPs = 192.168.104.1/32, 192.168.100.0/24 Endpoint = 171.215.223.90:5555 PersistentKeepalive = 25 最后验证 点击连接可以看到有流量就知道通了 OP界面也有显示连接 ping测试OP与下面局域网设备也可以通过 以上操作都是远程家里OP撰写的，如有问题请留言"><meta itemprop="datePublished" content="2023-06-09T11:10:08+08:00" />
+<meta itemprop="dateModified" content="2023-06-09T11:10:08+08:00" />
+<meta itemprop="wordCount" content="71">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Openwrt WireGuard连接局域网2023"/>
+<meta name="twitter:description" content="搭建环境 360 T7硬件主路由 ImmortalWrt 21.02 IPV4公网 WireGuard客户端window版本 wg预分配网段192.168.105.1/24 路由器网段192.168.100.1/24 过程 特殊约定后面我把WireGuard统称为wg
+创建密钥 在window系统上安装客户端并新建两个隧道 创建接口 在网络-接口-添加新接口、创建一个名称为WG1协议为WireGuard VPN的接口 去刚刚在客户端里创建的Openwrt隧道私钥 复制到这边创建的WG1接口私钥 设置ip地址为192.168.105.1/24端口为5555,这是可自定义的可按照您需求更改 设置防火墙区域为lan区域 设置对端 添加对端-设置一个名称-复制刚刚客户端创建的Window10隧道公钥到接口 设置允许iP非常重要 例子如我客户端远程iP为192.168.105.2/24就需要设置为192.168.105.2/32 设置持续 Keep-Alive为25 其他可选设置 是必须操作的选项每次修改完接口配置都建议重启接口 然后保存并应用-点击重启接口-点击重启接口-点击重启接口 再增加一个对端（可选） 对端IP为192.168.105.3/24 需要设置允许IP为192.168.105.3/32 设置如下 设置防火墙 点击网络-防火墙-找到WAN区域-把入站与出站都设置允许 找到通信规则-添加规则设置需的端口5555 点击保存应用
+客户端设置 需要了解PrivateKey为私钥PublicKey为公钥 把两个隧道的公钥交换 并设置好AllowedIPs 一个为WG的网段一个为主路由OP的网段
+[Interface] PrivateKey = sBD2AcsmGNddmKRnZItL31lYydshHmxd5ZdVifi5Um0= Address = 192.168.105.2/24 DNS = 192.168.100.1 [Peer] PublicKey = 5ZOelbDMJkeXjGuLsVQze8sul&#43;ZnAlYUmAVpsT//hhE= AllowedIPs = 192.168.104.1/32, 192.168.100.0/24 Endpoint = 171.215.223.90:5555 PersistentKeepalive = 25 最后验证 点击连接可以看到有流量就知道通了 OP界面也有显示连接 ping测试OP与下面局域网设备也可以通过 以上操作都是远程家里OP撰写的，如有问题请留言"/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://gao4.top/"
+      >Paper</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/nan.xiaobei"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pb-24 pt-16 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">Openwrt WireGuard连接局域网2023</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>2023年6月9日</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="搭建环境">搭建环境</h2>
+<ol>
+<li>360 T7硬件主路由</li>
+<li>ImmortalWrt 21.02</li>
+<li>IPV4公网</li>
+<li>WireGuard客户端window版本</li>
+<li>wg预分配网段192.168.105.1/24</li>
+<li>路由器网段192.168.100.1/24</li>
+</ol>
+<h2 id="过程">过程</h2>
+<p>特殊约定后面我把WireGuard统称为wg</p>
+<h4 id="创建密钥">创建密钥</h4>
+<p>在window系统上安装客户端并新建两个隧道
+<img src="https://gao4.top/wp-content/uploads/2023/05/2446397780.png" alt="WireGuard客户端window版本"></p>
+<h4 id="创建接口">创建接口</h4>
+<p>在网络-接口-添加新接口、创建一个名称为WG1协议为WireGuard VPN的接口
+<img src="https://gao4.top/wp-content/uploads/2023/05/3334229737.png" alt="创建新接口界面">
+去刚刚在客户端里创建的Openwrt隧道私钥 复制到这边创建的WG1接口私钥
+<img src="https://gao4.top/wp-content/uploads/2023/05/1562060062.png" alt="私钥">
+<img src="https://gao4.top/wp-content/uploads/2023/05/1228194948.png" alt="私钥2">
+设置ip地址为<code>192.168.105.1/24</code>端口为<code>5555</code>,这是可自定义的可按照您需求更改
+<img src="https://gao4.top/wp-content/uploads/2023/05/992398305.png" alt="设置ip与端口">
+设置防火墙区域为lan区域
+<img src="https://gao4.top/wp-content/uploads/2023/05/1525696044.png" alt="防火墙区域"></p>
+<h4 id="设置对端">设置对端</h4>
+<p>添加对端-设置一个名称-复制刚刚客户端创建的Window10隧道公钥到接口
+<img src="https://gao4.top/wp-content/uploads/2023/05/1102602785.png" alt="window10隧道公钥">
+<img src="https://gao4.top/wp-content/uploads/2023/05/3600423415.png" alt="复制到OP"></p>
+<h5 id="设置允许ip非常重要">设置允许iP非常重要</h5>
+<p>例子如我客户端远程iP为192.168.105.2/24就需要设置为192.168.105.2/32 设置持续 Keep-Alive为<code>25</code> 其他可选设置
+<img src="https://gao4.top/wp-content/uploads/2023/05/2338709599.png" alt="允许的 IP">
+是必须操作的选项每次修改完接口配置都建议重启接口
+然后保存并应用-点击重启接口-点击重启接口-点击重启接口
+<img src="https://gao4.top/wp-content/uploads/2023/05/2406026720.png" alt="点击重启接口"></p>
+<h5 id="再增加一个对端可选">再增加一个对端（可选）</h5>
+<p>对端IP为192.168.105.3/24 需要设置允许IP为192.168.105.3/32
+<img src="https://gao4.top/wp-content/uploads/2023/05/3005810838.png" alt="公钥">
+设置如下
+<img src="https://gao4.top/wp-content/uploads/2023/05/3046932207.png" alt="第二个对端"></p>
+<h4 id="设置防火墙">设置防火墙</h4>
+<p>点击网络-防火墙-找到WAN区域-把入站与出站都设置允许
+<img src="https://gao4.top/wp-content/uploads/2023/05/278395329.png" alt="防火墙区域设置">
+找到通信规则-添加规则设置需的端口5555
+<img src="https://gao4.top/wp-content/uploads/2023/05/3875804701.png" alt="设置如图">
+点击保存应用</p>
+<h4 id="客户端设置">客户端设置</h4>
+<p>需要了解PrivateKey为私钥PublicKey为公钥
+把两个隧道的公钥交换 并设置好AllowedIPs 一个为WG的网段一个为主路由OP的网段</p>
+<pre tabindex="0"><code>[Interface]
+PrivateKey = sBD2AcsmGNddmKRnZItL31lYydshHmxd5ZdVifi5Um0=
+Address = 192.168.105.2/24
+DNS = 192.168.100.1
+
+[Peer]
+PublicKey = 5ZOelbDMJkeXjGuLsVQze8sul+ZnAlYUmAVpsT//hhE=
+AllowedIPs = 192.168.104.1/32, 192.168.100.0/24
+Endpoint = 171.215.223.90:5555
+PersistentKeepalive = 25
+</code></pre><h2 id="最后验证">最后验证</h2>
+<p>点击连接可以看到有流量就知道通了
+<img src="https://gao4.top/wp-content/uploads/2023/05/824864124.png" alt="点击链接">
+OP界面也有显示连接
+<img src="https://gao4.top/wp-content/uploads/2023/05/1412178774.png" alt="OP界面显示">
+ping测试OP与下面局域网设备也可以通过
+<img src="https://gao4.top/wp-content/uploads/2023/05/3599056984.png" alt="ping测试">
+以上操作都是远程家里OP撰写的，如有问题请留言</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/post/1117/"
+      ><span>华为2288H v2 DSM7.1 黑群晖实践</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://gao4.top">Paper</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
+
+  </body>
+</html>

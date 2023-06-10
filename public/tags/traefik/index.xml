@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Traefik on 小莫的博客-fighting(技术分享、生活随笔)</title>
-    <link>https://blog.xiaomo.info/tags/traefik/</link>
-    <description>Recent content in Traefik on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <title>Traefik on Paper</title>
+    <link>https://gao4.top/tags/traefik/</link>
+    <description>Recent content in Traefik on Paper</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>@Copyright 2023</copyright>
-    <lastBuildDate>Wed, 14 Jul 2021 22:47:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/traefik/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
+    <lastBuildDate>Wed, 14 Jul 2021 22:47:00 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/traefik/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Traefik系列二-docker搭建typecho-to-traefik</title>
-      <link>https://blog.xiaomo.info/2021/615/</link>
+      <link>https://gao4.top/post/615/</link>
       <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
       
-      <guid>https://blog.xiaomo.info/2021/615/</guid>
-      <description>快速开始 1 2 3 4 5 6 7 cd /home git clone https://github.com/YianAndCode/typecho-in-docker.git cd /home/typecho-in-docker git clone https://github.com/typecho/typecho.git rm -r typecho/.git chown -R www-data:www-data typecho/ docker-compose up -d 浏览器访问http://IP:8001 如果GitHub下载过于慢的话可以替换为</description>
+      <guid>https://gao4.top/post/615/</guid>
+      <description>快速开始 cd /home git clone https://github.com/YianAndCode/typecho-in-docker.git cd /home/typecho-in-docker git clone https://github.com/typecho/typecho.git rm -r typecho/.git chown -R www-data:www-data typecho/ docker-compose up -d 浏览器访问http://IP:8001
+如果GitHub下载过于慢的话可以替换为Github镜像地址
+cd /home git clone https://github.com.cnpmjs.org/YianAndCode/typecho-in-docker.git cd /home/typecho-in-docker git clone https://github.com.cnpmjs.org/typecho/typecho.git chown -R www-data:www-data typecho/ docker-compose up -d 配置邮件通知
+Github下载地址
+从1.7.2版本开始支持php8版本，其他通知插件都没配置成功
+Traefik配置 待续</description>
     </item>
     
   </channel>

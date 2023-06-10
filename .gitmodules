@@ -8,3 +8,6 @@
 [submodule "themes/hugo-theme-tokiwa"]
 	path = themes/hugo-theme-tokiwa
 	url = https://github.com/heyeshuang/hugo-theme-tokiwa.git
+[submodule "themes/paper"]
+	path = themes/paper
+	url = https://github.com/nanxiaobei/hugo-paper

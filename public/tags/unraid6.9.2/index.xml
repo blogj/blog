@@ -1,29 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>unraid6.9.2 on 小莫的博客-fighting(技术分享、生活随笔)</title>
-    <link>https://blog.xiaomo.info/tags/unraid6.9.2/</link>
-    <description>Recent content in unraid6.9.2 on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <title>unraid6.9.2 on Paper</title>
+    <link>https://gao4.top/tags/unraid6.9.2/</link>
+    <description>Recent content in unraid6.9.2 on Paper</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>@Copyright 2023</copyright>
-    <lastBuildDate>Wed, 24 Nov 2021 13:20:53 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/unraid6.9.2/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
+    <lastBuildDate>Wed, 24 Nov 2021 13:20:53 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/unraid6.9.2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>unraid6.9.2 安装群晖DSM7.0.1</title>
-      <link>https://blog.xiaomo.info/2021/707/</link>
+      <link>https://gao4.top/post/707/</link>
       <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
       
-      <guid>https://blog.xiaomo.info/2021/707/</guid>
-      <description>序言 引导驱动来源openos论坛 使用版本 DS3615xs_7.01-42218 配置 新建Linux虚拟机配置如下按照配置启动虚拟机就行，不用改什么全程图形化 虚拟机配置 详细主要配置</description>
+      <guid>https://gao4.top/post/707/</guid>
+      <description>序言 引导驱动来源openos论坛
+使用版本 DS3615xs_7.01-42218
+配置 新建Linux虚拟机配置如下按照配置启动虚拟机就行，不用改什么全程图形化
+详细主要配置 Machine i440fx-5.1 Bios OVMF Primary vDisk Location MAnual Primary vDisk Bus SATA Network MAC 00:11:32:11:22:33 Network Model virtio-net 后言 在什么值得买上有一篇在unraid下搭建黑群晖7的文章，按照它的教程，有可能会出现，在安装成功后卸载套件或停止套件出现死机重启的情况。
+偶遇问题 安装套件后权限问题</description>
     </item>
     
     <item>
       <title>unraid6.9.2安装及UEFI引导与初始化</title>
-      <link>https://blog.xiaomo.info/2021/649/</link>
+      <link>https://gao4.top/post/649/</link>
       <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
       
-      <guid>https://blog.xiaomo.info/2021/649/</guid>
-      <description>前言 系统包来源于俄罗斯论坛 系统盘制作 系统下载 分享云盘链接 使用官方工具制作 把下载的unRAIDServer-6.9.2-x86_64_fu11</description>
+      <guid>https://gao4.top/post/649/</guid>
+      <description>前言 系统包来源于俄罗斯论坛
+系统盘制作 系统下载 分享云盘链接
+使用官方工具制作
+把下载的unRAIDServer-6.9.2-x86_64_fu11压缩包解压 运行Unraid.USB.Creator.Win32-1.6 Allow UEFI Boot 勾选 需要UEFI引导一定需要使用官方工具制作 使用UnraidTool制作UEFI引导的系统U盘不一定生效 生成密钥，复制UnraidTool.exe与keymaker.exe到U盘根目录 右击管理员身份运行 UnraidTool 点击第二个注册 系统制作完毕
+进入系统初始化操作 GitHub访问 echo &amp;#34;199.232.4.133 raw.githubusercontent.com&amp;#34; &amp;gt;&amp;gt; /etc/hosts Docker市场 https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg 安装中文语言包 在Docker市场点击 左边 Language找到中文语言包安装即可
+选择中文如何点击APPLY确定
+设置阵列自启 开启核显 安装CA CONFIG EDITOR`一个在线配置文件编辑器`
+点击插件
+modprobe i915 chown nobody:users /dev/dri chmod 0777 /dev/dri/* 必安装插件 User Scripts
+一款可以运行用户自定义脚本的插件。贴吧有人使用这个插件设置每次开机自动更换docker源。官方解释为：一个插件，可充当任何用户脚本的简单前端，使您无需输入命令行即可运行它们。
+rclone
+类似于rsync但是可以连通所有云服务器的命令行软件, 用它来做远程备份或者下载很方便.</description>
     </item>
     
   </channel>

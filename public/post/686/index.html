@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="zh"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>折腾NAS中用的软件资源分享 - Paper</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="资源链接阿里云盘 我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀
+复制这段内容打开「阿里云盘」App 即可获取
+链接：https://www.aliyundrive.com/s/QUm851phfC7
+Esxi常用系统ova模板 搜集来自于sysin博客，sysin博主分享是百度云，本博客下载下来后上传至阿里云盘全部为标准分区（新版）
+ESXi6.7集成2.5G与8111网卡驱动 集成了rtl8125b网卡驱动以及rtl8111驱动，为什么不集成7.0的，是因为集成不了，据说新版本esxi7.0有什么改动。
+openwrt x86_64软路由 使用GitHub编译结果，Qifcn/Actions-OpenWrt: A template for building OpenWrt with GitHub Actions | 使用 GitHub Actions 云编译 OpenWrt
+集成了
+tailscale wireguard 内核分区扩大至100m 根分区扩至512m resilio分享 这些软件我集成密钥形式
+SYNC同步网盘 - 孤岛 (gao4.top)" />
+  <meta name="author" content="Lee" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://gao4.top/main.min.css" />
+
+  
+  <script
+    defer
+    src="https://gao4.top/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://gao4.top/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/ef333c1203724d1cb48104b2679529bb?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://gao4.top/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/github.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/instagram.svg" />
+  
+  
+
+  
+  
+
+  
+  <link rel="icon" href="https://gao4.top/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://gao4.top/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.113.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="折腾NAS中用的软件资源分享" />
+<meta property="og:description" content="资源链接阿里云盘 我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀
+复制这段内容打开「阿里云盘」App 即可获取
+链接：https://www.aliyundrive.com/s/QUm851phfC7
+Esxi常用系统ova模板 搜集来自于sysin博客，sysin博主分享是百度云，本博客下载下来后上传至阿里云盘全部为标准分区（新版）
+ESXi6.7集成2.5G与8111网卡驱动 集成了rtl8125b网卡驱动以及rtl8111驱动，为什么不集成7.0的，是因为集成不了，据说新版本esxi7.0有什么改动。
+openwrt x86_64软路由 使用GitHub编译结果，Qifcn/Actions-OpenWrt: A template for building OpenWrt with GitHub Actions | 使用 GitHub Actions 云编译 OpenWrt
+集成了
+tailscale wireguard 内核分区扩大至100m 根分区扩至512m resilio分享 这些软件我集成密钥形式
+SYNC同步网盘 - 孤岛 (gao4.top)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gao4.top/post/686/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-24T18:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-24T18:00:00+00:00" />
+
+  
+  <meta itemprop="name" content="折腾NAS中用的软件资源分享">
+<meta itemprop="description" content="资源链接阿里云盘 我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀
+复制这段内容打开「阿里云盘」App 即可获取
+链接：https://www.aliyundrive.com/s/QUm851phfC7
+Esxi常用系统ova模板 搜集来自于sysin博客，sysin博主分享是百度云，本博客下载下来后上传至阿里云盘全部为标准分区（新版）
+ESXi6.7集成2.5G与8111网卡驱动 集成了rtl8125b网卡驱动以及rtl8111驱动，为什么不集成7.0的，是因为集成不了，据说新版本esxi7.0有什么改动。
+openwrt x86_64软路由 使用GitHub编译结果，Qifcn/Actions-OpenWrt: A template for building OpenWrt with GitHub Actions | 使用 GitHub Actions 云编译 OpenWrt
+集成了
+tailscale wireguard 内核分区扩大至100m 根分区扩至512m resilio分享 这些软件我集成密钥形式
+SYNC同步网盘 - 孤岛 (gao4.top)"><meta itemprop="datePublished" content="2021-10-24T18:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-10-24T18:00:00+00:00" />
+<meta itemprop="wordCount" content="37">
+<meta itemprop="keywords" content="esxi,NAS物语,Openwrt,VPN,原创教程,软件,软路由," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="折腾NAS中用的软件资源分享"/>
+<meta name="twitter:description" content="资源链接阿里云盘 我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀
+复制这段内容打开「阿里云盘」App 即可获取
+链接：https://www.aliyundrive.com/s/QUm851phfC7
+Esxi常用系统ova模板 搜集来自于sysin博客，sysin博主分享是百度云，本博客下载下来后上传至阿里云盘全部为标准分区（新版）
+ESXi6.7集成2.5G与8111网卡驱动 集成了rtl8125b网卡驱动以及rtl8111驱动，为什么不集成7.0的，是因为集成不了，据说新版本esxi7.0有什么改动。
+openwrt x86_64软路由 使用GitHub编译结果，Qifcn/Actions-OpenWrt: A template for building OpenWrt with GitHub Actions | 使用 GitHub Actions 云编译 OpenWrt
+集成了
+tailscale wireguard 内核分区扩大至100m 根分区扩至512m resilio分享 这些软件我集成密钥形式
+SYNC同步网盘 - 孤岛 (gao4.top)"/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://gao4.top/"
+      >Paper</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/nan.xiaobei"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pb-24 pt-16 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">折腾NAS中用的软件资源分享</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>2021年10月24日</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="资源链接阿里云盘">资源链接阿里云盘</h1>
+<p>我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀<br>
+复制这段内容打开「阿里云盘」App 即可获取<br>
+链接：<a href="https://www.aliyundrive.com/s/QUm851phfC7">https://www.aliyundrive.com/s/QUm851phfC7</a></p>
+<h2 id="esxi常用系统ova模板">Esxi常用系统ova模板</h2>
+<p>搜集来自于sysin博客，sysin博主分享是百度云，本博客下载下来后上传至阿里云盘全部为<strong>标准分区（新版）</strong><br>
+<img src="https://gao4.top/wp-content/uploads/2021/10/680834712.png" alt="全部模板" title="全部模板"></p>
+<p><img src="https://gao4.top/wp-content/uploads/2021/10/3310680356.png" alt="模板来源" title="模板来源"></p>
+<h2 id="esxi67集成25g与8111网卡驱动">ESXi6.7集成2.5G与8111网卡驱动</h2>
+<p>集成了rtl8125b网卡驱动以及rtl8111驱动，为什么不集成7.0的，是因为集成不了，据说新版本esxi7.0有什么改动。<br>
+<img src="https://gao4.top/wp-content/uploads/2021/10/185705712.png" alt="esxi6.7驱动" title="esxi6.7驱动"></p>
+<h2 id="openwrt-x86_64软路由">openwrt x86_64软路由</h2>
+<p>使用GitHub编译结果，<a href="https://github.com/Qifcn/Actions-OpenWrt">Qifcn/Actions-OpenWrt: A template for building OpenWrt with GitHub Actions | 使用 GitHub Actions 云编译 OpenWrt</a></p>
+<p>集成了</p>
+<ol>
+<li>tailscale</li>
+<li>wireguard</li>
+<li>内核分区扩大至100m 根分区扩至512m</li>
+</ol>
+<p><img src="https://gao4.top/wp-content/uploads/2021/10/1623699456.png" alt="压缩包" title="压缩包"></p>
+<h3 id="resilio分享">resilio分享</h3>
+<p>这些软件我集成密钥形式<br>
+<a href="https://gao4.top/sync">SYNC同步网盘 - 孤岛 (gao4.top)</a></p>
+</section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/esxi"
+      >esxi</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/nas%E7%89%A9%E8%AF%AD"
+      >NAS物语</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/openwrt"
+      >Openwrt</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/vpn"
+      >VPN</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B"
+      >原创教程</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/%E8%BD%AF%E4%BB%B6"
+      >软件</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1"
+      >软路由</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/post/key/"
+      ><span class="mr-1.5">←</span><span>密钥</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/post/679/"
+      ><span>tailscale 中继节点 搭建教程</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://gao4.top">Paper</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
+
+  </body>
+</html>

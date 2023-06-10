@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="zh"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>NPS 内网穿透工具学习记录 - Paper</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="介绍 2021年5月18日更新
+官方更新了docker安装方式，推荐用这个方法强烈推荐
+地址
+nps是一款轻量级、高性能、功能强大的内网穿透代理服务器。目前支持tcp、udp流量转发，可支持任何tcp、udp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还支持内网http代理、内网socks5代理、p2p等，并带有功能强大的web管理端。支持中文
+官方文档 https://ehang-io.github.io/nps/#/
+登录界面
+安装 https://github.com/ehang-io/nps/releases
+去Github下载对应计算机架构系统版本的服务器包
+部分架构包图
+Github加速下载 https://d.serctl.com/
+安装为系统服务 ./nps install 注意事项 看下面这句话
+2020/12/27 13:52:08当前目录中的静态文件和配置文件将无用 2020/12/27 13:52:08新的配置文件位于/etc/nps中，您可以对其进行编辑 注意客户端与服务端版本一样 使用systemctl来控制启动服务端 sudo vi /lib/systemd/system/nps.service [Unit] Description=nps service After=network.target syslog.target Wants=network.target
+[Service] Type=simple ExecStart=/usr/bin/nps start
+[Install] WantedBy=multi-user.target
+* 启动nps：`sudo systemctl start nps` * 打开自启动：`sudo systemctl enable nps` * 重启应用：`sudo systemctl restart nps` * 停止应用：`sudo systemctl stop nps` * 查看应用：`sudo systemctl status nps` ### 注意事项 现在NPS的配置文件在/etc/nps中，不用在当前目录配置 可以删除了 ### 默认端口 * nps默认配置文件使用了80，443，8080，8024端口 * 80与443端口为域名解析模式默认端口 * 8080为web管理访问端口 * 8024为网桥端口，用于客户端与服务器通信 访问web控制端 -------- http://公网ip:8080 注意 需要开启防火墙端口，云服务器也需要安全组放行 客户端安装与systemctl来控制启动 -------------------- ### 注意事项 [注意看官方文档](https://ehang-io." />
+  <meta name="author" content="Lee" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://gao4.top/main.min.css" />
+
+  
+  <script
+    defer
+    src="https://gao4.top/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://gao4.top/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/ef333c1203724d1cb48104b2679529bb?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://gao4.top/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/github.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/instagram.svg" />
+  
+  
+
+  
+  
+
+  
+  <link rel="icon" href="https://gao4.top/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://gao4.top/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.113.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="NPS 内网穿透工具学习记录" />
+<meta property="og:description" content="介绍 2021年5月18日更新
+官方更新了docker安装方式，推荐用这个方法强烈推荐
+地址
+nps是一款轻量级、高性能、功能强大的内网穿透代理服务器。目前支持tcp、udp流量转发，可支持任何tcp、udp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还支持内网http代理、内网socks5代理、p2p等，并带有功能强大的web管理端。支持中文
+官方文档 https://ehang-io.github.io/nps/#/
+登录界面
+安装 https://github.com/ehang-io/nps/releases
+去Github下载对应计算机架构系统版本的服务器包
+部分架构包图
+Github加速下载 https://d.serctl.com/
+安装为系统服务 ./nps install 注意事项 看下面这句话
+2020/12/27 13:52:08当前目录中的静态文件和配置文件将无用 2020/12/27 13:52:08新的配置文件位于/etc/nps中，您可以对其进行编辑 注意客户端与服务端版本一样 使用systemctl来控制启动服务端 sudo vi /lib/systemd/system/nps.service [Unit] Description=nps service After=network.target syslog.target Wants=network.target
+[Service] Type=simple ExecStart=/usr/bin/nps start
+[Install] WantedBy=multi-user.target
+* 启动nps：`sudo systemctl start nps` * 打开自启动：`sudo systemctl enable nps` * 重启应用：`sudo systemctl restart nps` * 停止应用：`sudo systemctl stop nps` * 查看应用：`sudo systemctl status nps` ### 注意事项 现在NPS的配置文件在/etc/nps中，不用在当前目录配置 可以删除了 ### 默认端口 * nps默认配置文件使用了80，443，8080，8024端口 * 80与443端口为域名解析模式默认端口 * 8080为web管理访问端口 * 8024为网桥端口，用于客户端与服务器通信 访问web控制端 -------- http://公网ip:8080 注意 需要开启防火墙端口，云服务器也需要安全组放行 客户端安装与systemctl来控制启动 -------------------- ### 注意事项 [注意看官方文档](https://ehang-io." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gao4.top/post/368/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-12-27T22:48:12+00:00" />
+<meta property="article:modified_time" content="2020-12-27T22:48:12+00:00" />
+
+  
+  <meta itemprop="name" content="NPS 内网穿透工具学习记录">
+<meta itemprop="description" content="介绍 2021年5月18日更新
+官方更新了docker安装方式，推荐用这个方法强烈推荐
+地址
+nps是一款轻量级、高性能、功能强大的内网穿透代理服务器。目前支持tcp、udp流量转发，可支持任何tcp、udp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还支持内网http代理、内网socks5代理、p2p等，并带有功能强大的web管理端。支持中文
+官方文档 https://ehang-io.github.io/nps/#/
+登录界面
+安装 https://github.com/ehang-io/nps/releases
+去Github下载对应计算机架构系统版本的服务器包
+部分架构包图
+Github加速下载 https://d.serctl.com/
+安装为系统服务 ./nps install 注意事项 看下面这句话
+2020/12/27 13:52:08当前目录中的静态文件和配置文件将无用 2020/12/27 13:52:08新的配置文件位于/etc/nps中，您可以对其进行编辑 注意客户端与服务端版本一样 使用systemctl来控制启动服务端 sudo vi /lib/systemd/system/nps.service [Unit] Description=nps service After=network.target syslog.target Wants=network.target
+[Service] Type=simple ExecStart=/usr/bin/nps start
+[Install] WantedBy=multi-user.target
+* 启动nps：`sudo systemctl start nps` * 打开自启动：`sudo systemctl enable nps` * 重启应用：`sudo systemctl restart nps` * 停止应用：`sudo systemctl stop nps` * 查看应用：`sudo systemctl status nps` ### 注意事项 现在NPS的配置文件在/etc/nps中，不用在当前目录配置 可以删除了 ### 默认端口 * nps默认配置文件使用了80，443，8080，8024端口 * 80与443端口为域名解析模式默认端口 * 8080为web管理访问端口 * 8024为网桥端口，用于客户端与服务器通信 访问web控制端 -------- http://公网ip:8080 注意 需要开启防火墙端口，云服务器也需要安全组放行 客户端安装与systemctl来控制启动 -------------------- ### 注意事项 [注意看官方文档](https://ehang-io."><meta itemprop="datePublished" content="2020-12-27T22:48:12+00:00" />
+<meta itemprop="dateModified" content="2020-12-27T22:48:12+00:00" />
+<meta itemprop="wordCount" content="131">
+<meta itemprop="keywords" content="NPC,NPS,内网穿透,原创教程," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NPS 内网穿透工具学习记录"/>
+<meta name="twitter:description" content="介绍 2021年5月18日更新
+官方更新了docker安装方式，推荐用这个方法强烈推荐
+地址
+nps是一款轻量级、高性能、功能强大的内网穿透代理服务器。目前支持tcp、udp流量转发，可支持任何tcp、udp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还支持内网http代理、内网socks5代理、p2p等，并带有功能强大的web管理端。支持中文
+官方文档 https://ehang-io.github.io/nps/#/
+登录界面
+安装 https://github.com/ehang-io/nps/releases
+去Github下载对应计算机架构系统版本的服务器包
+部分架构包图
+Github加速下载 https://d.serctl.com/
+安装为系统服务 ./nps install 注意事项 看下面这句话
+2020/12/27 13:52:08当前目录中的静态文件和配置文件将无用 2020/12/27 13:52:08新的配置文件位于/etc/nps中，您可以对其进行编辑 注意客户端与服务端版本一样 使用systemctl来控制启动服务端 sudo vi /lib/systemd/system/nps.service [Unit] Description=nps service After=network.target syslog.target Wants=network.target
+[Service] Type=simple ExecStart=/usr/bin/nps start
+[Install] WantedBy=multi-user.target
+* 启动nps：`sudo systemctl start nps` * 打开自启动：`sudo systemctl enable nps` * 重启应用：`sudo systemctl restart nps` * 停止应用：`sudo systemctl stop nps` * 查看应用：`sudo systemctl status nps` ### 注意事项 现在NPS的配置文件在/etc/nps中，不用在当前目录配置 可以删除了 ### 默认端口 * nps默认配置文件使用了80，443，8080，8024端口 * 80与443端口为域名解析模式默认端口 * 8080为web管理访问端口 * 8024为网桥端口，用于客户端与服务器通信 访问web控制端 -------- http://公网ip:8080 注意 需要开启防火墙端口，云服务器也需要安全组放行 客户端安装与systemctl来控制启动 -------------------- ### 注意事项 [注意看官方文档](https://ehang-io."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://gao4.top/"
+      >Paper</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/nan.xiaobei"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pb-24 pt-16 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">NPS 内网穿透工具学习记录</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>2020年12月27日</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="介绍">介绍</h2>
+<p>2021年5月18日更新</p>
+<p>官方更新了docker安装方式，推荐用这个方法强烈推荐</p>
+<p><a href="https://hub.docker.com/r/ffdfgdfg/nps">地址</a></p>
+<p>nps是一款轻量级、高性能、功能强大的<strong>内网穿透</strong>代理服务器。目前支持<strong>tcp、udp流量转发</strong>，可支持任何<strong>tcp、udp</strong>上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还<strong>支持内网http代理、内网socks5代理</strong>、<strong>p2p等</strong>，并带有功能强大的web管理端。支持中文</p>
+<h3 id="官方文档">官方文档</h3>
+<p><a href="https://ehang-io.github.io/nps/#/">https://ehang-io.github.io/nps/#/</a></p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-39-28-1024x620.png" alt=""></p>
+<p>登录界面</p>
+<h2 id="安装">安装</h2>
+<p><a href="https://github.com/ehang-io/nps/releases">https://github.com/ehang-io/nps/releases</a></p>
+<p>去Github下载对应计算机架构系统版本的服务器包</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-46-16.png" alt=""></p>
+<p>部分架构包图</p>
+<h3 id="github加速下载">Github加速下载</h3>
+<p><a href="https://d.serctl.com/">https://d.serctl.com/</a></p>
+<h2 id="安装为系统服务">安装为系统服务</h2>
+<pre tabindex="0"><code>./nps install
+</code></pre><p><img src="https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-53-47.png" alt=""></p>
+<h3 id="注意事项">注意事项</h3>
+<p>看下面这句话</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-56-24.png" alt=""></p>
+<pre tabindex="0"><code>2020/12/27 13:52:08当前目录中的静态文件和配置文件将无用
+2020/12/27 13:52:08新的配置文件位于/etc/nps中，您可以对其进行编辑
+注意客户端与服务端版本一样
+</code></pre><h2 id="使用systemctl来控制启动服务端">使用systemctl来控制启动服务端</h2>
+<pre tabindex="0"><code>sudo vi /lib/systemd/system/nps.service
+</code></pre><p>[Unit]
+Description=nps service
+After=network.target syslog.target
+Wants=network.target</p>
+<p>[Service]
+Type=simple
+ExecStart=/usr/bin/nps start</p>
+<p>[Install]
+WantedBy=multi-user.target</p>
+<pre tabindex="0"><code>
+*   启动nps：`sudo systemctl start nps`
+*   打开自启动：`sudo systemctl enable nps`
+*   重启应用：`sudo systemctl restart nps`
+*   停止应用：`sudo systemctl stop nps`
+*   查看应用：`sudo systemctl status nps`
+
+### 注意事项
+
+现在NPS的配置文件在/etc/nps中，不用在当前目录配置 可以删除了
+
+### 默认端口
+
+*   nps默认配置文件使用了80，443，8080，8024端口
+*   80与443端口为域名解析模式默认端口
+*   8080为web管理访问端口
+*   8024为网桥端口，用于客户端与服务器通信
+
+访问web控制端
+--------
+
+http://公网ip:8080
+
+注意 需要开启防火墙端口，云服务器也需要安全组放行
+
+客户端安装与systemctl来控制启动
+--------------------
+
+### 注意事项
+
+[注意看官方文档](https://ehang-io.github.io/nps/#/use?id=%E6%B3%A8%E5%86%8C%E5%88%B0%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1)，很完善
+
+下面报错是因为systemctl找不到npc二进制启动文件，指定就行
+
+![](https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_22-38-23.png)
+
+启动报错
+
+安装客户端
+-----
+
+解压后执行
+</code></pre><p>./npc install</p>
+<pre tabindex="0"><code>
+复制配置文件
+</code></pre><p>cp conf/npc.conf /etc/npc/</p>
+<pre tabindex="0"><code>
+### 撰写service文件
+</code></pre><p>sudo vim  /usr/lib/systemd/system/npc.service</p>
+<pre tabindex="0"><code>
+### 文件内容
+</code></pre><p>[Unit]
+Description=npc service
+After=network.target syslog.target
+Wants=network.target</p>
+<p>[Service]
+Type=simple
+ExecStart=/usr/bin/npc -config=/etc/npc/npc.conf
+ExecStop=/usr/bin/npc stop</p>
+<p>[Install]
+WantedBy=multi-user.target</p>
+<pre tabindex="0"><code>
+\## 启动与设置开机自启动
+--------------
+</code></pre><p>systemctl start npc.service
+systemctl enable npc.service</p>
+<pre tabindex="0"><code></code></pre></section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/npc"
+      >NPC</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/nps"
+      >NPS</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"
+      >内网穿透</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B"
+      >原创教程</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/post/388/"
+      ><span class="mr-1.5">←</span><span>NPS内网穿透工具学习2-服务端搭建</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/post/325/"
+      ><span>Linux 下resilio同步服务安装</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://gao4.top">Paper</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
+
+  </body>
+</html>

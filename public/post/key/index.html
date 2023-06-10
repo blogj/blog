@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="zh"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>密钥 - Paper</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="前言 个人使用转载于qifcn
+对于新入手或重装后的 VPS 配置密钥登录需要创建 ~/.ssh 目录、把公钥写入到 ~/.ssh/authorized_keys、设置权限、禁用密码登录等操作，虽然都是很简单的基础操作，但过程麻烦且枯燥：
+mkdir -p ~/.ssh curl -fsSL https://github.com/qifcn.keys &gt;&gt; ~/.ssh/authorized_keys chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys sudo sed -i &#34;s@.*\(PasswordAuthentication \).*@\1no@&#34; /etc/ssh/sshd_config sudo service sshd restart SSH 密钥一键配置脚本是一套用于简化 SSH 密钥配置过程的解决方案。使用它以上操作只需要一行命令：
+bash &lt;(curl -fsSL gao4.top/key.sh) -g qifcn -d 语法及选项说明 bash &lt;(curl -fsSL gao4.top/key.sh) [选项...] &lt;参数&gt; -o - 覆盖模式，必须写在最前面才会生效 -g - 从 GitHub 获取公钥，参数为 GitHub 用户名 -u - 从 URL 获取公钥，参数为 URL -f - 从本地文件获取公钥，参数为本地文件路径 -p - 修改 SSH 端口，参数为端口号 -d - 禁用密码登录 使用方法 生成 SSH 密钥对 如果没有密钥需要先生成，执行以下命令后一路回车即可。" />
+  <meta name="author" content="Lee" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://gao4.top/main.min.css" />
+
+  
+  <script
+    defer
+    src="https://gao4.top/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://gao4.top/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://www.gravatar.com/avatar/ef333c1203724d1cb48104b2679529bb?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://gao4.top/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/github.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/instagram.svg" />
+  
+  
+
+  
+  
+
+  
+  <link rel="icon" href="https://gao4.top/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://gao4.top/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.113.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="密钥" />
+<meta property="og:description" content="前言 个人使用转载于qifcn
+对于新入手或重装后的 VPS 配置密钥登录需要创建 ~/.ssh 目录、把公钥写入到 ~/.ssh/authorized_keys、设置权限、禁用密码登录等操作，虽然都是很简单的基础操作，但过程麻烦且枯燥：
+mkdir -p ~/.ssh curl -fsSL https://github.com/qifcn.keys &gt;&gt; ~/.ssh/authorized_keys chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys sudo sed -i &#34;s@.*\(PasswordAuthentication \).*@\1no@&#34; /etc/ssh/sshd_config sudo service sshd restart SSH 密钥一键配置脚本是一套用于简化 SSH 密钥配置过程的解决方案。使用它以上操作只需要一行命令：
+bash &lt;(curl -fsSL gao4.top/key.sh) -g qifcn -d 语法及选项说明 bash &lt;(curl -fsSL gao4.top/key.sh) [选项...] &lt;参数&gt; -o - 覆盖模式，必须写在最前面才会生效 -g - 从 GitHub 获取公钥，参数为 GitHub 用户名 -u - 从 URL 获取公钥，参数为 URL -f - 从本地文件获取公钥，参数为本地文件路径 -p - 修改 SSH 端口，参数为端口号 -d - 禁用密码登录 使用方法 生成 SSH 密钥对 如果没有密钥需要先生成，执行以下命令后一路回车即可。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gao4.top/post/key/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-11-01T11:47:00+00:00" />
+<meta property="article:modified_time" content="2021-11-01T11:47:00+00:00" />
+
+  
+  <meta itemprop="name" content="密钥">
+<meta itemprop="description" content="前言 个人使用转载于qifcn
+对于新入手或重装后的 VPS 配置密钥登录需要创建 ~/.ssh 目录、把公钥写入到 ~/.ssh/authorized_keys、设置权限、禁用密码登录等操作，虽然都是很简单的基础操作，但过程麻烦且枯燥：
+mkdir -p ~/.ssh curl -fsSL https://github.com/qifcn.keys &gt;&gt; ~/.ssh/authorized_keys chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys sudo sed -i &#34;s@.*\(PasswordAuthentication \).*@\1no@&#34; /etc/ssh/sshd_config sudo service sshd restart SSH 密钥一键配置脚本是一套用于简化 SSH 密钥配置过程的解决方案。使用它以上操作只需要一行命令：
+bash &lt;(curl -fsSL gao4.top/key.sh) -g qifcn -d 语法及选项说明 bash &lt;(curl -fsSL gao4.top/key.sh) [选项...] &lt;参数&gt; -o - 覆盖模式，必须写在最前面才会生效 -g - 从 GitHub 获取公钥，参数为 GitHub 用户名 -u - 从 URL 获取公钥，参数为 URL -f - 从本地文件获取公钥，参数为本地文件路径 -p - 修改 SSH 端口，参数为端口号 -d - 禁用密码登录 使用方法 生成 SSH 密钥对 如果没有密钥需要先生成，执行以下命令后一路回车即可。"><meta itemprop="datePublished" content="2021-11-01T11:47:00+00:00" />
+<meta itemprop="dateModified" content="2021-11-01T11:47:00+00:00" />
+<meta itemprop="wordCount" content="213">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="密钥"/>
+<meta name="twitter:description" content="前言 个人使用转载于qifcn
+对于新入手或重装后的 VPS 配置密钥登录需要创建 ~/.ssh 目录、把公钥写入到 ~/.ssh/authorized_keys、设置权限、禁用密码登录等操作，虽然都是很简单的基础操作，但过程麻烦且枯燥：
+mkdir -p ~/.ssh curl -fsSL https://github.com/qifcn.keys &gt;&gt; ~/.ssh/authorized_keys chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys sudo sed -i &#34;s@.*\(PasswordAuthentication \).*@\1no@&#34; /etc/ssh/sshd_config sudo service sshd restart SSH 密钥一键配置脚本是一套用于简化 SSH 密钥配置过程的解决方案。使用它以上操作只需要一行命令：
+bash &lt;(curl -fsSL gao4.top/key.sh) -g qifcn -d 语法及选项说明 bash &lt;(curl -fsSL gao4.top/key.sh) [选项...] &lt;参数&gt; -o - 覆盖模式，必须写在最前面才会生效 -g - 从 GitHub 获取公钥，参数为 GitHub 用户名 -u - 从 URL 获取公钥，参数为 URL -f - 从本地文件获取公钥，参数为本地文件路径 -p - 修改 SSH 端口，参数为端口号 -d - 禁用密码登录 使用方法 生成 SSH 密钥对 如果没有密钥需要先生成，执行以下命令后一路回车即可。"/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://gao4.top/"
+      >Paper</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/nan.xiaobei"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pb-24 pt-16 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">密钥</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>2021年11月1日</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="前言">前言</h2>
+<p><strong>个人使用转载于qifcn</strong></p>
+<p>对于新入手或重装后的 VPS 配置密钥登录需要创建 <code>~/.ssh</code> 目录、把公钥写入到 <code>~/.ssh/authorized_keys</code>、设置权限、禁用密码登录等操作，虽然都是很简单的基础操作，但过程麻烦且枯燥：</p>
+<pre tabindex="0"><code>mkdir -p ~/.ssh
+curl -fsSL https://github.com/qifcn.keys &gt;&gt; ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+sudo sed -i &#34;s@.*\(PasswordAuthentication \).*@\1no@&#34; /etc/ssh/sshd_config
+sudo service sshd restart
+</code></pre><p><a href="https://gao4.top/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC9TU0hfS2V5X0luc3RhbGxlcg">SSH 密钥一键配置脚本</a>是一套用于简化 SSH 密钥配置过程的解决方案。使用它以上操作只需要一行命令：</p>
+<pre tabindex="0"><code>bash &lt;(curl -fsSL gao4.top/key.sh) -g qifcn -d
+</code></pre><h2 id="语法及选项说明">语法及选项说明</h2>
+<pre tabindex="0"><code>bash &lt;(curl -fsSL gao4.top/key.sh) [选项...] &lt;参数&gt;
+</code></pre><ul>
+<li><code>-o</code> - 覆盖模式，必须写在最前面才会生效</li>
+<li><code>-g</code> - 从 GitHub 获取公钥，参数为 GitHub 用户名</li>
+<li><code>-u</code> - 从 URL 获取公钥，参数为 URL</li>
+<li><code>-f</code> - 从本地文件获取公钥，参数为本地文件路径</li>
+<li><code>-p</code> - 修改 SSH 端口，参数为端口号</li>
+<li><code>-d</code> - 禁用密码登录</li>
+</ul>
+<h2 id="使用方法">使用方法</h2>
+<h3 id="生成-ssh-密钥对">生成 SSH 密钥对</h3>
+<p>如果没有密钥需要先生成，执行以下命令后一路回车即可。</p>
+<pre tabindex="0"><code>ssh-keygen -t ecdsa -b 521
+</code></pre><blockquote>
+<p><strong>TIPS：</strong> 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Linux 发行版和 ma­cOS 自带的终端，但不仅限于这些环境。</p>
+<p><strong>科普：</strong> 521 位的 ECDSA 密钥比起 RSA 密钥更安全且验证速度更快。</p>
+</blockquote>
+<p>操作完后会在 <code>~/.ssh</code> 目录中生两个密钥文件，<code>id_ecdsa</code> 为私钥，<code>id_ecdsa.pub</code> 为公钥。公钥就是我们需要安装在远程主机上的。</p>
+<blockquote>
+<p><strong>科普：</strong> <code>~</code>符号代表<strong>用户主目录</strong> ，俗称<strong>家目录</strong> 。其路径与当前登陆的用户有关，在 Linux 中普通用户家目录的路径是<code>/home/用户名</code>，而 root 用户是<code>/root</code>。Win­dows 10 中路径是<code>C:\Users\用户名</code>。在 ma­cOS 中路径是<code>/Users/用户名</code>。</p>
+</blockquote>
+<h3 id="安装公钥">安装公钥</h3>
+<h4 id="从-github-获取公钥">从 GitHub 获取公钥</h4>
+<p>在 <a href="https://gao4.top/go/aHR0cHM6Ly9naXRodWIuY29tL3NldHRpbmdzL2tleXM">GitHub 密钥管理页面</a> 添加公钥，比如我的用户名是 <code>qifcn</code>，那么在主机上输入以下命令即可：</p>
+<pre tabindex="0"><code>bash &lt;(curl -fsSL gao4.top/key.sh) -g qifcn
+</code></pre><h4 id="从-url-获取公钥">从 URL 获取公钥</h4>
+<p>把公钥上传到网盘，通过网盘链接获取公钥：</p>
+<pre tabindex="0"><code>bash &lt;(curl -fsSL gao4.top/key.sh) -u https://gao4.top/key.pub
+</code></pre><h4 id="从本地文件获取公钥">从本地文件获取公钥</h4>
+<p>通过 FTP 的方式把公钥传到 VPS 上，然后指定公钥路径：</p>
+<pre tabindex="0"><code>bash &lt;(curl -fsSL gao4.top/key.sh) -f ~/key.pub
+</code></pre><h3 id="覆盖模式">覆盖模式</h3>
+<p>使用覆盖模式（<code>-o</code>）将覆盖 <code>/.ssh/authorized_keys</code> 文件，之前的密钥会被完全替换掉，选项必须写在最前面才会生效，比如：</p>
+<pre tabindex="0"><code>bash &lt;(curl -fsSL gao4.top/key.sh) -o -g qifcn
+</code></pre><p>或者</p>
+<pre tabindex="0"><code>bash &lt;(curl -fsSL gao4.top/key.sh) -og qifcn
+</code></pre><h3 id="禁用密码登录">禁用密码登录</h3>
+<p>在确定使用密钥能正常登录后禁用密码登录：</p>
+<pre tabindex="0"><code>bash &lt;(curl -fsSL gao4.top/key.sh) -d
+</code></pre><h3 id="修改-ssh-端口">修改 SSH 端口</h3>
+<p>把 SSH 端口修改为 <code>2222</code>：</p>
+<pre tabindex="0"><code>bash &lt;(curl -fsSL gao4.top/key.sh) -p 2222
+</code></pre><h3 id="一键操作">一键操作</h3>
+<p>安装密钥、修改端口、禁用密码登录一键操作：</p>
+<pre tabindex="0"><code>bash &lt;(curl -fsSL gao4.top/key.sh) -og qifcn -p 2222 -d
+</code></pre><p>本文作者：qifcn本文链接：https://gao4.top/archives/ssh-key-installer.html版权声明：本博客所有文章除特别声明外，均采用 CC BY-NC-SA 4.0 许可协议。非商业转载及引用请注明出处（作者、原文链接），商业转载请联系作者获得授权。</p>
+<pre tabindex="0"><code></code></pre></section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/post/707/"
+      ><span class="mr-1.5">←</span><span>unraid6.9.2 安装群晖DSM7.0.1</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/post/686/"
+      ><span>折腾NAS中用的软件资源分享</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://gao4.top">Paper</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
+
+  </body>
+</html>

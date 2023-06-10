@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>QQ on 小莫的博客-fighting(技术分享、生活随笔)</title>
-    <link>https://blog.xiaomo.info/tags/qq/</link>
-    <description>Recent content in QQ on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <title>QQ on Paper</title>
+    <link>https://gao4.top/tags/qq/</link>
+    <description>Recent content in QQ on Paper</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>@Copyright 2023</copyright>
-    <lastBuildDate>Tue, 31 Aug 2021 17:20:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/qq/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 31 Aug 2021 17:20:00 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/qq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mirai Dice QQ机器人-to-docker搭建记录</title>
-      <link>https://blog.xiaomo.info/2021/639/</link>
+      <link>https://gao4.top/post/639/</link>
       <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
       
-      <guid>https://blog.xiaomo.info/2021/639/</guid>
-      <description>前言 网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的</description>
+      <guid>https://gao4.top/post/639/</guid>
+      <description>前言 网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的问题
+推荐开始之前阅读官方教程 Mirai Dice官方文档（和上面教程不一样是使用文档） 流程 启动容器 sudo docker run -it --name qq -v /home/container -v /etc/localtime:/etc/localtime:ro suhuiw4123/mirai-dice 登录 在&amp;gt;符号下输入 login QQ号 密码
+示例&amp;gt;login 23421123 DSH12323
+QQ登录验证（重要） 沿用官方教程的话（建议看看官方教程）大部分人都卡死登录验证的步骤一定把下面的话看完一个字一个字理解
+如果你开启了设备锁（推荐开启，可减少被盗和封号概率）可能需要设备锁验证，点击链接打开浏览器，
+20210602更新 : 如果没有显示扫码，手动把网址中的verify (https://ti.qq.com/safe/verify?…) 改成qrcode (https://ti.qq.com/safe/qrcode?…) ，用手机QQ登陆后扫码完成验证，然后关闭Mirai中的对话框即可登陆完成。稍等片刻后，Dice就可正常加载并开始使用。
+大白话就是把提示的链接复制到浏览器并把链接里的verify 改成 qrcode也是下图地方链接
+浏览器扫码验证 此时浏览器会出现二维码，然后手机 qq 登录需要登录的QQ号进行扫码确认， 确认后退出手机QQ
+然后在ssh下输入随意字符回车进入下一步。上图我输入的e然后回车
+验证 手机QQ 好友界面输入.r命令理论上应该有回复
+退出容器容器继续运行 Ctrl+P Ctrl+Q
+这是一道组合命令同时按Ctrl然后按一下P 不放Ctrl按一下Q 相关命令 docker attach qq
+进入正在运行的容器上面运行QQ机器人的容器名字是qq docker logs qq
+查看容器日志 autologin 账号 密码
+这是在QQ机器人终端的后台命令 设置自动登录 容器备份迁移 机器人的数据存储在/var/lib/docker/volumes
+这个目录下</description>
     </item>
     
   </channel>

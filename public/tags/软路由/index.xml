@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>软路由 on 小莫的博客-fighting(技术分享、生活随笔)</title>
-    <link>https://blog.xiaomo.info/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link>
-    <description>Recent content in 软路由 on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <title>软路由 on Paper</title>
+    <link>https://gao4.top/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link>
+    <description>Recent content in 软路由 on Paper</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>@Copyright 2023</copyright>
-    <lastBuildDate>Sun, 24 Oct 2021 18:00:00 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 24 Oct 2021 18:00:00 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>折腾NAS中用的软件资源分享</title>
-      <link>https://blog.xiaomo.info/2021/686/</link>
+      <link>https://gao4.top/post/686/</link>
       <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
       
-      <guid>https://blog.xiaomo.info/2021/686/</guid>
-      <description>资源链接阿里云盘 我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀 复制这段内容打开「阿里云盘」App 即可获取 链接：ht</description>
+      <guid>https://gao4.top/post/686/</guid>
+      <description>资源链接阿里云盘 我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀
+复制这段内容打开「阿里云盘」App 即可获取
+链接：https://www.aliyundrive.com/s/QUm851phfC7
+Esxi常用系统ova模板 搜集来自于sysin博客，sysin博主分享是百度云，本博客下载下来后上传至阿里云盘全部为标准分区（新版）
+ESXi6.7集成2.5G与8111网卡驱动 集成了rtl8125b网卡驱动以及rtl8111驱动，为什么不集成7.0的，是因为集成不了，据说新版本esxi7.0有什么改动。
+openwrt x86_64软路由 使用GitHub编译结果，Qifcn/Actions-OpenWrt: A template for building OpenWrt with GitHub Actions | 使用 GitHub Actions 云编译 OpenWrt
+集成了
+tailscale wireguard 内核分区扩大至100m 根分区扩至512m resilio分享 这些软件我集成密钥形式
+SYNC同步网盘 - 孤岛 (gao4.top)</description>
     </item>
     
   </channel>

@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NPC on 小莫的博客-fighting(技术分享、生活随笔)</title>
-    <link>https://blog.xiaomo.info/tags/npc/</link>
-    <description>Recent content in NPC on 小莫的博客-fighting(技术分享、生活随笔)</description>
+    <title>NPC on Paper</title>
+    <link>https://gao4.top/tags/npc/</link>
+    <description>Recent content in NPC on Paper</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>@Copyright 2023</copyright>
-    <lastBuildDate>Sun, 27 Dec 2020 22:48:12 +0000</lastBuildDate><atom:link href="https://blog.xiaomo.info/tags/npc/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 27 Dec 2020 22:48:12 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/npc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NPS 内网穿透工具学习记录</title>
-      <link>https://blog.xiaomo.info/2020/368/</link>
+      <link>https://gao4.top/post/368/</link>
       <pubDate>Sun, 27 Dec 2020 22:48:12 +0000</pubDate>
       
-      <guid>https://blog.xiaomo.info/2020/368/</guid>
-      <description>介绍 2021年5月18日更新 官方更新了docker安装方式，推荐用这个方法强烈推荐 地址 nps是一款轻量级、高性能、功能强大的内网穿透代理服务</description>
+      <guid>https://gao4.top/post/368/</guid>
+      <description>介绍 2021年5月18日更新
+官方更新了docker安装方式，推荐用这个方法强烈推荐
+地址
+nps是一款轻量级、高性能、功能强大的内网穿透代理服务器。目前支持tcp、udp流量转发，可支持任何tcp、udp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还支持内网http代理、内网socks5代理、p2p等，并带有功能强大的web管理端。支持中文
+官方文档 https://ehang-io.github.io/nps/#/
+登录界面
+安装 https://github.com/ehang-io/nps/releases
+去Github下载对应计算机架构系统版本的服务器包
+部分架构包图
+Github加速下载 https://d.serctl.com/
+安装为系统服务 ./nps install 注意事项 看下面这句话
+2020/12/27 13:52:08当前目录中的静态文件和配置文件将无用 2020/12/27 13:52:08新的配置文件位于/etc/nps中，您可以对其进行编辑 注意客户端与服务端版本一样 使用systemctl来控制启动服务端 sudo vi /lib/systemd/system/nps.service [Unit] Description=nps service After=network.target syslog.target Wants=network.target
+[Service] Type=simple ExecStart=/usr/bin/nps start
+[Install] WantedBy=multi-user.target
+* 启动nps：`sudo systemctl start nps` * 打开自启动：`sudo systemctl enable nps` * 重启应用：`sudo systemctl restart nps` * 停止应用：`sudo systemctl stop nps` * 查看应用：`sudo systemctl status nps` ### 注意事项 现在NPS的配置文件在/etc/nps中，不用在当前目录配置 可以删除了 ### 默认端口 * nps默认配置文件使用了80，443，8080，8024端口 * 80与443端口为域名解析模式默认端口 * 8080为web管理访问端口 * 8024为网桥端口，用于客户端与服务器通信 访问web控制端 -------- http://公网ip:8080 注意 需要开启防火墙端口，云服务器也需要安全组放行 客户端安装与systemctl来控制启动 -------------------- ### 注意事项 [注意看官方文档](https://ehang-io.</description>
     </item>
     
   </channel>
