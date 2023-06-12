@@ -2,6 +2,7 @@
 title: 'docker快速搭建MATRIX服务器synapse-2023'
 date: Sun, 11 Sep 2023 13:31:00 +0000
 draft: false
+slug: 227
 tags: ['NAS物语', 'MATRIX', 'VPN', '原创教程']
 ---
 
