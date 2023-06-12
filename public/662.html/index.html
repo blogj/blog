@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="zh"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>unraid 挂载webdav为本地目录 - 孤岛</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="序言 上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不稳定，就没有去了解，这次我们通过 rclone 这个软件来挂载webdav协议来实现把阿里云盘挂载到本地目录，这样就实现了让nas或者本地的主机无负担的有了一个大硬盘。
+过程 注意前期一定确定webdav可用
+安装rclone插件 在 unraid 应用市场搜索rclone安装
+安装可能会遇到网络问题 我曾经在unraid6.8.2版本下安装不成功 升级到unraid6.9.2版本才成功 在fq情况下软路由上
+在命令行下运行rclone version测试插件是否安装成功
+剩下的操作跟 rclone 命令行下进行配置一模一样
+rclone官网也有相应的模板
+rclone使用 在终端下运行
+rclone config No remotes found - make a new one n) New remote s) Set configuration password q) Quit config n/s/q&gt; n #选择n新建名称 name&gt; aliyun #名字对应下面挂载 Type of storage to configure. Choose a number from below, or type in your own value [snip] XX / Webdav \ &ldquo;webdav&rdquo; [snip] Storage&gt; webdav #选择协议 URL of http host to connect to Choose a number from below, or type in your own value 1 / Connect to example." />
+  <meta name="author" content="白墨" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://gao4.top/main.min.css" />
+
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://gao4.top/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://gao4.top/tx.webp" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://gao4.top/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/github.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/instagram.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  <link rel="icon" href="https://gao4.top/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://gao4.top/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.113.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="unraid 挂载webdav为本地目录" />
+<meta property="og:description" content="序言 上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不稳定，就没有去了解，这次我们通过 rclone 这个软件来挂载webdav协议来实现把阿里云盘挂载到本地目录，这样就实现了让nas或者本地的主机无负担的有了一个大硬盘。
+过程 注意前期一定确定webdav可用
+安装rclone插件 在 unraid 应用市场搜索rclone安装
+安装可能会遇到网络问题 我曾经在unraid6.8.2版本下安装不成功 升级到unraid6.9.2版本才成功 在fq情况下软路由上
+在命令行下运行rclone version测试插件是否安装成功
+剩下的操作跟 rclone 命令行下进行配置一模一样
+rclone官网也有相应的模板
+rclone使用 在终端下运行
+rclone config No remotes found - make a new one n) New remote s) Set configuration password q) Quit config n/s/q&gt; n #选择n新建名称 name&gt; aliyun #名字对应下面挂载 Type of storage to configure. Choose a number from below, or type in your own value [snip] XX / Webdav \ &ldquo;webdav&rdquo; [snip] Storage&gt; webdav #选择协议 URL of http host to connect to Choose a number from below, or type in your own value 1 / Connect to example." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gao4.top/662.html/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-04T21:43:00+00:00" />
+<meta property="article:modified_time" content="2021-08-04T21:43:00+00:00" />
+
+  
+  <meta itemprop="name" content="unraid 挂载webdav为本地目录">
+<meta itemprop="description" content="序言 上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不稳定，就没有去了解，这次我们通过 rclone 这个软件来挂载webdav协议来实现把阿里云盘挂载到本地目录，这样就实现了让nas或者本地的主机无负担的有了一个大硬盘。
+过程 注意前期一定确定webdav可用
+安装rclone插件 在 unraid 应用市场搜索rclone安装
+安装可能会遇到网络问题 我曾经在unraid6.8.2版本下安装不成功 升级到unraid6.9.2版本才成功 在fq情况下软路由上
+在命令行下运行rclone version测试插件是否安装成功
+剩下的操作跟 rclone 命令行下进行配置一模一样
+rclone官网也有相应的模板
+rclone使用 在终端下运行
+rclone config No remotes found - make a new one n) New remote s) Set configuration password q) Quit config n/s/q&gt; n #选择n新建名称 name&gt; aliyun #名字对应下面挂载 Type of storage to configure. Choose a number from below, or type in your own value [snip] XX / Webdav \ &ldquo;webdav&rdquo; [snip] Storage&gt; webdav #选择协议 URL of http host to connect to Choose a number from below, or type in your own value 1 / Connect to example."><meta itemprop="datePublished" content="2021-08-04T21:43:00+00:00" />
+<meta itemprop="dateModified" content="2021-08-04T21:43:00+00:00" />
+<meta itemprop="wordCount" content="275">
+<meta itemprop="keywords" content="NAS物语,Unraid,webdav,原创教程,阿里云盘," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="unraid 挂载webdav为本地目录"/>
+<meta name="twitter:description" content="序言 上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不稳定，就没有去了解，这次我们通过 rclone 这个软件来挂载webdav协议来实现把阿里云盘挂载到本地目录，这样就实现了让nas或者本地的主机无负担的有了一个大硬盘。
+过程 注意前期一定确定webdav可用
+安装rclone插件 在 unraid 应用市场搜索rclone安装
+安装可能会遇到网络问题 我曾经在unraid6.8.2版本下安装不成功 升级到unraid6.9.2版本才成功 在fq情况下软路由上
+在命令行下运行rclone version测试插件是否安装成功
+剩下的操作跟 rclone 命令行下进行配置一模一样
+rclone官网也有相应的模板
+rclone使用 在终端下运行
+rclone config No remotes found - make a new one n) New remote s) Set configuration password q) Quit config n/s/q&gt; n #选择n新建名称 name&gt; aliyun #名字对应下面挂载 Type of storage to configure. Choose a number from below, or type in your own value [snip] XX / Webdav \ &ldquo;webdav&rdquo; [snip] Storage&gt; webdav #选择协议 URL of http host to connect to Choose a number from below, or type in your own value 1 / Connect to example."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://gao4.top/"
+      >孤岛</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/qifcn"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/nan.xiaobei"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://gao4.top/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pb-24 pt-16 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">unraid 挂载webdav为本地目录</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>2021年8月4日</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="序言">序言</h1>
+<p>上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不稳定，就没有去了解，这次我们通过 rclone 这个软件来挂载webdav协议来实现把阿里云盘挂载到本地目录，这样就实现了让nas或者本地的主机无负担的有了一个大硬盘。</p>
+<h1 id="过程">过程</h1>
+<p>注意前期一定确定<code>webdav</code>可用</p>
+<h2 id="安装rclone插件">安装rclone插件</h2>
+<p>在 unraid 应用市场搜索<code>rclone</code>安装<br>
+安装可能会遇到网络问题 我曾经在unraid6.8.2版本下安装不成功 升级到unraid6.9.2版本才成功 在fq情况下软路由上<br>
+<img src="https://gao4.top/wp-content/uploads/2021/08/3478895582.png" alt="搜索rclone" title="搜索rclone"></p>
+<p>在命令行下运行<code>rclone version</code>测试插件是否安装成功<br>
+<img src="https://gao4.top/wp-content/uploads/2021/08/834171094.png" alt="安装插件成功截图" title="安装插件成功截图"></p>
+<p>剩下的操作跟 rclone 命令行下进行配置一模一样<br>
+<a href="https://rclone.org/">rclone官网</a>也有相应的模板<br>
+<img src="https://gao4.top/wp-content/uploads/2021/08/2251568679.png" alt="模板" title="模板"></p>
+<h3 id="rclone使用">rclone使用</h3>
+<p>在终端下运行</p>
+<pre tabindex="0"><code>rclone config
+</code></pre><h2 id="remote-config">No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q&gt; n #选择n新建名称
+name&gt; aliyun #名字对应下面挂载
+Type of storage to configure.
+Choose a number from below, or type in your own value
+[snip]
+XX / Webdav
+\ &ldquo;webdav&rdquo;
+[snip]
+Storage&gt; webdav #选择协议
+URL of http host to connect to
+Choose a number from below, or type in your own value
+1 / Connect to example.com
+\ &ldquo;<a href="https://example.com">https://example.com</a>&rdquo;
+url&gt; http://192.168.100.4:8082/ 设置webdav服务器地址注意需要加http
+Name of the Webdav site/service/software you are using
+Choose a number from below, or type in your own value
+1 / Nextcloud
+\ &ldquo;nextcloud&rdquo;
+2 / Owncloud
+\ &ldquo;owncloud&rdquo;
+3 / Sharepoint Online, authenticated by Microsoft account.
+\ &ldquo;sharepoint&rdquo;
+4 / Sharepoint with NTLM authentication. Usually self-hosted or on-premises.
+\ &ldquo;sharepoint-ntlm&rdquo;
+5 / Other site/service or software
+\ &ldquo;other&rdquo;
+vendor&gt; 5 #选择第五个
+User name
+user&gt; user #设置用户名
+Password.
+y) Yes type in my own password
+g) Generate random password
+n) No leave this optional password blank
+y/g/n&gt; y #设置密码默认2次都不显示
+Enter the password:
+password:
+Confirm the password:
+password:
+Bearer token instead of user/pass (e.g. a Macaroon)
+bearer_token&gt;
+Remote config</h2>
+<h2 id="bearer_token-">[aliyun]
+type = webdav
+url = http://192.168.100.4:8082/
+vendor = other
+user = user
+pass = *** ENCRYPTED ***
+bearer_token =</h2>
+<p>y) Yes this is OK
+e) Edit this remote
+d) Delete this remote
+y/e/d&gt; y #输入y保存配置文件</p>
+<pre tabindex="0"><code>
+主要部分我都写了注释，也有视频比我写得好 花几分钟可以看看
+
+### 挂载
+
+创建目录并挂载
+</code></pre><p>mkdir /mnt/user/aliyundriver
+nohup rclone mount aliyun: /mnt/user/aliyundriver &ndash;allow-other &gt;output 2&gt;&amp;1 &amp;</p>
+<pre tabindex="0"><code>
+![结果](https://gao4.top/wp-content/uploads/2021/08/2912935607.png &#34;结果&#34;)
+
+### 开机挂载
+
+在插件`User Scripts`创建脚本开机运行  
+![配置](https://gao4.top/wp-content/uploads/2021/08/177123910.png &#34;配置&#34;)
+
+结语
+==
+
+在这个过程中 也就遇到过`rclone插件`安装不成功的问题，解决办法就是升级系统并挂了代理，传输速度取决于宽带的速度。
+</code></pre></section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/nas%E7%89%A9%E8%AF%AD"
+      >NAS物语</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/unraid"
+      >Unraid</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/webdav"
+      >webdav</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B"
+      >原创教程</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98"
+      >阿里云盘</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/639.html/"
+      ><span class="mr-1.5">←</span><span>Mirai Dice QQ机器人-to-docker搭建记录</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/649.html/"
+      ><span>unraid6.9.2安装及UEFI引导与初始化</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://gao4.top">孤岛</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
+
+  </body>
+</html>

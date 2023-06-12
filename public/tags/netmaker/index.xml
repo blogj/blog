@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>netmaker on Paper</title>
+    <title>netmaker on 孤岛</title>
     <link>https://gao4.top/tags/netmaker/</link>
-    <description>Recent content in netmaker on Paper</description>
+    <description>Recent content in netmaker on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Wed, 01 Dec 2021 22:43:00 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/netmaker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>netmaker 搭建教程 组建虚拟局域网</title>
-      <link>https://gao4.top/post/715/</link>
+      <link>https://gao4.top/715.html/</link>
       <pubDate>Wed, 01 Dec 2021 22:43:00 +0000</pubDate>
       
-      <guid>https://gao4.top/post/715/</guid>
+      <guid>https://gao4.top/715.html/</guid>
       <description>前言 参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装
 官方文档地址
 过程 环境 腾讯云乌班图20.04版本无任何其他网站宝塔乱七八糟软件 1 安装环境
@@ -25,10 +25,10 @@ wget -O docker-compose.yml https://raw.githubusercontent.com/gravitl/netmaker/ma
     
     <item>
       <title>netmaker win10 手动添加节点</title>
-      <link>https://gao4.top/post/711/</link>
+      <link>https://gao4.top/711.html/</link>
       <pubDate>Wed, 01 Dec 2021 22:21:54 +0000</pubDate>
       
-      <guid>https://gao4.top/post/711/</guid>
+      <guid>https://gao4.top/711.html/</guid>
       <description>https://github.com/gravitl/netmaker/releases
 去下载netclient.exe
 放到D盘或者C盘管理员身份运行PowerShell</description>

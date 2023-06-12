@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SMB on Paper</title>
+    <title>SMB on 孤岛</title>
     <link>https://gao4.top/tags/smb/</link>
-    <description>Recent content in SMB on Paper</description>
+    <description>Recent content in SMB on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Wed, 19 May 2021 01:51:32 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/smb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TrueNAS-SCALE SMB共享设置</title>
-      <link>https://gao4.top/post/538/</link>
+      <link>https://gao4.top/538.html/</link>
       <pubDate>Wed, 19 May 2021 01:51:32 +0000</pubDate>
       
-      <guid>https://gao4.top/post/538/</guid>
+      <guid>https://gao4.top/538.html/</guid>
       <description>1.打开win10 SMB1.0 SMB1.0功能 此电脑&amp;gt;卸载或更改程序&amp;gt;程序和功能&amp;gt;启用或关闭win功能 勾选?
 勾选
 2.添加用户 登录TrueNAS 仪表盘&amp;gt;证书&amp;gt;Local Users&amp;gt;添加 添加一个用户user1修改密码，保持默认选项点击保存?

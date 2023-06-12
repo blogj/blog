@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="zh"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Openwrt OpenConnect VPN 搭建设置教程 - 孤岛</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图 ![流程图](https://gao4.top/wp-content/uploads/2022/01/851998809.png) ```Unknown package &rsquo;luci-app-ocserv*&rsquo;. Collected errors: * opkg_install_cmd: Cannot install package luci-app-ocserv*. root@OpenWrt:~# wget https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk &ndash;2022-01-04 12:01:53&ndash; https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Resolving mirrors.cloud.tencent.com&hellip; 125.39.223.218, 42.63.50.204, 220.194.79.73, &hellip; Connecting to mirrors.cloud.tencent.com|125.39.223.218|:443&hellip; connected. HTTP request sent, awaiting response&hellip; 200 OK Length: 5314 (5.2K) [application/octet-stream] Saving to: &rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&rsquo; luci-app-ocserv_git-20.356.64372-1259bb1 100%[================================================================================&gt;] 5.19K &ndash;.-KB/s in 0.001s 2022-01-04 12:01:56 (4.28 MB/s) - &rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&rsquo; saved [5314/5314] root@OpenWrt:~# ls luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk root@OpenWrt:~# opkg install luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Installing luci-app-ocserv (git-20.356.64372-1259bb1-1) to root&hellip; Configuring luci-app-ocserv." />
+  <meta name="author" content="白墨" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://gao4.top/main.min.css" />
+
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://gao4.top/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://gao4.top/tx.webp" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://gao4.top/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/github.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/instagram.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  <link rel="icon" href="https://gao4.top/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://gao4.top/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.113.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Openwrt OpenConnect VPN 搭建设置教程" />
+<meta property="og:description" content="## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图 ![流程图](https://gao4.top/wp-content/uploads/2022/01/851998809.png) ```Unknown package &rsquo;luci-app-ocserv*&rsquo;. Collected errors: * opkg_install_cmd: Cannot install package luci-app-ocserv*. root@OpenWrt:~# wget https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk &ndash;2022-01-04 12:01:53&ndash; https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Resolving mirrors.cloud.tencent.com&hellip; 125.39.223.218, 42.63.50.204, 220.194.79.73, &hellip; Connecting to mirrors.cloud.tencent.com|125.39.223.218|:443&hellip; connected. HTTP request sent, awaiting response&hellip; 200 OK Length: 5314 (5.2K) [application/octet-stream] Saving to: &rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&rsquo; luci-app-ocserv_git-20.356.64372-1259bb1 100%[================================================================================&gt;] 5.19K &ndash;.-KB/s in 0.001s 2022-01-04 12:01:56 (4.28 MB/s) - &rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&rsquo; saved [5314/5314] root@OpenWrt:~# ls luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk root@OpenWrt:~# opkg install luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Installing luci-app-ocserv (git-20.356.64372-1259bb1-1) to root&hellip; Configuring luci-app-ocserv." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gao4.top/293.html/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-09-30T13:52:00+00:00" />
+<meta property="article:modified_time" content="2020-09-30T13:52:00+00:00" />
+
+  
+  <meta itemprop="name" content="Openwrt OpenConnect VPN 搭建设置教程">
+<meta itemprop="description" content="## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图 ![流程图](https://gao4.top/wp-content/uploads/2022/01/851998809.png) ```Unknown package &rsquo;luci-app-ocserv*&rsquo;. Collected errors: * opkg_install_cmd: Cannot install package luci-app-ocserv*. root@OpenWrt:~# wget https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk &ndash;2022-01-04 12:01:53&ndash; https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Resolving mirrors.cloud.tencent.com&hellip; 125.39.223.218, 42.63.50.204, 220.194.79.73, &hellip; Connecting to mirrors.cloud.tencent.com|125.39.223.218|:443&hellip; connected. HTTP request sent, awaiting response&hellip; 200 OK Length: 5314 (5.2K) [application/octet-stream] Saving to: &rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&rsquo; luci-app-ocserv_git-20.356.64372-1259bb1 100%[================================================================================&gt;] 5.19K &ndash;.-KB/s in 0.001s 2022-01-04 12:01:56 (4.28 MB/s) - &rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&rsquo; saved [5314/5314] root@OpenWrt:~# ls luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk root@OpenWrt:~# opkg install luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Installing luci-app-ocserv (git-20.356.64372-1259bb1-1) to root&hellip; Configuring luci-app-ocserv."><meta itemprop="datePublished" content="2020-09-30T13:52:00+00:00" />
+<meta itemprop="dateModified" content="2020-09-30T13:52:00+00:00" />
+<meta itemprop="wordCount" content="192">
+<meta itemprop="keywords" content="NAS物语,Openwrt,VPN,原创教程," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Openwrt OpenConnect VPN 搭建设置教程"/>
+<meta name="twitter:description" content="## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图 ![流程图](https://gao4.top/wp-content/uploads/2022/01/851998809.png) ```Unknown package &rsquo;luci-app-ocserv*&rsquo;. Collected errors: * opkg_install_cmd: Cannot install package luci-app-ocserv*. root@OpenWrt:~# wget https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk &ndash;2022-01-04 12:01:53&ndash; https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Resolving mirrors.cloud.tencent.com&hellip; 125.39.223.218, 42.63.50.204, 220.194.79.73, &hellip; Connecting to mirrors.cloud.tencent.com|125.39.223.218|:443&hellip; connected. HTTP request sent, awaiting response&hellip; 200 OK Length: 5314 (5.2K) [application/octet-stream] Saving to: &rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&rsquo; luci-app-ocserv_git-20.356.64372-1259bb1 100%[================================================================================&gt;] 5.19K &ndash;.-KB/s in 0.001s 2022-01-04 12:01:56 (4.28 MB/s) - &rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&rsquo; saved [5314/5314] root@OpenWrt:~# ls luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk root@OpenWrt:~# opkg install luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Installing luci-app-ocserv (git-20.356.64372-1259bb1-1) to root&hellip; Configuring luci-app-ocserv."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://gao4.top/"
+      >孤岛</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/qifcn"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/nan.xiaobei"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://gao4.top/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pb-24 pt-16 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">Openwrt OpenConnect VPN 搭建设置教程</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>2020年9月30日</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图 ![流程图](<a href="https://gao4.top/wp-content/uploads/2022/01/851998809.png">https://gao4.top/wp-content/uploads/2022/01/851998809.png</a>) ```Unknown package &rsquo;luci-app-ocserv*&rsquo;. Collected errors: * opkg_install_cmd: Cannot install package luci-app-ocserv*. root@OpenWrt:~# wget <a href="https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel">https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel</a>_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk &ndash;2022-01-04 12:01:53&ndash; <a href="https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel">https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel</a>_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Resolving mirrors.cloud.tencent.com&hellip; 125.39.223.218, 42.63.50.204, 220.194.79.73, &hellip; Connecting to mirrors.cloud.tencent.com|125.39.223.218|:443&hellip; connected. HTTP request sent, awaiting response&hellip; 200 OK Length: 5314 (5.2K) [application/octet-stream] Saving to: &rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&rsquo; luci-app-ocserv_git-20.356.64372-1259bb1 100%[================================================================================&gt;] 5.19K &ndash;.-KB/s in 0.001s 2022-01-04 12:01:56 (4.28 MB/s) - &rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&rsquo; saved [5314/5314] root@OpenWrt:~# ls luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk root@OpenWrt:~# opkg install luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Installing luci-app-ocserv (git-20.356.64372-1259bb1-1) to root&hellip; Configuring luci-app-ocserv. root@OpenWrt:~# reboot root@OpenWrt:~# ``` 怎么知道当前openwrt架构的软件源包去后台看看就好了 ![复制浏览器搜索](<a href="https://gao4.top/wp-content/uploads/2022/01/816834899.png">https://gao4.top/wp-content/uploads/2022/01/816834899.png</a>)</p>
+<h2 id="序言">序言</h2>
+<p>本来这个需求基本上可以说是可以用其他vpn来解决的，可我ody勒就是不走寻常路，局域网随便一台有docker的Linux服务器开一个vpn服务不香吗，非需要在openwrt上折腾，而这方面的资料很少，而且国内对openwrt的软件服务器支持很糟糕。没有开全局基本上都是GG。固件来源是Github云编译的固件</p>
+<h4 id="需求">需求</h4>
+<ul>
+<li>openwrt软路由承担服务</li>
+<li>安全访问局域网</li>
+<li>Udp加速访问</li>
+<li>全平台客户端</li>
+</ul>
+<h4 id="软件了解">软件了解</h4>
+<p>OpenConnect是一个开源的应用程序最初是拿来做思科专有的Vpn客户端<a href="https://en.wikipedia.org/wiki/AnyConnect">AnyConnect</a> 的开源替代品</p>
+<p>OpenConnect项目还提供与 AnyConnect 兼容的服务器**，ocserv**</p>
+<h2 id="安装ocserv服务端">安装Ocserv服务端</h2>
+<pre tabindex="0"><code>opkg update
+opkg install ocserv luci-app-ocserv
+reboot
+</code></pre><h2 id="第一步">第一步</h2>
+<p><strong>OpenWRT - 网络 - 防火墙 - 自定义规则 添加防火墙规则</strong></p>
+<pre tabindex="0"><code>iptables -t nat -I POSTROUTING -s 192.168.100.0/24 -j MASQUERADE
+iptables -I FORWARD -i vpns+ -s 192.168.100.0/24 -j ACCEPT
+iptables -I INPUT -i vpns+ -s 192.168.100.0/24 -j ACCEPT
+</code></pre><p><img src="https://gao4.top/wp-content/uploads/2020/09/image.png" alt=""></p>
+<h2 id="第二步">第二步</h2>
+<p>**OpenWRT - 网络 - 防火墙 -**端口转发 转发至外网</p>
+<p><strong>转发端口4443</strong> 默认端口为4443当然可以更改，</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/09/image-1-1024x405.png" alt=""></p>
+<p>转发默认4443端口</p>
+<h2 id="第三步">第三步</h2>
+<p>开启服务点击<strong>Enable server</strong>这个</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/09/image-2-1024x367.png" alt=""></p>
+<h2 id="第四步">第四步</h2>
+<p>添加用户注意事项，需要开启服务后才能添加用户</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/09/image-3-1024x248.png" alt=""></p>
+<p>注意事项，需要开启服务后才能添加用户没有开起服务的界面</p>
+<p>添加一个实验用户ac密码为123456</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/09/image-4-1024x274.png" alt=""></p>
+<h2 id="客户端访问">客户端访问</h2>
+<p>2021年1月28日添加<strong>把勾去掉</strong></p>
+<p><img src="https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-28_20-05-44.png" alt=""></p>
+<p>win10客户端访问<strong>ip地址加端口点击connect</strong></p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/09/image-5.png" alt=""></p>
+<p>点击</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/09/image-6.png" alt=""></p>
+<p>输入用户名<strong>ac点击OK</strong></p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/09/image-7.png" alt=""></p>
+<p>输入密码点击Ok</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/09/image-8.png" alt=""></p>
+<p>弹出这个点击Accept</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/09/image-9.png" alt=""></p>
+<p>继续点击</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/09/image-10.png" alt=""></p>
+<p>成功连接</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/09/Snipaste_2020-09-29_20-27-16.png" alt=""></p>
+<h2 id="客户端下载">客户端下载</h2>
+<p><strong>Windows 10 操作系统</strong><br>
+AnyConnect Mobile 4.8.02045</p>
+<p><a href="https://Gigss.coding.net/s/cbd9e911-b39c-4f76-851e-be02f8b06111">点击下载</a></p>
+<p><strong>Windows 7/8 操作系统</strong><br>
+AnyConnect Mobile 4.7.04056</p>
+<p><a href="https://Gigss.coding.net/s/7fe78da2-9340-48be-9f62-a665dcb5f5d4">点击下载</a></p>
+<p><strong>Android 客户端</strong><br>
+AnyConnect</p>
+<p><a href="https://Gigss.coding.net/s/85e68257-d3fc-4f3c-8612-826e2fa36313">点击下载</a></p>
+<h2 id="连接openwet互相访问">连接Openwet互相访问</h2>
+<p>添加路由</p>
+<p><img src="https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-28_19-43-00.png" alt=""></p>
+<p><strong>Routing table</strong></p>
+<p>防火墙规则</p>
+<p><img src="https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-28_19-43-32-1024x534.png" alt=""></p>
+<p>测试</p>
+<p>客户端测试</p>
+<p><img src="https://gao4.top/wp-content/uploads/2021/01/IMG_20210128_194456-988x1024.jpg" alt=""></p>
+<p>客户端</p>
+<p><img src="https://gao4.top/wp-content/uploads/2021/01/IMG_20210128_195241-1016x1024.jpg" alt=""></p>
+<p>结果</p>
+<p>内网局域网测试</p>
+<p><img src="https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-28_19-53-27.png" alt=""></p>
+</section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/nas%E7%89%A9%E8%AF%AD"
+      >NAS物语</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/openwrt"
+      >Openwrt</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/vpn"
+      >VPN</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B"
+      >原创教程</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/325.html/"
+      ><span class="mr-1.5">←</span><span>Linux 下resilio同步服务安装</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/288.html/"
+      ><span>FileRun docker-compose 安装搭建</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://gao4.top">孤岛</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
+
+  </body>
+</html>

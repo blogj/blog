@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="zh"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Openwrt WireGuard连接局域网2022 - 孤岛</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="2022年lede固件默认编译的时候已经支持WireGuard进固件保持固件是最新即可
+如果编译的时候取消了 后面安装是很麻烦的 因为内核不匹配，和仓库有兼容性问题
+最好的办法就是编译的时候就已经选择，后面也不要取消
+openwrt WireGuard 连接局域网 2022 下载客户端生成密钥 https://www.wireguard.com/install/ 我们生成两个隧道 一个作为服务端 一个作为客户端 没错逻辑和ssh一模一样。
+openwrt 服务端配置 然后我们就登录到OP的web界面找到网络-接口-添加新接口 添加一个名称为WG0 新接口协议
+为WireGuard VPN 然后我们点击提交
+然后到我们刚刚用客户端生成的1openwrt 点击编辑 把 PrivateKey私钥复制到基本设置-私钥
+并填写相关配置监听端口随意比如说我的4399 IP地址为10.0.0.1/24
+配置Peers 复制2win客户端的公钥
+点击添加 复制2win客户端的公钥 添加到Peers公钥 选项并填写允许IP为10.0.0.0/24 配置如下
+点击保存&amp;应用 其他不用配置
+配置防火墙并开启端口 接口-WG0-防火墙设置 选择lan区域 点击保存&amp;应用
+防火墙-通信规则-打开路由器端口 自定义名字WG0 协议选择UDP 外部端口选择4399 点击添加 在最下面点击保存&amp;应用
+WIN客户端配置 点击编辑2win 复制下面参数 从Address开始复制 把Peer选项中PublicKey公钥 替换为1openwrt的公钥
+好好理解这段话 其实和ssh的过程一样 都是两个端之间交换公钥来互相通信，其中192.168.100.0/24为我局域网网段作用为远程访问openwrt lan下地址
+[Interface] PrivateKey = sAueVLI2sdRY42jmjcMoXDYFns4M1Qd/47GN0DpsA3E= Address = 10.0.0.2/24 DNS = 1.1.1.1 [Peer] PublicKey = H0DDIv4uZHKJ/BGG4Mqxp5734f/0cGtmZ7SOOzYMZig= AllowedIPs = 192." />
+  <meta name="author" content="白墨" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://gao4.top/main.min.css" />
+
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://gao4.top/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://gao4.top/tx.webp" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://gao4.top/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/github.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/instagram.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  <link rel="icon" href="https://gao4.top/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://gao4.top/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.113.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Openwrt WireGuard连接局域网2022" />
+<meta property="og:description" content="2022年lede固件默认编译的时候已经支持WireGuard进固件保持固件是最新即可
+如果编译的时候取消了 后面安装是很麻烦的 因为内核不匹配，和仓库有兼容性问题
+最好的办法就是编译的时候就已经选择，后面也不要取消
+openwrt WireGuard 连接局域网 2022 下载客户端生成密钥 https://www.wireguard.com/install/ 我们生成两个隧道 一个作为服务端 一个作为客户端 没错逻辑和ssh一模一样。
+openwrt 服务端配置 然后我们就登录到OP的web界面找到网络-接口-添加新接口 添加一个名称为WG0 新接口协议
+为WireGuard VPN 然后我们点击提交
+然后到我们刚刚用客户端生成的1openwrt 点击编辑 把 PrivateKey私钥复制到基本设置-私钥
+并填写相关配置监听端口随意比如说我的4399 IP地址为10.0.0.1/24
+配置Peers 复制2win客户端的公钥
+点击添加 复制2win客户端的公钥 添加到Peers公钥 选项并填写允许IP为10.0.0.0/24 配置如下
+点击保存&amp;应用 其他不用配置
+配置防火墙并开启端口 接口-WG0-防火墙设置 选择lan区域 点击保存&amp;应用
+防火墙-通信规则-打开路由器端口 自定义名字WG0 协议选择UDP 外部端口选择4399 点击添加 在最下面点击保存&amp;应用
+WIN客户端配置 点击编辑2win 复制下面参数 从Address开始复制 把Peer选项中PublicKey公钥 替换为1openwrt的公钥
+好好理解这段话 其实和ssh的过程一样 都是两个端之间交换公钥来互相通信，其中192.168.100.0/24为我局域网网段作用为远程访问openwrt lan下地址
+[Interface] PrivateKey = sAueVLI2sdRY42jmjcMoXDYFns4M1Qd/47GN0DpsA3E= Address = 10.0.0.2/24 DNS = 1.1.1.1 [Peer] PublicKey = H0DDIv4uZHKJ/BGG4Mqxp5734f/0cGtmZ7SOOzYMZig= AllowedIPs = 192." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gao4.top/760.html/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-23T23:29:00+00:00" />
+<meta property="article:modified_time" content="2022-04-23T23:29:00+00:00" />
+
+  
+  <meta itemprop="name" content="Openwrt WireGuard连接局域网2022">
+<meta itemprop="description" content="2022年lede固件默认编译的时候已经支持WireGuard进固件保持固件是最新即可
+如果编译的时候取消了 后面安装是很麻烦的 因为内核不匹配，和仓库有兼容性问题
+最好的办法就是编译的时候就已经选择，后面也不要取消
+openwrt WireGuard 连接局域网 2022 下载客户端生成密钥 https://www.wireguard.com/install/ 我们生成两个隧道 一个作为服务端 一个作为客户端 没错逻辑和ssh一模一样。
+openwrt 服务端配置 然后我们就登录到OP的web界面找到网络-接口-添加新接口 添加一个名称为WG0 新接口协议
+为WireGuard VPN 然后我们点击提交
+然后到我们刚刚用客户端生成的1openwrt 点击编辑 把 PrivateKey私钥复制到基本设置-私钥
+并填写相关配置监听端口随意比如说我的4399 IP地址为10.0.0.1/24
+配置Peers 复制2win客户端的公钥
+点击添加 复制2win客户端的公钥 添加到Peers公钥 选项并填写允许IP为10.0.0.0/24 配置如下
+点击保存&amp;应用 其他不用配置
+配置防火墙并开启端口 接口-WG0-防火墙设置 选择lan区域 点击保存&amp;应用
+防火墙-通信规则-打开路由器端口 自定义名字WG0 协议选择UDP 外部端口选择4399 点击添加 在最下面点击保存&amp;应用
+WIN客户端配置 点击编辑2win 复制下面参数 从Address开始复制 把Peer选项中PublicKey公钥 替换为1openwrt的公钥
+好好理解这段话 其实和ssh的过程一样 都是两个端之间交换公钥来互相通信，其中192.168.100.0/24为我局域网网段作用为远程访问openwrt lan下地址
+[Interface] PrivateKey = sAueVLI2sdRY42jmjcMoXDYFns4M1Qd/47GN0DpsA3E= Address = 10.0.0.2/24 DNS = 1.1.1.1 [Peer] PublicKey = H0DDIv4uZHKJ/BGG4Mqxp5734f/0cGtmZ7SOOzYMZig= AllowedIPs = 192."><meta itemprop="datePublished" content="2022-04-23T23:29:00+00:00" />
+<meta itemprop="dateModified" content="2022-04-23T23:29:00+00:00" />
+<meta itemprop="wordCount" content="124">
+<meta itemprop="keywords" content="NAS物语," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Openwrt WireGuard连接局域网2022"/>
+<meta name="twitter:description" content="2022年lede固件默认编译的时候已经支持WireGuard进固件保持固件是最新即可
+如果编译的时候取消了 后面安装是很麻烦的 因为内核不匹配，和仓库有兼容性问题
+最好的办法就是编译的时候就已经选择，后面也不要取消
+openwrt WireGuard 连接局域网 2022 下载客户端生成密钥 https://www.wireguard.com/install/ 我们生成两个隧道 一个作为服务端 一个作为客户端 没错逻辑和ssh一模一样。
+openwrt 服务端配置 然后我们就登录到OP的web界面找到网络-接口-添加新接口 添加一个名称为WG0 新接口协议
+为WireGuard VPN 然后我们点击提交
+然后到我们刚刚用客户端生成的1openwrt 点击编辑 把 PrivateKey私钥复制到基本设置-私钥
+并填写相关配置监听端口随意比如说我的4399 IP地址为10.0.0.1/24
+配置Peers 复制2win客户端的公钥
+点击添加 复制2win客户端的公钥 添加到Peers公钥 选项并填写允许IP为10.0.0.0/24 配置如下
+点击保存&amp;应用 其他不用配置
+配置防火墙并开启端口 接口-WG0-防火墙设置 选择lan区域 点击保存&amp;应用
+防火墙-通信规则-打开路由器端口 自定义名字WG0 协议选择UDP 外部端口选择4399 点击添加 在最下面点击保存&amp;应用
+WIN客户端配置 点击编辑2win 复制下面参数 从Address开始复制 把Peer选项中PublicKey公钥 替换为1openwrt的公钥
+好好理解这段话 其实和ssh的过程一样 都是两个端之间交换公钥来互相通信，其中192.168.100.0/24为我局域网网段作用为远程访问openwrt lan下地址
+[Interface] PrivateKey = sAueVLI2sdRY42jmjcMoXDYFns4M1Qd/47GN0DpsA3E= Address = 10.0.0.2/24 DNS = 1.1.1.1 [Peer] PublicKey = H0DDIv4uZHKJ/BGG4Mqxp5734f/0cGtmZ7SOOzYMZig= AllowedIPs = 192."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://gao4.top/"
+      >孤岛</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/qifcn"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/nan.xiaobei"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://gao4.top/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pb-24 pt-16 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">Openwrt WireGuard连接局域网2022</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>2022年4月23日</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>2022年lede固件默认编译的时候已经支持WireGuard进固件保持固件是最新即可<br>
+如果编译的时候取消了 后面安装是很麻烦的 因为内核不匹配，和仓库有兼容性问题<br>
+最好的办法就是编译的时候就已经选择，后面也不要取消</p>
+<h2 id="openwrt-wireguard-连接局域网-2022">openwrt WireGuard 连接局域网 2022</h2>
+<h3 id="下载客户端生成密钥">下载客户端生成密钥</h3>
+<pre tabindex="0"><code>https://www.wireguard.com/install/
+</code></pre><p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423220927767.png" alt="生成密钥" title="生成密钥"></p>
+<p>我们生成两个隧道 一个作为服务端 一个作为客户端 没错逻辑和ssh一模一样。</p>
+<p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423221355244.png" alt="生成的密钥" title="生成的密钥"></p>
+<h3 id="openwrt-服务端配置">openwrt 服务端配置</h3>
+<p>然后我们就登录到OP的web界面找到<code>网络-接口-添加新接口</code> 添加一个名称为<code>WG0</code> 新接口协议</p>
+<p>为<code>WireGuard VPN</code> 然后我们点击提交</p>
+<p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423221903500.png" alt="创建接口" title="创建接口"></p>
+<p>然后到我们刚刚用客户端生成的1openwrt 点击编辑 把 <code>PrivateKey私钥</code>复制到基本<code>设置-私钥</code></p>
+<p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423222241057.png" alt="复制1openwrt私钥" title="复制1openwrt私钥"></p>
+<p>并填写相关配置监听端口随意比如说我的<code>4399</code> IP地址为<code>10.0.0.1/24</code></p>
+<p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423222633747.png" alt="基本设置" title="基本设置"></p>
+<h4 id="配置peers">配置Peers</h4>
+<p>复制2win客户端的<code>公钥</code></p>
+<p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423222954964.png" alt="复制2win客户端公钥" title="复制2win客户端公钥"></p>
+<p>点击<code>添加</code> 复制2win客户端的<code>公钥</code> 添加到<code>Peers公钥</code> 选项并填写允许IP为<code>10.0.0.0/24</code> 配置如下</p>
+<p>点击<code>保存&amp;应用</code> 其他不用配置</p>
+<p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423223413138.png" alt="Peers设置" title="Peers设置"></p>
+<h3 id="配置防火墙并开启端口">配置防火墙并开启端口</h3>
+<p><code>接口-WG0-防火墙设置 选择lan区域</code> 点击<code>保存&amp;应用</code></p>
+<p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423223621367.png" alt="设置防火墙区域" title="设置防火墙区域"></p>
+<p><strong>防火墙-通信规则-打开路由器端口</strong> 自定义名字<code>WG0</code> 协议选择<code>UDP</code> 外部端口选择<code>4399</code> 点击添加 在最下面点击<code>保存&amp;应用</code></p>
+<p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423223920910.png" alt="打开路由器端口" title="打开路由器端口"></p>
+<h3 id="win客户端配置">WIN客户端配置</h3>
+<p>点击<code>编辑2win</code> 复制下面参数 从Address开始复制 把Peer选项中<code>PublicKey公钥</code> 替换为1openwrt的公钥</p>
+<p>好好理解这段话 其实和ssh的过程一样 都是两个端之间交换公钥来互相通信，其中192.168.100.0/24为我局域网网段作用为远程访问openwrt lan下地址</p>
+<pre tabindex="0"><code>[Interface]
+PrivateKey = sAueVLI2sdRY42jmjcMoXDYFns4M1Qd/47GN0DpsA3E=
+Address = 10.0.0.2/24
+DNS = 1.1.1.1
+
+[Peer]
+PublicKey = H0DDIv4uZHKJ/BGG4Mqxp5734f/0cGtmZ7SOOzYMZig=
+AllowedIPs = 192.168.100.0/24, 10.0.0.0/24
+Endpoint = x.gao4.top:4399
+PersistentKeepalive = 25 
+</code></pre><p>点击保存 再点击连接进行测试 接受有流量就代表我们连接成功，反之没有流量显示已连接其实没有连接成功<img src="https://gao4.top/wp-content/uploads/ig/image-20220423231134793.png" alt="2win客户端1" title="2win客户端1"></p>
+<p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423225357628.png" alt="客户端配置2" title="客户端配置2"></p>
+<h3 id="测试连接">测试连接</h3>
+<p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423225901349.png" alt="测试连接vpn网段" title="测试连接vpn网段"></p>
+<h4 id="ｐｉｎｇ局域网ｉｐ">　ｐｉｎｇ局域网ｉｐ</h4>
+<p><img src="https://gao4.top/wp-content/uploads/ig/image-20220423225748543.png" alt="测试局域网网段连接性" title="测试局域网网段连接性"></p>
+<h3 id="后言">后言</h3>
+<p>配置很简单 就是有时候理解不了,为什么这么配置 本教程合适已经有些配置经验的老哥,</p>
+<h3 id="后续更新">后续更新</h3>
+<p>2022年4月24日<br>
+在同一网段 不同网关的情况下 添加防火墙规则 <code>防火墙-自定义规则</code><br>
+例子 在局域网里 我系统A地址是 192.168.100.196 网关是192.168.100.1 openwrt软路由 系统B地址是 192.168.100.187网关是192.168.100.4 那么就需要添加下面规则 规则来源于IOIOX博客<a href="https://www.ioiox.com/archives/143.html">https://www.ioiox.com/archives/143.html</a></p>
+<pre tabindex="0"><code>iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o br-lan -j MASQUERADE
+# 注意此条防火墙网段 10.0.0.0/24 需和上文服务端 IP 网段保持一致.
+</code></pre></section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/nas%E7%89%A9%E8%AF%AD"
+      >NAS物语</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/761.html/"
+      ><span class="mr-1.5">←</span><span>更换ACME.sh的CA为ZeroSSL</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/759.html/"
+      ><span>Wg-Easy一个几分钟搞定访问局域网的wg面板</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://gao4.top">孤岛</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
+
+  </body>
+</html>

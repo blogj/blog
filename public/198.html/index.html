@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: #faf6f1"
+  lang="zh"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>arch下网络设置2020年版本 - 孤岛</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="静态IP设置 地址设置 ip addr change 192.168.200.187/24 dev enp3s0 修改地方enp3s0网卡名称与192.168.200.187/24注意子网掩码/24
+设置网关 ip route add default via 192.168.200.1 注意上面添加的是192.168.200.1这个网关
+设置DNS echo &#34;nameserver 61.139.2.69&#34; &gt;&gt; /etc/resolv.conf 注意我设置的是公共dns是61.139.2.69
+测试网络 ping qq.com 注意事项：默认arch安装盘启动后网卡是启动的状态UP，设置IP后上面的操作重启失效，不需要重启网卡。适合于安装arch系统时候没有DHCP服务器的一种情况。
+自动获取IP地址DHCP设置 启动 dhcpcd interface 注意事项：
+1.不能同时运行两个 DHCP 客户端
+2.使用 DHCP 客户端的同时还需要同时使用 网络管理器
+文本字符界面设置IP地址（推荐） 安装 pacman -S networkmanager systemctl enable NetworkManager 执行命令 nmtui 适合于已经联网的情况下设置固定IP或者设置DHCP获取IP，并且永久有效。是一种合适于安装系统后推荐设置使用的方法。
+nmtui设置界面" />
+  <meta name="author" content="白墨" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://gao4.top/main.min.css" />
+
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://gao4.top/theme.png" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="https://gao4.top/tx.webp" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://gao4.top/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/github.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/instagram.svg" />
+  
+  <link rel="preload" as="image" href="https://gao4.top/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  <link rel="icon" href="https://gao4.top/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://gao4.top/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.113.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="arch下网络设置2020年版本" />
+<meta property="og:description" content="静态IP设置 地址设置 ip addr change 192.168.200.187/24 dev enp3s0 修改地方enp3s0网卡名称与192.168.200.187/24注意子网掩码/24
+设置网关 ip route add default via 192.168.200.1 注意上面添加的是192.168.200.1这个网关
+设置DNS echo &#34;nameserver 61.139.2.69&#34; &gt;&gt; /etc/resolv.conf 注意我设置的是公共dns是61.139.2.69
+测试网络 ping qq.com 注意事项：默认arch安装盘启动后网卡是启动的状态UP，设置IP后上面的操作重启失效，不需要重启网卡。适合于安装arch系统时候没有DHCP服务器的一种情况。
+自动获取IP地址DHCP设置 启动 dhcpcd interface 注意事项：
+1.不能同时运行两个 DHCP 客户端
+2.使用 DHCP 客户端的同时还需要同时使用 网络管理器
+文本字符界面设置IP地址（推荐） 安装 pacman -S networkmanager systemctl enable NetworkManager 执行命令 nmtui 适合于已经联网的情况下设置固定IP或者设置DHCP获取IP，并且永久有效。是一种合适于安装系统后推荐设置使用的方法。
+nmtui设置界面" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gao4.top/198.html/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-08-19T15:46:53+00:00" />
+<meta property="article:modified_time" content="2020-08-19T15:46:53+00:00" />
+
+  
+  <meta itemprop="name" content="arch下网络设置2020年版本">
+<meta itemprop="description" content="静态IP设置 地址设置 ip addr change 192.168.200.187/24 dev enp3s0 修改地方enp3s0网卡名称与192.168.200.187/24注意子网掩码/24
+设置网关 ip route add default via 192.168.200.1 注意上面添加的是192.168.200.1这个网关
+设置DNS echo &#34;nameserver 61.139.2.69&#34; &gt;&gt; /etc/resolv.conf 注意我设置的是公共dns是61.139.2.69
+测试网络 ping qq.com 注意事项：默认arch安装盘启动后网卡是启动的状态UP，设置IP后上面的操作重启失效，不需要重启网卡。适合于安装arch系统时候没有DHCP服务器的一种情况。
+自动获取IP地址DHCP设置 启动 dhcpcd interface 注意事项：
+1.不能同时运行两个 DHCP 客户端
+2.使用 DHCP 客户端的同时还需要同时使用 网络管理器
+文本字符界面设置IP地址（推荐） 安装 pacman -S networkmanager systemctl enable NetworkManager 执行命令 nmtui 适合于已经联网的情况下设置固定IP或者设置DHCP获取IP，并且永久有效。是一种合适于安装系统后推荐设置使用的方法。
+nmtui设置界面"><meta itemprop="datePublished" content="2020-08-19T15:46:53+00:00" />
+<meta itemprop="dateModified" content="2020-08-19T15:46:53+00:00" />
+<meta itemprop="wordCount" content="52">
+<meta itemprop="keywords" content="Arch,原创教程,资料," />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="arch下网络设置2020年版本"/>
+<meta name="twitter:description" content="静态IP设置 地址设置 ip addr change 192.168.200.187/24 dev enp3s0 修改地方enp3s0网卡名称与192.168.200.187/24注意子网掩码/24
+设置网关 ip route add default via 192.168.200.1 注意上面添加的是192.168.200.1这个网关
+设置DNS echo &#34;nameserver 61.139.2.69&#34; &gt;&gt; /etc/resolv.conf 注意我设置的是公共dns是61.139.2.69
+测试网络 ping qq.com 注意事项：默认arch安装盘启动后网卡是启动的状态UP，设置IP后上面的操作重启失效，不需要重启网卡。适合于安装arch系统时候没有DHCP服务器的一种情况。
+自动获取IP地址DHCP设置 启动 dhcpcd interface 注意事项：
+1.不能同时运行两个 DHCP 客户端
+2.使用 DHCP 客户端的同时还需要同时使用 网络管理器
+文本字符界面设置IP地址（推荐） 安装 pacman -S networkmanager systemctl enable NetworkManager 执行命令 nmtui 适合于已经联网的情况下设置固定IP或者设置DHCP获取IP，并且永久有效。是一种合适于安装系统后推荐设置使用的方法。
+nmtui设置界面"/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://gao4.top/"
+      >孤岛</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `"#faf6f1"`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/nanxiaobei"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/qifcn"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/nan.xiaobei"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://gao4.top/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pb-24 pt-16 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-20">
+    <h1 class="!my-0 pb-2.5">arch下网络设置2020年版本</h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>2020年8月19日</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="静态ip设置">静态IP设置</h2>
+<h3 id="地址设置">地址设置</h3>
+<pre tabindex="0"><code>ip addr change 192.168.200.187/24 dev enp3s0
+</code></pre><p>修改地方enp3s0网卡名称与192.168.200.187/24注意子网掩码/24</p>
+<h3 id="设置网关">设置网关</h3>
+<pre tabindex="0"><code>ip route add default via 192.168.200.1
+</code></pre><p>注意上面添加的是192.168.200.1这个网关</p>
+<h3 id="设置dns">设置DNS</h3>
+<pre tabindex="0"><code>echo &#34;nameserver 61.139.2.69&#34; &gt;&gt; /etc/resolv.conf
+</code></pre><p>注意我设置的是公共dns是61.139.2.69</p>
+<h3 id="测试网络">测试网络</h3>
+<pre tabindex="0"><code>ping qq.com
+</code></pre><blockquote>
+<p>注意事项：默认arch安装盘启动后网卡是启动的状态UP，设置IP后上面的操作重启失效，不需要重启网卡。适合于安装arch系统时候没有DHCP服务器的一种情况。</p>
+</blockquote>
+<h2 id="自动获取ip地址dhcp设置"><strong>自动获取IP地址DHCP设置</strong></h2>
+<h3 id="启动">启动</h3>
+<pre tabindex="0"><code>dhcpcd interface
+</code></pre><blockquote>
+<p>注意事项：</p>
+<p>1.不能同时运行两个 DHCP 客户端</p>
+<p>2.使用 DHCP 客户端的同时还需要同时使用 网络管理器</p>
+</blockquote>
+<h2 id="文本字符界面设置ip地址推荐">文本字符界面设置IP地址（推荐）</h2>
+<h3 id="安装">安装</h3>
+<pre tabindex="0"><code>pacman -S networkmanager
+systemctl enable NetworkManager
+</code></pre><h4 id="执行命令">执行命令</h4>
+<pre tabindex="0"><code>nmtui
+</code></pre><p>适合于已经联网的情况下设置固定IP或者设置DHCP获取IP，并且永久有效。是一种合适于安装系统后推荐设置使用的方法。</p>
+<p><img src="https://gao4.top/wp-content/uploads/2020/08/timg-3.jpeg" alt=""></p>
+<p>nmtui设置界面</p>
+</section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/arch"
+      >Arch</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B"
+      >原创教程</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://gao4.top/tags/%E8%B5%84%E6%96%99"
+      >资料</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/234.html/"
+      ><span class="mr-1.5">←</span><span>UNraid 安装后注意事项常见操作</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://gao4.top/201.html/"
+      ><span>ventoy启动工具分享</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://gao4.top">孤岛</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >Theme Paper</a
+  >
+</footer>
+
+  </body>
+</html>

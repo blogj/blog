@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>开源 on Paper</title>
+    <title>开源 on 孤岛</title>
     <link>https://gao4.top/tags/%E5%BC%80%E6%BA%90/</link>
-    <description>Recent content in 开源 on Paper</description>
+    <description>Recent content in 开源 on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Wed, 29 Dec 2021 14:16:00 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/%E5%BC%80%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>headscale开源服务器搭建</title>
-      <link>https://gao4.top/post/723/</link>
+      <link>https://gao4.top/723.html/</link>
       <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
       
-      <guid>https://gao4.top/post/723/</guid>
+      <guid>https://gao4.top/723.html/</guid>
       <description>2022年1月5日更新 GitHub仓库的文档已更新，可正常运行。 配置文件里本地ssl证书设置好了后不起效果 前言 headscale是一款今年 2021 年出现的一款 Tailscale 控制服务器的开源实现。也是唯一的一款。望能发展壮大。
 环境 Ubuntu 18.04.3（理论上正常支持systemctl的Linux发行版本都能搭建） 端口8080 版本为v0.11
 注意事项 官方的当前时间也是本文章撰写的时间。最新版本的配置文件不兼容版本号为v0.12.1

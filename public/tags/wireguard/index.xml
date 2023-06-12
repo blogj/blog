@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wireguard on Paper</title>
+    <title>Wireguard on 孤岛</title>
     <link>https://gao4.top/tags/wireguard/</link>
-    <description>Recent content in Wireguard on Paper</description>
+    <description>Recent content in Wireguard on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Wed, 24 Feb 2021 15:01:46 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/wireguard/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>openwrt通过wireguard组网</title>
-      <link>https://gao4.top/post/444/</link>
+      <link>https://gao4.top/444.html/</link>
       <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
       
-      <guid>https://gao4.top/post/444/</guid>
+      <guid>https://gao4.top/444.html/</guid>
       <description>概念 网上找的图很好理解应该
 wireguard原理就不多做解释了，我们只是人为的分客户端与服务端，因为国情在这，有时候两端不可都是可以互相访问的公网。这是理论上最好的访问模型，但实际上使用也就服务端访问这种模式。
 2021年5月21日更新

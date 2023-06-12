@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>端口 on Paper</title>
+    <title>端口 on 孤岛</title>
     <link>https://gao4.top/tags/%E7%AB%AF%E5%8F%A3/</link>
-    <description>Recent content in 端口 on Paper</description>
+    <description>Recent content in 端口 on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Thu, 24 Jun 2021 10:32:00 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/%E7%AB%AF%E5%8F%A3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NGINX 非443端口http跳转https</title>
-      <link>https://gao4.top/post/600/</link>
+      <link>https://gao4.top/600.html/</link>
       <pubDate>Thu, 24 Jun 2021 10:32:00 +0000</pubDate>
       
-      <guid>https://gao4.top/post/600/</guid>
+      <guid>https://gao4.top/600.html/</guid>
       <description>关于Nginx这个web服务器软件在NAS上配置非443端口访问时候跳转https问题，默认80端口与443端口无法访问情况。
 error_page 497 301 =307 https://$host:9443$request_uri; 添加上面代码就行https端口为9443这样就不会出现访问http出现错误的问题
 完整代码 容器部署nginx桥接443端口为9443 然后反向代理192.168.100.4:86用wallabag.gao4.top:9443访问服务并让http跳转https

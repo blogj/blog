@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NPC on Paper</title>
+    <title>NPC on 孤岛</title>
     <link>https://gao4.top/tags/npc/</link>
-    <description>Recent content in NPC on Paper</description>
+    <description>Recent content in NPC on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Sun, 27 Dec 2020 22:48:12 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/npc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NPS 内网穿透工具学习记录</title>
-      <link>https://gao4.top/post/368/</link>
+      <link>https://gao4.top/368.html/</link>
       <pubDate>Sun, 27 Dec 2020 22:48:12 +0000</pubDate>
       
-      <guid>https://gao4.top/post/368/</guid>
+      <guid>https://gao4.top/368.html/</guid>
       <description>介绍 2021年5月18日更新
 官方更新了docker安装方式，推荐用这个方法强烈推荐
 地址

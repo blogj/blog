@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>unraid6.9.2 on Paper</title>
+    <title>unraid6.9.2 on 孤岛</title>
     <link>https://gao4.top/tags/unraid6.9.2/</link>
-    <description>Recent content in unraid6.9.2 on Paper</description>
+    <description>Recent content in unraid6.9.2 on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Wed, 24 Nov 2021 13:20:53 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/unraid6.9.2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>unraid6.9.2 安装群晖DSM7.0.1</title>
-      <link>https://gao4.top/post/707/</link>
+      <link>https://gao4.top/707.html/</link>
       <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
       
-      <guid>https://gao4.top/post/707/</guid>
+      <guid>https://gao4.top/707.html/</guid>
       <description>序言 引导驱动来源openos论坛
 使用版本 DS3615xs_7.01-42218
 配置 新建Linux虚拟机配置如下按照配置启动虚拟机就行，不用改什么全程图形化
@@ -23,10 +23,10 @@
     
     <item>
       <title>unraid6.9.2安装及UEFI引导与初始化</title>
-      <link>https://gao4.top/post/649/</link>
+      <link>https://gao4.top/649.html/</link>
       <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
       
-      <guid>https://gao4.top/post/649/</guid>
+      <guid>https://gao4.top/649.html/</guid>
       <description>前言 系统包来源于俄罗斯论坛
 系统盘制作 系统下载 分享云盘链接
 使用官方工具制作

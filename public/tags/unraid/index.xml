@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unraid on Paper</title>
+    <title>Unraid on 孤岛</title>
     <link>https://gao4.top/tags/unraid/</link>
-    <description>Recent content in Unraid on Paper</description>
+    <description>Recent content in Unraid on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Wed, 24 Nov 2021 13:20:53 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/unraid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>unraid6.9.2 安装群晖DSM7.0.1</title>
-      <link>https://gao4.top/post/707/</link>
+      <link>https://gao4.top/707.html/</link>
       <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
       
-      <guid>https://gao4.top/post/707/</guid>
+      <guid>https://gao4.top/707.html/</guid>
       <description>序言 引导驱动来源openos论坛
 使用版本 DS3615xs_7.01-42218
 配置 新建Linux虚拟机配置如下按照配置启动虚拟机就行，不用改什么全程图形化
@@ -23,10 +23,10 @@
     
     <item>
       <title>unraid 挂载webdav为本地目录</title>
-      <link>https://gao4.top/post/662/</link>
+      <link>https://gao4.top/662.html/</link>
       <pubDate>Wed, 04 Aug 2021 21:43:00 +0000</pubDate>
       
-      <guid>https://gao4.top/post/662/</guid>
+      <guid>https://gao4.top/662.html/</guid>
       <description>序言 上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不稳定，就没有去了解，这次我们通过 rclone 这个软件来挂载webdav协议来实现把阿里云盘挂载到本地目录，这样就实现了让nas或者本地的主机无负担的有了一个大硬盘。
 过程 注意前期一定确定webdav可用
 安装rclone插件 在 unraid 应用市场搜索rclone安装
@@ -40,10 +40,10 @@ rclone config No remotes found - make a new one n) New remote s) Set configurati
     
     <item>
       <title>unraid6.9.2安装及UEFI引导与初始化</title>
-      <link>https://gao4.top/post/649/</link>
+      <link>https://gao4.top/649.html/</link>
       <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
       
-      <guid>https://gao4.top/post/649/</guid>
+      <guid>https://gao4.top/649.html/</guid>
       <description>前言 系统包来源于俄罗斯论坛
 系统盘制作 系统下载 分享云盘链接
 使用官方工具制作
@@ -60,10 +60,10 @@ rclone
     
     <item>
       <title>Unarid 安装异星工厂并指定存档</title>
-      <link>https://gao4.top/post/415/</link>
+      <link>https://gao4.top/415.html/</link>
       <pubDate>Sun, 24 Jan 2021 13:46:44 +0000</pubDate>
       
-      <guid>https://gao4.top/post/415/</guid>
+      <guid>https://gao4.top/415.html/</guid>
       <description>0-1搜索factorio并添加环境变量指定存档 搜索镜像
 添加相关环境变量
 注意C1存档已经上传到saves目录
@@ -77,10 +77,10 @@ server-settings下载
     
     <item>
       <title>UNraid 安装后注意事项常见操作</title>
-      <link>https://gao4.top/post/234/</link>
+      <link>https://gao4.top/234.html/</link>
       <pubDate>Mon, 31 Aug 2020 13:18:41 +0000</pubDate>
       
-      <guid>https://gao4.top/post/234/</guid>
+      <guid>https://gao4.top/234.html/</guid>
       <description>引导模式 UnRaid如果不能成功引导试试换传统引导模式
 修改访问iP地址 如果引导成功后访问不了，可能是局域网没有dhcp服务器，试试在Unraid引导选择界面选择启动桌面修改IP地址 修改ip界面
 修改主机时间 修改主机时间为Beijing

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>QQ on Paper</title>
+    <title>QQ on 孤岛</title>
     <link>https://gao4.top/tags/qq/</link>
-    <description>Recent content in QQ on Paper</description>
+    <description>Recent content in QQ on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Tue, 31 Aug 2021 17:20:00 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/qq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mirai Dice QQ机器人-to-docker搭建记录</title>
-      <link>https://gao4.top/post/639/</link>
+      <link>https://gao4.top/639.html/</link>
       <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
       
-      <guid>https://gao4.top/post/639/</guid>
+      <guid>https://gao4.top/639.html/</guid>
       <description>前言 网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的问题
 推荐开始之前阅读官方教程 Mirai Dice官方文档（和上面教程不一样是使用文档） 流程 启动容器 sudo docker run -it --name qq -v /home/container -v /etc/localtime:/etc/localtime:ro suhuiw4123/mirai-dice 登录 在&amp;gt;符号下输入 login QQ号 密码
 示例&amp;gt;login 23421123 DSH12323

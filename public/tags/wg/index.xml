@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WG on Paper</title>
+    <title>WG on 孤岛</title>
     <link>https://gao4.top/tags/wg/</link>
-    <description>Recent content in WG on Paper</description>
+    <description>Recent content in WG on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Fri, 22 Apr 2022 14:26:00 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/wg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wg-Easy一个几分钟搞定访问局域网的wg面板</title>
-      <link>https://gao4.top/post/759/</link>
+      <link>https://gao4.top/759.html/</link>
       <pubDate>Fri, 22 Apr 2022 14:26:00 +0000</pubDate>
       
-      <guid>https://gao4.top/post/759/</guid>
+      <guid>https://gao4.top/759.html/</guid>
       <description>前言 在前面博主比较推荐tailscale这款软件也是基于Wg协议的，但兜兜转转还是回归了wireguard，
 回归了传统的那种网络模型 ，或许网状形的模型成熟了再换也不迟，这面板就是快速让你部署后，并且能远程访问局域网地址
 快速搭建 mkdir /home/wg-easy cd /home/wg-easy nano /home/wg-easy/docker-compose.yml 内容如下
@@ -22,10 +22,10 @@ version: &amp;#34;3.3&amp;#34; services: wg-easy: environment: # ⚠️ Required
     
     <item>
       <title>openwrt通过wireguard组网</title>
-      <link>https://gao4.top/post/444/</link>
+      <link>https://gao4.top/444.html/</link>
       <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
       
-      <guid>https://gao4.top/post/444/</guid>
+      <guid>https://gao4.top/444.html/</guid>
       <description>概念 网上找的图很好理解应该
 wireguard原理就不多做解释了，我们只是人为的分客户端与服务端，因为国情在这，有时候两端不可都是可以互相访问的公网。这是理论上最好的访问模型，但实际上使用也就服务端访问这种模式。
 2021年5月21日更新

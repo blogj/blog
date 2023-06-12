@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>邮件 on Paper</title>
+    <title>邮件 on 孤岛</title>
     <link>https://gao4.top/tags/%E9%82%AE%E4%BB%B6/</link>
-    <description>Recent content in 邮件 on Paper</description>
+    <description>Recent content in 邮件 on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Wed, 14 Jul 2021 22:47:00 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/%E9%82%AE%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Traefik系列二-docker搭建typecho-to-traefik</title>
-      <link>https://gao4.top/post/615/</link>
+      <link>https://gao4.top/615.html/</link>
       <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
       
-      <guid>https://gao4.top/post/615/</guid>
+      <guid>https://gao4.top/615.html/</guid>
       <description>快速开始 cd /home git clone https://github.com/YianAndCode/typecho-in-docker.git cd /home/typecho-in-docker git clone https://github.com/typecho/typecho.git rm -r typecho/.git chown -R www-data:www-data typecho/ docker-compose up -d 浏览器访问http://IP:8001
 如果GitHub下载过于慢的话可以替换为Github镜像地址
 cd /home git clone https://github.com.cnpmjs.org/YianAndCode/typecho-in-docker.git cd /home/typecho-in-docker git clone https://github.com.cnpmjs.org/typecho/typecho.git chown -R www-data:www-data typecho/ docker-compose up -d 配置邮件通知

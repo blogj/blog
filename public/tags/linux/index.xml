@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on Paper</title>
+    <title>linux on 孤岛</title>
     <link>https://gao4.top/tags/linux/</link>
-    <description>Recent content in linux on Paper</description>
+    <description>Recent content in linux on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Tue, 08 Sep 2020 08:35:26 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arch 安装sshd问题</title>
-      <link>https://gao4.top/post/196/</link>
+      <link>https://gao4.top/196.html/</link>
       <pubDate>Tue, 08 Sep 2020 08:35:26 +0000</pubDate>
       
-      <guid>https://gao4.top/post/196/</guid>
+      <guid>https://gao4.top/196.html/</guid>
       <description>启动ssh systemctl restart sshd 开机自启ssh systemctl enable ssh 设置root用户远程登陆 arch 远程ssh默认是禁止登陆root的
 nano /etc/ssh/sshd.config # 添加下面一行配置 PermitRootLogin yes nano 文本编辑器使用 退出 按Ctrl+X
 如果你修改了文件，下面会询问你是否需要保存修改。输入Y确认保存，输入N不保存，按Ctrl+C取消返回。

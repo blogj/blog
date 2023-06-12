@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Openwrt on Paper</title>
+    <title>Openwrt on 孤岛</title>
     <link>https://gao4.top/tags/openwrt/</link>
-    <description>Recent content in Openwrt on Paper</description>
+    <description>Recent content in Openwrt on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Sun, 24 Oct 2021 18:00:00 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>折腾NAS中用的软件资源分享</title>
-      <link>https://gao4.top/post/686/</link>
+      <link>https://gao4.top/686.html/</link>
       <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
       
-      <guid>https://gao4.top/post/686/</guid>
+      <guid>https://gao4.top/686.html/</guid>
       <description>资源链接阿里云盘 我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀
 复制这段内容打开「阿里云盘」App 即可获取
 链接：https://www.aliyundrive.com/s/QUm851phfC7
@@ -27,10 +27,10 @@ SYNC同步网盘 - 孤岛 (gao4.top)</description>
     
     <item>
       <title>openwrt通过wireguard组网</title>
-      <link>https://gao4.top/post/444/</link>
+      <link>https://gao4.top/444.html/</link>
       <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
       
-      <guid>https://gao4.top/post/444/</guid>
+      <guid>https://gao4.top/444.html/</guid>
       <description>概念 网上找的图很好理解应该
 wireguard原理就不多做解释了，我们只是人为的分客户端与服务端，因为国情在这，有时候两端不可都是可以互相访问的公网。这是理论上最好的访问模型，但实际上使用也就服务端访问这种模式。
 2021年5月21日更新
@@ -43,10 +43,10 @@ mkdir /etc/wireguard cd /etc/wireguard wg genkey | tee privatekey | wg pubkey &a
     
     <item>
       <title>Openwrt OpenConnect VPN 搭建设置教程</title>
-      <link>https://gao4.top/post/293/</link>
+      <link>https://gao4.top/293.html/</link>
       <pubDate>Wed, 30 Sep 2020 13:52:00 +0000</pubDate>
       
-      <guid>https://gao4.top/post/293/</guid>
+      <guid>https://gao4.top/293.html/</guid>
       <description>## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图 ![流程图](https://gao4.top/wp-content/uploads/2022/01/851998809.png) ```Unknown package &amp;rsquo;luci-app-ocserv*&amp;rsquo;. Collected errors: * opkg_install_cmd: Cannot install package luci-app-ocserv*. root@OpenWrt:~# wget https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk &amp;ndash;2022-01-04 12:01:53&amp;ndash; https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Resolving mirrors.cloud.tencent.com&amp;hellip; 125.39.223.218, 42.63.50.204, 220.194.79.73, &amp;hellip; Connecting to mirrors.cloud.tencent.com|125.39.223.218|:443&amp;hellip; connected. HTTP request sent, awaiting response&amp;hellip; 200 OK Length: 5314 (5.2K) [application/octet-stream] Saving to: &amp;rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&amp;rsquo; luci-app-ocserv_git-20.356.64372-1259bb1 100%[================================================================================&amp;gt;] 5.19K &amp;ndash;.-KB/s in 0.001s 2022-01-04 12:01:56 (4.28 MB/s) - &amp;rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&amp;rsquo; saved [5314/5314] root@OpenWrt:~# ls luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk root@OpenWrt:~# opkg install luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Installing luci-app-ocserv (git-20.356.64372-1259bb1-1) to root&amp;hellip; Configuring luci-app-ocserv.</description>
     </item>
     

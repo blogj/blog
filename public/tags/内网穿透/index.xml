@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>内网穿透 on Paper</title>
+    <title>内网穿透 on 孤岛</title>
     <link>https://gao4.top/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
-    <description>Recent content in 内网穿透 on Paper</description>
+    <description>Recent content in 内网穿透 on 孤岛</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
     <lastBuildDate>Mon, 28 Dec 2020 10:44:52 +0000</lastBuildDate><atom:link href="https://gao4.top/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NPS内网穿透工具学习2-服务端搭建</title>
-      <link>https://gao4.top/post/388/</link>
+      <link>https://gao4.top/388.html/</link>
       <pubDate>Mon, 28 Dec 2020 10:44:52 +0000</pubDate>
       
-      <guid>https://gao4.top/post/388/</guid>
+      <guid>https://gao4.top/388.html/</guid>
       <description>序言 通俗约定您已经，通晓基本的Linux知识（解压复制粘贴移动）、了解基本的网络知识（知晓什么是公网IP什么是内网IP）登录已root用户为准
 版本 v0.26.9 linux_amd64_server.tar.gz centos7 已关闭Firewalld 下载解压安装 mkdir /home/nps cd /home/nps wegt https://github.com/ehang-io/nps/releases/download/v0.26.9/linux_amd64_server.tar.gz tar -zxvf linux_amd64_server.tar.gz ./nps install 撰写程序NPS配置文件 打开配置文件
 vim /etc/nps/nps.conf
@@ -24,10 +24,10 @@ vim /usr/lib/systemd/system/nps.service 填入以下内容
     
     <item>
       <title>NPS 内网穿透工具学习记录</title>
-      <link>https://gao4.top/post/368/</link>
+      <link>https://gao4.top/368.html/</link>
       <pubDate>Sun, 27 Dec 2020 22:48:12 +0000</pubDate>
       
-      <guid>https://gao4.top/post/368/</guid>
+      <guid>https://gao4.top/368.html/</guid>
       <description>介绍 2021年5月18日更新
 官方更新了docker安装方式，推荐用这个方法强烈推荐
 地址
@@ -47,10 +47,10 @@ Github加速下载 https://d.serctl.com/
     
     <item>
       <title>Tinc全球虚拟局域网搭建记录</title>
-      <link>https://gao4.top/post/112/</link>
+      <link>https://gao4.top/112.html/</link>
       <pubDate>Thu, 06 Aug 2020 19:10:04 +0000</pubDate>
       
-      <guid>https://gao4.top/post/112/</guid>
+      <guid>https://gao4.top/112.html/</guid>
       <description>安装 apt-get install tinc 开启IPv4转发 echo &amp;#34;net.ipv4.ip_forward = 1&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf &amp;amp;&amp;amp; sysctl -p 创建一个名为imlala的虚拟网络 mkdir -p /etc/tinc/imlala &amp;amp;&amp;amp; mkdir -p /etc/tinc/imlala/hosts 新建tinc.conf配置文件 vim.tiny /etc/tinc/imlala/tinc.conf 配置文件内容 Name=imlala Interface=vpn Cipher=aes-256-cbc Digest=sha512 ConnectTo=imlala 网络名就是imlala，网卡接口名vpn，以及加密方式
 建hosts文件 vim.tiny /etc/tinc/imlala/hosts/imlala 需要注意这个文件名必须和tinc.conf内的Name
 写入如下配置 Address = 你的VPS公网IP Subnet = 10.0.0.1/32 完成之后生成密匙对 tincd -n imlala -K4096 按两下回车全部保持默认配置，生成完成之后，对应的文件路径
