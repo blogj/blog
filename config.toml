@@ -21,9 +21,11 @@ title = "孤岛"
   github = 'qifcn'
   instagram = 'nan.xiaobei'
 
-  avatar = 'i@gao4.top'
+  avatar = 'https://gao4.top/tx.webp'
   name = '白墨'
   bio = '分享快乐'
+  rss = true 
+  disableHLJS = true  
 # ------------------------------
 
 # needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
