@@ -3,7 +3,7 @@ title: 'Tailscale安装到ARM openwrt上'
 date: Sun, 12 Jun 2022 12:09:10 +0000
 draft: false
 slug: 1076
-tags: ['NAS物语', '资料']
+tags: ['NAS物语', '资料', 'openwrt', 'Tailscale']
 ---
 
 ![](http://gao4.top/wp-content/uploads/2022/06/FotoJet-1024x576.png)
