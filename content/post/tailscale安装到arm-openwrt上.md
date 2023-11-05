@@ -11,15 +11,15 @@ tags: ['NAS物语', '资料']
 下载到tmp目录
 
 ```
-wget https://pkgs.tailscale.com/stable/tailscale_1.46.1_arm64.tgz -P /tmp
+wget https://pkgs.tailscale.com/stable/tailscale_1.52.1_arm64.tgz -P /tmp
 ```
 
 解压压缩包并移动二进制文件
 
 ```
 cd /tmp
-tar x -zvf tailscale_1.26.0_arm64.tgz
-cd tailscal_1.26.0_arm64
+tar x -zvf tailscale_1.52.1_arm64.tgz
+cd tailscal_1.52.1_arm64
 mv tailscale tailscaled /usr/sbin/
 ```
 
