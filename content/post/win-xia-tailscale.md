@@ -9,7 +9,7 @@ tags: ['NAS物语', 'Tailscale', 'Windows', ' 内网穿透', '资料']
 ## 序言
 
 解决 Windows 下 Tailscale 未登录桌面不启动问题
-新版本的 ui 启动无人值守的选项`run unattended mode`已经去掉，所以只能命令行设置
+新版本的 ui 启动无人值守的选项```run unattended mode```已经去掉，所以只能命令行设置
 
 ## 研究资料
 
