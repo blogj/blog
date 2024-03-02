@@ -30,7 +30,7 @@ params:
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
+  ShowCodeCopyButtons: true
   ShowWordCount: true
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
@@ -121,9 +121,6 @@ menu:
     - name: 归档
       url: archives
       weight: 10
-    - name: 分类
-      url: categories/
-      weight: 20
     - name: 标签
       url: tags/
       weight: 30
@@ -143,3 +140,9 @@ markup:
 # 自定义
 permalinks:
   post: /:slug.html
+  
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
