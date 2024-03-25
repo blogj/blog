@@ -1,5 +1,5 @@
 baseURL: "https://gao4.top"
-title: ExampleSite
+title: 孤岛
 paginate: 10
 theme: PaperMod
 
@@ -16,10 +16,10 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: ExampleSite
+  title: 孤岛-分享快乐
   description: "ExampleSite description"
   keywords: [Blog, Portfolio, PaperMod]
-  author: Me
+  author: 白墨
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
