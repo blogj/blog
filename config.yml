@@ -66,10 +66,10 @@ params:
     imageHeight: 120
     imageTitle: my image
     buttons:
-      - name: Posts
-        url: posts
-      - name: Tags
-        url: tags
+      - name: Post
+        url: post
+      - name: Archives
+        url: archives/
 
   # home-info mode
   homeInfoParams:
