@@ -61,7 +61,7 @@ params:
     enabled: true # needs to be explicitly set
     title: 孤岛
     subtitle: "分享快乐"
-    imageUrl: "https://gao4.top/icons/32x32.png"
+    imageUrl: "https://gao4.top/icons/512x512.png"
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
