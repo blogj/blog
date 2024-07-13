@@ -24,3 +24,13 @@ C:\Users%USERNAME%\AppData\Local\Tailscale
 C:\Windows\System32\config\systemprofile\AppData\Local\Tailscale
 ```
 再重新安装登录
+
+
+## 如果上面命令没反应
+去注册表找到这个文件编辑
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Tailscale IPN\LoginURL
+```
+修改控制器域名为https://controlplane.tailscale.com
+
+重启电脑 登录
