@@ -61,7 +61,7 @@ RestartSec=5s
 #ExecStop=flatpak kill dev.lizardbyte.sunshine
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=multi-user.target
 ```
 在关闭软件情况下依次执行下面相关命令
 ```markdown
