@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>MATRIX on 孤岛</title>
+    <link>http://localhost:1313/tags/matrix/</link>
+    <description>Recent content in MATRIX on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 11 Sep 2023 13:31:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/matrix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker快速搭建MATRIX服务器synapse-2023</title>
+      <link>http://localhost:1313/227.html/</link>
+      <pubDate>Mon, 11 Sep 2023 13:31:00 +0000</pubDate>
+      <guid>http://localhost:1313/227.html/</guid>
+      <description>&lt;p&gt;docker 快速搭建 MATRIX 服务器 synapse&lt;/p&gt;
+&lt;h2 id=&#34;环境&#34;&gt;环境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;debian11&lt;/li&gt;
+&lt;li&gt;docker&lt;/li&gt;
+&lt;li&gt;synapse:v1.83.0&lt;/li&gt;
+&lt;li&gt;postgres:12-alpine&lt;/li&gt;
+&lt;li&gt;域名一个 不能轻易修改&lt;/li&gt;
+&lt;li&gt;ipv6 地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;p&gt;新建一个文件夹建立 yml 文件&lt;code&gt;nano docker-compose.yml&lt;/code&gt;内容如下注意自己 生成数据库密码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#也感谢糖喵提供的配置文件~
+version: &amp;#34;3.4&amp;#34;
+
+services:
+  synapse:
+    hostname: matrix
+    image: matrixdotorg/synapse:v1.83.0
+    restart: always
+    container_name: matrix_server
+    depends_on:
+      - db
+      - redis
+    ports:
+      - &amp;#34;127.0.0.1:8001:8008&amp;#34;
+    volumes:
+      - ./synapse/data:/data
+    networks:
+      - synapse_network
+      - external_network
+    healthcheck:
+      test: [&amp;#34;CMD-SHELL&amp;#34;, &amp;#34;curl -s localhost:8008/health || exit 1&amp;#34;]
+
+  db:
+    image: postgres:12-alpine
+    restart: always
+    container_name: matrix_db
+    volumes:
+      - ./synapse/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: synapse
+      POSTGRES_PASSWORD: 配置数据库密码
+      POSTGRES_DB: synapse
+      POSTGRES_INITDB_ARGS: &amp;#34;--encoding=&amp;#39;UTF8&amp;#39; --lc-collate=&amp;#39;C&amp;#39; --lc-ctype=&amp;#39;C&amp;#39;&amp;#34;
+    networks:
+      - synapse_network
+    healthcheck:
+      test: [&amp;#34;CMD&amp;#34;, &amp;#34;pg_isready&amp;#34;, &amp;#34;-U&amp;#34;, &amp;#34;synapse&amp;#34;]
+
+  redis:
+    image: redis:6.0-alpine
+    restart: always
+    container_name: matrix_redis
+    volumes:
+      - ./synapse/redis:/data
+    networks:
+      - synapse_network
+    healthcheck:
+      test: [&amp;#34;CMD&amp;#34;, &amp;#34;redis-cli&amp;#34;, &amp;#34;ping&amp;#34;]
+
+networks:
+  synapse_network:
+    internal: true
+  external_network:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行如下内容进行生成配置文件&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

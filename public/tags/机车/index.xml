@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>机车 on 孤岛</title>
+    <link>http://localhost:1313/tags/%E6%9C%BA%E8%BD%A6/</link>
+    <description>Recent content in 机车 on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 07 May 2024 10:04:49 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E6%9C%BA%E8%BD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tr300预接口加装USB快充</title>
+      <link>http://localhost:1313/3700.html/</link>
+      <pubDate>Tue, 07 May 2024 10:04:49 +0800</pubDate>
+      <guid>http://localhost:1313/3700.html/</guid>
+      <description>&lt;h1 id=&#34;准备材料&#34;&gt;准备材料&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;USB快充&lt;/li&gt;
+&lt;li&gt;DJ7021-2-21(母头)含端子&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;提前需要了解的&#34;&gt;提前需要了解的&lt;/h1&gt;
+&lt;p&gt;接线部分是在tr300水箱后的预留接口 根据豪爵社区测试大概65w左右钥匙控制通断，有保险保险位置在保险盒5A保险，可通过更换10A保险增加使用功率但不建议这么做
+需要注意的是接口正负极，最好自己用万用表测试一下，豪爵的tr300在我的车上是错误的。（万用表测试方法抖音搜索一下很简单的）
+&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/tr300/1.jpg&#34;&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/tr300/2.jpg&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

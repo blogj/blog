@@ -1,14 +1,18 @@
-baseURL: "https://gao4.top"
+baseURL: "https://gao4.top/"
 title: 孤岛
-paginate: 10
 theme: PaperMod
+
+languageCode: zh
+defaultContentLanguage: zh
+
+#自定义
+permalinks:
+  post: /:slug.html
 
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
-
-googleAnalytics: UA-123-45
 
 minify:
   disableXML: true
@@ -16,10 +20,10 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: 孤岛-分享快乐
+  title: ExampleSite
   description: "ExampleSite description"
   keywords: [Blog, Portfolio, PaperMod]
-  author: 白墨
+  author: Me
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
@@ -45,31 +49,31 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "https://gao4.top/icons/16x16"
-    favicon16x16: "https://gao4.top/icons/16x16"
-    favicon32x32: "https://gao4.top/icons/32x32.png"
+    favicon: "<link / abs url>"
+    favicon16x16: "<link / abs url>"
+    favicon32x32: "<link / abs url>"
     apple_touch_icon: "<link / abs url>"
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "首页"
+    text: "孤岛"
     icon: /apple-touch-icon.png
     iconHeight: 35
 
   # profile-mode
   profileMode:
-    enabled: true # needs to be explicitly set
-    title: 孤岛
-    subtitle: "分享快乐"
-    imageUrl: "https://gao4.top/icons/512x512.png"
+    enabled: false # needs to be explicitly set
+    title: ExampleSite
+    subtitle: "This is subtitle"
+    imageUrl: "<img location>"
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
     buttons:
-      - name: Post
-        url: post
-      - name: Archives
-        url: archives/
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
 
   # home-info mode
   homeInfoParams:
@@ -113,36 +117,27 @@ params:
     minMatchCharLength: 0
     limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
-languageCode: zh
-defaultContentLanguage: zh
-
 menu:
   main:
-    - name: 归档
-      url: archives
+    - identifier: categories
+      name: 分类
+      url: /categories/
       weight: 10
-    - name: 标签
-      url: tags/
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 20
+    - identifier: example
+      name: 主页
+      url: https://example.org
       weight: 30
-    - name: 搜索
-      url: search/
-      weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
   highlight:
-    noClasses: false
+    noClasses: true
     # anchorLineNos: true
     # codeFences: true
     # guessSyntax: true
     # lineNos: true
     # style: monokai
-# 自定义
-permalinks:
-  post: /:slug.html
-  
-outputs:
-    home:
-        - HTML
-        - RSS
-        - JSON # is necessary

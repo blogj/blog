@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Resilio on 孤岛</title>
+    <link>http://localhost:1313/tags/resilio/</link>
+    <description>Recent content in Resilio on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 07 Dec 2020 12:42:46 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/resilio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 下resilio同步服务安装</title>
+      <link>http://localhost:1313/325.html/</link>
+      <pubDate>Mon, 07 Dec 2020 12:42:46 +0000</pubDate>
+      <guid>http://localhost:1313/325.html/</guid>
+      <description>&lt;h2 id=&#34;参考常见问题&#34;&gt;参考常见问题&lt;/h2&gt;
+&lt;p&gt;2021年6月15日更新&lt;/p&gt;
+&lt;p&gt;网络传输速度测试一直不能满速跑，断断续续的传输，速度一直跑不上来，已弃坑&lt;/p&gt;
+&lt;p&gt;远程服务器安装后需要修改配置文件把127.0.0.1改成0.0.0.0，不然的话无论是rpm包安装还是仓库安装方式都会访问不了，&lt;/p&gt;
+&lt;p&gt;2021年5月4日更新 docker镜像网络问题&lt;/p&gt;
+&lt;p&gt;经测试linuxserver/resilio-sync的安装方式如果网络是以端口转发的方式会对传输有影响，具体是走桥接中继传输数据&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;解决办法是赋予容器一个独立ip或者走当前本地网络，下面是我的docker-compose.yml文件路径修改一下&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;version: &amp;#34;2&amp;#34;
+services:
+  resilio-sync:
+    image: ghcr.io/linuxserver/resilio-sync
+    container_name: resilio-sync
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - /root/resilio/config:/config
+      - //mnt/sda/resilio/downloads/:/downloads
+      - /mnt/sda/resilio/Sync/:/sync
+    network_mode: &amp;#34;host&amp;#34;
+    restart: unless-stopped
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2020/12/baedb53e845ae71.zip&#34;&gt;docker-compose&lt;/a&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2020/12/baedb53e845ae71.zip&#34;&gt;下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2021年1月29日更新&lt;/p&gt;
+&lt;p&gt;前面权限问题可以用下面方法解决，这个问题其实是白名单问题如果遇到下面问题就在配置文件里修改就行unraid docker镜像还是Linux下的问题都可以解决&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-29_15-15-24-1024x514.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;权限问题&#34;&gt;权限问题&lt;/h3&gt;
+&lt;p&gt;安装后有一个权限问题，最快解决办法&lt;/p&gt;
+&lt;p&gt;运行下面命令找到rslsync.service这个配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;systemctl status rslsync.service
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-07_12-22-51.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;编辑rslsync.service配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo vim /usr/lib/systemd/system/rslsync.service
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改如下&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-07_12-26-01.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;重新启动服务&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo systemctl restart rslsync.service
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;后续&#34;&gt;后续&lt;/h4&gt;
+&lt;p&gt;猜测是系统启动了rslsync而不是用户启动这个服务，有条件的可以试试反正解决了问题，猜测来源如下图&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-07_12-29-26.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装rslsync服务&#34;&gt;安装rslsync服务&lt;/h2&gt;
+&lt;p&gt;arch&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;yay -S rslsync
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;systemctl enable rslsync
+systemctl start rslsync&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+对于网络环境不好的时候，可以考虑使用离线安装包的方式来安装。官方给了两个包，分别是deb和rpm。
+
+DEB：
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;sudo dpkg -i &amp;lt;resilio-sync.deb&amp;gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

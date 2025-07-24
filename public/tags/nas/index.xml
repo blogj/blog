@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>NAS on 孤岛</title>
+    <link>http://localhost:1313/tags/nas/</link>
+    <description>Recent content in NAS on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 01 Aug 2021 22:07:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>unraid6.9.2安装及UEFI引导与初始化</title>
+      <link>http://localhost:1313/649.html/</link>
+      <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
+      <guid>http://localhost:1313/649.html/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;系统包来源于俄罗斯论坛&lt;/p&gt;
+&lt;h1 id=&#34;系统盘制作&#34;&gt;系统盘制作&lt;/h1&gt;
+&lt;h2 id=&#34;系统下载&#34;&gt;系统下载&lt;/h2&gt;
+&lt;p&gt;分享&lt;a href=&#34;https://www.aliyundrive.com/s/xt2ZVqBRGxw&#34;&gt;云盘链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用官方工具制作&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把下载的unRAIDServer-6.9.2-x86_64_fu11压缩包解压&lt;/li&gt;
+&lt;li&gt;运行Unraid.USB.Creator.Win32-1.6&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;官方制作工具&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1676644806.png&#34; title=&#34;官方制作工具&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Allow UEFI Boot 勾选 需要UEFI引导一定需要使用官方工具制作 使用&lt;code&gt;UnraidTool&lt;/code&gt;制作UEFI引导的系统U盘不一定生效&lt;/li&gt;
+&lt;li&gt;生成密钥，复制&lt;code&gt;UnraidTool.exe&lt;/code&gt;与&lt;code&gt;keymaker.exe&lt;/code&gt;到U盘根目录 右击管理员身份运行 UnraidTool 点击第二个&lt;code&gt;注册&lt;/code&gt; 系统制作完毕&lt;br&gt;
+&lt;img alt=&#34;UnraidTool&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/4095878892.png&#34; title=&#34;UnraidTool&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;进入系统初始化操作&#34;&gt;进入系统初始化操作&lt;/h1&gt;
+&lt;h2 id=&#34;github访问&#34;&gt;GitHub访问&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#34;199.232.4.133 raw.githubusercontent.com&amp;#34; &amp;gt;&amp;gt; /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img alt=&#34;GitHub访问&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3282416052.png&#34; title=&#34;GitHub访问&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;docker市场&#34;&gt;Docker市场&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img alt=&#34;安装Docker市场&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3954018899.png&#34; title=&#34;安装Docker市场&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装中文语言包&#34;&gt;安装中文语言包&lt;/h2&gt;
+&lt;p&gt;在Docker市场点击 &lt;strong&gt;左边&lt;/strong&gt; &lt;strong&gt;Language&lt;/strong&gt;找到中文语言包安装即可&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;中文语言包&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1974993561.png&#34; title=&#34;中文语言包&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;切换中文&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3264224320.png&#34; title=&#34;切换中文&#34;&gt;&lt;br&gt;
+选择中文如何点击APPLY确定&lt;br&gt;
+&lt;img alt=&#34;切换即可&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3824821100.png&#34; title=&#34;切换即可&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;设置阵列自启&#34;&gt;设置阵列自启&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;阵列自启&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/2732363111.png&#34; title=&#34;阵列自启&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;开启核显&#34;&gt;开启核显&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;安装CA CONFIG EDITOR&lt;/code&gt;`一个在线配置文件编辑器`&lt;br&gt;
+&lt;img alt=&#34;安装插件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-23_20-19-03-1024x324.png&#34; title=&#34;安装插件&#34;&gt;&lt;br&gt;
+点击插件&lt;br&gt;
+&lt;img alt=&#34;点击插件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/626629736.png&#34; title=&#34;点击插件&#34;&gt;&lt;br&gt;
+&lt;img alt=&#34;页面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1099005542.png&#34; title=&#34;页面&#34;&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;modprobe i915
+chown nobody:users /dev/dri
+chmod 0777 /dev/dri/*
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;必安装插件&#34;&gt;必安装插件&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;User Scripts&lt;/strong&gt;&lt;br&gt;
+一款可以运行用户自定义脚本的插件。贴吧有人使用这个插件设置每次开机自动更换docker源。官方解释为：一个插件，可充当任何用户脚本的简单前端，使您无需输入命令行即可运行它们。&lt;br&gt;
+&lt;img alt=&#34;User Scripts&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3505330592.png&#34; title=&#34;User Scripts&#34;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;rclone&lt;/strong&gt;&lt;br&gt;
+类似于rsync但是可以连通所有云服务器的命令行软件, 用它来做远程备份或者下载很方便.&lt;br&gt;
+&lt;img alt=&#34;rclone&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1398285922.png&#34; title=&#34;rclone&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>NGINX 非443端口http跳转https</title>
+      <link>http://localhost:1313/600.html/</link>
+      <pubDate>Thu, 24 Jun 2021 10:32:00 +0000</pubDate>
+      <guid>http://localhost:1313/600.html/</guid>
+      <description>&lt;p&gt;关于Nginx这个web服务器软件在NAS上配置非443端口访问时候跳转https问题，默认80端口与443端口无法访问情况。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;error_page 497 301 =307 https://$host:9443$request_uri;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;添加上面代码就行https端口为9443这样就不会出现访问http出现错误的问题&lt;/p&gt;
+&lt;h3 id=&#34;完整代码&#34;&gt;完整代码&lt;/h3&gt;
+&lt;p&gt;容器部署nginx桥接443端口为9443 然后反向代理192.168.100.4:86用wallabag.gao4.top:9443访问服务并让http跳转https&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;upstream dockername1 {
+    server 192.168.100.4:86; # 端口改为docker容器提供的端口
+}
+
+
+server {
+    listen 80;
+    listen 443 default ssl;
+    server_name  wallabag.gao4.top;
+    error_page 497 301 =307 https://$host:9443$request_uri;
+    gzip on;
+    ssl_certificate /ssl/fullchain1.pem;
+    ssl_certificate_key /ssl/privkey1.pem;
+
+    # access_log /var/log/nginx/dockername_access.log combined;
+    # error_log  /var/log/nginx/dockername_error.log;
+
+    location / {
+        proxy_redirect off;
+        proxy_pass http://dockername1;
+
+        proxy_set_header  Host                $http_host;
+        proxy_set_header  X-Real-IP           $remote_addr;
+        proxy_set_header  X-Forwarded-Ssl     on;
+        proxy_set_header  X-Forwarded-For     $proxy_add_x_forwarded_for;
+        proxy_set_header  X-Forwarded-Proto   $scheme;
+        proxy_set_header  X-Frame-Options     SAMEORIGIN;
+
+        client_max_body_size        100m;
+        client_body_buffer_size     128k;
+
+        proxy_buffer_size           4k;
+        proxy_buffers               4 32k;
+        proxy_busy_buffers_size     64k;
+        proxy_temp_file_write_size  64k;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>TrueNAS-SCALE SMB共享设置</title>
+      <link>http://localhost:1313/538.html/</link>
+      <pubDate>Wed, 19 May 2021 01:51:32 +0000</pubDate>
+      <guid>http://localhost:1313/538.html/</guid>
+      <description>&lt;h4 id=&#34;1打开win10-smb10&#34;&gt;1.打开win10 SMB1.0&lt;/h4&gt;
+&lt;p&gt;SMB1.0功能 此电脑&amp;gt;卸载或更改程序&amp;gt;程序和功能&amp;gt;启用或关闭win功能 勾选?&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-8.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;勾选&lt;/p&gt;
+&lt;h4 id=&#34;2添加用户&#34;&gt;2.添加用户&lt;/h4&gt;
+&lt;p&gt;登录TrueNAS 仪表盘&amp;gt;证书&amp;gt;Local Users&amp;gt;添加 添加一个用户user1修改密码，保持默认选项点击保存?&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-10-1024x280.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;添加用户&lt;/p&gt;
+&lt;h4 id=&#34;3添加数据集&#34;&gt;3.添加数据集&lt;/h4&gt;
+&lt;p&gt;添加数据集填入名字test1其他保持默认点击保存，存储&amp;gt;阵列旁边三个小点&amp;gt;Add Dataset ?&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-11-1024x430.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4修改数据集权限&#34;&gt;4.修改数据集权限&lt;/h4&gt;
+&lt;p&gt;点击数据集右边三个小点&amp;gt;点击Edit Permissions 修改用户与群组为user1 勾选下面的Apply User不然修改无效其他默认即可，点击保存?&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-12.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;数据集权限设置&lt;/p&gt;
+&lt;h4 id=&#34;5添加smb共享&#34;&gt;5.添加SMB共享&lt;/h4&gt;
+&lt;p&gt;添加名为tes1的共享 Shares&amp;gt; Windows Shares(SMB)&amp;gt;添加 φ(*￣0￣)&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-13-1024x285.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择路径 刚刚添加的数据集路径默认即可，点击保存?&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-14.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;6win文件管理器访问smb测试&#34;&gt;6.win文件管理器访问smb测试&lt;/h4&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-15.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PS：一定需要添加新用户 root用户无法访问，客户端SMB1.0一定需要开启不然无法访问。&lt;/strong&gt;?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>关于NAS的小折腾填坑</title>
+      <link>http://localhost:1313/530.html/</link>
+      <pubDate>Tue, 18 May 2021 11:38:59 +0000</pubDate>
+      <guid>http://localhost:1313/530.html/</guid>
+      <description>&lt;h1 id=&#34;关于nas的小折腾填坑&#34;&gt;关于NAS的小折腾填坑&lt;/h1&gt;
+&lt;p&gt;【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。&lt;/p&gt;
+&lt;h2 id=&#34;关于电信路由器&#34;&gt;关于电信路由器&lt;/h2&gt;
+&lt;p&gt;   四川电信，可以在微信公众号，给找客服切换光猫桥接模式，顺便要了公网IP，没有网上那么难，很顺利就要到了，也没有去折腾光猫破解什么的，因为网上超级密码都不正确&lt;/p&gt;
+&lt;h3 id=&#34;桥接后遇到的问题&#34;&gt;桥接后遇到的问题&lt;/h3&gt;
+&lt;p&gt;过一天死机，重启恢复，开始怀疑固件有问题，OPenwrt固件刷到工控n2800主板上，随后换固件pfSense，还是遇到过一天死机重启恢复，应该不是固件与硬件问题随后换回OPenwrt，每天早上5点定时重启（应该是电信定时换IP问题猜测）。问题解决，用过几个月后，突然连不上DDNS（幸亏没有出现死机问题），随后发现OPenwrt固件空间满了，随后按照网上教程把剩下的30G空间重新远程ssh连上路由器分区挂载，问题解决。&lt;/p&gt;
+&lt;h2 id=&#34;关于移动宽带&#34;&gt;关于移动宽带&lt;/h2&gt;
+&lt;p&gt;最开始移动宽带，公网iP就不要想了，不过移动居然提供了IPv6，光猫很顺利就通过网上超级密码进入后台，建议把后台截图，防止出错，很顺利设置成桥接模式，用Openwrt拨号，折腾IPv6远程访问，因为不可能每个服务都做ddns，也不现实，就用网上恩山论坛的方法在OPenwrt上安装 &lt;strong&gt;socat&lt;/strong&gt;工具，桥接主路由ipv6端口到下面ipv4内网服务端口，跟端口映射是不是很像，每次重启机器需要重新设置运行命令，就放OPenwrt，web界面有一个开机启动设置的地方。使用就搜索吧&lt;img alt=&#34;关于NAS的小折腾填坑&#34; loading=&#34;lazy&#34; src=&#34;https://res.smzdm.com/images/emotions/147.gif&#34;&gt; &lt;/p&gt;
+&lt;h3 id=&#34;移动ipv6速度&#34;&gt;移动ipv6速度&lt;/h3&gt;
+&lt;p&gt;挺快的，和老弟相隔一个城市200多公里，传输速度相同的移动宽带。跑到了满速100M，也就是上行12.5M/s 左右当时硬件接口是100M的，后面换电信，硬件接口千兆了就没机会测试了。&lt;/p&gt;
+&lt;h3 id=&#34;resiliosync软件&#34;&gt; Resilio Sync软件&lt;/h3&gt;
+&lt;p&gt;记得17年接触当时还没，懂？ 21年重新安装，据说恢复。实际测试也恢复了。&lt;/p&gt;
+&lt;h3 id=&#34;遇到问题&#34;&gt;遇到问题&lt;/h3&gt;
+&lt;p&gt;docker安装一定要把网络设置为和本地一样的网络，也就是宿主机，或者给一个IP给容器，不然会走中继，没速度，有公网ip会自动打洞，不然没速度也，&lt;strong&gt;记得设置就是host模式&lt;/strong&gt;，吐槽一句，unraid的docker就看个状态，详细的还是ssh吧&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://post.smzdm.com/p/ax08z5gw/pic_2/&#34;&gt;&lt;/a&gt;网络模式&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/Snipaste_2021-05-18_11-12-16.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt; Resilio Sync用docker安装方式与Linux安装方式同步位置没法修改，是配置文件的限制，修改配置文件就OK了&lt;img alt=&#34;关于NAS的小折腾填坑&#34; loading=&#34;lazy&#34; src=&#34;https://res.smzdm.com/images/emotions/147.gif&#34;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://post.smzdm.com/p/ax08z5gw/pic_3/&#34;&gt;&lt;img alt=&#34;关于NAS的小折腾填坑&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/Snipaste_2021-01-29_15-15-24-1024x514-1.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;遇到的问题就这么多，安装谁都会，软件的使用过程中问题就很奈斯了。&lt;/p&gt;
+&lt;h2 id=&#34;异地组网问题&#34;&gt;异地组网问题&lt;/h2&gt;
+&lt;p&gt;有一个和另一个地方的群晖组网&lt;/p&gt;
+&lt;p&gt;wireguard软件，全平台，没法动态更新ddns的域名，可以通过脚本检测断网重启接口解决，网上是这么说，我是定时重启，openwrt不知道怎么设置，没法中继互联，配置复杂？？，简直就是 就这么着吧，弃用&lt;/p&gt;
+&lt;p&gt;传统的Ipsec 服务端为OPenwrt，群晖现成的接口，可惜群晖下，断线重连只最多5次，有时能连上有时不行，弃用&lt;/p&gt;
+&lt;p&gt;现在用的方案tailscale，只需要登陆账号，全平台，自动打洞，支持群晖，前几天支持OPenwrt ，有一个小问题就是安装包对于arm平台的OPenwrt偏大，可能会把空间占满，只能恢复出厂了。子网服务与自建中继付费10美元/月&lt;/p&gt;
+&lt;p&gt;现在还在用的方案。&lt;/p&gt;
+&lt;p&gt;可能对你有所帮助，就这样吧&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tailscale VPN初步安装体验</title>
+      <link>http://localhost:1313/503.html/</link>
+      <pubDate>Thu, 13 May 2021 16:13:00 +0000</pubDate>
+      <guid>http://localhost:1313/503.html/</guid>
+      <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;初步体验是一个基于&lt;a href=&#34;http://wireguard.com&#34;&gt;wireguard&lt;/a&gt;的新的星形组网软件（功能之一），对比WGvpn最大的不同就是增加了公匙交换系统，免配置组网，只需要安装客户端登录账号就可以组网，支持p2p打洞，付费自建中继功能。支持基本上全平台支持Linux|群晖|Openrt|Window|Mac等常见客户端，docker也可以安装。&lt;/p&gt;
+&lt;h2 id=&#34;openwrt-x86上安装&#34;&gt;Openwrt X86上安装&lt;/h2&gt;
+&lt;p&gt;2021年5月13日更新&lt;/p&gt;
+&lt;p&gt;openwrt 仓库已经有了安装包直接更新一下仓库就可以搜索到如下图&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行下面命令就可以安装&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;opkg update
+opkg install tailscale
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ps：&lt;a href=&#34;https://www.vediotalk.com/archives/13889&#34;&gt;在X86下扩容安装软件&lt;/a&gt;&lt;a href=&#34;https://www.vediotalk.com/archives/13889&#34;&gt;Overlay&lt;/a&gt;空间的教程亲测可用&lt;/p&gt;
+&lt;h2 id=&#34;openwrt-arm上安装&#34;&gt;Openwrt arm上安装&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;opkg update
+opkg install tailscale
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;PS:注意安装空间的大小，占满空间会保存不了Openwrt配置，一些定时任务失效&lt;/p&gt;
+&lt;h2 id=&#34;tailscale-synolog群晖下安装&#34;&gt;&lt;a href=&#34;https://github.com/tailscale/tailscale-synology&#34;&gt;tailscale-synolog&lt;/a&gt;群晖下安装&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tailscale/tailscale-synology/releases&#34;&gt;在Github上下载合适的版本&lt;/a&gt;上传到群晖安装即可，然后ssh登录群晖sudo tailscale up 即可&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-3.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;unraid下用docker安装&#34;&gt;Unraid下用docker安装&lt;/h2&gt;
+&lt;p&gt;在APPS里搜索 然后按照正常启动容器就可以，不用修改什么&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-4-1024x447.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后点击图标双击第一个&amp;gt;_Console 在启动的命令行窗口输入命令tailscale up 获取登录链接就可以。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-5.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ps遇到问题&#34;&gt;PS：遇到问题&lt;/h2&gt;
+&lt;p&gt;0x1安卓下远程控制0x300005f错误代码&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-6.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;要修复此问题，请在“PC名称”字段中使用您的IP地址。&lt;/p&gt;
+&lt;p&gt;0x2 &lt;a href=&#34;https://www.vediotalk.com/archives/13889&#34;&gt;openwrt 空间不足问题&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-7.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;arm重新恢复出厂设置吧&lt;/p&gt;
+&lt;p&gt;0x3 openwert ssh登录不了问题 直接未指定就行&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-17-1024x316.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;### win10升级win11后服务启动失败 解决办法 我可以确认我在从 Win10 升级到 Win11 后遇到了类似的问题，但结合了来自[@iball](&lt;a href=&#34;https://github.com/iball&#34;&gt;https://github.com/iball&lt;/a&gt;)和[@DentonGentry 的](&lt;a href=&#34;https://github.com/DentonGentry&#34;&gt;https://github.com/DentonGentry&lt;/a&gt;)两种解决方案。 * 卸载 Tailscale * 删除 %USERPROFILE%\AppData\Local\Tailscale * 重新安装尾鳞 现在需要重新登录Tailscale，登录后，Win11 中的Tailscale 效果很赞。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ESXI 群晖下连接VPN网络报错解决</title>
+      <link>http://localhost:1313/494.html/</link>
+      <pubDate>Thu, 29 Apr 2021 16:25:03 +0000</pubDate>
+      <guid>http://localhost:1313/494.html/</guid>
+      <description>&lt;p&gt;前言&lt;/p&gt;
+&lt;p&gt;我的vpn服务端搭建在openwrt软路由上使用SoftEther作为相关软件，在群晖下出现&lt;/p&gt;
+&lt;p&gt;群晖 l2tp连接失败 请检查。。。。解决办法如下勾选第二个选项就行&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/04/SAVE_20210429_162054.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;啰嗦一下环境&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;esxi6.5u2&lt;/li&gt;
+&lt;li&gt;DS3617XS&lt;/li&gt;
+&lt;li&gt;MAC已修改&lt;/li&gt;
+&lt;li&gt;tun未开启&lt;/li&gt;
+&lt;li&gt;宿主机戴尔r410&lt;/li&gt;
+&lt;li&gt;网卡为博通网卡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为啥我判断是群晖的问题嘞，win10最新，正常连接 安卓10正常连接，白群晖正常连接&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>群晖开启tun模块驱动以支持tinc</title>
+      <link>http://localhost:1313/164.html/</link>
+      <pubDate>Sun, 09 Aug 2020 09:27:29 +0000</pubDate>
+      <guid>http://localhost:1313/164.html/</guid>
+      <description>&lt;p&gt;登陆群晖开启ssh，在终端依次用admin用户登陆再sudo -i 进入#管理员模式&lt;/p&gt;
+&lt;h2 id=&#34;检查tun模块状态&#34;&gt;检查tun模块状态&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;lsmod | grep tun
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;如果结果为空请尝试安装它&#34;&gt;如果结果为空，请尝试安装它&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;insmod /lib/modules/tun.ko
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;依次输入下列命令确保tunko模块可以正常工作&#34;&gt;依次输入下列命令，确保tun.ko模块可以正常工作&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir /dev/net
+mknod /dev/net/tun c 10 200
+chmod 600 /dev/net/tun
+cat /dev/net/tun
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_202841-1024x466.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;命令结果&lt;/p&gt;
+&lt;h2 id=&#34;持久化操作&#34;&gt;持久化操作&lt;/h2&gt;
+&lt;p&gt;模块开机自启动（不保证有效可以在群晖面板计划任务设置）&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;lt; /usr/local/etc/rc.d/tun.sh
+#!/bin/sh -e
+insmod /lib/modules/tun.ko
+EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;赋予脚本启动权限&#34;&gt;赋予脚本启动权限&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chmod a+x /usr/local/etc/rc.d/tun.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;tun/tap 驱动程序实现了虚拟网卡的功能，tun表示虚拟的是点对点设备，tap表示虚拟的是以太网设备，这两种设备针对网络包实施不同的封装。利用tun/tap 驱动，可以将tcp/ip协议栈处理好的网络分包传给任何一个使用tun/tap驱动的进程，由进程重新处理后再发到物理链路中。&lt;/p&gt;&lt;/blockquote&gt;</description>
+    </item>
+  </channel>
+</rss>

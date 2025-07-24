@@ -1,0 +1,2342 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on 孤岛</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 11 Oct 2024 14:30:50 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manjaro发行版本远程桌面方案2024 </title>
+      <link>http://localhost:1313/20241011.html/</link>
+      <pubDate>Fri, 11 Oct 2024 14:30:50 +0800</pubDate>
+      <guid>http://localhost:1313/20241011.html/</guid>
+      <description>&lt;h2 id=&#34;预览图&#34;&gt;预览图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;预览图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/manjaro/Snipaste_2024-10-11_14-31-42.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;一直在全网寻找一个不卡的远程桌面方案所以就找到到了这一个远程游戏的解决方法非常合适win去远程Linux发行版本&lt;/p&gt;
+&lt;h2 id=&#34;优点&#34;&gt;优点&lt;/h2&gt;
+&lt;p&gt;非常流程    非常流程   非常流程
+130公里 双边移动宽带ipv6 通过wg远程 1080 60fps  也就是说能做到60帧率基本上和副屏幕差不多了
+&lt;img alt=&#34;预览图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/manjaro/Snipaste_2024-10-11_14-36-50.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;manjaro下安装方法&#34;&gt;manjaro下安装方法&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;注意都是在root用户下执行下面命令&lt;/strong&gt;&lt;br&gt;
+直接去github去下载安装包是是启动不成功的，搜索引擎说可以安装sunshine-git版本，可惜我不会 提供一个网上的包 不放心可以去试试sunshine-git版本&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://0x0.st/XE4O.tar.zst&#34;&gt;https://0x0.st/XE4O.tar.zst&lt;/a&gt; 这是包（如果你不相信我，就不要使用它）&lt;/p&gt;
+&lt;p&gt;重命名为 sunshine-0.23.1-5-x86_64.pkg.tar.zst &lt;strong&gt;安装命令如下&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo pacman -U sunshine-0.23.1-5-x86_64.pkg.tar.zst
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;启动命令为&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sunshine
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;默认访问为本机访问所以需要ssh隧道 默认端口为https://localhost:47990/ 因为我们启动了ssh隧道就访问https://localhost:47991/ 隧道设置如下图
+&lt;img alt=&#34;隧道&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/manjaro/Snipaste_2024-10-11_14-45-47.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;linux下自启动设置&#34;&gt;Linux下自启动设置&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.lizardbyte.dev/projects/sunshine/en/latest/about/setup.html#install&#34;&gt;官方文档&lt;/a&gt;
+编辑&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano /etc/systemd/system/sunshine.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;内容如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Unit]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Description=Sunshine self-hosted game stream host for Moonlight.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;StartLimitIntervalSec=500
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;StartLimitBurst=5
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Service]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ExecStart=/usr/bin/sunshine
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Restart=on-failure
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;RestartSec=5s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;#Flatpak Only
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;#ExecStop=flatpak kill dev.lizardbyte.sunshine
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Install]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;WantedBy=multi-user.target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在关闭软件情况下依次执行下面相关命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl daemon-reload
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl enable sunshine.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl start sunshine.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;注意事项&#34;&gt;注意事项&lt;/h3&gt;
+&lt;p&gt;注意客户端连接需要&lt;strong&gt;moonlight&lt;/strong&gt;这个软件 下载连接如下&lt;br&gt;
+&lt;a href=&#34;https://flowus.cn/lecheng/share/cf8b9092-8ac2-4dd9-bb81-701be6e2f196&#34;&gt;https://flowus.cn/lecheng/share/cf8b9092-8ac2-4dd9-bb81-701be6e2f196&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Openwrt系列之打开ipv6端口访问</title>
+      <link>http://localhost:1313/20240906.html/</link>
+      <pubDate>Fri, 06 Sep 2024 09:20:02 +0800</pubDate>
+      <guid>http://localhost:1313/20240906.html/</guid>
+      <description>&lt;h2 id=&#34;打开ipv6-访问&#34;&gt;打开ipv6 访问&lt;/h2&gt;
+&lt;p&gt;很简单只需要把防火墙打开就行就可以访问端口上的openwrt服务&lt;/p&gt;
+&lt;h3 id=&#34;第一步&#34;&gt;第一步&lt;/h3&gt;
+&lt;p&gt;打开防火墙区域设置
+&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/9yue6hao/Snipaste_2024-09-06_10-28-21.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;第二步&#34;&gt;第二步&lt;/h3&gt;
+&lt;p&gt;防火墙 通信规则
+&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/9yue6hao/Snipaste_2024-09-06_10-34-34.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Syncthing自动化接受设备与自动添加共享目录脚本</title>
+      <link>http://localhost:1313/20240621.html/</link>
+      <pubDate>Fri, 21 Jun 2024 09:22:44 +0800</pubDate>
+      <guid>http://localhost:1313/20240621.html/</guid>
+      <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;在当前2024/6/21参考官方论坛与github官方讨论，开发者不愿意开发自动接受设备与连接设备后自动添加共享目录，官方更愿意让使用者自己通过api构建程序脚本来增强相关功能。&lt;/p&gt;
+&lt;h2 id=&#34;脚本&#34;&gt;脚本&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nano sync.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash
+
+api_key=&amp;#34;YOUR_API_KEY_HERE&amp;#34;
+syncthing_url=&amp;#34;http://localhost:8384&amp;#34;
+
+while :
+do
+    device_id=$(curl -s -X GET -H &amp;#34;X-API-Key: ${api_key}&amp;#34; &amp;#34;${syncthing_url}/rest/cluster/pending/devices&amp;#34; | jq -r &amp;#34;keys[0]&amp;#34; )
+    time=$(date &amp;#34;+%Y-%m-%d %H:%M:%S&amp;#34;)
+    if [ &amp;#34;$device_id&amp;#34; = &amp;#34;null&amp;#34; ] || [ ${#device_id} -lt 5 ]; then
+        echo $time &amp;#34;未找到待连接的设备&amp;#34;
+    else
+        curl -s -X PUT -H &amp;#34;X-API-Key: ${api_key}&amp;#34; -d &amp;#34;[{\&amp;#34;deviceID\&amp;#34;: \&amp;#34;$device_id\&amp;#34;}]&amp;#34; ${syncthing_url}/rest/config/devices
+        curl -s -X PATCH -H &amp;#34;X-API-Key: ${api_key}&amp;#34; -d &amp;#34;{ &amp;#34;\devices\&amp;#34;:&amp;#34;[{\&amp;#34;deviceID\&amp;#34;: \&amp;#34;$device_id\&amp;#34;}]}&amp;#34; ${syncthing_url}/rest/config/folders/9ecev-bio4v
+        echo $time &amp;#34;$device_id 连接成功并添加共享文件夹&amp;#34;
+    fi
+    sleep 30 
+done
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;注意事项必看&#34;&gt;注意事项(必看)&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;YOUR_API_KEY_HERE 在右上角 操作-设置-常规-API 密钥找到&lt;/li&gt;
+&lt;li&gt;jq命令必须安装这是解析设备id用的常规Linux发行版本可能没有带&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;开机启动脚本&#34;&gt;开机启动脚本&lt;/h3&gt;
+&lt;p&gt;因为每个发行版本可能不一样就偷懒不写了q.q&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DSM7.2 docker 下申请SSL泛域名证书 并切换切换ZeroSSL</title>
+      <link>http://localhost:1313/37200.html/</link>
+      <pubDate>Tue, 04 Jun 2024 23:21:47 +0800</pubDate>
+      <guid>http://localhost:1313/37200.html/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;通过黑群晖7.2版本docker套件部署ssl证书 且是通过acme.sh切换ZeroSSL申请
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;第一步&#34;&gt;第一步&lt;/h3&gt;
+&lt;p&gt;在注册表中搜索&lt;code&gt;neilpang/acme.sh&lt;/code&gt;并下载
+&lt;img alt=&#34;镜像&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/heiqunhui7.2ssl/Snipaste_2024-06-04_23-28-10.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;第二步&#34;&gt;第二步&lt;/h3&gt;
+&lt;p&gt;启动镜像并填写相关环境
+容器名字命名为&lt;code&gt;acme-sh&lt;/code&gt;和下面第三步脚本执行命令容器名字相同&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;存储空间&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;镜像&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/heiqunhui7.2ssl/Snipaste_2024-06-04_23-31-49.png&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;环境变量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Ali_Key ： # 填 AccessKey
+
+Ali_Secret ： # 填 AccessKey Secret
+
+SYNO_Username ： # 登录群晖的用户名（建议使用管理员权限）
+
+SYNO_Password ： # 登录群晖的密码
+
+SYNO_Device_ID: #如果你用于登陆的账户启动了二次验证，还需要确定设备ID
+
+SYNO_Certificate ：&amp;#34;&amp;#34; # 空字符串（&amp;#34;&amp;#34;）为替换默认证书，这里输入任命名来区别于默认证书
+
+SYNO_Create：1 # 表示如果证书不存在，则创建该证书。
+
+SYNO_Port ： # 填入群晖内网的端口号（如果你修改过，默认是5000。）
+
+ACME_EAB_KID: #查看方法，登陆ZeroSSL -&amp;gt; Developer -&amp;gt; ZeroSSL API Key；
+
+ACME_EAB_HMAC_KEY: #查看方法，登陆ZeroSSL -&amp;gt; Developer -&amp;gt; ZeroSSL API Key；
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img alt=&#34;环境变量&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/heiqunhui7.2ssl/Snipaste_2024-06-04_23-41-32.png&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;网络类型与执行命令
+网络中勾选使用与 Docker Host 相同的网络
+执行命令 -&amp;gt; 在命令栏添加 -&amp;gt; &lt;code&gt;daemon&lt;/code&gt;
+&lt;img alt=&#34;环境变量&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/heiqunhui7.2ssl/Snipaste_2024-06-04_23-42-42.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;第三步&#34;&gt;第三步&lt;/h3&gt;
+&lt;p&gt;撰写脚本Autoupdatecert.sh
+路径为/volume1/docker/acme.sh/Autoupdatecert.sh
+注意执行脚本前， 容器acme-sh 为运行状态
+可通过ssh #模式下执行bash /volume1/docker/acme.sh/Autoupdatecert.sh看是否成功&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tr300预接口加装USB快充</title>
+      <link>http://localhost:1313/3700.html/</link>
+      <pubDate>Tue, 07 May 2024 10:04:49 +0800</pubDate>
+      <guid>http://localhost:1313/3700.html/</guid>
+      <description>&lt;h1 id=&#34;准备材料&#34;&gt;准备材料&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;USB快充&lt;/li&gt;
+&lt;li&gt;DJ7021-2-21(母头)含端子&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;提前需要了解的&#34;&gt;提前需要了解的&lt;/h1&gt;
+&lt;p&gt;接线部分是在tr300水箱后的预留接口 根据豪爵社区测试大概65w左右钥匙控制通断，有保险保险位置在保险盒5A保险，可通过更换10A保险增加使用功率但不建议这么做
+需要注意的是接口正负极，最好自己用万用表测试一下，豪爵的tr300在我的车上是错误的。（万用表测试方法抖音搜索一下很简单的）
+&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/tr300/1.jpg&#34;&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/tr300/2.jpg&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tailscale恢复官方控制器</title>
+      <link>http://localhost:1313/1001.html/</link>
+      <pubDate>Sun, 05 Nov 2023 18:24:03 +0800</pubDate>
+      <guid>http://localhost:1313/1001.html/</guid>
+      <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;在节点登录了第三方控制器后，想恢复官方控制器&lt;/p&gt;
+&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
+&lt;p&gt;命令行输入以下命令&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tailscale up --accept-dns=false --accept-routes --login-server=https://controlplane.tailscale.com --advertise-routes=192.168.100.0/24
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重要的是&lt;code&gt;--login-server=https://controlplane.tailscale.com&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;window删除第三方tailscale用户&#34;&gt;Window删除第三方tailscale用户&lt;/h2&gt;
+&lt;p&gt;登录后节点有第三方用户的缓存可以尝试删除&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;C:\ProgramData\Tailscale
+C:\Users%USERNAME%\AppData\Local\Tailscale
+C:\Windows\System32\config\systemprofile\AppData\Local\Tailscale
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再重新安装登录&lt;/p&gt;
+&lt;h2 id=&#34;如果上面命令没反应&#34;&gt;如果上面命令没反应&lt;/h2&gt;
+&lt;p&gt;去注册表找到这个文件编辑&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Tailscale IPN\LoginURL
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改控制器域名为https://controlplane.tailscale.com&lt;/p&gt;
+&lt;p&gt;重启电脑 登录&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>unattended Tailscale</title>
+      <link>http://localhost:1313/1000.html/</link>
+      <pubDate>Sun, 05 Nov 2023 18:10:57 +0800</pubDate>
+      <guid>http://localhost:1313/1000.html/</guid>
+      <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;解决 Windows 下 Tailscale 未登录桌面不启动问题
+新版本的 ui 启动无人值守的选项&lt;code&gt;run unattended mode&lt;/code&gt;已经去掉，所以只能命令行设置&lt;/p&gt;
+&lt;h2 id=&#34;研究资料&#34;&gt;研究资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://tailscale.com/kb/1080/cli/#login&#34;&gt;https://tailscale.com/kb/1080/cli/#login&lt;/a&gt; 官方文档来源&lt;/p&gt;
+&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
+&lt;p&gt;以管理员身份运行&lt;code&gt;cmd&lt;/code&gt; 输入以下命令重新登录 tailscale&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tailscale login --unattended
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;测试&#34;&gt;测试&lt;/h2&gt;
+&lt;p&gt;重新关机Window电脑，然后再开机不进入桌面 用手机登录管理后台发现Window节点已经在线&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>docker快速搭建MATRIX服务器synapse-2023</title>
+      <link>http://localhost:1313/227.html/</link>
+      <pubDate>Mon, 11 Sep 2023 13:31:00 +0000</pubDate>
+      <guid>http://localhost:1313/227.html/</guid>
+      <description>&lt;p&gt;docker 快速搭建 MATRIX 服务器 synapse&lt;/p&gt;
+&lt;h2 id=&#34;环境&#34;&gt;环境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;debian11&lt;/li&gt;
+&lt;li&gt;docker&lt;/li&gt;
+&lt;li&gt;synapse:v1.83.0&lt;/li&gt;
+&lt;li&gt;postgres:12-alpine&lt;/li&gt;
+&lt;li&gt;域名一个 不能轻易修改&lt;/li&gt;
+&lt;li&gt;ipv6 地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;p&gt;新建一个文件夹建立 yml 文件&lt;code&gt;nano docker-compose.yml&lt;/code&gt;内容如下注意自己 生成数据库密码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#也感谢糖喵提供的配置文件~
+version: &amp;#34;3.4&amp;#34;
+
+services:
+  synapse:
+    hostname: matrix
+    image: matrixdotorg/synapse:v1.83.0
+    restart: always
+    container_name: matrix_server
+    depends_on:
+      - db
+      - redis
+    ports:
+      - &amp;#34;127.0.0.1:8001:8008&amp;#34;
+    volumes:
+      - ./synapse/data:/data
+    networks:
+      - synapse_network
+      - external_network
+    healthcheck:
+      test: [&amp;#34;CMD-SHELL&amp;#34;, &amp;#34;curl -s localhost:8008/health || exit 1&amp;#34;]
+
+  db:
+    image: postgres:12-alpine
+    restart: always
+    container_name: matrix_db
+    volumes:
+      - ./synapse/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: synapse
+      POSTGRES_PASSWORD: 配置数据库密码
+      POSTGRES_DB: synapse
+      POSTGRES_INITDB_ARGS: &amp;#34;--encoding=&amp;#39;UTF8&amp;#39; --lc-collate=&amp;#39;C&amp;#39; --lc-ctype=&amp;#39;C&amp;#39;&amp;#34;
+    networks:
+      - synapse_network
+    healthcheck:
+      test: [&amp;#34;CMD&amp;#34;, &amp;#34;pg_isready&amp;#34;, &amp;#34;-U&amp;#34;, &amp;#34;synapse&amp;#34;]
+
+  redis:
+    image: redis:6.0-alpine
+    restart: always
+    container_name: matrix_redis
+    volumes:
+      - ./synapse/redis:/data
+    networks:
+      - synapse_network
+    healthcheck:
+      test: [&amp;#34;CMD&amp;#34;, &amp;#34;redis-cli&amp;#34;, &amp;#34;ping&amp;#34;]
+
+networks:
+  synapse_network:
+    internal: true
+  external_network:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;运行如下内容进行生成配置文件&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Openwrt WireGuard连接局域网2023</title>
+      <link>http://localhost:1313/772.html/</link>
+      <pubDate>Fri, 09 Jun 2023 11:10:08 +0800</pubDate>
+      <guid>http://localhost:1313/772.html/</guid>
+      <description>&lt;h2 id=&#34;搭建环境&#34;&gt;搭建环境&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;360 T7硬件主路由&lt;/li&gt;
+&lt;li&gt;ImmortalWrt 21.02&lt;/li&gt;
+&lt;li&gt;IPV4公网&lt;/li&gt;
+&lt;li&gt;WireGuard客户端window版本&lt;/li&gt;
+&lt;li&gt;wg预分配网段192.168.105.1/24&lt;/li&gt;
+&lt;li&gt;路由器网段192.168.100.1/24&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;过程&#34;&gt;过程&lt;/h2&gt;
+&lt;p&gt;特殊约定后面我把WireGuard统称为wg&lt;/p&gt;
+&lt;h4 id=&#34;创建密钥&#34;&gt;创建密钥&lt;/h4&gt;
+&lt;p&gt;在window系统上安装客户端并新建两个隧道
+&lt;img alt=&#34;WireGuard客户端window版本&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/2446397780.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;创建接口&#34;&gt;创建接口&lt;/h4&gt;
+&lt;p&gt;在网络-接口-添加新接口、创建一个名称为WG1协议为WireGuard VPN的接口
+&lt;img alt=&#34;创建新接口界面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/3334229737.png&#34;&gt;
+去刚刚在客户端里创建的Openwrt隧道私钥 复制到这边创建的WG1接口私钥
+&lt;img alt=&#34;私钥&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/1562060062.png&#34;&gt;
+&lt;img alt=&#34;私钥2&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/1228194948.png&#34;&gt;
+设置ip地址为&lt;code&gt;192.168.105.1/24&lt;/code&gt;端口为&lt;code&gt;5555&lt;/code&gt;,这是可自定义的可按照您需求更改
+&lt;img alt=&#34;设置ip与端口&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/992398305.png&#34;&gt;
+设置防火墙区域为lan区域
+&lt;img alt=&#34;防火墙区域&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/1525696044.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;设置对端&#34;&gt;设置对端&lt;/h4&gt;
+&lt;p&gt;添加对端-设置一个名称-复制刚刚客户端创建的Window10隧道公钥到接口
+&lt;img alt=&#34;window10隧道公钥&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/1102602785.png&#34;&gt;
+&lt;img alt=&#34;复制到OP&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/3600423415.png&#34;&gt;&lt;/p&gt;
+&lt;h5 id=&#34;设置允许ip非常重要&#34;&gt;设置允许iP非常重要&lt;/h5&gt;
+&lt;p&gt;例子如我客户端远程iP为192.168.105.2/24就需要设置为192.168.105.2/32 设置持续 Keep-Alive为&lt;code&gt;25&lt;/code&gt; 其他可选设置
+&lt;img alt=&#34;允许的 IP&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/2338709599.png&#34;&gt;
+是必须操作的选项每次修改完接口配置都建议重启接口
+然后保存并应用-点击重启接口-点击重启接口-点击重启接口
+&lt;img alt=&#34;点击重启接口&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/2406026720.png&#34;&gt;&lt;/p&gt;
+&lt;h5 id=&#34;再增加一个对端可选&#34;&gt;再增加一个对端（可选）&lt;/h5&gt;
+&lt;p&gt;对端IP为192.168.105.3/24 需要设置允许IP为192.168.105.3/32
+&lt;img alt=&#34;公钥&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/3005810838.png&#34;&gt;
+设置如下
+&lt;img alt=&#34;第二个对端&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/3046932207.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;设置防火墙&#34;&gt;设置防火墙&lt;/h4&gt;
+&lt;p&gt;点击网络-防火墙-找到WAN区域-把入站与出站都设置允许
+&lt;img alt=&#34;防火墙区域设置&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/278395329.png&#34;&gt;
+找到通信规则-添加规则设置需的端口5555
+&lt;img alt=&#34;设置如图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/3875804701.png&#34;&gt;
+点击保存应用&lt;/p&gt;
+&lt;h4 id=&#34;客户端设置&#34;&gt;客户端设置&lt;/h4&gt;
+&lt;p&gt;需要了解PrivateKey为私钥PublicKey为公钥
+把两个隧道的公钥交换 并设置好AllowedIPs 一个为WG的网段一个为主路由OP的网段&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Interface]
+PrivateKey = sBD2AcsmGNddmKRnZItL31lYydshHmxd5ZdVifi5Um0=
+Address = 192.168.105.2/24
+DNS = 192.168.100.1
+
+[Peer]
+PublicKey = 5ZOelbDMJkeXjGuLsVQze8sul+ZnAlYUmAVpsT//hhE=
+AllowedIPs = 192.168.104.1/32, 192.168.100.0/24
+Endpoint = 171.215.223.90:5555
+PersistentKeepalive = 25
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;最后验证&#34;&gt;最后验证&lt;/h2&gt;
+&lt;p&gt;点击连接可以看到有流量就知道通了
+&lt;img alt=&#34;点击链接&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/824864124.png&#34;&gt;
+OP界面也有显示连接
+&lt;img alt=&#34;OP界面显示&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/1412178774.png&#34;&gt;
+ping测试OP与下面局域网设备也可以通过
+&lt;img alt=&#34;ping测试&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/3599056984.png&#34;&gt;
+以上操作都是远程家里OP撰写的，如有问题请留言&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>华为2288H v2 DSM7.1 黑群晖实践</title>
+      <link>http://localhost:1313/1117.html/</link>
+      <pubDate>Sun, 11 Sep 2022 08:11:34 +0000</pubDate>
+      <guid>http://localhost:1313/1117.html/</guid>
+      <description>&lt;h2 id=&#34;黑群晖软件来源&#34;&gt;黑群晖软件来源&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.openos.org/threads/2022810dsm7-x.3529/&#34;&gt;https://www.openos.org/threads/2022810dsm7-x.3529/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/09/image-1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;黑群晖版本&lt;/p&gt;
+&lt;h3 id=&#34;引导类型为efi&#34;&gt;引导类型为EFI&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/09/image-2.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;引导资源与系统安装分享&#34;&gt;引导资源与系统安装分享&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://cloud.189.cn/t/yAfEjiRRbaMv&#34;&gt;https://cloud.189.cn/t/yAfEjiRRbaMv&lt;/a&gt; (访问码:9c17)&lt;/p&gt;
+&lt;h3 id=&#34;2288hv2服务器默认是支持网络唤醒的&#34;&gt;2288hv2服务器默认是支持网络唤醒的&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/09/Snipaste_2022-09-11_12-54-26.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Bios界面选项&lt;/p&gt;
+&lt;h3 id=&#34;华为服务器关闭超线程&#34;&gt;华为服务器关闭超线程&lt;/h3&gt;
+&lt;p&gt;把Intel HT technology 设置成 Disabled就行&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/09/Snipaste_2022-09-11_12-54-48.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Biso界面选项&lt;/p&gt;
+&lt;h3 id=&#34;全系列华为服务器bios选项信息手册地址&#34;&gt;全系列华为服务器BIOS选项信息手册地址&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://support.huawei.com/hedex/hdx.do?docid=EDOC1000010815&amp;amp;lang=zh&#34;&gt;https://support.huawei.com/hedex/hdx.do?docid=EDOC1000010815&amp;amp;lang=zh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/09/image-3.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;界面截图&lt;/p&gt;
+&lt;h3 id=&#34;kvm_client_windows的使用注意事项&#34;&gt;kvm_client_windows的使用注意事项&lt;/h3&gt;
+&lt;p&gt;得把 iMana 升级能找得到的最新版本 RH2285 V2-iMana-V731 才能连上&lt;/p&gt;
+&lt;h2 id=&#34;黑群晖71版本安装时候注意事项重要&#34;&gt;黑群晖7.1版本安装时候注意事项重要&lt;/h2&gt;
+&lt;p&gt;在上传系统包时候 断网安装，不然默认会在后台下载最新的系统版本造成无限还原的情况，不止在本机型号，在其他实体机黑群晖安装7.1版本也会出现这种情况，所以在引导成功找到IP后 &lt;strong&gt;断网安装系统Pat包&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;断网安装系统Pat包 断网安装系统Pat包 断网安装系统Pat包&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>关于openwrt不定时断网研究与解决办法</title>
+      <link>http://localhost:1313/1114.html/</link>
+      <pubDate>Tue, 06 Sep 2022 11:55:13 +0000</pubDate>
+      <guid>http://localhost:1313/1114.html/</guid>
+      <description>&lt;h2 id=&#34;三种解决断网方法&#34;&gt;三种解决断网方法&lt;/h2&gt;
+&lt;p&gt;选择任意一种看能不能解决刷了 openwrt 后光猫桥接 openwrt 当主路由不定时断网问题。&lt;/p&gt;
+&lt;h3 id=&#34;第一种推荐&#34;&gt;第一种（推荐）&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;修改LCP 响应故障阈值&lt;/code&gt;与&lt;code&gt;LCP 响应间隔&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;界面图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2023/05/2853494952.png&#34;&gt;
+LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
+&lt;p&gt;LCP 响应间隔为 未响应 10 次就断开链接重新拨号&lt;/p&gt;
+&lt;h3 id=&#34;第二种-冗余方案&#34;&gt;第二种 （冗余方案）&lt;/h3&gt;
+&lt;p&gt;撰写脚本来只要断网就重启 WAN 口重新拨号&lt;/p&gt;
+&lt;p&gt;第一步通过 ssh 登录 openwrt 后台复制下面命令回车执行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vi /root/dwjb.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;按&lt;code&gt;i&lt;/code&gt;进入编辑模式&lt;/p&gt;
+&lt;p&gt;第二步 复制下面脚本粘贴&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/sh
+tries=0
+logger &amp;#34;my network watchdog start&amp;#34;
+while [[ $tries -lt 5 ]]
+do
+        if /bin/ping -c 1 114.114.114.114 &amp;gt;/dev/null
+        then
+            logger &amp;#34;network pass, exit.&amp;#34;
+            exit 0
+        fi
+        tries=$((tries+1))
+        sleep 10
+done
+logger &amp;#34;network error, restart network&amp;#34;
+/sbin/ifup wan
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;粘贴完成 按【ESC】键跳到命令模式,然后再按【:】冒号键,最后再按【wq】,即可保存退出 vi 的编辑状态;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tailscale安装到ARM openwrt上</title>
+      <link>http://localhost:1313/1076.html/</link>
+      <pubDate>Sun, 12 Jun 2022 12:09:10 +0000</pubDate>
+      <guid>http://localhost:1313/1076.html/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://gao4.top/wp-content/uploads/2022/06/FotoJet-1024x576.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;下载到tmp目录&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget https://pkgs.tailscale.com/stable/tailscale_1.70.0_arm64.tgz -P /tmp
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;解压压缩包并移动二进制文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd /tmp
+tar x -zvf tailscale_1.70.0_arm64.tgz
+cd tailscal_1.70.0_arm64
+mv tailscale tailscaled /usr/sbin/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装依赖文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;opkg update
+opkg install ca-bundle kmod-tun
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建守护脚本文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vim /etc/init.d/tailscale
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;写入如下代码&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/sh /etc/rc.common
+
+# Copyright 2020 Google LLC.
+# SPDX-License-Identifier: Apache-2.0
+
+USE_PROCD=1
+START=80
+
+start_service() {
+  /usr/sbin/tailscaled --cleanup
+
+  procd_open_instance 
+  procd_set_param command /usr/sbin/tailscaled
+
+  # Set the port to listen on for incoming VPN packets.
+  # Remote nodes will automatically be informed about the new port number,
+  # but you might want to configure this in order to set external firewall
+  # settings.
+  procd_append_param command --port 41641
+
+  # OpenWRT /var is a symlink to /tmp, so write persistent state elsewhere.
+  procd_append_param command --state /etc/tailscale/tailscaled.state
+
+  procd_set_param respawn
+  procd_set_param stdout 1
+  procd_set_param stderr 1
+
+  procd_close_instance
+}
+
+stop_service() {
+  /usr/sbin/tailscaled --cleanup
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;收尾工作&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Office LTSC 专业增强版 2021个人指南</title>
+      <link>http://localhost:1313/762.html/</link>
+      <pubDate>Thu, 26 May 2022 18:22:00 +0000</pubDate>
+      <guid>http://localhost:1313/762.html/</guid>
+      <description>&lt;h1 id=&#34;office-ltsc-专业增强版-2021个人指南&#34;&gt;Office LTSC 专业增强版 2021个人指南&lt;/h1&gt;
+&lt;h3 id=&#34;下载office-tool&#34;&gt;下载Office tool&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://otp.landian.vip/zh-cn/&#34;&gt;https://otp.landian.vip/zh-cn/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;推荐使用前三项以跳过安装 OTP 运行环境。解压使用&lt;/p&gt;
+&lt;h3 id=&#34;安装-office-ltsc-专业增强版-2021&#34;&gt;安装 Office LTSC 专业增强版 2021&lt;/h3&gt;
+&lt;p&gt;然后双击运行 &lt;code&gt;Office Tool Plus.exe&lt;/code&gt; ，点击 &lt;code&gt;安装 Office&lt;/code&gt; 后选择 Office LTSC 专业增强版 2021 - 批量许可证，&lt;code&gt;激活设置&lt;/code&gt; 输入密钥 &lt;code&gt;FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH&lt;/code&gt; 安装完毕后 主页面&lt;code&gt;激活&lt;/code&gt; &lt;code&gt;KMS管理&lt;/code&gt; 输入&lt;code&gt;kms.03k.org&lt;/code&gt; 大佬运行很久的地址 点击右上角&lt;code&gt;激活&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;密钥&#34;&gt;密钥&lt;/h3&gt;
+&lt;p&gt;Office LTSC 2021系列版本GVLK通用密钥：&lt;/p&gt;
+&lt;p&gt;转自 &lt;a href=&#34;https://www.landian.vip/download/91008.html&#34;&gt;https://www.landian.vip/download/91008.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GVLK即通用密钥，以下密钥均为微软公开密钥不涉任何版权问题，以下密钥仅用于企业KMS激活无法直接使用。&lt;/p&gt;
+&lt;p&gt;版本名称：Office LTSC Professional Plus 2021 GVLK密钥： FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH&lt;/p&gt;
+&lt;p&gt;打包为ISO文件&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;创建iso文件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220518071144600.png&#34; title=&#34;创建iso文件&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;下载设置&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220518071237169.png&#34; title=&#34;下载设置&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>更换ACME.sh的CA为ZeroSSL</title>
+      <link>http://localhost:1313/761.html/</link>
+      <pubDate>Mon, 02 May 2022 15:09:00 +0000</pubDate>
+      <guid>http://localhost:1313/761.html/</guid>
+      <description>&lt;h2 id=&#34;更换acmesh的ca为zerossl&#34;&gt;更换ACME.sh的CA为ZeroSSL&lt;/h2&gt;
+&lt;h2 id=&#34;安装acme&#34;&gt;安装ACME&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git clone https://github.com/acmesh-official/acme.sh.git
+cd acme.sh
+./acme.sh --install -m my@example.com
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;1访问账户注册页面注册一个zerossl账户&#34;&gt;1.访问账户注册页面注册一个ZeroSSL账户&lt;/h4&gt;
+&lt;p&gt;传送门：&lt;a href=&#34;https://app.zerossl.com/signup&#34;&gt;https://app.zerossl.com/signup&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2获取账户的eab凭证用来注册acme帐户&#34;&gt;2.获取账户的EAB凭证，用来注册acme帐户&lt;/h4&gt;
+&lt;p&gt;&lt;img alt=&#34;申请界面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220502143653073.png&#34; title=&#34;申请界面&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3注册acme帐户&#34;&gt;3.注册ACME帐户&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;acme.sh  --register-account  --server zerossl \
+        --eab-kid  你的eab-kid \
+        --eab-hmac-key  你的eab-hmac-key
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;4切换acmesh的默认ca为zerossl&#34;&gt;4.切换acme.sh的默认CA为ZeroSSL&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;acme.sh --set-default-ca  --server zerossl
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;5设置阿里云访问密钥&#34;&gt;5.设置阿里云访问密钥&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;一条一条执行
+export Ali_Key=&amp;#34;LTAIIJoxxxxxxxxxx&amp;#34;
+export Ali_Secret=&amp;#34;mcSQ6Ab7KmEed5uNyyyyyyyyy&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;6签发通配符证书以阿里云dns验证方式&#34;&gt;6.签发通配符证书以阿里云dns验证方式&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;acme.sh --issue --dns dns_ali -d *.gao4.top
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Openwrt WireGuard连接局域网2022</title>
+      <link>http://localhost:1313/760.html/</link>
+      <pubDate>Sat, 23 Apr 2022 23:29:00 +0000</pubDate>
+      <guid>http://localhost:1313/760.html/</guid>
+      <description>&lt;p&gt;2022年lede固件默认编译的时候已经支持WireGuard进固件保持固件是最新即可&lt;br&gt;
+如果编译的时候取消了 后面安装是很麻烦的 因为内核不匹配，和仓库有兼容性问题&lt;br&gt;
+最好的办法就是编译的时候就已经选择，后面也不要取消&lt;/p&gt;
+&lt;h2 id=&#34;openwrt-wireguard-连接局域网-2022&#34;&gt;openwrt WireGuard 连接局域网 2022&lt;/h2&gt;
+&lt;h3 id=&#34;下载客户端生成密钥&#34;&gt;下载客户端生成密钥&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://www.wireguard.com/install/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img alt=&#34;生成密钥&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220423220927767.png&#34; title=&#34;生成密钥&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我们生成两个隧道 一个作为服务端 一个作为客户端 没错逻辑和ssh一模一样。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;生成的密钥&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220423221355244.png&#34; title=&#34;生成的密钥&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;openwrt-服务端配置&#34;&gt;openwrt 服务端配置&lt;/h3&gt;
+&lt;p&gt;然后我们就登录到OP的web界面找到&lt;code&gt;网络-接口-添加新接口&lt;/code&gt; 添加一个名称为&lt;code&gt;WG0&lt;/code&gt; 新接口协议&lt;/p&gt;
+&lt;p&gt;为&lt;code&gt;WireGuard VPN&lt;/code&gt; 然后我们点击提交&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;创建接口&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220423221903500.png&#34; title=&#34;创建接口&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后到我们刚刚用客户端生成的1openwrt 点击编辑 把 &lt;code&gt;PrivateKey私钥&lt;/code&gt;复制到基本&lt;code&gt;设置-私钥&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;复制1openwrt私钥&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220423222241057.png&#34; title=&#34;复制1openwrt私钥&#34;&gt;&lt;/p&gt;
+&lt;p&gt;并填写相关配置监听端口随意比如说我的&lt;code&gt;4399&lt;/code&gt; IP地址为&lt;code&gt;10.0.0.1/24&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;基本设置&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220423222633747.png&#34; title=&#34;基本设置&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;配置peers&#34;&gt;配置Peers&lt;/h4&gt;
+&lt;p&gt;复制2win客户端的&lt;code&gt;公钥&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;复制2win客户端公钥&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220423222954964.png&#34; title=&#34;复制2win客户端公钥&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击&lt;code&gt;添加&lt;/code&gt; 复制2win客户端的&lt;code&gt;公钥&lt;/code&gt; 添加到&lt;code&gt;Peers公钥&lt;/code&gt; 选项并填写允许IP为&lt;code&gt;10.0.0.0/24&lt;/code&gt; 配置如下&lt;/p&gt;
+&lt;p&gt;点击&lt;code&gt;保存&amp;amp;应用&lt;/code&gt; 其他不用配置&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Peers设置&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220423223413138.png&#34; title=&#34;Peers设置&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置防火墙并开启端口&#34;&gt;配置防火墙并开启端口&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;接口-WG0-防火墙设置 选择lan区域&lt;/code&gt; 点击&lt;code&gt;保存&amp;amp;应用&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;设置防火墙区域&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220423223621367.png&#34; title=&#34;设置防火墙区域&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;防火墙-通信规则-打开路由器端口&lt;/strong&gt; 自定义名字&lt;code&gt;WG0&lt;/code&gt; 协议选择&lt;code&gt;UDP&lt;/code&gt; 外部端口选择&lt;code&gt;4399&lt;/code&gt; 点击添加 在最下面点击&lt;code&gt;保存&amp;amp;应用&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;打开路由器端口&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220423223920910.png&#34; title=&#34;打开路由器端口&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;win客户端配置&#34;&gt;WIN客户端配置&lt;/h3&gt;
+&lt;p&gt;点击&lt;code&gt;编辑2win&lt;/code&gt; 复制下面参数 从Address开始复制 把Peer选项中&lt;code&gt;PublicKey公钥&lt;/code&gt; 替换为1openwrt的公钥&lt;/p&gt;
+&lt;p&gt;好好理解这段话 其实和ssh的过程一样 都是两个端之间交换公钥来互相通信，其中192.168.100.0/24为我局域网网段作用为远程访问openwrt lan下地址&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Interface]
+PrivateKey = sAueVLI2sdRY42jmjcMoXDYFns4M1Qd/47GN0DpsA3E=
+Address = 10.0.0.2/24
+DNS = 1.1.1.1
+
+[Peer]
+PublicKey = H0DDIv4uZHKJ/BGG4Mqxp5734f/0cGtmZ7SOOzYMZig=
+AllowedIPs = 192.168.100.0/24, 10.0.0.0/24
+Endpoint = x.gao4.top:4399
+PersistentKeepalive = 25 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;点击保存 再点击连接进行测试 接受有流量就代表我们连接成功，反之没有流量显示已连接其实没有连接成功&lt;img alt=&#34;2win客户端1&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/ig/image-20220423231134793.png&#34; title=&#34;2win客户端1&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wg-Easy一个几分钟搞定访问局域网的wg面板</title>
+      <link>http://localhost:1313/759.html/</link>
+      <pubDate>Fri, 22 Apr 2022 14:26:00 +0000</pubDate>
+      <guid>http://localhost:1313/759.html/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在前面博主比较推荐tailscale这款软件也是基于Wg协议的，但兜兜转转还是回归了wireguard，&lt;/p&gt;
+&lt;p&gt;回归了传统的那种网络模型 ，或许网状形的模型成熟了再换也不迟，这面板就是快速让你部署后，并且能远程访问局域网地址&lt;/p&gt;
+&lt;h2 id=&#34;快速搭建&#34;&gt;快速搭建&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir /home/wg-easy
+cd /home/wg-easy
+nano /home/wg-easy/docker-compose.yml 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;内容如下&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;version: &amp;#34;3.3&amp;#34;
+services:
+  wg-easy:
+    environment:
+      # ⚠️ Required:
+      # Change this to your host&amp;#39;s public address
+      - WG_HOST=g.gao4.top
+
+      # Optional:
+      # - PASSWORD=foobar123
+      # - WG_PORT=51820
+      # - WG_DEFAULT_ADDRESS=10.8.0.x
+      # - WG_DEFAULT_DNS=1.1.1.1
+      # - WG_MTU=1420
+      - WG_ALLOWED_IPS=192.168.100.0/24, 10.8.0.0/24
+      - WG_PERSISTENT_KEEPALIVE=25
+
+    image: weejewel/wg-easy
+    container_name: wg-easy
+    volumes:
+      - .:/etc/wireguard
+    ports:
+      - &amp;#34;51820:51820/udp&amp;#34;
+      - &amp;#34;51821:51821/tcp&amp;#34;
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    sysctls:
+      - net.ipv4.ip_forward=1
+      - net.ipv4.conf.all.src_valid_mark=1 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;需要配置的环境变量如下&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Headscale服务器搭建启用SSL证书</title>
+      <link>http://localhost:1313/758.html/</link>
+      <pubDate>Tue, 12 Apr 2022 18:35:00 +0000</pubDate>
+      <guid>http://localhost:1313/758.html/</guid>
+      <description>&lt;h2 id=&#34;20230705更新&#34;&gt;20230705更新&lt;/h2&gt;
+&lt;p&gt;systemd方式启动Headscale会有启动不成功现象 配置ssl证书后 推荐去官方页面抄nginx反向代理进行增加ssl
+推测是因为权限原因，推荐测试时候全新安装不修改配置文件情况下来启动。&lt;/p&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在前些日子，写了一篇文章关于headscale服务器的，这次有更深的理解，希望谷歌出来这篇文章的朋友有所帮助&lt;/p&gt;
+&lt;h2 id=&#34;环境&#34;&gt;环境&lt;/h2&gt;
+&lt;p&gt;系统debian11 并root用户登录&lt;/p&gt;
+&lt;h2 id=&#34;开启端口&#34;&gt;开启端口&lt;/h2&gt;
+&lt;p&gt;有用的就8080端口其他端口有需要开放&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;## 服务器服务端口
+8080 
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;安装headscale&#34;&gt;安装headscale&lt;/h2&gt;
+&lt;p&gt;创建相关目录与文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir -p /etc/headscale
+mkdir -p /var/lib/headscale
+touch /var/lib/headscale/db.sqlite
+touch /etc/headscale/config.yaml 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/juanfont/headscale/releases&#34;&gt;&lt;code&gt;headscale&lt;/code&gt;从 GitHub 的发布页面&lt;/a&gt;下载最新的二进制文件重命名为&lt;code&gt;headscale&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;上传到&lt;code&gt;/root&lt;/code&gt;目录&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mv /root/headscale /usr/local/bin/
+chmod +x /usr/local/bin/headscale 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;复制Github仓库里的&lt;a href=&#34;https://github.com/juanfont/headscale/blob/main/config-example.yaml&#34;&gt;示例配置&lt;/a&gt;内容到&lt;code&gt;config.yaml&lt;/code&gt;文件`&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nano /etc/headscale/config.yaml 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;配置文件修改内容 如下 证书配置绝对不要双引号直接配置为绝对路径&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;server_url: http://127.0.0.1:8080
+修改为 这选项需要配置域名
+server_url: https://he.gao4.top:8080
+配置自定义本地证书
+tls_cert_path: &amp;#34;&amp;#34;
+tls_key_path: &amp;#34;&amp;#34;
+修改如下 
+tls_cert_path: /root/.acme.sh/he.gao4.top/fullchain.cer
+tls_key_path: /root/.acme.sh/he.gao4.top/he.gao4.top.key
+配置客户端证书模式
+tls_client_auth_mode: relaxed
+修改为
+tls_client_auth_mode: disabled 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建 SystemD service 配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nano  /etc/systemd/system/headscale.service 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;内容如下&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Unit]
+Description=headscale
+After=network.target
+
+[Service]
+WorkingDirectory=/etc/headscale
+ExecStart=/usr/local/bin/headscale serve
+# Disable debug mode
+Environment=GIN_MODE=release
+
+[Install]
+WantedBy=multi-user.target 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重载SystemD配置文件&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Caddy安装反向代理Hugo</title>
+      <link>http://localhost:1313/757.html/</link>
+      <pubDate>Sun, 27 Mar 2022 19:59:00 +0000</pubDate>
+      <guid>http://localhost:1313/757.html/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;记录个人的blog相关的配置 其实我就是在腾讯云服务器上安装caddy然后再反向代理各种服务&lt;/p&gt;
+&lt;h2 id=&#34;caddy安装&#34;&gt;caddy安装&lt;/h2&gt;
+&lt;p&gt;使用的&lt;a href=&#34;https://teddysun.com/610.html&#34;&gt;https://teddysun.com/610.html&lt;/a&gt; 秋水编译版本&lt;br&gt;
+下载并重命名&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget https://dl.lamp.sh/files/caddy_linux_amd64
+mv caddy_linux_amd64 caddy 
+mv caddy /usr/local/bin/
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;放置配置文件&#34;&gt;放置配置文件&lt;/h3&gt;
+&lt;p&gt;反向代理了两个网站 一个是本地目录另一个是启动的本地容器端口83 很好的理解&lt;/p&gt;
+&lt;p&gt;nano /etc/caddy/Caddyfile&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;gao4.top {
+  gzip
+  root /home/docker/hugo/blog/public
+}
+
+
+https://b.gao4.top {
+        
+        proxy / http://127.0.0.1:83
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;caddy的caddyservice文件&#34;&gt;caddy的caddy.service文件&lt;/h3&gt;
+&lt;p&gt;nano /etc/systemd/system/caddy.service&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Unit]
+Description=Caddy HTTP/2 web server
+After=syslog.target
+After=network.target
+
+[Service]
+User=root
+Group=root
+LimitNOFILE=64000
+ExecStart=/usr/local/bin/caddy --conf=/etc/caddy/Caddyfile
+Restart=on-failure
+
+[Install]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;caddy-配置管理&#34;&gt;caddy 配置管理&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;systemctl enable caddy.service   # 开机启动
+systemctl start caddy.service    # 启动
+systemctl stop caddy.service     # 停止
+systemctl restart caddy.service  # 重启
+systemctl status caddy.service   # 查看状态
+systemctl daemon-reload          # 重载配置
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;hugo-安装&#34;&gt;hugo 安装&lt;/h2&gt;
+&lt;p&gt;hugo安装很简单直接去GitHub网站下载二进制文件就好，一般下载扩展版 用来支持主题需要&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>全能推送 openwrt插件</title>
+      <link>http://localhost:1313/751.html/</link>
+      <pubDate>Mon, 21 Mar 2022 16:59:00 +0000</pubDate>
+      <guid>http://localhost:1313/751.html/</guid>
+      <description>&lt;p&gt;一款推送软路由openwrt当期运行状态的插件&lt;br&gt;
+推送至钉钉&lt;/p&gt;
+&lt;p&gt;现在推送信息生态最好的就是Server酱，可在大量使用后作者也不得不走向了收费，免费额度有限，这也是我不得不转向替代品的寻找。&lt;/p&gt;
+&lt;h2 id=&#34;环境&#34;&gt;环境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;openwrt x86-64 官方版本&lt;/li&gt;
+&lt;li&gt;钉钉机器人&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;插件说明&#34;&gt;插件说明&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/zzsj0928/luci-app-pushbot&#34;&gt;开源地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;p&gt;ssh登录软路由后台地址&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd /tmp
+wget https://op.dllkids.xyz/packages/x86_64/luci-app-pushbot_3.**_all.ipk
+opkg update &amp;amp; opkg install iputils-arping   curl   wrtbwmon   luci-app-pushbot*
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;插件设置&#34;&gt;插件设置&lt;/h2&gt;
+&lt;h3 id=&#34;钉钉机器人&#34;&gt;钉钉机器人&lt;/h3&gt;
+&lt;p&gt;钉钉机器人获取webhook&lt;br&gt;
+电脑端钉钉 新建群 然后设置里添加自定义机器人并设置关键字 还需要只需要 webhook链接那&lt;code&gt;access_token&lt;/code&gt; 后面的那一串字符串&lt;br&gt;
+&lt;img alt=&#34;关键字&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/03/232947806.png&#34; title=&#34;关键字&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;插件设置-1&#34;&gt;插件设置&lt;/h3&gt;
+&lt;p&gt;Webhook填入你&lt;code&gt;access_token&lt;/code&gt; 后面的字符串&lt;/p&gt;
+&lt;p&gt;本设备名称填入你设置的钉钉机器人关键字&lt;/p&gt;
+&lt;p&gt;然后保存运行就好建议开启日志测试&lt;/p&gt;
+&lt;h3 id=&#34;运行效果&#34;&gt;运行效果&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;效果&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/03/2068492024.png&#34; title=&#34;效果&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;常见问题&#34;&gt;常见问题&lt;/h2&gt;
+&lt;p&gt;1 推送不成功日志显示&lt;br&gt;
+【！！！！】当前网络不通！停止检测！&lt;br&gt;
+1.2 检查openwrt是否正常拨号成功&lt;br&gt;
+1.3 检查curl插件是否安装，我遇到就是curl插件有问题重新安装解决的&lt;/p&gt;
+&lt;p&gt;2定时任务不运行&lt;br&gt;
+在luci-app-pushbot插件界面设置定时任务后保存观察 &lt;strong&gt;系统&lt;/strong&gt; 》&lt;strong&gt;计划任务&lt;/strong&gt; 内是否有/usr/bin/pushbot/pushbot 的定时计划 ，&lt;br&gt;
+2.2 没有任务的话在ssh登录openwrt运行一下 /usr/bin/pushbot/pushbot send &lt;strong&gt;很玄学&lt;/strong&gt; ，后面保存定时任务就正常保存。&lt;/p&gt;
+&lt;p&gt;3 注意安装相关依赖插件 依赖 iputils-arping + curl 命令，安装前请 opkg update，小内存路由谨慎安装&lt;br&gt;
+如果无的话运行相关命令 。wrtbwmon是检测流量相关的依赖 ，没有安装在日志里有提示。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2022年Resilio Sync在Linux安装搭建</title>
+      <link>http://localhost:1313/743.html/</link>
+      <pubDate>Mon, 14 Feb 2022 15:57:00 +0000</pubDate>
+      <guid>http://localhost:1313/743.html/</guid>
+      <description>&lt;p&gt;2022年7月6日更新&lt;/p&gt;
+&lt;p&gt;修复配置保存问题&lt;/p&gt;
+&lt;p&gt;修复长时间运行保存问题&lt;/p&gt;
+&lt;h1 id=&#34;序言&#34;&gt;序言&lt;/h1&gt;
+&lt;p&gt;17年就体验的分布式同步软件 体验很不错，网上也有密钥分享再回忆起来服务怎么搭建。顺便填一点小坑&lt;/p&gt;
+&lt;p&gt;1下载安装包 &lt;a href=&#34;https://pan.gao4.top/aliyundrive/resilio&#34;&gt;孤岛云盘&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget https://download-cdn.resilio.com/stable/linux-x64/resilio-sync_x64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2安装&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tar -xzvf resilio-sync_x64.tar.gz
+sudo mv rslsync /usr/bin
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3修改启动用户防止权限问题&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo nano /etc/systemd/system/resilio.service
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;内容如下&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Unit]
+Description=Resilio Sync service
+Documentation=https://help.resilio.com
+After=network.target network-online.target
+
+[Service]
+Type=forking
+UMask=0002
+Restart=on-failure
+PermissionsStartOnly=true
+
+User=root
+Group=root
+Environment=&amp;#34;SYNC_USER=root&amp;#34;
+Environment=&amp;#34;SYNC_GROUP=root&amp;#34;
+
+Environment=&amp;#34;SYNC_RUN_DIR=/var/run/resilio-sync&amp;#34;
+Environment=&amp;#34;SYNC_LIB_DIR=/var/lib/resilio-sync&amp;#34;
+Environment=&amp;#34;SYNC_CONF_DIR=/etc/resilio-sync&amp;#34;
+
+PIDFile=/var/run/resilio-sync/sync.pid
+
+ExecStartPre=/bin/mkdir -p ${SYNC_RUN_DIR} ${SYNC_LIB_DIR}
+ExecStartPre=/bin/chown -R ${SYNC_USER}:${SYNC_GROUP} ${SYNC_RUN_DIR} ${SYNC_LIB_DIR}
+ExecStart=/usr/bin/rslsync --config ${SYNC_CONF_DIR}/config.json
+ExecStartPost=/bin/sleep 1
+
+[Install]
+WantedBy=multi-user.target 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;写入配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir /etc/resilio-sync
+nano /etc/resilio-sync/config.json
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{
+    &amp;#34;storage_path&amp;#34; : &amp;#34;/var/lib/resilio-sync/&amp;#34;,
+    &amp;#34;pid_file&amp;#34; : &amp;#34;/var/run/resilio-sync/sync.pid&amp;#34;,
+
+    &amp;#34;webui&amp;#34; :
+    {
+        &amp;#34;force_https&amp;#34;: true,
+        &amp;#34;listen&amp;#34; : &amp;#34;0.0.0.0:8888&amp;#34;
+    }
+} 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;重载服务&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ESXI7.0 Update 2下黑群晖7.01安装</title>
+      <link>http://localhost:1313/738.html/</link>
+      <pubDate>Sat, 08 Jan 2022 15:02:27 +0000</pubDate>
+      <guid>http://localhost:1313/738.html/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;只是填坑把遇到的问题写出来&lt;/p&gt;
+&lt;h2 id=&#34;相关软件分享&#34;&gt;相关软件分享&lt;/h2&gt;
+&lt;p&gt;引导来源&lt;a href=&#34;https://www.openos.org/threads/1211esxi7-0-1-42218vmxnet3.3814/page-5#post-42800&#34;&gt;【12月11日更新】ESXI专用群晖7.0.1 42218引导vmxnet3 | 第 5 页 | OPENOS-服务器-路由器-黑群晖-NAS-网络存储-虚拟化&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;文件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/805129475.png&#34; title=&#34;文件&#34;&gt;&lt;/p&gt;
+&lt;p&gt;「DSM7.01」，点击链接保存，或者复制本段内容，打开「阿里云盘」APP ，无需下载极速在线查看，视频原画倍速播放。&lt;br&gt;
+链接：&lt;a href=&#34;https://www.aliyundrive.com/s/vTAodWTdNsP&#34;&gt;https://www.aliyundrive.com/s/vTAodWTdNsP&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;esxi70-下虚拟黑群晖注意事项&#34;&gt;ESXI7.0 下虚拟黑群晖注意事项&lt;/h3&gt;
+&lt;p&gt;把交换机的安全选项全部设置为&lt;strong&gt;接受&lt;/strong&gt;，不设置可以试试不然根本群晖的ip，路由器上看不到分配群晖的ip&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;注意事项&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/4072798372.png&#34; title=&#34;注意事项&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;我的虚拟群晖配置&#34;&gt;我的虚拟群晖配置&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;硬盘为SATA&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/2176242978.png&#34; title=&#34;硬盘为SATA&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;网卡为默认的VMXNET3&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/537278402.png&#34; title=&#34;网卡为默认的VMXNET3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;整体虚拟硬件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/3275028051.png&#34; title=&#34;整体虚拟硬件&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;客户端配置&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/1534275700.png&#34; title=&#34;客户端配置&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;引导为BIOS&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/1389071870.png&#34; title=&#34;引导为BIOS&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;注意事项&#34;&gt;注意事项&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;群晖助手搜索不到去路由器后台看有没有分配ip&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>headscale开源服务器搭建</title>
+      <link>http://localhost:1313/723.html/</link>
+      <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
+      <guid>http://localhost:1313/723.html/</guid>
+      <description>&lt;h2 id=&#34;2022年1月5日更新&#34;&gt;2022年1月5日更新&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;GitHub仓库的文档已更新，可正常运行。&lt;/li&gt;
+&lt;li&gt;配置文件里本地ssl证书设置好了后不起效果&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/juanfont/headscale&#34;&gt;headscale&lt;/a&gt;是一款今年 2021 年出现的一款 Tailscale 控制服务器的开源实现。也是唯一的一款。望能发展壮大。&lt;/p&gt;
+&lt;h2 id=&#34;环境&#34;&gt;环境&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Ubuntu 18.04.3（理论上正常支持systemctl的Linux发行版本都能搭建）&lt;/li&gt;
+&lt;li&gt;端口8080&lt;/li&gt;
+&lt;li&gt;版本为v0.11&lt;br&gt;
+&lt;img alt=&#34;使用版本&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/1728101212.png&#34; title=&#34;使用版本&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;注意事项&#34;&gt;注意事项&lt;/h2&gt;
+&lt;p&gt;官方的当前时间也是本文章撰写的时间。最新版本的配置文件不兼容版本号为&lt;strong&gt;v0.12.1&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;搭建过程&#34;&gt;搭建过程&lt;/h2&gt;
+&lt;p&gt;下载二进制文件与源代码&lt;br&gt;
+&lt;a href=&#34;https://github.com/juanfont/headscale/releases/download/v0.11.0/headscale_0.11.0_linux_amd64&#34;&gt;&lt;strong&gt;headscale_0.11.0_linux_amd64&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/juanfont/headscale/archive/refs/tags/v0.11.0.zip&#34;&gt;&lt;strong&gt;Source code&lt;/strong&gt; (zip)&lt;/a&gt;&lt;br&gt;
+&lt;img alt=&#34;文件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/1644842355.png&#34; title=&#34;文件&#34;&gt;&lt;br&gt;
+上传headscale_0.11.0_linux_amd64文件到&lt;code&gt;/usr/local/bin&lt;/code&gt;并重命名为&lt;code&gt;headscale&lt;/code&gt;并赋予执行权限&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chmod 755 /usr/local/bin/headscale
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;登录服务器创建目录及文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir /etc/headscale
+cd /etc/headscale
+touch db.sqlite
+touch config.yaml
+touch derp.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意在0.12版本已不需要生成密钥会自动生成,或许需要安装&lt;code&gt;wireguard&lt;/code&gt;我们是0.11版本所以需要手动生成&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apt-get update
+apt-get install wireguard
+wg genkey &amp;gt; private.key
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后目录结构如下&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root@10-255-1-181:/etc/headscale# tree
+.
+├── config.yaml
+├── db.sqlite
+├── derp.yaml
+└── private.key
+
+0 directories, 4 files
+root@10-255-1-181:/etc/headscale#
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;填写config.yaml内容，内容来源于解压的v0.11.0.zip压缩包config-example.yaml内容&lt;br&gt;
+&lt;img alt=&#34;config-example&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/1966737605.png&#34; title=&#34;config-example&#34;&gt;&lt;br&gt;
+填写derp.yaml内容内容来源于解压的v0.11.0.zip压缩包derp-example.yaml内容&lt;br&gt;
+&lt;img alt=&#34;derp-example&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/3535675087.png&#34; title=&#34;derp-example&#34;&gt;&lt;/p&gt;
+&lt;p&gt;撰写&lt;code&gt;headscale.service&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nano  /etc/systemd/system/headscale.service
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;[Unit]
+Description=headscale
+After=network.target&lt;/p&gt;
+&lt;p&gt;[Service]
+WorkingDirectory=/etc/headscale
+ExecStart=/usr/local/bin/headscale serve&lt;/p&gt;
+&lt;h1 id=&#34;disable-debug-mode&#34;&gt;Disable debug mode&lt;/h1&gt;
+&lt;p&gt;Environment=GIN_MODE=release&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RH 2288H v2 相关资源分享</title>
+      <link>http://localhost:1313/720.html/</link>
+      <pubDate>Wed, 22 Dec 2021 15:27:00 +0000</pubDate>
+      <guid>http://localhost:1313/720.html/</guid>
+      <description>&lt;p&gt;分享&lt;br&gt;
+&lt;img alt=&#34;相关&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/3078162299.png&#34; title=&#34;相关&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;远程java相关&#34;&gt;远程java相关&lt;/h2&gt;
+&lt;p&gt;点击远程控制 在win10下用ie浏览器可行&lt;/p&gt;
+&lt;p&gt;jre-7u4-windows-i586&lt;/p&gt;
+&lt;p&gt;kvm_client_windows&lt;/p&gt;
+&lt;p&gt;「NAS常用软件引导软件系统镜像」，点击链接保存，或者复制本段内容，打开「阿里云盘」APP ，无需下载极速在线查看，视频原画倍速播放。&lt;br&gt;
+提取码: akp9&lt;br&gt;
+链接：&lt;a href=&#34;https://www.aliyundrive.com/s/L4FYdRnstgA&#34;&gt;https://www.aliyundrive.com/s/L4FYdRnstgA&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;esxi相关&#34;&gt;ESxi相关&lt;/h2&gt;
+&lt;p&gt;亲测官网下载的esxi7.0u2能装上运行&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>netmaker 搭建教程 组建虚拟局域网</title>
+      <link>http://localhost:1313/715.html/</link>
+      <pubDate>Wed, 01 Dec 2021 22:43:00 +0000</pubDate>
+      <guid>http://localhost:1313/715.html/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装&lt;br&gt;
+&lt;a href=&#34;https://docs.netmaker.org/quick-start.html&#34;&gt;官方文档地址&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;过程&#34;&gt;过程&lt;/h1&gt;
+&lt;h3 id=&#34;环境&#34;&gt;环境&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;腾讯云乌班图20.04版本无任何其他网站宝塔乱七八糟软件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1 安装环境&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install -y docker.io docker-compose wireguard
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2开放防火墙&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo ufw allow proto tcp from any to any port 443 &amp;amp;&amp;amp; sudo ufw allow 53/udp &amp;amp;&amp;amp; sudo ufw allow 53/tcp &amp;amp;&amp;amp; sudo ufw allow 51821:51830/udp
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;开放云服务器端口切记 端口如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;allow 443/tcp from all&lt;/li&gt;
+&lt;li&gt;allow 53/udp and 53/tcp from all&lt;/li&gt;
+&lt;li&gt;allow 51821-51830/udp from all&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;3获取docker-compose文件并修改&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wget -O docker-compose.yml https://raw.githubusercontent.com/gravitl/netmaker/master/compose/docker-compose.contained.yml
+sed -i &amp;#39;s/NETMAKER_BASE_DOMAIN/&amp;lt;your base domain&amp;gt;/g&amp;#39; docker-compose.yml
+sed -i &amp;#39;s/SERVER_PUBLIC_IP/&amp;lt;your server ip&amp;gt;/g&amp;#39; docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;解释your base domain为泛域名your server ip为公网ip&lt;br&gt;
+&lt;img alt=&#34;例子&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/2878924425.png&#34; title=&#34;例子&#34;&gt;&lt;br&gt;
+修改docker-compose56行把容器网络端口模式为本地网络模式&lt;br&gt;
+&lt;img alt=&#34;修改网络模式&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/2598405899.png&#34; title=&#34;修改网络模式&#34;&gt;&lt;br&gt;
+4生成密钥并写入&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>netmaker win10 手动添加节点</title>
+      <link>http://localhost:1313/711.html/</link>
+      <pubDate>Wed, 01 Dec 2021 22:21:54 +0000</pubDate>
+      <guid>http://localhost:1313/711.html/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/gravitl/netmaker/releases&#34;&gt;https://github.com/gravitl/netmaker/releases&lt;/a&gt;&lt;br&gt;
+去下载&lt;a href=&#34;https://github.com/gravitl/netmaker/releases/download/v0.9.0/netclient.exe&#34;&gt;&lt;strong&gt;netclient.exe&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;
+&lt;img alt=&#34;netclient.exe&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/273974275.png&#34; title=&#34;netclient.exe&#34;&gt;&lt;/p&gt;
+&lt;p&gt;放到D盘或者C盘管理员身份运行&lt;strong&gt;PowerShell&lt;/strong&gt;&lt;br&gt;
+&lt;img alt=&#34;运行命令&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/700091264.png&#34; title=&#34;运行命令&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>unraid6.9.2 安装群晖DSM7.0.1</title>
+      <link>http://localhost:1313/707.html/</link>
+      <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
+      <guid>http://localhost:1313/707.html/</guid>
+      <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.openos.org/threads/111ds3615ds918ds36157-x.3529/page-172#post-40022&#34;&gt;引导驱动来源openos论坛&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用版本 DS3615xs_7.01-42218&lt;/p&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;p&gt;新建Linux虚拟机配置如下&lt;strong&gt;按照配置启动虚拟机&lt;/strong&gt;就行，不用改什么全程图形化&lt;br&gt;
+&lt;img alt=&#34;虚拟机配置&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/11/805891248.png&#34; title=&#34;虚拟机配置&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;详细主要配置&#34;&gt;详细主要配置&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Machine i440fx-5.1&lt;/li&gt;
+&lt;li&gt;Bios OVMF&lt;/li&gt;
+&lt;li&gt;Primary vDisk Location MAnual&lt;/li&gt;
+&lt;li&gt;Primary vDisk Bus SATA&lt;/li&gt;
+&lt;li&gt;Network MAC 00:11:32:11:22:33&lt;/li&gt;
+&lt;li&gt;Network Model virtio-net&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;后言&#34;&gt;后言&lt;/h2&gt;
+&lt;p&gt;在什么值得买上有一篇在unraid下搭建黑群晖7的文章，按照它的教程，有可能会出现，在安装成功后卸载套件或停止套件出现死机重启的情况。&lt;/p&gt;
+&lt;h3 id=&#34;偶遇问题&#34;&gt;偶遇问题&lt;/h3&gt;
+&lt;p&gt;安装套件后权限问题&lt;br&gt;
+&lt;img alt=&#34;套件后权限&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/11/1761296647.png&#34; title=&#34;套件后权限&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>密钥</title>
+      <link>http://localhost:1313/%E5%AF%86%E9%92%A5.html/</link>
+      <pubDate>Mon, 01 Nov 2021 11:47:00 +0000</pubDate>
+      <guid>http://localhost:1313/%E5%AF%86%E9%92%A5.html/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;个人使用转载于qifcn&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对于新入手或重装后的 VPS 配置密钥登录需要创建 &lt;code&gt;~/.ssh&lt;/code&gt; 目录、把公钥写入到 &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt;、设置权限、禁用密码登录等操作，虽然都是很简单的基础操作，但过程麻烦且枯燥：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir -p ~/.ssh
+curl -fsSL https://github.com/qifcn.keys &amp;gt;&amp;gt; ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+sudo sed -i &amp;#34;s@.*\(PasswordAuthentication \).*@\1no@&amp;#34; /etc/ssh/sshd_config
+sudo service sshd restart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://gao4.top/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC9TU0hfS2V5X0luc3RhbGxlcg&#34;&gt;SSH 密钥一键配置脚本&lt;/a&gt;是一套用于简化 SSH 密钥配置过程的解决方案。使用它以上操作只需要一行命令：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL gao4.top/key.sh) -g qifcn -d
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;语法及选项说明&#34;&gt;语法及选项说明&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL gao4.top/key.sh) [选项...] &amp;lt;参数&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-o&lt;/code&gt; - 覆盖模式，必须写在最前面才会生效&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-g&lt;/code&gt; - 从 GitHub 获取公钥，参数为 GitHub 用户名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-u&lt;/code&gt; - 从 URL 获取公钥，参数为 URL&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-f&lt;/code&gt; - 从本地文件获取公钥，参数为本地文件路径&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-p&lt;/code&gt; - 修改 SSH 端口，参数为端口号&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-d&lt;/code&gt; - 禁用密码登录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用方法&#34;&gt;使用方法&lt;/h2&gt;
+&lt;h3 id=&#34;生成-ssh-密钥对&#34;&gt;生成 SSH 密钥对&lt;/h3&gt;
+&lt;p&gt;如果没有密钥需要先生成，执行以下命令后一路回车即可。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>折腾NAS中用的软件资源分享</title>
+      <link>http://localhost:1313/686.html/</link>
+      <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/686.html/</guid>
+      <description>&lt;h1 id=&#34;资源链接阿里云盘&#34;&gt;资源链接阿里云盘&lt;/h1&gt;
+&lt;p&gt;我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀&lt;br&gt;
+复制这段内容打开「阿里云盘」App 即可获取&lt;br&gt;
+链接：&lt;a href=&#34;https://www.aliyundrive.com/s/QUm851phfC7&#34;&gt;https://www.aliyundrive.com/s/QUm851phfC7&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;esxi常用系统ova模板&#34;&gt;Esxi常用系统ova模板&lt;/h2&gt;
+&lt;p&gt;搜集来自于sysin博客，sysin博主分享是百度云，本博客下载下来后上传至阿里云盘全部为&lt;strong&gt;标准分区（新版）&lt;/strong&gt;&lt;br&gt;
+&lt;img alt=&#34;全部模板&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/10/680834712.png&#34; title=&#34;全部模板&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;模板来源&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/10/3310680356.png&#34; title=&#34;模板来源&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;esxi67集成25g与8111网卡驱动&#34;&gt;ESXi6.7集成2.5G与8111网卡驱动&lt;/h2&gt;
+&lt;p&gt;集成了rtl8125b网卡驱动以及rtl8111驱动，为什么不集成7.0的，是因为集成不了，据说新版本esxi7.0有什么改动。&lt;br&gt;
+&lt;img alt=&#34;esxi6.7驱动&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/10/185705712.png&#34; title=&#34;esxi6.7驱动&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;openwrt-x86_64软路由&#34;&gt;openwrt x86_64软路由&lt;/h2&gt;
+&lt;p&gt;使用GitHub编译结果，&lt;a href=&#34;https://github.com/Qifcn/Actions-OpenWrt&#34;&gt;Qifcn/Actions-OpenWrt: A template for building OpenWrt with GitHub Actions | 使用 GitHub Actions 云编译 OpenWrt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;集成了&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;tailscale&lt;/li&gt;
+&lt;li&gt;wireguard&lt;/li&gt;
+&lt;li&gt;内核分区扩大至100m 根分区扩至512m&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;压缩包&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/10/1623699456.png&#34; title=&#34;压缩包&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;resilio分享&#34;&gt;resilio分享&lt;/h3&gt;
+&lt;p&gt;这些软件我集成密钥形式&lt;br&gt;
+&lt;a href=&#34;https://gao4.top/sync&#34;&gt;SYNC同步网盘 - 孤岛 (gao4.top)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>tailscale 中继节点 搭建教程</title>
+      <link>http://localhost:1313/679.html/</link>
+      <pubDate>Mon, 13 Sep 2021 09:35:00 +0000</pubDate>
+      <guid>http://localhost:1313/679.html/</guid>
+      <description>&lt;h2 id=&#34;2021年10月20日更新&#34;&gt;2021年10月20日更新&lt;/h2&gt;
+&lt;p&gt;标题设置得不太准确，应该是中继网关，中继内网网段。&lt;br&gt;
+&lt;strong&gt;中继节点可看这篇文章&lt;/strong&gt;&lt;br&gt;
+&lt;a href=&#34;https://github.com/fredliang44/derper-docker&#34;&gt;&lt;strong&gt;社区为 Tailscale 的自定义 DERP 服务器构建的 Docker 镜像&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;
+Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行您自己的 DERP 服务器&lt;/p&gt;
+&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;谷歌翻译过来的&lt;br&gt;
+在最近一段时间 tailscale 更新了他们的资费，变得合理了一些，对于个人虚拟网络有了更合理的配置。可以有一个免费搭建 中继节点的名额。而且根据介绍，官网说相比原来的100台设备变成20个设备，但挂在中继节点下的设备是不占设备名额的。&lt;br&gt;
+&lt;img alt=&#34;定价&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/09/3683955973.png&#34; title=&#34;定价&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;官方教程&#34;&gt;官方教程&lt;/h2&gt;
+&lt;p&gt;建议先看一下流程&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tailscale.com/kb/1019/subnets/&#34;&gt;Subnet routers and traffic relay nodes · Tailscale&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;流程&#34;&gt;流程&lt;/h2&gt;
+&lt;h3 id=&#34;0x1&#34;&gt;0x1&lt;/h3&gt;
+&lt;p&gt;只支持Linux 下的设备，群晖与win端官方没有明确说支持&lt;/p&gt;
+&lt;h3 id=&#34;0x2&#34;&gt;0x2&lt;/h3&gt;
+&lt;p&gt;在Linux 终端下输入下面命令&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo tailscale up --advertise-routes=10.0.0.0/24,10.0.1.0/24
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;按需选择自己的网段。&lt;/p&gt;
+&lt;p&gt;注意是支持ipv6的&lt;br&gt;
+我的设备是openwrt x86输入的命令是&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tailscale up --advertise-routes=192.168.100.0/24
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;0x3&#34;&gt;0x3&lt;/h3&gt;
+&lt;p&gt;在 tailscale web管理面板开启&lt;code&gt;192.168.100.0&lt;/code&gt;这个网段&lt;br&gt;
+&lt;img alt=&#34;Route settings&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/09/994378428.png&#34; title=&#34;Route settings&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;0x4&#34;&gt;0x4&lt;/h3&gt;
+&lt;p&gt;实际然后在任意taliscale客户端都应该可以访问到内网服务。如下，学校机房笔记本电脑连接手机热点，访问30公里之外的家openwrt。&lt;br&gt;
+&lt;img alt=&#34;测试访问openwrt&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/09/356263671.png&#34; title=&#34;测试访问openwrt&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;速度sftp测试&#34;&gt;速度sftp测试&lt;/h4&gt;
+&lt;p&gt;客户端网络为4G网络&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;上传&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/09/2669023075.png&#34; title=&#34;上传&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;下载&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/09/938244907.png&#34; title=&#34;下载&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;后言&#34;&gt;后言&lt;/h3&gt;
+&lt;p&gt;这个软件在有公网ip下体验很不错，ipv6还没折腾。在没有公网ip下可以试试在虚拟局域网内加一个有公网的客户端。实际它为一个&lt;code&gt;网状组网架构的&lt;/code&gt;&lt;br&gt;
+我曾经在两边都是内网情况下，速度体验很差。&lt;br&gt;
+这只是个人体验，有些像报告，并不像教程，有什么错误欢迎留言指出，感激不尽，学无止境。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mirai Dice QQ机器人-to-docker搭建记录</title>
+      <link>http://localhost:1313/639.html/</link>
+      <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
+      <guid>http://localhost:1313/639.html/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的问题&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.kokona.tech/d/448-mirai-dice-20210324&#34;&gt;推荐开始之前阅读官方教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mirai Dice&lt;a href=&#34;https://v2docs.kokona.tech/zh/latest/&#34;&gt;官方文档&lt;/a&gt;（和上面教程不一样是使用文档）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;流程&#34;&gt;流程&lt;/h1&gt;
+&lt;h2 id=&#34;启动容器&#34;&gt;启动容器&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo docker run -it --name qq  -v /home/container -v /etc/localtime:/etc/localtime:ro suhuiw4123/mirai-dice
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;登录&#34;&gt;登录&lt;/h2&gt;
+&lt;p&gt;在&lt;code&gt;&amp;gt;&lt;/code&gt;符号下输入 &lt;code&gt;login QQ号 密码&lt;/code&gt;&lt;br&gt;
+示例&lt;code&gt;&amp;gt;login 23421123 DSH12323&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;登录互交&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2981758090.png&#34; title=&#34;登录互交&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;qq登录验证重要&#34;&gt;QQ登录验证（重要）&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;沿用官方教程的话（建议看看官方教程）大部分人都卡死登录验证的步骤&lt;/strong&gt;一定把下面的话看完一个字一个字理解&lt;/p&gt;
+&lt;p&gt;如果你开启了设备锁（推荐开启，可减少被盗和封号概率）可能需要设备锁验证，点击链接打开浏览器，&lt;br&gt;
+&lt;strong&gt;20210602更新&lt;/strong&gt; : 如果没有显示扫码，手动把网址中的verify (&lt;a href=&#34;https://ti.qq.com/safe/verify&#34;&gt;https://ti.qq.com/safe/verify&lt;/a&gt;?…) 改成qrcode (&lt;a href=&#34;https://ti.qq.com/safe/qrcode&#34;&gt;https://ti.qq.com/safe/qrcode&lt;/a&gt;?…) ，用手机QQ登陆后扫码完成验证，然后关闭Mirai中的对话框即可登陆完成。稍等片刻后，Dice就可正常加载并开始使用。&lt;/p&gt;
+&lt;p&gt;大白话就是把提示的链接复制到浏览器并把链接里的&lt;code&gt;verify&lt;/code&gt; 改成 &lt;code&gt;qrcode&lt;/code&gt;也是下图地方&lt;strong&gt;链接&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;QQ验证&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/1726320199.png&#34; title=&#34;QQ验证&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;浏览器扫码验证&#34;&gt;浏览器扫码验证&lt;/h3&gt;
+&lt;p&gt;此时浏览器会出现二维码，然后手机 qq 登录需要登录的QQ号进行扫码确认， 确认后退出手机QQ&lt;br&gt;
+然后在ssh下输入随意字符回车进入下一步。上图我输入的e然后回车&lt;/p&gt;
+&lt;h3 id=&#34;验证&#34;&gt;验证&lt;/h3&gt;
+&lt;p&gt;手机QQ 好友界面输入&lt;code&gt;.r&lt;/code&gt;命令理论上应该有回复&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;对话&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/451246510.jpg&#34; title=&#34;对话&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;退出容器容器继续运行&#34;&gt;退出容器容器继续运行&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Ctrl+P Ctrl+Q&lt;br&gt;
+这是一道组合命令同时按Ctrl然后按一下P &lt;strong&gt;不放Ctrl&lt;/strong&gt;按一下Q&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;相关命令&#34;&gt;相关命令&lt;/h1&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;docker attach qq&lt;br&gt;
+进入正在运行的容器上面运行QQ机器人的容器名字是qq&lt;/li&gt;
+&lt;li&gt;docker logs qq&lt;br&gt;
+查看容器日志&lt;/li&gt;
+&lt;li&gt;autologin 账号 密码&lt;br&gt;
+这是在QQ机器人终端的后台命令 设置自动登录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;容器备份迁移&#34;&gt;容器备份迁移&lt;/h1&gt;
+&lt;p&gt;机器人的数据存储在&lt;code&gt;/var/lib/docker/volumes&lt;/code&gt;&lt;br&gt;
+这个目录下&lt;br&gt;
+注意&lt;br&gt;
+下面命令会让宿主机目录覆盖容器目录&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>unraid 挂载webdav为本地目录</title>
+      <link>http://localhost:1313/662.html/</link>
+      <pubDate>Wed, 04 Aug 2021 21:43:00 +0000</pubDate>
+      <guid>http://localhost:1313/662.html/</guid>
+      <description>&lt;h1 id=&#34;序言&#34;&gt;序言&lt;/h1&gt;
+&lt;p&gt;上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不稳定，就没有去了解，这次我们通过 rclone 这个软件来挂载webdav协议来实现把阿里云盘挂载到本地目录，这样就实现了让nas或者本地的主机无负担的有了一个大硬盘。&lt;/p&gt;
+&lt;h1 id=&#34;过程&#34;&gt;过程&lt;/h1&gt;
+&lt;p&gt;注意前期一定确定&lt;code&gt;webdav&lt;/code&gt;可用&lt;/p&gt;
+&lt;h2 id=&#34;安装rclone插件&#34;&gt;安装rclone插件&lt;/h2&gt;
+&lt;p&gt;在 unraid 应用市场搜索&lt;code&gt;rclone&lt;/code&gt;安装&lt;br&gt;
+安装可能会遇到网络问题 我曾经在unraid6.8.2版本下安装不成功 升级到unraid6.9.2版本才成功 在fq情况下软路由上&lt;br&gt;
+&lt;img alt=&#34;搜索rclone&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3478895582.png&#34; title=&#34;搜索rclone&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在命令行下运行&lt;code&gt;rclone version&lt;/code&gt;测试插件是否安装成功&lt;br&gt;
+&lt;img alt=&#34;安装插件成功截图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/834171094.png&#34; title=&#34;安装插件成功截图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;剩下的操作跟 rclone 命令行下进行配置一模一样&lt;br&gt;
+&lt;a href=&#34;https://rclone.org/&#34;&gt;rclone官网&lt;/a&gt;也有相应的模板&lt;br&gt;
+&lt;img alt=&#34;模板&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/2251568679.png&#34; title=&#34;模板&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;rclone使用&#34;&gt;rclone使用&lt;/h3&gt;
+&lt;p&gt;在终端下运行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rclone config
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;remote-config&#34;&gt;No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q&amp;gt; n #选择n新建名称
+name&amp;gt; aliyun #名字对应下面挂载
+Type of storage to configure.
+Choose a number from below, or type in your own value
+[snip]
+XX / Webdav
+\ &amp;ldquo;webdav&amp;rdquo;
+[snip]
+Storage&amp;gt; webdav #选择协议
+URL of http host to connect to
+Choose a number from below, or type in your own value
+1 / Connect to example.com
+\ &amp;ldquo;&lt;a href=&#34;https://example.com&#34;&gt;https://example.com&lt;/a&gt;&amp;rdquo;
+url&amp;gt; http://192.168.100.4:8082/ 设置webdav服务器地址注意需要加http
+Name of the Webdav site/service/software you are using
+Choose a number from below, or type in your own value
+1 / Nextcloud
+\ &amp;ldquo;nextcloud&amp;rdquo;
+2 / Owncloud
+\ &amp;ldquo;owncloud&amp;rdquo;
+3 / Sharepoint Online, authenticated by Microsoft account.
+\ &amp;ldquo;sharepoint&amp;rdquo;
+4 / Sharepoint with NTLM authentication. Usually self-hosted or on-premises.
+\ &amp;ldquo;sharepoint-ntlm&amp;rdquo;
+5 / Other site/service or software
+\ &amp;ldquo;other&amp;rdquo;
+vendor&amp;gt; 5 #选择第五个
+User name
+user&amp;gt; user #设置用户名
+Password.
+y) Yes type in my own password
+g) Generate random password
+n) No leave this optional password blank
+y/g/n&amp;gt; y #设置密码默认2次都不显示
+Enter the password:
+password:
+Confirm the password:
+password:
+Bearer token instead of user/pass (e.g. a Macaroon)
+bearer_token&amp;gt;
+Remote config&lt;/h2&gt;
+&lt;h2 id=&#34;bearer_token-&#34;&gt;[aliyun]
+type = webdav
+url = http://192.168.100.4:8082/
+vendor = other
+user = user
+pass = *** ENCRYPTED ***
+bearer_token =&lt;/h2&gt;
+&lt;p&gt;y) Yes this is OK
+e) Edit this remote
+d) Delete this remote
+y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>unraid6.9.2安装及UEFI引导与初始化</title>
+      <link>http://localhost:1313/649.html/</link>
+      <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
+      <guid>http://localhost:1313/649.html/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;系统包来源于俄罗斯论坛&lt;/p&gt;
+&lt;h1 id=&#34;系统盘制作&#34;&gt;系统盘制作&lt;/h1&gt;
+&lt;h2 id=&#34;系统下载&#34;&gt;系统下载&lt;/h2&gt;
+&lt;p&gt;分享&lt;a href=&#34;https://www.aliyundrive.com/s/xt2ZVqBRGxw&#34;&gt;云盘链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用官方工具制作&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把下载的unRAIDServer-6.9.2-x86_64_fu11压缩包解压&lt;/li&gt;
+&lt;li&gt;运行Unraid.USB.Creator.Win32-1.6&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;官方制作工具&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1676644806.png&#34; title=&#34;官方制作工具&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Allow UEFI Boot 勾选 需要UEFI引导一定需要使用官方工具制作 使用&lt;code&gt;UnraidTool&lt;/code&gt;制作UEFI引导的系统U盘不一定生效&lt;/li&gt;
+&lt;li&gt;生成密钥，复制&lt;code&gt;UnraidTool.exe&lt;/code&gt;与&lt;code&gt;keymaker.exe&lt;/code&gt;到U盘根目录 右击管理员身份运行 UnraidTool 点击第二个&lt;code&gt;注册&lt;/code&gt; 系统制作完毕&lt;br&gt;
+&lt;img alt=&#34;UnraidTool&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/4095878892.png&#34; title=&#34;UnraidTool&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;进入系统初始化操作&#34;&gt;进入系统初始化操作&lt;/h1&gt;
+&lt;h2 id=&#34;github访问&#34;&gt;GitHub访问&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#34;199.232.4.133 raw.githubusercontent.com&amp;#34; &amp;gt;&amp;gt; /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img alt=&#34;GitHub访问&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3282416052.png&#34; title=&#34;GitHub访问&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;docker市场&#34;&gt;Docker市场&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img alt=&#34;安装Docker市场&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3954018899.png&#34; title=&#34;安装Docker市场&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装中文语言包&#34;&gt;安装中文语言包&lt;/h2&gt;
+&lt;p&gt;在Docker市场点击 &lt;strong&gt;左边&lt;/strong&gt; &lt;strong&gt;Language&lt;/strong&gt;找到中文语言包安装即可&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;中文语言包&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1974993561.png&#34; title=&#34;中文语言包&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;切换中文&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3264224320.png&#34; title=&#34;切换中文&#34;&gt;&lt;br&gt;
+选择中文如何点击APPLY确定&lt;br&gt;
+&lt;img alt=&#34;切换即可&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3824821100.png&#34; title=&#34;切换即可&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;设置阵列自启&#34;&gt;设置阵列自启&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;阵列自启&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/2732363111.png&#34; title=&#34;阵列自启&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;开启核显&#34;&gt;开启核显&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;安装CA CONFIG EDITOR&lt;/code&gt;`一个在线配置文件编辑器`&lt;br&gt;
+&lt;img alt=&#34;安装插件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-23_20-19-03-1024x324.png&#34; title=&#34;安装插件&#34;&gt;&lt;br&gt;
+点击插件&lt;br&gt;
+&lt;img alt=&#34;点击插件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/626629736.png&#34; title=&#34;点击插件&#34;&gt;&lt;br&gt;
+&lt;img alt=&#34;页面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1099005542.png&#34; title=&#34;页面&#34;&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;modprobe i915
+chown nobody:users /dev/dri
+chmod 0777 /dev/dri/*
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;必安装插件&#34;&gt;必安装插件&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;User Scripts&lt;/strong&gt;&lt;br&gt;
+一款可以运行用户自定义脚本的插件。贴吧有人使用这个插件设置每次开机自动更换docker源。官方解释为：一个插件，可充当任何用户脚本的简单前端，使您无需输入命令行即可运行它们。&lt;br&gt;
+&lt;img alt=&#34;User Scripts&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3505330592.png&#34; title=&#34;User Scripts&#34;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;rclone&lt;/strong&gt;&lt;br&gt;
+类似于rsync但是可以连通所有云服务器的命令行软件, 用它来做远程备份或者下载很方便.&lt;br&gt;
+&lt;img alt=&#34;rclone&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1398285922.png&#34; title=&#34;rclone&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
+      <link>http://localhost:1313/629.html/</link>
+      <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
+      <guid>http://localhost:1313/629.html/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;基本上这是最简单的方式，我通过 &lt;a href=&#34;tailscale.com&#34;&gt;tailscale&lt;/a&gt; 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能通过 IP地址 来访问服务，有没有一种办法可以通过域名的方式来访问，当然可以，最简单的方案如下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;win服务器版本自带dns服务器&lt;/li&gt;
+&lt;li&gt;群晖NAS系统自带dns解析套件&lt;/li&gt;
+&lt;li&gt;Adguardhome-dns去广告软件（也可以自定义域名解析）只是大部分人拿来去广告了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;流程&#34;&gt;流程&lt;/h1&gt;
+&lt;h2 id=&#34;docker配置&#34;&gt;docker配置&lt;/h2&gt;
+&lt;h3 id=&#34;host-网络模式&#34;&gt;Host 网络模式&lt;/h3&gt;
+&lt;p&gt;Host 网络模式直接使用宿主机的网络，没有网络隔离，不需要考虑容器端口的映射，在容器启动后可以自由调整被占用的端口。适合在本机使用 (lo­cal­host)&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run -d \
+    --name adguardhome \
+    --restart unless-stopped \
+    --log-opt max-size=1m \
+    --network host \
+    -v /root/adguardhome/work:/opt/adguardhome/work \
+    -v /roo/adguardhome/conf:/opt/adguardhome/conf \
+    adguard/adguardhome
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;复制启动&#34;&gt;复制启动&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;安装界面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2469298094.png&#34; title=&#34;安装界面&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;访问web&#34;&gt;访问web&lt;/h3&gt;
+&lt;p&gt;AdGuard Home 初始化设置&lt;br&gt;
+使用网页浏览器访问 IP + 3000 端口即可进入到 Ad­Guard Home 的初始化界面，比如 IP 是 &lt;code&gt;10.0.0.53&lt;/code&gt;，那么就访问 [&lt;a href=&#34;http://10.0.0.53&#34;&gt;http://10.0.0.53&lt;/a&gt;]:3000&lt;br&gt;
+我的是tailscale虚拟内网 ip &lt;code&gt;http://100.112.191.114:3000/&lt;/code&gt;&lt;br&gt;
+&lt;img alt=&#34;安装界面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3284010322.png&#34; title=&#34;安装界面&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安装步骤来&lt;/p&gt;
+&lt;h4 id=&#34;改一下端口防止冲突&#34;&gt;改一下端口防止冲突&lt;/h4&gt;
+&lt;p&gt;&lt;img alt=&#34;改端口&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/481378311.png&#34; title=&#34;改端口&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;添加域名&#34;&gt;添加域名&lt;/h2&gt;
+&lt;p&gt;在页面&lt;code&gt;过滤器&lt;/code&gt;-&amp;gt; &lt;code&gt;DNS重写&lt;/code&gt;&lt;br&gt;
+&lt;img alt=&#34;DNS重写&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3321944190.png&#34; title=&#34;DNS重写&#34;&gt;&lt;/p&gt;
+&lt;p&gt;添加dns重写&lt;br&gt;
+&lt;img alt=&#34;添加域名&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3108300146.png&#34; title=&#34;添加域名&#34;&gt;&lt;/p&gt;
+&lt;p&gt;域名对应iP点击&lt;code&gt;保存&lt;/code&gt;&lt;br&gt;
+&lt;img alt=&#34;域名对应IP&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/1219428542.png&#34; title=&#34;域名对应IP&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置客户端dns地址对应ip地址&lt;br&gt;
+&lt;img alt=&#34;设置客户端dns地址&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3535240638.png&#34; title=&#34;设置客户端dns地址&#34;&gt;&lt;br&gt;
+Ping测试&lt;br&gt;
+&lt;img alt=&#34;测试&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2372846563.png&#34; title=&#34;测试&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;结语&#34;&gt;结语&lt;/h1&gt;
+&lt;p&gt;一款非常棒的DNS服务器软件，不过有一点需要注意测试时候注意一下打开网页速度，慢了的话建议搭建在局域网，博主搭建在阿里云服务器上有一定的延迟，建议网上找一些资料，给局域网额外去广告也是不错的&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Traefik系列二-docker搭建typecho-to-traefik</title>
+      <link>http://localhost:1313/615.html/</link>
+      <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
+      <guid>http://localhost:1313/615.html/</guid>
+      <description>&lt;h1 id=&#34;快速开始&#34;&gt;快速开始&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd /home
+git clone https://github.com/YianAndCode/typecho-in-docker.git
+cd /home/typecho-in-docker
+git clone https://github.com/typecho/typecho.git
+rm -r typecho/.git
+chown -R www-data:www-data typecho/
+docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;浏览器访问&lt;code&gt;http://IP:8001&lt;/code&gt;&lt;br&gt;
+如果GitHub下载过于慢的话可以替换为Github镜像地址&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd /home
+git clone https://github.com.cnpmjs.org/YianAndCode/typecho-in-docker.git
+cd /home/typecho-in-docker
+git clone https://github.com.cnpmjs.org/typecho/typecho.git
+chown -R www-data:www-data typecho/
+docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;配置邮件通知&lt;br&gt;
+&lt;a href=&#34;https://github.com/Stitch-June/CommentPush/releases&#34;&gt;Github下载地址&lt;/a&gt;&lt;br&gt;
+从&lt;strong&gt;1.7.2&lt;/strong&gt;版本开始支持php8版本，其他通知插件都没配置成功&lt;br&gt;
+&lt;img alt=&#34;配置截图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3947263831.png&#34; title=&#34;配置截图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;成功截图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2201639954.png&#34; title=&#34;成功截图&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;traefik配置&#34;&gt;Traefik配置&lt;/h1&gt;
+&lt;p&gt;待续&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NGINX 非443端口http跳转https</title>
+      <link>http://localhost:1313/600.html/</link>
+      <pubDate>Thu, 24 Jun 2021 10:32:00 +0000</pubDate>
+      <guid>http://localhost:1313/600.html/</guid>
+      <description>&lt;p&gt;关于Nginx这个web服务器软件在NAS上配置非443端口访问时候跳转https问题，默认80端口与443端口无法访问情况。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;error_page 497 301 =307 https://$host:9443$request_uri;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;添加上面代码就行https端口为9443这样就不会出现访问http出现错误的问题&lt;/p&gt;
+&lt;h3 id=&#34;完整代码&#34;&gt;完整代码&lt;/h3&gt;
+&lt;p&gt;容器部署nginx桥接443端口为9443 然后反向代理192.168.100.4:86用wallabag.gao4.top:9443访问服务并让http跳转https&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;upstream dockername1 {
+    server 192.168.100.4:86; # 端口改为docker容器提供的端口
+}
+
+
+server {
+    listen 80;
+    listen 443 default ssl;
+    server_name  wallabag.gao4.top;
+    error_page 497 301 =307 https://$host:9443$request_uri;
+    gzip on;
+    ssl_certificate /ssl/fullchain1.pem;
+    ssl_certificate_key /ssl/privkey1.pem;
+
+    # access_log /var/log/nginx/dockername_access.log combined;
+    # error_log  /var/log/nginx/dockername_error.log;
+
+    location / {
+        proxy_redirect off;
+        proxy_pass http://dockername1;
+
+        proxy_set_header  Host                $http_host;
+        proxy_set_header  X-Real-IP           $remote_addr;
+        proxy_set_header  X-Forwarded-Ssl     on;
+        proxy_set_header  X-Forwarded-For     $proxy_add_x_forwarded_for;
+        proxy_set_header  X-Forwarded-Proto   $scheme;
+        proxy_set_header  X-Frame-Options     SAMEORIGIN;
+
+        client_max_body_size        100m;
+        client_body_buffer_size     128k;
+
+        proxy_buffer_size           4k;
+        proxy_buffers               4 32k;
+        proxy_busy_buffers_size     64k;
+        proxy_temp_file_write_size  64k;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>阿里云域名 docker下申请泛域名</title>
+      <link>http://localhost:1313/578.html/</link>
+      <pubDate>Thu, 10 Jun 2021 15:54:00 +0000</pubDate>
+      <guid>http://localhost:1313/578.html/</guid>
+      <description>&lt;h1 id=&#34;构建&#34;&gt;构建&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Git pull https://github.com/monkeyWie/certbot-dns-aliyun.git
+cd docker
+docker build -t certbot-aliyun:latest .
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;启动容器&#34;&gt;启动容器&lt;/h1&gt;
+&lt;p&gt;docker官方仓库有这个镜像&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run \
+--name cert \
+-itd \
+-v /etc/letsencrypt:/etc/letsencrypt \
+-e ACCESS_KEY_ID=XXX \
+-e ACCESS_KEY_SECRET=XXX \
+liwei2633/certbot-aliyun
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;首次创建证书根据命令提示输入多个域名用隔开&#34;&gt;首次创建证书，根据命令提示输入，多个域名用,隔开&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec -it cert ./create.sh *.pdown.org
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;续签&#34;&gt;续签&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec cert ./renew.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;记录申请通配符的流程&#34;&gt;记录申请通配符的流程&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/06/2021-06-08_171602.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;证书路径&#34;&gt;证书路径&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/gao4.top/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/gao4.top/privkey.pem
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>tailscale docker上安装搭建方法</title>
+      <link>http://localhost:1313/555.html/</link>
+      <pubDate>Thu, 20 May 2021 13:31:00 +0000</pubDate>
+      <guid>http://localhost:1313/555.html/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-16.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;启动&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run -d --restart=always --name=tailscaled -v /var/lib:/var/lib -v /dev/net/tun:/dev/net/tun --network=host --privileged fastandfearless/tailscale
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;登录&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec tailscaled tailscale up
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;查看状态&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec tailscaled tailscale status
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;停止tailscale容器&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker stop tailscaled 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;删除tailscale容器&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker rm tailscaled 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/tailscale/tailscale/blob/main/Dockerfile&#34;&gt;参考官方docker编译文件&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/fastandfearless/tailscale/&#34;&gt;镜像地址&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TrueNAS-SCALE SMB共享设置</title>
+      <link>http://localhost:1313/538.html/</link>
+      <pubDate>Wed, 19 May 2021 01:51:32 +0000</pubDate>
+      <guid>http://localhost:1313/538.html/</guid>
+      <description>&lt;h4 id=&#34;1打开win10-smb10&#34;&gt;1.打开win10 SMB1.0&lt;/h4&gt;
+&lt;p&gt;SMB1.0功能 此电脑&amp;gt;卸载或更改程序&amp;gt;程序和功能&amp;gt;启用或关闭win功能 勾选?&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-8.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;勾选&lt;/p&gt;
+&lt;h4 id=&#34;2添加用户&#34;&gt;2.添加用户&lt;/h4&gt;
+&lt;p&gt;登录TrueNAS 仪表盘&amp;gt;证书&amp;gt;Local Users&amp;gt;添加 添加一个用户user1修改密码，保持默认选项点击保存?&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-10-1024x280.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;添加用户&lt;/p&gt;
+&lt;h4 id=&#34;3添加数据集&#34;&gt;3.添加数据集&lt;/h4&gt;
+&lt;p&gt;添加数据集填入名字test1其他保持默认点击保存，存储&amp;gt;阵列旁边三个小点&amp;gt;Add Dataset ?&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-11-1024x430.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4修改数据集权限&#34;&gt;4.修改数据集权限&lt;/h4&gt;
+&lt;p&gt;点击数据集右边三个小点&amp;gt;点击Edit Permissions 修改用户与群组为user1 勾选下面的Apply User不然修改无效其他默认即可，点击保存?&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-12.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;数据集权限设置&lt;/p&gt;
+&lt;h4 id=&#34;5添加smb共享&#34;&gt;5.添加SMB共享&lt;/h4&gt;
+&lt;p&gt;添加名为tes1的共享 Shares&amp;gt; Windows Shares(SMB)&amp;gt;添加 φ(*￣0￣)&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-13-1024x285.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择路径 刚刚添加的数据集路径默认即可，点击保存?&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-14.png&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;6win文件管理器访问smb测试&#34;&gt;6.win文件管理器访问smb测试&lt;/h4&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-15.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PS：一定需要添加新用户 root用户无法访问，客户端SMB1.0一定需要开启不然无法访问。&lt;/strong&gt;?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>关于NAS的小折腾填坑</title>
+      <link>http://localhost:1313/530.html/</link>
+      <pubDate>Tue, 18 May 2021 11:38:59 +0000</pubDate>
+      <guid>http://localhost:1313/530.html/</guid>
+      <description>&lt;h1 id=&#34;关于nas的小折腾填坑&#34;&gt;关于NAS的小折腾填坑&lt;/h1&gt;
+&lt;p&gt;【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。&lt;/p&gt;
+&lt;h2 id=&#34;关于电信路由器&#34;&gt;关于电信路由器&lt;/h2&gt;
+&lt;p&gt;   四川电信，可以在微信公众号，给找客服切换光猫桥接模式，顺便要了公网IP，没有网上那么难，很顺利就要到了，也没有去折腾光猫破解什么的，因为网上超级密码都不正确&lt;/p&gt;
+&lt;h3 id=&#34;桥接后遇到的问题&#34;&gt;桥接后遇到的问题&lt;/h3&gt;
+&lt;p&gt;过一天死机，重启恢复，开始怀疑固件有问题，OPenwrt固件刷到工控n2800主板上，随后换固件pfSense，还是遇到过一天死机重启恢复，应该不是固件与硬件问题随后换回OPenwrt，每天早上5点定时重启（应该是电信定时换IP问题猜测）。问题解决，用过几个月后，突然连不上DDNS（幸亏没有出现死机问题），随后发现OPenwrt固件空间满了，随后按照网上教程把剩下的30G空间重新远程ssh连上路由器分区挂载，问题解决。&lt;/p&gt;
+&lt;h2 id=&#34;关于移动宽带&#34;&gt;关于移动宽带&lt;/h2&gt;
+&lt;p&gt;最开始移动宽带，公网iP就不要想了，不过移动居然提供了IPv6，光猫很顺利就通过网上超级密码进入后台，建议把后台截图，防止出错，很顺利设置成桥接模式，用Openwrt拨号，折腾IPv6远程访问，因为不可能每个服务都做ddns，也不现实，就用网上恩山论坛的方法在OPenwrt上安装 &lt;strong&gt;socat&lt;/strong&gt;工具，桥接主路由ipv6端口到下面ipv4内网服务端口，跟端口映射是不是很像，每次重启机器需要重新设置运行命令，就放OPenwrt，web界面有一个开机启动设置的地方。使用就搜索吧&lt;img alt=&#34;关于NAS的小折腾填坑&#34; loading=&#34;lazy&#34; src=&#34;https://res.smzdm.com/images/emotions/147.gif&#34;&gt; &lt;/p&gt;
+&lt;h3 id=&#34;移动ipv6速度&#34;&gt;移动ipv6速度&lt;/h3&gt;
+&lt;p&gt;挺快的，和老弟相隔一个城市200多公里，传输速度相同的移动宽带。跑到了满速100M，也就是上行12.5M/s 左右当时硬件接口是100M的，后面换电信，硬件接口千兆了就没机会测试了。&lt;/p&gt;
+&lt;h3 id=&#34;resiliosync软件&#34;&gt; Resilio Sync软件&lt;/h3&gt;
+&lt;p&gt;记得17年接触当时还没，懂？ 21年重新安装，据说恢复。实际测试也恢复了。&lt;/p&gt;
+&lt;h3 id=&#34;遇到问题&#34;&gt;遇到问题&lt;/h3&gt;
+&lt;p&gt;docker安装一定要把网络设置为和本地一样的网络，也就是宿主机，或者给一个IP给容器，不然会走中继，没速度，有公网ip会自动打洞，不然没速度也，&lt;strong&gt;记得设置就是host模式&lt;/strong&gt;，吐槽一句，unraid的docker就看个状态，详细的还是ssh吧&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://post.smzdm.com/p/ax08z5gw/pic_2/&#34;&gt;&lt;/a&gt;网络模式&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/Snipaste_2021-05-18_11-12-16.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt; Resilio Sync用docker安装方式与Linux安装方式同步位置没法修改，是配置文件的限制，修改配置文件就OK了&lt;img alt=&#34;关于NAS的小折腾填坑&#34; loading=&#34;lazy&#34; src=&#34;https://res.smzdm.com/images/emotions/147.gif&#34;&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://post.smzdm.com/p/ax08z5gw/pic_3/&#34;&gt;&lt;img alt=&#34;关于NAS的小折腾填坑&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/Snipaste_2021-01-29_15-15-24-1024x514-1.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;遇到的问题就这么多，安装谁都会，软件的使用过程中问题就很奈斯了。&lt;/p&gt;
+&lt;h2 id=&#34;异地组网问题&#34;&gt;异地组网问题&lt;/h2&gt;
+&lt;p&gt;有一个和另一个地方的群晖组网&lt;/p&gt;
+&lt;p&gt;wireguard软件，全平台，没法动态更新ddns的域名，可以通过脚本检测断网重启接口解决，网上是这么说，我是定时重启，openwrt不知道怎么设置，没法中继互联，配置复杂？？，简直就是 就这么着吧，弃用&lt;/p&gt;
+&lt;p&gt;传统的Ipsec 服务端为OPenwrt，群晖现成的接口，可惜群晖下，断线重连只最多5次，有时能连上有时不行，弃用&lt;/p&gt;
+&lt;p&gt;现在用的方案tailscale，只需要登陆账号，全平台，自动打洞，支持群晖，前几天支持OPenwrt ，有一个小问题就是安装包对于arm平台的OPenwrt偏大，可能会把空间占满，只能恢复出厂了。子网服务与自建中继付费10美元/月&lt;/p&gt;
+&lt;p&gt;现在还在用的方案。&lt;/p&gt;
+&lt;p&gt;可能对你有所帮助，就这样吧&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tailscale VPN初步安装体验</title>
+      <link>http://localhost:1313/503.html/</link>
+      <pubDate>Thu, 13 May 2021 16:13:00 +0000</pubDate>
+      <guid>http://localhost:1313/503.html/</guid>
+      <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;初步体验是一个基于&lt;a href=&#34;http://wireguard.com&#34;&gt;wireguard&lt;/a&gt;的新的星形组网软件（功能之一），对比WGvpn最大的不同就是增加了公匙交换系统，免配置组网，只需要安装客户端登录账号就可以组网，支持p2p打洞，付费自建中继功能。支持基本上全平台支持Linux|群晖|Openrt|Window|Mac等常见客户端，docker也可以安装。&lt;/p&gt;
+&lt;h2 id=&#34;openwrt-x86上安装&#34;&gt;Openwrt X86上安装&lt;/h2&gt;
+&lt;p&gt;2021年5月13日更新&lt;/p&gt;
+&lt;p&gt;openwrt 仓库已经有了安装包直接更新一下仓库就可以搜索到如下图&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行下面命令就可以安装&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;opkg update
+opkg install tailscale
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ps：&lt;a href=&#34;https://www.vediotalk.com/archives/13889&#34;&gt;在X86下扩容安装软件&lt;/a&gt;&lt;a href=&#34;https://www.vediotalk.com/archives/13889&#34;&gt;Overlay&lt;/a&gt;空间的教程亲测可用&lt;/p&gt;
+&lt;h2 id=&#34;openwrt-arm上安装&#34;&gt;Openwrt arm上安装&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;opkg update
+opkg install tailscale
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;PS:注意安装空间的大小，占满空间会保存不了Openwrt配置，一些定时任务失效&lt;/p&gt;
+&lt;h2 id=&#34;tailscale-synolog群晖下安装&#34;&gt;&lt;a href=&#34;https://github.com/tailscale/tailscale-synology&#34;&gt;tailscale-synolog&lt;/a&gt;群晖下安装&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/tailscale/tailscale-synology/releases&#34;&gt;在Github上下载合适的版本&lt;/a&gt;上传到群晖安装即可，然后ssh登录群晖sudo tailscale up 即可&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-3.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;unraid下用docker安装&#34;&gt;Unraid下用docker安装&lt;/h2&gt;
+&lt;p&gt;在APPS里搜索 然后按照正常启动容器就可以，不用修改什么&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-4-1024x447.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后点击图标双击第一个&amp;gt;_Console 在启动的命令行窗口输入命令tailscale up 获取登录链接就可以。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-5.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ps遇到问题&#34;&gt;PS：遇到问题&lt;/h2&gt;
+&lt;p&gt;0x1安卓下远程控制0x300005f错误代码&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-6.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;要修复此问题，请在“PC名称”字段中使用您的IP地址。&lt;/p&gt;
+&lt;p&gt;0x2 &lt;a href=&#34;https://www.vediotalk.com/archives/13889&#34;&gt;openwrt 空间不足问题&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-7.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;arm重新恢复出厂设置吧&lt;/p&gt;
+&lt;p&gt;0x3 openwert ssh登录不了问题 直接未指定就行&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-17-1024x316.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;### win10升级win11后服务启动失败 解决办法 我可以确认我在从 Win10 升级到 Win11 后遇到了类似的问题，但结合了来自[@iball](&lt;a href=&#34;https://github.com/iball&#34;&gt;https://github.com/iball&lt;/a&gt;)和[@DentonGentry 的](&lt;a href=&#34;https://github.com/DentonGentry&#34;&gt;https://github.com/DentonGentry&lt;/a&gt;)两种解决方案。 * 卸载 Tailscale * 删除 %USERPROFILE%\AppData\Local\Tailscale * 重新安装尾鳞 现在需要重新登录Tailscale，登录后，Win11 中的Tailscale 效果很赞。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ESXI 群晖下连接VPN网络报错解决</title>
+      <link>http://localhost:1313/494.html/</link>
+      <pubDate>Thu, 29 Apr 2021 16:25:03 +0000</pubDate>
+      <guid>http://localhost:1313/494.html/</guid>
+      <description>&lt;p&gt;前言&lt;/p&gt;
+&lt;p&gt;我的vpn服务端搭建在openwrt软路由上使用SoftEther作为相关软件，在群晖下出现&lt;/p&gt;
+&lt;p&gt;群晖 l2tp连接失败 请检查。。。。解决办法如下勾选第二个选项就行&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/04/SAVE_20210429_162054.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;啰嗦一下环境&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;esxi6.5u2&lt;/li&gt;
+&lt;li&gt;DS3617XS&lt;/li&gt;
+&lt;li&gt;MAC已修改&lt;/li&gt;
+&lt;li&gt;tun未开启&lt;/li&gt;
+&lt;li&gt;宿主机戴尔r410&lt;/li&gt;
+&lt;li&gt;网卡为博通网卡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为啥我判断是群晖的问题嘞，win10最新，正常连接 安卓10正常连接，白群晖正常连接&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FreshRSS docker-compose.yml 教程</title>
+      <link>http://localhost:1313/478.html/</link>
+      <pubDate>Sun, 14 Mar 2021 17:30:38 +0000</pubDate>
+      <guid>http://localhost:1313/478.html/</guid>
+      <description>&lt;p&gt;创建docker-compose.yml文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir /home/FreshRSS &amp;amp;&amp;amp; cd /home/FreshRSS
+nano docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;填入以下内容 内容来源于&lt;a href=&#34;https://github.com/FreshRSS/FreshRSS/blob/master/Docker/docker-compose.yml&#34;&gt;官方GIthub&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;version: &amp;#34;3&amp;#34;
+
+services:
+  freshrss-db:
+    image: postgres:12-alpine
+    container_name: freshrss-db
+    hostname: freshrss-db
+    restart: unless-stopped
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: freshrss
+      POSTGRES_PASSWORD: freshrss
+      POSTGRES_DB: freshrss
+
+  freshrss-app:
+    image: freshrss/freshrss:latest
+    container_name: freshrss-app
+    hostname: freshrss-app
+    restart: unless-stopped
+    ports:
+      - &amp;#34;8080:80&amp;#34;
+    depends_on:
+      - freshrss-db
+    volumes:
+      - ./data:/var/www/FreshRSS/data
+      - ./extensions:/var/www/FreshRSS/extensions
+    environment:
+      CRON_MIN: &amp;#39;*/20&amp;#39;
+      TZ: Asia/Shanghai
+
+volumes:
+  db:
+  data:
+  extensions:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;打开浏览器访问http://IP:8080进入安装界面 支持中文&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据库选择postgres&lt;/li&gt;
+&lt;li&gt;数据库地址填freshrss-db&lt;/li&gt;
+&lt;li&gt;数据库用户名为freshrss&lt;/li&gt;
+&lt;li&gt;数据库密码为freshrss&lt;/li&gt;
+&lt;li&gt;这些都是上面文件环境变量按需修改&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>友链</title>
+      <link>http://localhost:1313/%E5%8F%8B%E9%93%BE.html/</link>
+      <pubDate>Fri, 26 Feb 2021 14:13:00 +0000</pubDate>
+      <guid>http://localhost:1313/%E5%8F%8B%E9%93%BE.html/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- 名称：孤岛
+- 描述：喜欢搞事的NAS玩家
+- 链接：https://gao4.top
+- 头像：https://gao4.top/tx.webp
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>openwrt通过wireguard组网</title>
+      <link>http://localhost:1313/444.html/</link>
+      <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
+      <guid>http://localhost:1313/444.html/</guid>
+      <description>&lt;h2 id=&#34;概念&#34;&gt;概念&lt;/h2&gt;
+&lt;p&gt;网上找的图很好理解应该&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/02/Screenshot_2021-02-19-18-10-47-849_com.google.android.youtube-1024x473.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;wireguard原理就不多做解释了，我们只是人为的分客户端与服务端，因为国情在这，有时候两端不可都是可以互相访问的公网。这是理论上最好的访问模型，但实际上使用也就服务端访问这种模式。&lt;/p&gt;
+&lt;p&gt;2021年5月21日更新&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-18.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;公网环境&#34;&gt;公网环境&lt;/h3&gt;
+&lt;p&gt;wireguard实际是支持ipv6的而我的环境是ipv4动态公网就不多做关于ipv6的介绍了，在2018年CN已经全面覆盖改造ipv6了，至少移动手机端与家庭宽带都支持ipv6了。&lt;/p&gt;
+&lt;h2 id=&#34;设备环境&#34;&gt;设备环境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;OpenWrt R21.2.1&lt;/li&gt;
+&lt;li&gt;公网IPv4&lt;/li&gt;
+&lt;li&gt;移动手机端&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;openwrt端配置&#34;&gt;openwrt端配置&lt;/h2&gt;
+&lt;p&gt;软件源 系统-软件包-发行版软件源&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;src/gz openwrt_core https://mirrors.cloud.tencent.com/lede/snapshots/targets/x86/64/packages
+src/gz openwrt_base https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/base
+src/gz openwrt_freifunk https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/freifunk
+src/gz openwrt_helloworld https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/helloworld
+src/gz openwrt_lienol https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/lienol
+src/gz openwrt_luci https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/x86_64/luci
+src/gz openwrt_packages https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/packages
+src/gz openwrt_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/routing
+src/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/telephony
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装WG&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;opkg update
+opkg install wireguard luci-app-wireguard luci-i18n-wireguard-zh-cn wireguard-tools
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/02/Snipaste_2021-02-24_15-01-01.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;生成密钥&#34;&gt;生成密钥&lt;/h2&gt;
+&lt;p&gt;可以在终端下生成 也可以在各客户端下生成 privatekey=私钥 publickey=公钥&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir /etc/wireguard
+cd /etc/wireguard
+wg genkey | tee privatekey | wg pubkey &amp;gt; publickey
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;配置接口 依次找到&lt;a href=&#34;http://openwrt.lan/cgi-bin/luci/admin/network/network&#34;&gt;网络-&amp;gt;接口&lt;/a&gt;-&amp;gt;添加新接口，设置内容如下&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unarid 安装异星工厂并指定存档</title>
+      <link>http://localhost:1313/415.html/</link>
+      <pubDate>Sun, 24 Jan 2021 13:46:44 +0000</pubDate>
+      <guid>http://localhost:1313/415.html/</guid>
+      <description>&lt;h2 id=&#34;0-1搜索factorio并添加环境变量指定存档&#34;&gt;0-1搜索factorio并添加环境变量指定存档&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-34-50.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;搜索镜像&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-34-18.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;添加相关环境变量&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;C1存档已经上传到saves目录&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-40-00.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;存档地址&lt;/p&gt;
+&lt;p&gt;配置文件修改&lt;/p&gt;
+&lt;p&gt;\tower\appdata\factorio\config ## 配置文件地址&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-43-27.png&#34;&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;public”: true 改为 public”: false
+requireuserverification”: true 改为requireuserverification”: false
+不然客户端直连服务器不上
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上传一份我的配置文件按需修改&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2021/01/4aad729c766ff05.zip&#34;&gt;server-settings&lt;/a&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2021/01/4aad729c766ff05.zip&#34;&gt;下载&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;运行&#34;&gt;运行&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-33-06-1024x39.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NPS内网穿透工具学习2-服务端搭建</title>
+      <link>http://localhost:1313/388.html/</link>
+      <pubDate>Mon, 28 Dec 2020 10:44:52 +0000</pubDate>
+      <guid>http://localhost:1313/388.html/</guid>
+      <description>&lt;h3 id=&#34;序言&#34;&gt;序言&lt;/h3&gt;
+&lt;p&gt;通俗约定您已经，通晓基本的Linux知识（解压复制粘贴移动）、了解基本的网络知识（知晓什么是公网IP什么是内网IP）登录已root用户为准&lt;/p&gt;
+&lt;h4 id=&#34;版本&#34;&gt;版本&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ehang-io/nps/releases/tag/v0.26.9&#34;&gt;v0.26.9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ehang-io/nps/releases/download/v0.26.9/linux_amd64_server.tar.gz&#34;&gt;linux_amd64_server.tar.gz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;centos7&lt;/li&gt;
+&lt;li&gt;已关闭Firewalld&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;下载解压安装&#34;&gt;下载解压安装&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir /home/nps
+cd /home/nps
+wegt https://github.com/ehang-io/nps/releases/download/v0.26.9/linux_amd64_server.tar.gz
+tar -zxvf linux_amd64_server.tar.gz
+./nps install
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;撰写程序nps配置文件&#34;&gt;撰写程序NPS配置文件&lt;/h3&gt;
+&lt;p&gt;打开配置文件&lt;/p&gt;
+&lt;p&gt;vim /etc/nps/nps.conf&lt;/p&gt;
+&lt;h3 id=&#34;撰写systemd配置文件&#34;&gt;撰写&lt;strong&gt;systemd&lt;/strong&gt;配置文件&lt;/h3&gt;
+&lt;p&gt;vim创建service文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vim /usr/lib/systemd/system/nps.service
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;填入以下内容&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Unit]
+Description=nps service
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nps start
+ExecStop=/usr/bin/nps stop
+
+[Install]
+WantedBy=multi-user.target
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;启动并设置开机自启动&#34;&gt;启动并设置开机自启动&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo systemctl start nps.service
+sudo systemctl enable nps.service
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;启动nps：&lt;code&gt;sudo systemctl start nps&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;打开自启动：&lt;code&gt;sudo systemctl enable nps&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;重启应用：&lt;code&gt;sudo systemctl restart nps&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;停止应用：&lt;code&gt;sudo systemctl stop nps&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看应用：&lt;code&gt;sudo systemctl status nps&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;访问设置&#34;&gt;访问设置&lt;/h3&gt;
+&lt;p&gt;关闭防火墙并设置关闭开机启动&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NPS 内网穿透工具学习记录</title>
+      <link>http://localhost:1313/368.html/</link>
+      <pubDate>Sun, 27 Dec 2020 22:48:12 +0000</pubDate>
+      <guid>http://localhost:1313/368.html/</guid>
+      <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;2021年5月18日更新&lt;/p&gt;
+&lt;p&gt;官方更新了docker安装方式，推荐用这个方法强烈推荐&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/ffdfgdfg/nps&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;nps是一款轻量级、高性能、功能强大的&lt;strong&gt;内网穿透&lt;/strong&gt;代理服务器。目前支持&lt;strong&gt;tcp、udp流量转发&lt;/strong&gt;，可支持任何&lt;strong&gt;tcp、udp&lt;/strong&gt;上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还&lt;strong&gt;支持内网http代理、内网socks5代理&lt;/strong&gt;、&lt;strong&gt;p2p等&lt;/strong&gt;，并带有功能强大的web管理端。支持中文&lt;/p&gt;
+&lt;h3 id=&#34;官方文档&#34;&gt;官方文档&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://ehang-io.github.io/nps/#/&#34;&gt;https://ehang-io.github.io/nps/#/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-39-28-1024x620.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;登录界面&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ehang-io/nps/releases&#34;&gt;https://github.com/ehang-io/nps/releases&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;去Github下载对应计算机架构系统版本的服务器包&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-46-16.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;部分架构包图&lt;/p&gt;
+&lt;h3 id=&#34;github加速下载&#34;&gt;Github加速下载&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://d.serctl.com/&#34;&gt;https://d.serctl.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装为系统服务&#34;&gt;安装为系统服务&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./nps install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-53-47.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;注意事项&#34;&gt;注意事项&lt;/h3&gt;
+&lt;p&gt;看下面这句话&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-56-24.png&#34;&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;2020/12/27 13:52:08当前目录中的静态文件和配置文件将无用
+2020/12/27 13:52:08新的配置文件位于/etc/nps中，您可以对其进行编辑
+注意客户端与服务端版本一样
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;使用systemctl来控制启动服务端&#34;&gt;使用systemctl来控制启动服务端&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo vi /lib/systemd/system/nps.service
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;[Unit]
+Description=nps service
+After=network.target syslog.target
+Wants=network.target&lt;/p&gt;
+&lt;p&gt;[Service]
+Type=simple
+ExecStart=/usr/bin/nps start&lt;/p&gt;
+&lt;p&gt;[Install]
+WantedBy=multi-user.target&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+*   启动nps：`sudo systemctl start nps`
+*   打开自启动：`sudo systemctl enable nps`
+*   重启应用：`sudo systemctl restart nps`
+*   停止应用：`sudo systemctl stop nps`
+*   查看应用：`sudo systemctl status nps`
+
+### 注意事项
+
+现在NPS的配置文件在/etc/nps中，不用在当前目录配置 可以删除了
+
+### 默认端口
+
+*   nps默认配置文件使用了80，443，8080，8024端口
+*   80与443端口为域名解析模式默认端口
+*   8080为web管理访问端口
+*   8024为网桥端口，用于客户端与服务器通信
+
+访问web控制端
+--------
+
+http://公网ip:8080
+
+注意 需要开启防火墙端口，云服务器也需要安全组放行
+
+客户端安装与systemctl来控制启动
+--------------------
+
+### 注意事项
+
+[注意看官方文档](https://ehang-io.github.io/nps/#/use?id=%E6%B3%A8%E5%86%8C%E5%88%B0%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1)，很完善
+
+下面报错是因为systemctl找不到npc二进制启动文件，指定就行
+
+![](https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_22-38-23.png)
+
+启动报错
+
+安装客户端
+-----
+
+解压后执行
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;./npc install&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux 下resilio同步服务安装</title>
+      <link>http://localhost:1313/325.html/</link>
+      <pubDate>Mon, 07 Dec 2020 12:42:46 +0000</pubDate>
+      <guid>http://localhost:1313/325.html/</guid>
+      <description>&lt;h2 id=&#34;参考常见问题&#34;&gt;参考常见问题&lt;/h2&gt;
+&lt;p&gt;2021年6月15日更新&lt;/p&gt;
+&lt;p&gt;网络传输速度测试一直不能满速跑，断断续续的传输，速度一直跑不上来，已弃坑&lt;/p&gt;
+&lt;p&gt;远程服务器安装后需要修改配置文件把127.0.0.1改成0.0.0.0，不然的话无论是rpm包安装还是仓库安装方式都会访问不了，&lt;/p&gt;
+&lt;p&gt;2021年5月4日更新 docker镜像网络问题&lt;/p&gt;
+&lt;p&gt;经测试linuxserver/resilio-sync的安装方式如果网络是以端口转发的方式会对传输有影响，具体是走桥接中继传输数据&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;解决办法是赋予容器一个独立ip或者走当前本地网络，下面是我的docker-compose.yml文件路径修改一下&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;version: &amp;#34;2&amp;#34;
+services:
+  resilio-sync:
+    image: ghcr.io/linuxserver/resilio-sync
+    container_name: resilio-sync
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - /root/resilio/config:/config
+      - //mnt/sda/resilio/downloads/:/downloads
+      - /mnt/sda/resilio/Sync/:/sync
+    network_mode: &amp;#34;host&amp;#34;
+    restart: unless-stopped
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2020/12/baedb53e845ae71.zip&#34;&gt;docker-compose&lt;/a&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2020/12/baedb53e845ae71.zip&#34;&gt;下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2021年1月29日更新&lt;/p&gt;
+&lt;p&gt;前面权限问题可以用下面方法解决，这个问题其实是白名单问题如果遇到下面问题就在配置文件里修改就行unraid docker镜像还是Linux下的问题都可以解决&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-29_15-15-24-1024x514.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;权限问题&#34;&gt;权限问题&lt;/h3&gt;
+&lt;p&gt;安装后有一个权限问题，最快解决办法&lt;/p&gt;
+&lt;p&gt;运行下面命令找到rslsync.service这个配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;systemctl status rslsync.service
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-07_12-22-51.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;编辑rslsync.service配置文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo vim /usr/lib/systemd/system/rslsync.service
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改如下&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-07_12-26-01.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;重新启动服务&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo systemctl restart rslsync.service
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;后续&#34;&gt;后续&lt;/h4&gt;
+&lt;p&gt;猜测是系统启动了rslsync而不是用户启动这个服务，有条件的可以试试反正解决了问题，猜测来源如下图&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-07_12-29-26.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装rslsync服务&#34;&gt;安装rslsync服务&lt;/h2&gt;
+&lt;p&gt;arch&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;yay -S rslsync
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;systemctl enable rslsync
+systemctl start rslsync&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+对于网络环境不好的时候，可以考虑使用离线安装包的方式来安装。官方给了两个包，分别是deb和rpm。
+
+DEB：
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;sudo dpkg -i &amp;lt;resilio-sync.deb&amp;gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Openwrt OpenConnect VPN 搭建设置教程</title>
+      <link>http://localhost:1313/293.html/</link>
+      <pubDate>Wed, 30 Sep 2020 13:52:00 +0000</pubDate>
+      <guid>http://localhost:1313/293.html/</guid>
+      <description>&lt;p&gt;## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图 ![流程图](&lt;a href=&#34;https://gao4.top/wp-content/uploads/2022/01/851998809.png&#34;&gt;https://gao4.top/wp-content/uploads/2022/01/851998809.png&lt;/a&gt;) ```Unknown package &amp;rsquo;luci-app-ocserv*&amp;rsquo;. Collected errors: * opkg_install_cmd: Cannot install package luci-app-ocserv*. root@OpenWrt:&lt;del&gt;# wget &lt;a href=&#34;https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel&#34;&gt;https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel&lt;/a&gt;_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk &amp;ndash;2022-01-04 12:01:53&amp;ndash; &lt;a href=&#34;https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel&#34;&gt;https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel&lt;/a&gt;_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Resolving mirrors.cloud.tencent.com&amp;hellip; 125.39.223.218, 42.63.50.204, 220.194.79.73, &amp;hellip; Connecting to mirrors.cloud.tencent.com|125.39.223.218|:443&amp;hellip; connected. HTTP request sent, awaiting response&amp;hellip; 200 OK Length: 5314 (5.2K) [application/octet-stream] Saving to: &amp;rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&amp;rsquo; luci-app-ocserv_git-20.356.64372-1259bb1 100%[================================================================================&amp;gt;] 5.19K &amp;ndash;.-KB/s in 0.001s 2022-01-04 12:01:56 (4.28 MB/s) - &amp;rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&amp;rsquo; saved [5314/5314] root@OpenWrt:&lt;/del&gt;# ls luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk root@OpenWrt:&lt;del&gt;# opkg install luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Installing luci-app-ocserv (git-20.356.64372-1259bb1-1) to root&amp;hellip; Configuring luci-app-ocserv. root@OpenWrt:&lt;/del&gt;# reboot root@OpenWrt:~# ``` 怎么知道当前openwrt架构的软件源包去后台看看就好了 ![复制浏览器搜索](&lt;a href=&#34;https://gao4.top/wp-content/uploads/2022/01/816834899.png&#34;&gt;https://gao4.top/wp-content/uploads/2022/01/816834899.png&lt;/a&gt;)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FileRun docker-compose 安装搭建</title>
+      <link>http://localhost:1313/288.html/</link>
+      <pubDate>Sun, 27 Sep 2020 12:17:45 +0000</pubDate>
+      <guid>http://localhost:1313/288.html/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;先说一下结论，安装后感觉确实比nextcloud快，特别对于ody备份照片来说，但有一个需要注意，在2020年官方的安卓客户端已经暂停更新，现在用的是nextcloud的安卓客户端，但默认登陆进去会有一个@Home目录，没有直接进入/目录，对客户端有些不兼容。现还没找到解决办法，只能等官方更新&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;version: &amp;#39;2&amp;#39;
+
+services:
+  db:
+    image: mariadb:10.1
+    environment:
+      MYSQL_ROOT_PASSWORD: your_mysql_root_password
+      MYSQL_USER: your_filerun_username
+      MYSQL_PASSWORD: your_filerun_password
+      MYSQL_DATABASE: your_filerun_database
+    volumes:
+      - ./filerun/db:/var/lib/mysql
+
+  web:
+    image: afian/filerun
+    environment:
+      FR_DB_HOST: db
+      FR_DB_PORT: 3306
+      FR_DB_NAME: your_filerun_database
+      FR_DB_USER: your_filerun_username
+      FR_DB_PASS: your_filerun_password
+      APACHE_RUN_USER: www-data
+      APACHE_RUN_USER_ID: 33
+      APACHE_RUN_GROUP: www-data
+      APACHE_RUN_GROUP_ID: 33
+    depends_on:
+      - db
+    links:
+      - db:db
+    ports:
+      - &amp;#34;80:80&amp;#34;
+    volumes:
+      - ./filerun/html:/var/www/html
+      - ./filerun/user-files:/user-files
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;参考链接&#34;&gt;参考链接&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.filerun.com/docker&#34;&gt;官方文档很详细推荐参考&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://post.m.smzdm.com/p/ag82pn83/&#34;&gt;什么值得买社区文章&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;默认登陆用户&#34;&gt;默认登陆用户&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;* Username: superuser
+
+* Password: superuser
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;中文汉化设置&#34;&gt;中文汉化设置&lt;/h2&gt;
+&lt;p&gt;打开&lt;a href=&#34;https://raw.githubusercontent.com/filerun/translations/master/chinese.php&#34;&gt;汉化地址&lt;/a&gt; 文件 Ctrl ＋S 保存为php文件，在后台上传刷新，就是中文的了&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Arch 安装sshd问题</title>
+      <link>http://localhost:1313/196.html/</link>
+      <pubDate>Tue, 08 Sep 2020 08:35:26 +0000</pubDate>
+      <guid>http://localhost:1313/196.html/</guid>
+      <description>&lt;h2 id=&#34;启动ssh&#34;&gt;启动ssh&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;systemctl restart sshd
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;开机自启ssh&#34;&gt;开机自启ssh&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;systemctl enable ssh
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;设置root用户远程登陆&#34;&gt;设置root用户远程登陆&lt;/h2&gt;
+&lt;p&gt;arch 远程ssh默认是禁止登陆root的&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nano /etc/ssh/sshd.config
+# 添加下面一行配置
+PermitRootLogin yes
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;nano-文本编辑器使用&#34;&gt;nano 文本编辑器使用&lt;/h2&gt;
+&lt;h3 id=&#34;退出&#34;&gt;退出&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;按Ctrl+X&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你修改了文件，下面会询问你是否需要保存修改。输入Y确认保存，输入N不保存，按Ctrl+C取消返回。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果输入了Y，下一步会让你输入想要保存的文件名。如果不需要修改文件名直接回车就行；若想要保存成别的名字（也就是另存为）则输入新名称然后确 定。这个时候也可用Ctrl+C来取消返回。&lt;/p&gt;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>UNraid 安装后注意事项常见操作</title>
+      <link>http://localhost:1313/234.html/</link>
+      <pubDate>Mon, 31 Aug 2020 13:18:41 +0000</pubDate>
+      <guid>http://localhost:1313/234.html/</guid>
+      <description>&lt;h2 id=&#34;引导模式&#34;&gt;引导模式&lt;/h2&gt;
+&lt;p&gt;UnRaid如果不能成功引导试试换传统引导模式&lt;/p&gt;
+&lt;h2 id=&#34;修改访问ip地址&#34;&gt;修改访问iP地址&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;如果引导成功后访问不了，可能是局域网没有dhcp服务器，试试在Unraid引导选择界面选择启动桌面修改IP地址
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831094440-1024x578.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;修改ip界面&lt;/p&gt;
+&lt;h2 id=&#34;修改主机时间&#34;&gt;修改主机时间&lt;/h2&gt;
+&lt;p&gt;修改主机时间为Beijing&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831130330.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;步骤1&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831130529-1024x561.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;步骤2&lt;/p&gt;
+&lt;h2 id=&#34;设置硬盘阵列开机自启动&#34;&gt;设置硬盘阵列开机自启动&lt;/h2&gt;
+&lt;p&gt;默认情况下硬盘阵列是不会开机就启动的需要设置一下&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831130758.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;步骤1&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831130825.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;步骤二，切换为YES&lt;/p&gt;
+&lt;h2 id=&#34;安装应用商店插件&#34;&gt;安装应用商店插件&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831131237.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在后台进入plugins设置页，然后进入install plugin的tab下，输入对应的插件安装地址，点击“安装”按钮，静静等待它安装完就行了&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这里给出我安装的两个插件地址&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Docker市场&lt;/strong&gt;&lt;br&gt;
+&lt;a href=&#34;https://links.jianshu.com/go?to=https%3A%2F%2Fraw.githubusercontent.com%2FSquidly271%2Fcommunity.applications%2Fmaster%2Fplugins%2Fcommunity.applications.plg&#34;&gt;https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;查看未加入序列的硬件&lt;/strong&gt;&lt;br&gt;
+&lt;a href=&#34;https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdlandon%2Funassigned.devices%2Fraw%2Fmaster%2Funassigned.devices.plg&#34;&gt;https://github.com/dlandon/unassigned.devices/raw/master/unassigned.devices.plg&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h5 id=&#34;无法安装插件的解决方案&#34;&gt;无法安装插件的解决方案&lt;/h5&gt;
+&lt;p&gt;安装软件商城出现问题，需要修改host指向国内的地址，具体host如下&lt;/p&gt;
+&lt;p&gt;方法1：通过vi 添加 hosts 中的地址“199.232.4.133 raw.githubusercontent.com”&lt;br&gt;
+方法2：在终端中运行以下内容即可修改host&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;echo &amp;ldquo;199.232.4.133 raw.githubusercontent.com&amp;rdquo; &amp;raquo; /etc/hosts&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;一键制作工具&#34;&gt;一键制作工具&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2020/08/6555e4d79948894.zip&#34;&gt;UnraidTool&lt;/a&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2020/08/6555e4d79948894.zip&#34;&gt;下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一键制作工具有问题，引导出错，建议下载包后用官方的制作工具制作启动盘然后用下面工具激活&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-23_19-24-44.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;key&lt;/p&gt;
+&lt;h2 id=&#34;安装ca-config-editor&#34;&gt;&lt;strong&gt;安装CA CONFIG EDITOR&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;一个在线配置文件编辑器&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-23_20-19-03-1024x324.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;编辑go文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash
+# Start the Management Utility
+/usr/local/sbin/emhttp &amp;amp;
+modprobe i915
+chown nobody:users /dev/dri
+chmod 0777 /dev/dri/*
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>arch下网络设置2020年版本</title>
+      <link>http://localhost:1313/198.html/</link>
+      <pubDate>Wed, 19 Aug 2020 15:46:53 +0000</pubDate>
+      <guid>http://localhost:1313/198.html/</guid>
+      <description>&lt;h2 id=&#34;静态ip设置&#34;&gt;静态IP设置&lt;/h2&gt;
+&lt;h3 id=&#34;地址设置&#34;&gt;地址设置&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ip addr change 192.168.200.187/24 dev enp3s0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改地方enp3s0网卡名称与192.168.200.187/24注意子网掩码/24&lt;/p&gt;
+&lt;h3 id=&#34;设置网关&#34;&gt;设置网关&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ip route add default via 192.168.200.1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意上面添加的是192.168.200.1这个网关&lt;/p&gt;
+&lt;h3 id=&#34;设置dns&#34;&gt;设置DNS&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#34;nameserver 61.139.2.69&amp;#34; &amp;gt;&amp;gt; /etc/resolv.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意我设置的是公共dns是61.139.2.69&lt;/p&gt;
+&lt;h3 id=&#34;测试网络&#34;&gt;测试网络&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ping qq.com
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;注意事项：默认arch安装盘启动后网卡是启动的状态UP，设置IP后上面的操作重启失效，不需要重启网卡。适合于安装arch系统时候没有DHCP服务器的一种情况。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;自动获取ip地址dhcp设置&#34;&gt;&lt;strong&gt;自动获取IP地址DHCP设置&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;启动&#34;&gt;启动&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;dhcpcd interface
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;注意事项：&lt;/p&gt;
+&lt;p&gt;1.不能同时运行两个 DHCP 客户端&lt;/p&gt;
+&lt;p&gt;2.使用 DHCP 客户端的同时还需要同时使用 网络管理器&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;文本字符界面设置ip地址推荐&#34;&gt;文本字符界面设置IP地址（推荐）&lt;/h2&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pacman -S networkmanager
+systemctl enable NetworkManager
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;执行命令&#34;&gt;执行命令&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nmtui
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;适合于已经联网的情况下设置固定IP或者设置DHCP获取IP，并且永久有效。是一种合适于安装系统后推荐设置使用的方法。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/timg-3.jpeg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;nmtui设置界面&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ventoy启动工具分享</title>
+      <link>http://localhost:1313/201.html/</link>
+      <pubDate>Wed, 19 Aug 2020 09:02:57 +0000</pubDate>
+      <guid>http://localhost:1313/201.html/</guid>
+      <description>&lt;p&gt;Ventoy是一个制作可启动U盘的开源工具支持win与Linux。有了Ventoy你就无需反复地格式化U盘，你只需要把ISO文件拷贝到U盘里面就可以启动了，无需其他操作。 你可以一次性拷贝很多个不同类型的ISO文件，在启动时Ventoy会显示一个菜单来选择。 无差异支持Legacy BIOS和UEFI模式&lt;/p&gt;
+&lt;p&gt;官方网站&lt;a href=&#34;https://www.ventoy.net&#34;&gt;https://www.ventoy.net&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;中文使用文档&lt;a href=&#34;https://www.ventoy.net/cn/doc_start.html&#34;&gt;https://www.ventoy.net/cn/doc_start.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/ventoy2disk_cn.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安装界面&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/ventoy2disk2_cn.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安装后&lt;/p&gt;
+&lt;h2 id=&#34;一个b站演示视频&#34;&gt;一个b站演示视频&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>群晖开启tun模块驱动以支持tinc</title>
+      <link>http://localhost:1313/164.html/</link>
+      <pubDate>Sun, 09 Aug 2020 09:27:29 +0000</pubDate>
+      <guid>http://localhost:1313/164.html/</guid>
+      <description>&lt;p&gt;登陆群晖开启ssh，在终端依次用admin用户登陆再sudo -i 进入#管理员模式&lt;/p&gt;
+&lt;h2 id=&#34;检查tun模块状态&#34;&gt;检查tun模块状态&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;lsmod | grep tun
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;如果结果为空请尝试安装它&#34;&gt;如果结果为空，请尝试安装它&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;insmod /lib/modules/tun.ko
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;依次输入下列命令确保tunko模块可以正常工作&#34;&gt;依次输入下列命令，确保tun.ko模块可以正常工作&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir /dev/net
+mknod /dev/net/tun c 10 200
+chmod 600 /dev/net/tun
+cat /dev/net/tun
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_202841-1024x466.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;命令结果&lt;/p&gt;
+&lt;h2 id=&#34;持久化操作&#34;&gt;持久化操作&lt;/h2&gt;
+&lt;p&gt;模块开机自启动（不保证有效可以在群晖面板计划任务设置）&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat &amp;lt; /usr/local/etc/rc.d/tun.sh
+#!/bin/sh -e
+insmod /lib/modules/tun.ko
+EOF
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;赋予脚本启动权限&#34;&gt;赋予脚本启动权限&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chmod a+x /usr/local/etc/rc.d/tun.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;tun/tap 驱动程序实现了虚拟网卡的功能，tun表示虚拟的是点对点设备，tap表示虚拟的是以太网设备，这两种设备针对网络包实施不同的封装。利用tun/tap 驱动，可以将tcp/ip协议栈处理好的网络分包传给任何一个使用tun/tap驱动的进程，由进程重新处理后再发到物理链路中。&lt;/p&gt;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>raw.githubusercontent.com拒绝访问解决办法</title>
+      <link>http://localhost:1313/142.html/</link>
+      <pubDate>Sat, 08 Aug 2020 15:10:17 +0000</pubDate>
+      <guid>http://localhost:1313/142.html/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_145930-1024x834.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;出现的错误&lt;/p&gt;
+&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1、访问网址 https://site.ip138.com/raw.Githubusercontent.com
+2、输入：raw.githubusercontent.com
+3、找到中国 香港Ip
+sudo vi /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;151.101.76.133 raw.githubusercontent.com&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+![](https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_150822-1024x324.jpg)
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>openmediavault SMB共享设置</title>
+      <link>http://localhost:1313/132.html/</link>
+      <pubDate>Sat, 08 Aug 2020 13:05:58 +0000</pubDate>
+      <guid>http://localhost:1313/132.html/</guid>
+      <description>&lt;h2 id=&#34;创建用户&#34;&gt;创建用户&lt;/h2&gt;
+&lt;p&gt;默认的admin用户与root用户权限都设置完毕也不能登陆smb，创建一个用户就正常了&lt;/p&gt;
+&lt;p&gt;访问权限管理-用户-添加用户&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_124702.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;添加用户&lt;/p&gt;
+&lt;h2 id=&#34;创建文件系统&#34;&gt;创建文件系统&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_125504-1024x641.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;创建文件系统ext4&lt;/p&gt;
+&lt;h2 id=&#34;挂载硬盘&#34;&gt;挂载硬盘&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_125156-1024x319.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;硬盘挂载&lt;/p&gt;
+&lt;h2 id=&#34;创建共享文件夹&#34;&gt;创建共享文件夹&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/OMV-SMB5-1024x677-1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;访问权限管理 —-&amp;gt; 共享文件夹点击添加根据自己需求设置名称，路径它自己会自动创建点击保存如需多个共享文件夹，按照上面依次设置即可&lt;/p&gt;
+&lt;h2 id=&#34;开启smb服务&#34;&gt;开启smb服务&lt;/h2&gt;
+&lt;p&gt;服务 —&amp;gt; SMB/CIFS启动服务 —&amp;gt; 保存&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/OMV-SMB6-1024x678-1.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;添加smb共享文件夹&#34;&gt;添加smb共享文件夹&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/OMV-SMB7-1024x679-1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后切换到共享，&lt;/p&gt;
+&lt;p&gt;选择所需添加的共享文件夹点击保存&lt;/p&gt;
+&lt;p&gt;然后把需要开启SMB的文件夹依次添加进去&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>freenas创建匿名访问共享</title>
+      <link>http://localhost:1313/127.html/</link>
+      <pubDate>Sat, 08 Aug 2020 08:54:32 +0000</pubDate>
+      <guid>http://localhost:1313/127.html/</guid>
+      <description>&lt;h2 id=&#34;一创建匿名访问共享11-创建&#34;&gt;一、创建匿名访问共享#1.1 创建&lt;/h2&gt;
+&lt;p&gt;进入Sharing ➞ Windows (SMB) Shares,然后点击ADD按钮界面如下图所示勾选Allow Guest Access直接按SAVE保存&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/FreeNAS15.52.27-1024x367.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;匿名共享图一&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意事项&lt;/strong&gt; 如果共享创建在根目录，没有任何权限处理，默认是只读的，要进一步控制权限，需要创建二级数据集，并设置权限。权限如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/FreeNAS16.22.02-1024x282.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;匿名共享图二&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tinc全球虚拟局域网搭建记录</title>
+      <link>http://localhost:1313/112.html/</link>
+      <pubDate>Thu, 06 Aug 2020 19:10:04 +0000</pubDate>
+      <guid>http://localhost:1313/112.html/</guid>
+      <description>&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apt-get install tinc
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;开启ipv4转发&#34;&gt;开启IPv4转发&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#34;net.ipv4.ip_forward = 1&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf &amp;amp;&amp;amp; sysctl -p
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;创建一个名为imlala的虚拟网络&#34;&gt;创建一个名为imlala的虚拟网络&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir -p /etc/tinc/imlala &amp;amp;&amp;amp; mkdir -p /etc/tinc/imlala/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;新建tincconf配置文件&#34;&gt;新建tinc.conf配置文件&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vim.tiny  /etc/tinc/imlala/tinc.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;配置文件内容&#34;&gt;配置文件内容&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Name=imlala
+Interface=vpn
+Cipher=aes-256-cbc
+Digest=sha512
+ConnectTo=imlala
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;网络名就是imlala，网卡接口名vpn，以及加密方式&lt;/p&gt;
+&lt;h2 id=&#34;建hosts文件&#34;&gt;建hosts文件&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vim.tiny /etc/tinc/imlala/hosts/imlala
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;需要注意这个文件名必须和tinc.conf内的Name&lt;/p&gt;
+&lt;h2 id=&#34;写入如下配置&#34;&gt;写入如下配置&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Address = 你的VPS公网IP
+Subnet = 10.0.0.1/32
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;完成之后生成密匙对&#34;&gt;完成之后生成密匙对&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tincd -n imlala -K4096
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;按两下回车全部保持默认配置，生成完成之后，对应的文件路径&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/etc/tinc/imlala/rsa_key.priv # 私钥
+/etc/tinc/imlala/hosts/imlala # 公钥
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;配置虚拟网卡tinc-up&#34;&gt;配置虚拟网卡tinc-up&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#39;ip addr add 10.0.0.1/24 dev $INTERFACE&amp;#39; &amp;gt; /etc/tinc/imlala/tinc-up
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;echo &amp;lsquo;ip link set $INTERFACE up&amp;rsquo; &amp;raquo; /etc/tinc/imlala/tinc-up&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+给执行权限
+-----
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;chmod +x /etc/tinc/imlala/tinc-*&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+启动
+--
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;systemctl start tinc@imlala
+systemctl enable tinc@imlala&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Debian国内服务器初始化</title>
+      <link>http://localhost:1313/109.html/</link>
+      <pubDate>Thu, 06 Aug 2020 18:56:43 +0000</pubDate>
+      <guid>http://localhost:1313/109.html/</guid>
+      <description>&lt;p&gt;乌班图服务器版本默认ssh居然没有sftp弃之 ， centos虽然很好但总感觉软件包陈旧，燧写这篇初始化操作&lt;/p&gt;
+&lt;h2 id=&#34;更新软件包&#34;&gt;更新软件包&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apt-get update
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;安装阿里云源docker&#34;&gt;安装阿里云源Docker&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;设置docker镜像源&#34;&gt;设置Docker镜像源&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json &amp;lt;&amp;lt;-&amp;#39;EOF&amp;#39;
+{
+  &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://0z9mn9x7.mirror.aliyuncs.com&amp;#34;]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;docker-compose-国内镜像源安装&#34;&gt;docker-compose 国内镜像源安装&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -L https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>wordpress 搭建</title>
+      <link>http://localhost:1313/27.html/</link>
+      <pubDate>Fri, 31 Jul 2020 20:10:08 +0000</pubDate>
+      <guid>http://localhost:1313/27.html/</guid>
+      <description>&lt;h2 id=&#34;github下载文件&#34;&gt;Github下载文件&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git clone https://github.com/kefins/docker_wpress.git wpress
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd wpress
+vi docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改1个地方image: wordpress:php7.4-fpm&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;version: &amp;#39;3&amp;#39;
+services:
+
+    mysql:
+        image: mariadb
+        container_name: mariadb
+        ports:
+            - &amp;#39;3306:3306&amp;#39;
+        volumes:
+            - ./sqldb:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=UNJ^)-+566YYunfn
+            - MYSQL_DATABASE=wordpress
+            - MYSQL_USER=wordpress
+            - MYSQL_PASSWORD=aqwe8662
+        networks:
+            - backend
+        restart: always
+
+    wordpress:
+        depends_on:
+            - mysql
+        image: wordpress:php7.4-fpm
+        container_name: wordpress
+        ports:
+            - &amp;#39;9000:9000&amp;#39;
+        volumes:
+            #- ./php-fpm:/usr/local/etc/php-fpm.d
+            - ./www:/var/www/html
+        environment:
+            - WORDPRESS_DB_NAME=wordpress
+            - WORDPRESS_TABLE_PREFIX=wp_
+            - WORDPRESS_DB_HOST=mysql:3306
+            - WORDPRESS_DB_USER=wordpress
+            - WORDPRESS_DB_PASSWORD=aqwe558123
+        links:
+            - mysql
+        networks:
+            - frontend
+            - backend
+        restart: always
+
+    nginx:
+        image: nginx:latest
+        container_name: nginx
+        ports:
+            - &amp;#39;80:80&amp;#39;
+            - &amp;#34;443:443&amp;#34;
+        volumes:
+            - ./nginx:/etc/nginx/conf.d
+            - ./logs/nginx:/var/log/nginx
+            - ./www:/var/www/html
+            - /var/run/docker.sock:/tmp/docker.sock:ro
+        links:
+            - wordpress
+        networks:
+            - frontend
+        restart: always
+
+networks:
+    frontend:
+        #name: frontend
+        driver: bridge
+    backend:
+        #name: backend
+        driver: bridge
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;启动容器&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

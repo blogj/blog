@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Wordpress on 孤岛</title>
+    <link>http://localhost:1313/tags/wordpress/</link>
+    <description>Recent content in Wordpress on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 31 Jul 2020 20:10:08 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>wordpress 搭建</title>
+      <link>http://localhost:1313/27.html/</link>
+      <pubDate>Fri, 31 Jul 2020 20:10:08 +0000</pubDate>
+      <guid>http://localhost:1313/27.html/</guid>
+      <description>&lt;h2 id=&#34;github下载文件&#34;&gt;Github下载文件&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git clone https://github.com/kefins/docker_wpress.git wpress
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd wpress
+vi docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;修改1个地方image: wordpress:php7.4-fpm&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;version: &amp;#39;3&amp;#39;
+services:
+
+    mysql:
+        image: mariadb
+        container_name: mariadb
+        ports:
+            - &amp;#39;3306:3306&amp;#39;
+        volumes:
+            - ./sqldb:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=UNJ^)-+566YYunfn
+            - MYSQL_DATABASE=wordpress
+            - MYSQL_USER=wordpress
+            - MYSQL_PASSWORD=aqwe8662
+        networks:
+            - backend
+        restart: always
+
+    wordpress:
+        depends_on:
+            - mysql
+        image: wordpress:php7.4-fpm
+        container_name: wordpress
+        ports:
+            - &amp;#39;9000:9000&amp;#39;
+        volumes:
+            #- ./php-fpm:/usr/local/etc/php-fpm.d
+            - ./www:/var/www/html
+        environment:
+            - WORDPRESS_DB_NAME=wordpress
+            - WORDPRESS_TABLE_PREFIX=wp_
+            - WORDPRESS_DB_HOST=mysql:3306
+            - WORDPRESS_DB_USER=wordpress
+            - WORDPRESS_DB_PASSWORD=aqwe558123
+        links:
+            - mysql
+        networks:
+            - frontend
+            - backend
+        restart: always
+
+    nginx:
+        image: nginx:latest
+        container_name: nginx
+        ports:
+            - &amp;#39;80:80&amp;#39;
+            - &amp;#34;443:443&amp;#34;
+        volumes:
+            - ./nginx:/etc/nginx/conf.d
+            - ./logs/nginx:/var/log/nginx
+            - ./www:/var/www/html
+            - /var/run/docker.sock:/tmp/docker.sock:ro
+        links:
+            - wordpress
+        networks:
+            - frontend
+        restart: always
+
+networks:
+    frontend:
+        #name: frontend
+        driver: bridge
+    backend:
+        #name: backend
+        driver: bridge
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;启动容器&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

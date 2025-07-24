@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>防火墙 on 孤岛</title>
+    <link>http://localhost:1313/tags/%E9%98%B2%E7%81%AB%E5%A2%99/</link>
+    <description>Recent content in 防火墙 on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 06 Sep 2024 09:20:02 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E9%98%B2%E7%81%AB%E5%A2%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Openwrt系列之打开ipv6端口访问</title>
+      <link>http://localhost:1313/20240906.html/</link>
+      <pubDate>Fri, 06 Sep 2024 09:20:02 +0800</pubDate>
+      <guid>http://localhost:1313/20240906.html/</guid>
+      <description>&lt;h2 id=&#34;打开ipv6-访问&#34;&gt;打开ipv6 访问&lt;/h2&gt;
+&lt;p&gt;很简单只需要把防火墙打开就行就可以访问端口上的openwrt服务&lt;/p&gt;
+&lt;h3 id=&#34;第一步&#34;&gt;第一步&lt;/h3&gt;
+&lt;p&gt;打开防火墙区域设置
+&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/9yue6hao/Snipaste_2024-09-06_10-28-21.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;第二步&#34;&gt;第二步&lt;/h3&gt;
+&lt;p&gt;防火墙 通信规则
+&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/9yue6hao/Snipaste_2024-09-06_10-34-34.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

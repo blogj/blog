@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>自动化 on 孤岛</title>
+    <link>http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+    <description>Recent content in 自动化 on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 21 Jun 2024 09:22:44 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Syncthing自动化接受设备与自动添加共享目录脚本</title>
+      <link>http://localhost:1313/20240621.html/</link>
+      <pubDate>Fri, 21 Jun 2024 09:22:44 +0800</pubDate>
+      <guid>http://localhost:1313/20240621.html/</guid>
+      <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;在当前2024/6/21参考官方论坛与github官方讨论，开发者不愿意开发自动接受设备与连接设备后自动添加共享目录，官方更愿意让使用者自己通过api构建程序脚本来增强相关功能。&lt;/p&gt;
+&lt;h2 id=&#34;脚本&#34;&gt;脚本&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nano sync.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash
+
+api_key=&amp;#34;YOUR_API_KEY_HERE&amp;#34;
+syncthing_url=&amp;#34;http://localhost:8384&amp;#34;
+
+while :
+do
+    device_id=$(curl -s -X GET -H &amp;#34;X-API-Key: ${api_key}&amp;#34; &amp;#34;${syncthing_url}/rest/cluster/pending/devices&amp;#34; | jq -r &amp;#34;keys[0]&amp;#34; )
+    time=$(date &amp;#34;+%Y-%m-%d %H:%M:%S&amp;#34;)
+    if [ &amp;#34;$device_id&amp;#34; = &amp;#34;null&amp;#34; ] || [ ${#device_id} -lt 5 ]; then
+        echo $time &amp;#34;未找到待连接的设备&amp;#34;
+    else
+        curl -s -X PUT -H &amp;#34;X-API-Key: ${api_key}&amp;#34; -d &amp;#34;[{\&amp;#34;deviceID\&amp;#34;: \&amp;#34;$device_id\&amp;#34;}]&amp;#34; ${syncthing_url}/rest/config/devices
+        curl -s -X PATCH -H &amp;#34;X-API-Key: ${api_key}&amp;#34; -d &amp;#34;{ &amp;#34;\devices\&amp;#34;:&amp;#34;[{\&amp;#34;deviceID\&amp;#34;: \&amp;#34;$device_id\&amp;#34;}]}&amp;#34; ${syncthing_url}/rest/config/folders/9ecev-bio4v
+        echo $time &amp;#34;$device_id 连接成功并添加共享文件夹&amp;#34;
+    fi
+    sleep 30 
+done
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;注意事项必看&#34;&gt;注意事项(必看)&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;YOUR_API_KEY_HERE 在右上角 操作-设置-常规-API 密钥找到&lt;/li&gt;
+&lt;li&gt;jq命令必须安装这是解析设备id用的常规Linux发行版本可能没有带&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;开机启动脚本&#34;&gt;开机启动脚本&lt;/h3&gt;
+&lt;p&gt;因为每个发行版本可能不一样就偷懒不写了q.q&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

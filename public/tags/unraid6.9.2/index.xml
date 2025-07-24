@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Unraid6.9.2 on 孤岛</title>
+    <link>http://localhost:1313/tags/unraid6.9.2/</link>
+    <description>Recent content in Unraid6.9.2 on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 24 Nov 2021 13:20:53 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/unraid6.9.2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>unraid6.9.2 安装群晖DSM7.0.1</title>
+      <link>http://localhost:1313/707.html/</link>
+      <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
+      <guid>http://localhost:1313/707.html/</guid>
+      <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.openos.org/threads/111ds3615ds918ds36157-x.3529/page-172#post-40022&#34;&gt;引导驱动来源openos论坛&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用版本 DS3615xs_7.01-42218&lt;/p&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;p&gt;新建Linux虚拟机配置如下&lt;strong&gt;按照配置启动虚拟机&lt;/strong&gt;就行，不用改什么全程图形化&lt;br&gt;
+&lt;img alt=&#34;虚拟机配置&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/11/805891248.png&#34; title=&#34;虚拟机配置&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;详细主要配置&#34;&gt;详细主要配置&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Machine i440fx-5.1&lt;/li&gt;
+&lt;li&gt;Bios OVMF&lt;/li&gt;
+&lt;li&gt;Primary vDisk Location MAnual&lt;/li&gt;
+&lt;li&gt;Primary vDisk Bus SATA&lt;/li&gt;
+&lt;li&gt;Network MAC 00:11:32:11:22:33&lt;/li&gt;
+&lt;li&gt;Network Model virtio-net&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;后言&#34;&gt;后言&lt;/h2&gt;
+&lt;p&gt;在什么值得买上有一篇在unraid下搭建黑群晖7的文章，按照它的教程，有可能会出现，在安装成功后卸载套件或停止套件出现死机重启的情况。&lt;/p&gt;
+&lt;h3 id=&#34;偶遇问题&#34;&gt;偶遇问题&lt;/h3&gt;
+&lt;p&gt;安装套件后权限问题&lt;br&gt;
+&lt;img alt=&#34;套件后权限&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/11/1761296647.png&#34; title=&#34;套件后权限&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>unraid6.9.2安装及UEFI引导与初始化</title>
+      <link>http://localhost:1313/649.html/</link>
+      <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
+      <guid>http://localhost:1313/649.html/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;系统包来源于俄罗斯论坛&lt;/p&gt;
+&lt;h1 id=&#34;系统盘制作&#34;&gt;系统盘制作&lt;/h1&gt;
+&lt;h2 id=&#34;系统下载&#34;&gt;系统下载&lt;/h2&gt;
+&lt;p&gt;分享&lt;a href=&#34;https://www.aliyundrive.com/s/xt2ZVqBRGxw&#34;&gt;云盘链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用官方工具制作&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把下载的unRAIDServer-6.9.2-x86_64_fu11压缩包解压&lt;/li&gt;
+&lt;li&gt;运行Unraid.USB.Creator.Win32-1.6&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;官方制作工具&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1676644806.png&#34; title=&#34;官方制作工具&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Allow UEFI Boot 勾选 需要UEFI引导一定需要使用官方工具制作 使用&lt;code&gt;UnraidTool&lt;/code&gt;制作UEFI引导的系统U盘不一定生效&lt;/li&gt;
+&lt;li&gt;生成密钥，复制&lt;code&gt;UnraidTool.exe&lt;/code&gt;与&lt;code&gt;keymaker.exe&lt;/code&gt;到U盘根目录 右击管理员身份运行 UnraidTool 点击第二个&lt;code&gt;注册&lt;/code&gt; 系统制作完毕&lt;br&gt;
+&lt;img alt=&#34;UnraidTool&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/4095878892.png&#34; title=&#34;UnraidTool&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;进入系统初始化操作&#34;&gt;进入系统初始化操作&lt;/h1&gt;
+&lt;h2 id=&#34;github访问&#34;&gt;GitHub访问&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#34;199.232.4.133 raw.githubusercontent.com&amp;#34; &amp;gt;&amp;gt; /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img alt=&#34;GitHub访问&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3282416052.png&#34; title=&#34;GitHub访问&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;docker市场&#34;&gt;Docker市场&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img alt=&#34;安装Docker市场&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3954018899.png&#34; title=&#34;安装Docker市场&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装中文语言包&#34;&gt;安装中文语言包&lt;/h2&gt;
+&lt;p&gt;在Docker市场点击 &lt;strong&gt;左边&lt;/strong&gt; &lt;strong&gt;Language&lt;/strong&gt;找到中文语言包安装即可&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;中文语言包&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1974993561.png&#34; title=&#34;中文语言包&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;切换中文&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3264224320.png&#34; title=&#34;切换中文&#34;&gt;&lt;br&gt;
+选择中文如何点击APPLY确定&lt;br&gt;
+&lt;img alt=&#34;切换即可&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3824821100.png&#34; title=&#34;切换即可&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;设置阵列自启&#34;&gt;设置阵列自启&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;阵列自启&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/2732363111.png&#34; title=&#34;阵列自启&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;开启核显&#34;&gt;开启核显&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;安装CA CONFIG EDITOR&lt;/code&gt;`一个在线配置文件编辑器`&lt;br&gt;
+&lt;img alt=&#34;安装插件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-23_20-19-03-1024x324.png&#34; title=&#34;安装插件&#34;&gt;&lt;br&gt;
+点击插件&lt;br&gt;
+&lt;img alt=&#34;点击插件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/626629736.png&#34; title=&#34;点击插件&#34;&gt;&lt;br&gt;
+&lt;img alt=&#34;页面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1099005542.png&#34; title=&#34;页面&#34;&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;modprobe i915
+chown nobody:users /dev/dri
+chmod 0777 /dev/dri/*
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;必安装插件&#34;&gt;必安装插件&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;User Scripts&lt;/strong&gt;&lt;br&gt;
+一款可以运行用户自定义脚本的插件。贴吧有人使用这个插件设置每次开机自动更换docker源。官方解释为：一个插件，可充当任何用户脚本的简单前端，使您无需输入命令行即可运行它们。&lt;br&gt;
+&lt;img alt=&#34;User Scripts&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3505330592.png&#34; title=&#34;User Scripts&#34;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;rclone&lt;/strong&gt;&lt;br&gt;
+类似于rsync但是可以连通所有云服务器的命令行软件, 用它来做远程备份或者下载很方便.&lt;br&gt;
+&lt;img alt=&#34;rclone&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1398285922.png&#34; title=&#34;rclone&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>

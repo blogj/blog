@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Unraid on 孤岛</title>
+    <link>http://localhost:1313/tags/unraid/</link>
+    <description>Recent content in Unraid on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 24 Nov 2021 13:20:53 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/unraid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>unraid6.9.2 安装群晖DSM7.0.1</title>
+      <link>http://localhost:1313/707.html/</link>
+      <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
+      <guid>http://localhost:1313/707.html/</guid>
+      <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.openos.org/threads/111ds3615ds918ds36157-x.3529/page-172#post-40022&#34;&gt;引导驱动来源openos论坛&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用版本 DS3615xs_7.01-42218&lt;/p&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;
+&lt;p&gt;新建Linux虚拟机配置如下&lt;strong&gt;按照配置启动虚拟机&lt;/strong&gt;就行，不用改什么全程图形化&lt;br&gt;
+&lt;img alt=&#34;虚拟机配置&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/11/805891248.png&#34; title=&#34;虚拟机配置&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;详细主要配置&#34;&gt;详细主要配置&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Machine i440fx-5.1&lt;/li&gt;
+&lt;li&gt;Bios OVMF&lt;/li&gt;
+&lt;li&gt;Primary vDisk Location MAnual&lt;/li&gt;
+&lt;li&gt;Primary vDisk Bus SATA&lt;/li&gt;
+&lt;li&gt;Network MAC 00:11:32:11:22:33&lt;/li&gt;
+&lt;li&gt;Network Model virtio-net&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;后言&#34;&gt;后言&lt;/h2&gt;
+&lt;p&gt;在什么值得买上有一篇在unraid下搭建黑群晖7的文章，按照它的教程，有可能会出现，在安装成功后卸载套件或停止套件出现死机重启的情况。&lt;/p&gt;
+&lt;h3 id=&#34;偶遇问题&#34;&gt;偶遇问题&lt;/h3&gt;
+&lt;p&gt;安装套件后权限问题&lt;br&gt;
+&lt;img alt=&#34;套件后权限&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/11/1761296647.png&#34; title=&#34;套件后权限&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>unraid 挂载webdav为本地目录</title>
+      <link>http://localhost:1313/662.html/</link>
+      <pubDate>Wed, 04 Aug 2021 21:43:00 +0000</pubDate>
+      <guid>http://localhost:1313/662.html/</guid>
+      <description>&lt;h1 id=&#34;序言&#34;&gt;序言&lt;/h1&gt;
+&lt;p&gt;上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不稳定，就没有去了解，这次我们通过 rclone 这个软件来挂载webdav协议来实现把阿里云盘挂载到本地目录，这样就实现了让nas或者本地的主机无负担的有了一个大硬盘。&lt;/p&gt;
+&lt;h1 id=&#34;过程&#34;&gt;过程&lt;/h1&gt;
+&lt;p&gt;注意前期一定确定&lt;code&gt;webdav&lt;/code&gt;可用&lt;/p&gt;
+&lt;h2 id=&#34;安装rclone插件&#34;&gt;安装rclone插件&lt;/h2&gt;
+&lt;p&gt;在 unraid 应用市场搜索&lt;code&gt;rclone&lt;/code&gt;安装&lt;br&gt;
+安装可能会遇到网络问题 我曾经在unraid6.8.2版本下安装不成功 升级到unraid6.9.2版本才成功 在fq情况下软路由上&lt;br&gt;
+&lt;img alt=&#34;搜索rclone&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3478895582.png&#34; title=&#34;搜索rclone&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在命令行下运行&lt;code&gt;rclone version&lt;/code&gt;测试插件是否安装成功&lt;br&gt;
+&lt;img alt=&#34;安装插件成功截图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/834171094.png&#34; title=&#34;安装插件成功截图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;剩下的操作跟 rclone 命令行下进行配置一模一样&lt;br&gt;
+&lt;a href=&#34;https://rclone.org/&#34;&gt;rclone官网&lt;/a&gt;也有相应的模板&lt;br&gt;
+&lt;img alt=&#34;模板&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/2251568679.png&#34; title=&#34;模板&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;rclone使用&#34;&gt;rclone使用&lt;/h3&gt;
+&lt;p&gt;在终端下运行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rclone config
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;remote-config&#34;&gt;No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q&amp;gt; n #选择n新建名称
+name&amp;gt; aliyun #名字对应下面挂载
+Type of storage to configure.
+Choose a number from below, or type in your own value
+[snip]
+XX / Webdav
+\ &amp;ldquo;webdav&amp;rdquo;
+[snip]
+Storage&amp;gt; webdav #选择协议
+URL of http host to connect to
+Choose a number from below, or type in your own value
+1 / Connect to example.com
+\ &amp;ldquo;&lt;a href=&#34;https://example.com&#34;&gt;https://example.com&lt;/a&gt;&amp;rdquo;
+url&amp;gt; http://192.168.100.4:8082/ 设置webdav服务器地址注意需要加http
+Name of the Webdav site/service/software you are using
+Choose a number from below, or type in your own value
+1 / Nextcloud
+\ &amp;ldquo;nextcloud&amp;rdquo;
+2 / Owncloud
+\ &amp;ldquo;owncloud&amp;rdquo;
+3 / Sharepoint Online, authenticated by Microsoft account.
+\ &amp;ldquo;sharepoint&amp;rdquo;
+4 / Sharepoint with NTLM authentication. Usually self-hosted or on-premises.
+\ &amp;ldquo;sharepoint-ntlm&amp;rdquo;
+5 / Other site/service or software
+\ &amp;ldquo;other&amp;rdquo;
+vendor&amp;gt; 5 #选择第五个
+User name
+user&amp;gt; user #设置用户名
+Password.
+y) Yes type in my own password
+g) Generate random password
+n) No leave this optional password blank
+y/g/n&amp;gt; y #设置密码默认2次都不显示
+Enter the password:
+password:
+Confirm the password:
+password:
+Bearer token instead of user/pass (e.g. a Macaroon)
+bearer_token&amp;gt;
+Remote config&lt;/h2&gt;
+&lt;h2 id=&#34;bearer_token-&#34;&gt;[aliyun]
+type = webdav
+url = http://192.168.100.4:8082/
+vendor = other
+user = user
+pass = *** ENCRYPTED ***
+bearer_token =&lt;/h2&gt;
+&lt;p&gt;y) Yes this is OK
+e) Edit this remote
+d) Delete this remote
+y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>unraid6.9.2安装及UEFI引导与初始化</title>
+      <link>http://localhost:1313/649.html/</link>
+      <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
+      <guid>http://localhost:1313/649.html/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;系统包来源于俄罗斯论坛&lt;/p&gt;
+&lt;h1 id=&#34;系统盘制作&#34;&gt;系统盘制作&lt;/h1&gt;
+&lt;h2 id=&#34;系统下载&#34;&gt;系统下载&lt;/h2&gt;
+&lt;p&gt;分享&lt;a href=&#34;https://www.aliyundrive.com/s/xt2ZVqBRGxw&#34;&gt;云盘链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用官方工具制作&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把下载的unRAIDServer-6.9.2-x86_64_fu11压缩包解压&lt;/li&gt;
+&lt;li&gt;运行Unraid.USB.Creator.Win32-1.6&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;官方制作工具&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1676644806.png&#34; title=&#34;官方制作工具&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Allow UEFI Boot 勾选 需要UEFI引导一定需要使用官方工具制作 使用&lt;code&gt;UnraidTool&lt;/code&gt;制作UEFI引导的系统U盘不一定生效&lt;/li&gt;
+&lt;li&gt;生成密钥，复制&lt;code&gt;UnraidTool.exe&lt;/code&gt;与&lt;code&gt;keymaker.exe&lt;/code&gt;到U盘根目录 右击管理员身份运行 UnraidTool 点击第二个&lt;code&gt;注册&lt;/code&gt; 系统制作完毕&lt;br&gt;
+&lt;img alt=&#34;UnraidTool&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/4095878892.png&#34; title=&#34;UnraidTool&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;进入系统初始化操作&#34;&gt;进入系统初始化操作&lt;/h1&gt;
+&lt;h2 id=&#34;github访问&#34;&gt;GitHub访问&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#34;199.232.4.133 raw.githubusercontent.com&amp;#34; &amp;gt;&amp;gt; /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img alt=&#34;GitHub访问&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3282416052.png&#34; title=&#34;GitHub访问&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;docker市场&#34;&gt;Docker市场&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img alt=&#34;安装Docker市场&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3954018899.png&#34; title=&#34;安装Docker市场&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装中文语言包&#34;&gt;安装中文语言包&lt;/h2&gt;
+&lt;p&gt;在Docker市场点击 &lt;strong&gt;左边&lt;/strong&gt; &lt;strong&gt;Language&lt;/strong&gt;找到中文语言包安装即可&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;中文语言包&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1974993561.png&#34; title=&#34;中文语言包&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;切换中文&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3264224320.png&#34; title=&#34;切换中文&#34;&gt;&lt;br&gt;
+选择中文如何点击APPLY确定&lt;br&gt;
+&lt;img alt=&#34;切换即可&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3824821100.png&#34; title=&#34;切换即可&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;设置阵列自启&#34;&gt;设置阵列自启&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;阵列自启&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/2732363111.png&#34; title=&#34;阵列自启&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;开启核显&#34;&gt;开启核显&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;安装CA CONFIG EDITOR&lt;/code&gt;`一个在线配置文件编辑器`&lt;br&gt;
+&lt;img alt=&#34;安装插件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-23_20-19-03-1024x324.png&#34; title=&#34;安装插件&#34;&gt;&lt;br&gt;
+点击插件&lt;br&gt;
+&lt;img alt=&#34;点击插件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/626629736.png&#34; title=&#34;点击插件&#34;&gt;&lt;br&gt;
+&lt;img alt=&#34;页面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1099005542.png&#34; title=&#34;页面&#34;&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;modprobe i915
+chown nobody:users /dev/dri
+chmod 0777 /dev/dri/*
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;必安装插件&#34;&gt;必安装插件&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;User Scripts&lt;/strong&gt;&lt;br&gt;
+一款可以运行用户自定义脚本的插件。贴吧有人使用这个插件设置每次开机自动更换docker源。官方解释为：一个插件，可充当任何用户脚本的简单前端，使您无需输入命令行即可运行它们。&lt;br&gt;
+&lt;img alt=&#34;User Scripts&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/3505330592.png&#34; title=&#34;User Scripts&#34;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;rclone&lt;/strong&gt;&lt;br&gt;
+类似于rsync但是可以连通所有云服务器的命令行软件, 用它来做远程备份或者下载很方便.&lt;br&gt;
+&lt;img alt=&#34;rclone&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/08/1398285922.png&#34; title=&#34;rclone&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Unarid 安装异星工厂并指定存档</title>
+      <link>http://localhost:1313/415.html/</link>
+      <pubDate>Sun, 24 Jan 2021 13:46:44 +0000</pubDate>
+      <guid>http://localhost:1313/415.html/</guid>
+      <description>&lt;h2 id=&#34;0-1搜索factorio并添加环境变量指定存档&#34;&gt;0-1搜索factorio并添加环境变量指定存档&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-34-50.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;搜索镜像&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-34-18.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;添加相关环境变量&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;C1存档已经上传到saves目录&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-40-00.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;存档地址&lt;/p&gt;
+&lt;p&gt;配置文件修改&lt;/p&gt;
+&lt;p&gt;\tower\appdata\factorio\config ## 配置文件地址&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-43-27.png&#34;&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;public”: true 改为 public”: false
+requireuserverification”: true 改为requireuserverification”: false
+不然客户端直连服务器不上
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上传一份我的配置文件按需修改&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2021/01/4aad729c766ff05.zip&#34;&gt;server-settings&lt;/a&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2021/01/4aad729c766ff05.zip&#34;&gt;下载&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;运行&#34;&gt;运行&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-33-06-1024x39.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>UNraid 安装后注意事项常见操作</title>
+      <link>http://localhost:1313/234.html/</link>
+      <pubDate>Mon, 31 Aug 2020 13:18:41 +0000</pubDate>
+      <guid>http://localhost:1313/234.html/</guid>
+      <description>&lt;h2 id=&#34;引导模式&#34;&gt;引导模式&lt;/h2&gt;
+&lt;p&gt;UnRaid如果不能成功引导试试换传统引导模式&lt;/p&gt;
+&lt;h2 id=&#34;修改访问ip地址&#34;&gt;修改访问iP地址&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;如果引导成功后访问不了，可能是局域网没有dhcp服务器，试试在Unraid引导选择界面选择启动桌面修改IP地址
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831094440-1024x578.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;修改ip界面&lt;/p&gt;
+&lt;h2 id=&#34;修改主机时间&#34;&gt;修改主机时间&lt;/h2&gt;
+&lt;p&gt;修改主机时间为Beijing&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831130330.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;步骤1&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831130529-1024x561.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;步骤2&lt;/p&gt;
+&lt;h2 id=&#34;设置硬盘阵列开机自启动&#34;&gt;设置硬盘阵列开机自启动&lt;/h2&gt;
+&lt;p&gt;默认情况下硬盘阵列是不会开机就启动的需要设置一下&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831130758.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;步骤1&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831130825.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;步骤二，切换为YES&lt;/p&gt;
+&lt;h2 id=&#34;安装应用商店插件&#34;&gt;安装应用商店插件&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/20200831131237.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在后台进入plugins设置页，然后进入install plugin的tab下，输入对应的插件安装地址，点击“安装”按钮，静静等待它安装完就行了&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这里给出我安装的两个插件地址&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Docker市场&lt;/strong&gt;&lt;br&gt;
+&lt;a href=&#34;https://links.jianshu.com/go?to=https%3A%2F%2Fraw.githubusercontent.com%2FSquidly271%2Fcommunity.applications%2Fmaster%2Fplugins%2Fcommunity.applications.plg&#34;&gt;https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;查看未加入序列的硬件&lt;/strong&gt;&lt;br&gt;
+&lt;a href=&#34;https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdlandon%2Funassigned.devices%2Fraw%2Fmaster%2Funassigned.devices.plg&#34;&gt;https://github.com/dlandon/unassigned.devices/raw/master/unassigned.devices.plg&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h5 id=&#34;无法安装插件的解决方案&#34;&gt;无法安装插件的解决方案&lt;/h5&gt;
+&lt;p&gt;安装软件商城出现问题，需要修改host指向国内的地址，具体host如下&lt;/p&gt;
+&lt;p&gt;方法1：通过vi 添加 hosts 中的地址“199.232.4.133 raw.githubusercontent.com”&lt;br&gt;
+方法2：在终端中运行以下内容即可修改host&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;echo &amp;ldquo;199.232.4.133 raw.githubusercontent.com&amp;rdquo; &amp;raquo; /etc/hosts&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;一键制作工具&#34;&gt;一键制作工具&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2020/08/6555e4d79948894.zip&#34;&gt;UnraidTool&lt;/a&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2020/08/6555e4d79948894.zip&#34;&gt;下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一键制作工具有问题，引导出错，建议下载包后用官方的制作工具制作启动盘然后用下面工具激活&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-23_19-24-44.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;key&lt;/p&gt;
+&lt;h2 id=&#34;安装ca-config-editor&#34;&gt;&lt;strong&gt;安装CA CONFIG EDITOR&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;一个在线配置文件编辑器&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-23_20-19-03-1024x324.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;编辑go文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash
+# Start the Management Utility
+/usr/local/sbin/emhttp &amp;amp;
+modprobe i915
+chown nobody:users /dev/dri
+chmod 0777 /dev/dri/*
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

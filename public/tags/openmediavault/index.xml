@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Openmediavault on 孤岛</title>
+    <link>http://localhost:1313/tags/openmediavault/</link>
+    <description>Recent content in Openmediavault on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 08 Aug 2020 15:10:17 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/openmediavault/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>raw.githubusercontent.com拒绝访问解决办法</title>
+      <link>http://localhost:1313/142.html/</link>
+      <pubDate>Sat, 08 Aug 2020 15:10:17 +0000</pubDate>
+      <guid>http://localhost:1313/142.html/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_145930-1024x834.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;出现的错误&lt;/p&gt;
+&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;1、访问网址 https://site.ip138.com/raw.Githubusercontent.com
+2、输入：raw.githubusercontent.com
+3、找到中国 香港Ip
+sudo vi /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;151.101.76.133 raw.githubusercontent.com&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+![](https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_150822-1024x324.jpg)
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>openmediavault SMB共享设置</title>
+      <link>http://localhost:1313/132.html/</link>
+      <pubDate>Sat, 08 Aug 2020 13:05:58 +0000</pubDate>
+      <guid>http://localhost:1313/132.html/</guid>
+      <description>&lt;h2 id=&#34;创建用户&#34;&gt;创建用户&lt;/h2&gt;
+&lt;p&gt;默认的admin用户与root用户权限都设置完毕也不能登陆smb，创建一个用户就正常了&lt;/p&gt;
+&lt;p&gt;访问权限管理-用户-添加用户&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_124702.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;添加用户&lt;/p&gt;
+&lt;h2 id=&#34;创建文件系统&#34;&gt;创建文件系统&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_125504-1024x641.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;创建文件系统ext4&lt;/p&gt;
+&lt;h2 id=&#34;挂载硬盘&#34;&gt;挂载硬盘&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_125156-1024x319.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;硬盘挂载&lt;/p&gt;
+&lt;h2 id=&#34;创建共享文件夹&#34;&gt;创建共享文件夹&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/OMV-SMB5-1024x677-1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;访问权限管理 —-&amp;gt; 共享文件夹点击添加根据自己需求设置名称，路径它自己会自动创建点击保存如需多个共享文件夹，按照上面依次设置即可&lt;/p&gt;
+&lt;h2 id=&#34;开启smb服务&#34;&gt;开启smb服务&lt;/h2&gt;
+&lt;p&gt;服务 —&amp;gt; SMB/CIFS启动服务 —&amp;gt; 保存&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/OMV-SMB6-1024x678-1.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;添加smb共享文件夹&#34;&gt;添加smb共享文件夹&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/OMV-SMB7-1024x679-1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后切换到共享，&lt;/p&gt;
+&lt;p&gt;选择所需添加的共享文件夹点击保存&lt;/p&gt;
+&lt;p&gt;然后把需要开启SMB的文件夹依次添加进去&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

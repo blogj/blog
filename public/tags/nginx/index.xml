@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nginx on 孤岛</title>
+    <link>http://localhost:1313/tags/nginx/</link>
+    <description>Recent content in Nginx on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 24 Jun 2021 10:32:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NGINX 非443端口http跳转https</title>
+      <link>http://localhost:1313/600.html/</link>
+      <pubDate>Thu, 24 Jun 2021 10:32:00 +0000</pubDate>
+      <guid>http://localhost:1313/600.html/</guid>
+      <description>&lt;p&gt;关于Nginx这个web服务器软件在NAS上配置非443端口访问时候跳转https问题，默认80端口与443端口无法访问情况。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;error_page 497 301 =307 https://$host:9443$request_uri;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;添加上面代码就行https端口为9443这样就不会出现访问http出现错误的问题&lt;/p&gt;
+&lt;h3 id=&#34;完整代码&#34;&gt;完整代码&lt;/h3&gt;
+&lt;p&gt;容器部署nginx桥接443端口为9443 然后反向代理192.168.100.4:86用wallabag.gao4.top:9443访问服务并让http跳转https&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;upstream dockername1 {
+    server 192.168.100.4:86; # 端口改为docker容器提供的端口
+}
+
+
+server {
+    listen 80;
+    listen 443 default ssl;
+    server_name  wallabag.gao4.top;
+    error_page 497 301 =307 https://$host:9443$request_uri;
+    gzip on;
+    ssl_certificate /ssl/fullchain1.pem;
+    ssl_certificate_key /ssl/privkey1.pem;
+
+    # access_log /var/log/nginx/dockername_access.log combined;
+    # error_log  /var/log/nginx/dockername_error.log;
+
+    location / {
+        proxy_redirect off;
+        proxy_pass http://dockername1;
+
+        proxy_set_header  Host                $http_host;
+        proxy_set_header  X-Real-IP           $remote_addr;
+        proxy_set_header  X-Forwarded-Ssl     on;
+        proxy_set_header  X-Forwarded-For     $proxy_add_x_forwarded_for;
+        proxy_set_header  X-Forwarded-Proto   $scheme;
+        proxy_set_header  X-Frame-Options     SAMEORIGIN;
+
+        client_max_body_size        100m;
+        client_body_buffer_size     128k;
+
+        proxy_buffer_size           4k;
+        proxy_buffers               4 32k;
+        proxy_busy_buffers_size     64k;
+        proxy_temp_file_write_size  64k;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

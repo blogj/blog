@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>QQ机器人 on 孤岛</title>
+    <link>http://localhost:1313/tags/qq%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
+    <description>Recent content in QQ机器人 on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 31 Aug 2021 17:20:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/qq%E6%9C%BA%E5%99%A8%E4%BA%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mirai Dice QQ机器人-to-docker搭建记录</title>
+      <link>http://localhost:1313/639.html/</link>
+      <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
+      <guid>http://localhost:1313/639.html/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的问题&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.kokona.tech/d/448-mirai-dice-20210324&#34;&gt;推荐开始之前阅读官方教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mirai Dice&lt;a href=&#34;https://v2docs.kokona.tech/zh/latest/&#34;&gt;官方文档&lt;/a&gt;（和上面教程不一样是使用文档）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;流程&#34;&gt;流程&lt;/h1&gt;
+&lt;h2 id=&#34;启动容器&#34;&gt;启动容器&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo docker run -it --name qq  -v /home/container -v /etc/localtime:/etc/localtime:ro suhuiw4123/mirai-dice
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;登录&#34;&gt;登录&lt;/h2&gt;
+&lt;p&gt;在&lt;code&gt;&amp;gt;&lt;/code&gt;符号下输入 &lt;code&gt;login QQ号 密码&lt;/code&gt;&lt;br&gt;
+示例&lt;code&gt;&amp;gt;login 23421123 DSH12323&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;登录互交&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2981758090.png&#34; title=&#34;登录互交&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;qq登录验证重要&#34;&gt;QQ登录验证（重要）&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;沿用官方教程的话（建议看看官方教程）大部分人都卡死登录验证的步骤&lt;/strong&gt;一定把下面的话看完一个字一个字理解&lt;/p&gt;
+&lt;p&gt;如果你开启了设备锁（推荐开启，可减少被盗和封号概率）可能需要设备锁验证，点击链接打开浏览器，&lt;br&gt;
+&lt;strong&gt;20210602更新&lt;/strong&gt; : 如果没有显示扫码，手动把网址中的verify (&lt;a href=&#34;https://ti.qq.com/safe/verify&#34;&gt;https://ti.qq.com/safe/verify&lt;/a&gt;?…) 改成qrcode (&lt;a href=&#34;https://ti.qq.com/safe/qrcode&#34;&gt;https://ti.qq.com/safe/qrcode&lt;/a&gt;?…) ，用手机QQ登陆后扫码完成验证，然后关闭Mirai中的对话框即可登陆完成。稍等片刻后，Dice就可正常加载并开始使用。&lt;/p&gt;
+&lt;p&gt;大白话就是把提示的链接复制到浏览器并把链接里的&lt;code&gt;verify&lt;/code&gt; 改成 &lt;code&gt;qrcode&lt;/code&gt;也是下图地方&lt;strong&gt;链接&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;QQ验证&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/1726320199.png&#34; title=&#34;QQ验证&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;浏览器扫码验证&#34;&gt;浏览器扫码验证&lt;/h3&gt;
+&lt;p&gt;此时浏览器会出现二维码，然后手机 qq 登录需要登录的QQ号进行扫码确认， 确认后退出手机QQ&lt;br&gt;
+然后在ssh下输入随意字符回车进入下一步。上图我输入的e然后回车&lt;/p&gt;
+&lt;h3 id=&#34;验证&#34;&gt;验证&lt;/h3&gt;
+&lt;p&gt;手机QQ 好友界面输入&lt;code&gt;.r&lt;/code&gt;命令理论上应该有回复&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;对话&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/451246510.jpg&#34; title=&#34;对话&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;退出容器容器继续运行&#34;&gt;退出容器容器继续运行&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Ctrl+P Ctrl+Q&lt;br&gt;
+这是一道组合命令同时按Ctrl然后按一下P &lt;strong&gt;不放Ctrl&lt;/strong&gt;按一下Q&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;相关命令&#34;&gt;相关命令&lt;/h1&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;docker attach qq&lt;br&gt;
+进入正在运行的容器上面运行QQ机器人的容器名字是qq&lt;/li&gt;
+&lt;li&gt;docker logs qq&lt;br&gt;
+查看容器日志&lt;/li&gt;
+&lt;li&gt;autologin 账号 密码&lt;br&gt;
+这是在QQ机器人终端的后台命令 设置自动登录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;容器备份迁移&#34;&gt;容器备份迁移&lt;/h1&gt;
+&lt;p&gt;机器人的数据存储在&lt;code&gt;/var/lib/docker/volumes&lt;/code&gt;&lt;br&gt;
+这个目录下&lt;br&gt;
+注意&lt;br&gt;
+下面命令会让宿主机目录覆盖容器目录&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

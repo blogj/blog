@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Freenas on 孤岛</title>
+    <link>http://localhost:1313/tags/freenas/</link>
+    <description>Recent content in Freenas on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 08 Aug 2020 08:54:32 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/freenas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>freenas创建匿名访问共享</title>
+      <link>http://localhost:1313/127.html/</link>
+      <pubDate>Sat, 08 Aug 2020 08:54:32 +0000</pubDate>
+      <guid>http://localhost:1313/127.html/</guid>
+      <description>&lt;h2 id=&#34;一创建匿名访问共享11-创建&#34;&gt;一、创建匿名访问共享#1.1 创建&lt;/h2&gt;
+&lt;p&gt;进入Sharing ➞ Windows (SMB) Shares,然后点击ADD按钮界面如下图所示勾选Allow Guest Access直接按SAVE保存&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/FreeNAS15.52.27-1024x367.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;匿名共享图一&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意事项&lt;/strong&gt; 如果共享创建在根目录，没有任何权限处理，默认是只读的，要进一步控制权限，需要创建二级数据集，并设置权限。权限如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/FreeNAS16.22.02-1024x282.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;匿名共享图二&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

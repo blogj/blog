@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Windows on 孤岛</title>
+    <link>http://localhost:1313/tags/windows/</link>
+    <description>Recent content in Windows on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 05 Nov 2023 18:10:57 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>unattended Tailscale</title>
+      <link>http://localhost:1313/1000.html/</link>
+      <pubDate>Sun, 05 Nov 2023 18:10:57 +0800</pubDate>
+      <guid>http://localhost:1313/1000.html/</guid>
+      <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;解决 Windows 下 Tailscale 未登录桌面不启动问题
+新版本的 ui 启动无人值守的选项&lt;code&gt;run unattended mode&lt;/code&gt;已经去掉，所以只能命令行设置&lt;/p&gt;
+&lt;h2 id=&#34;研究资料&#34;&gt;研究资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://tailscale.com/kb/1080/cli/#login&#34;&gt;https://tailscale.com/kb/1080/cli/#login&lt;/a&gt; 官方文档来源&lt;/p&gt;
+&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
+&lt;p&gt;以管理员身份运行&lt;code&gt;cmd&lt;/code&gt; 输入以下命令重新登录 tailscale&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tailscale login --unattended
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;测试&#34;&gt;测试&lt;/h2&gt;
+&lt;p&gt;重新关机Window电脑，然后再开机不进入桌面 用手机登录管理后台发现Window节点已经在线&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

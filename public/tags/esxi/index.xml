@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Esxi on 孤岛</title>
+    <link>http://localhost:1313/tags/esxi/</link>
+    <description>Recent content in Esxi on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 08 Jan 2022 15:02:27 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/esxi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESXI7.0 Update 2下黑群晖7.01安装</title>
+      <link>http://localhost:1313/738.html/</link>
+      <pubDate>Sat, 08 Jan 2022 15:02:27 +0000</pubDate>
+      <guid>http://localhost:1313/738.html/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;只是填坑把遇到的问题写出来&lt;/p&gt;
+&lt;h2 id=&#34;相关软件分享&#34;&gt;相关软件分享&lt;/h2&gt;
+&lt;p&gt;引导来源&lt;a href=&#34;https://www.openos.org/threads/1211esxi7-0-1-42218vmxnet3.3814/page-5#post-42800&#34;&gt;【12月11日更新】ESXI专用群晖7.0.1 42218引导vmxnet3 | 第 5 页 | OPENOS-服务器-路由器-黑群晖-NAS-网络存储-虚拟化&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;文件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/805129475.png&#34; title=&#34;文件&#34;&gt;&lt;/p&gt;
+&lt;p&gt;「DSM7.01」，点击链接保存，或者复制本段内容，打开「阿里云盘」APP ，无需下载极速在线查看，视频原画倍速播放。&lt;br&gt;
+链接：&lt;a href=&#34;https://www.aliyundrive.com/s/vTAodWTdNsP&#34;&gt;https://www.aliyundrive.com/s/vTAodWTdNsP&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;esxi70-下虚拟黑群晖注意事项&#34;&gt;ESXI7.0 下虚拟黑群晖注意事项&lt;/h3&gt;
+&lt;p&gt;把交换机的安全选项全部设置为&lt;strong&gt;接受&lt;/strong&gt;，不设置可以试试不然根本群晖的ip，路由器上看不到分配群晖的ip&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;注意事项&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/4072798372.png&#34; title=&#34;注意事项&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;我的虚拟群晖配置&#34;&gt;我的虚拟群晖配置&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;硬盘为SATA&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/2176242978.png&#34; title=&#34;硬盘为SATA&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;网卡为默认的VMXNET3&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/537278402.png&#34; title=&#34;网卡为默认的VMXNET3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;整体虚拟硬件&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/3275028051.png&#34; title=&#34;整体虚拟硬件&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;客户端配置&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/1534275700.png&#34; title=&#34;客户端配置&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;引导为BIOS&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/1389071870.png&#34; title=&#34;引导为BIOS&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;注意事项&#34;&gt;注意事项&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;群晖助手搜索不到去路由器后台看有没有分配ip&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>折腾NAS中用的软件资源分享</title>
+      <link>http://localhost:1313/686.html/</link>
+      <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/686.html/</guid>
+      <description>&lt;h1 id=&#34;资源链接阿里云盘&#34;&gt;资源链接阿里云盘&lt;/h1&gt;
+&lt;p&gt;我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀&lt;br&gt;
+复制这段内容打开「阿里云盘」App 即可获取&lt;br&gt;
+链接：&lt;a href=&#34;https://www.aliyundrive.com/s/QUm851phfC7&#34;&gt;https://www.aliyundrive.com/s/QUm851phfC7&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;esxi常用系统ova模板&#34;&gt;Esxi常用系统ova模板&lt;/h2&gt;
+&lt;p&gt;搜集来自于sysin博客，sysin博主分享是百度云，本博客下载下来后上传至阿里云盘全部为&lt;strong&gt;标准分区（新版）&lt;/strong&gt;&lt;br&gt;
+&lt;img alt=&#34;全部模板&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/10/680834712.png&#34; title=&#34;全部模板&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;模板来源&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/10/3310680356.png&#34; title=&#34;模板来源&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;esxi67集成25g与8111网卡驱动&#34;&gt;ESXi6.7集成2.5G与8111网卡驱动&lt;/h2&gt;
+&lt;p&gt;集成了rtl8125b网卡驱动以及rtl8111驱动，为什么不集成7.0的，是因为集成不了，据说新版本esxi7.0有什么改动。&lt;br&gt;
+&lt;img alt=&#34;esxi6.7驱动&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/10/185705712.png&#34; title=&#34;esxi6.7驱动&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;openwrt-x86_64软路由&#34;&gt;openwrt x86_64软路由&lt;/h2&gt;
+&lt;p&gt;使用GitHub编译结果，&lt;a href=&#34;https://github.com/Qifcn/Actions-OpenWrt&#34;&gt;Qifcn/Actions-OpenWrt: A template for building OpenWrt with GitHub Actions | 使用 GitHub Actions 云编译 OpenWrt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;集成了&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;tailscale&lt;/li&gt;
+&lt;li&gt;wireguard&lt;/li&gt;
+&lt;li&gt;内核分区扩大至100m 根分区扩至512m&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;压缩包&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/10/1623699456.png&#34; title=&#34;压缩包&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;resilio分享&#34;&gt;resilio分享&lt;/h3&gt;
+&lt;p&gt;这些软件我集成密钥形式&lt;br&gt;
+&lt;a href=&#34;https://gao4.top/sync&#34;&gt;SYNC同步网盘 - 孤岛 (gao4.top)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

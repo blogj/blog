@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Docker-Compose on 孤岛</title>
+    <link>http://localhost:1313/tags/docker-compose/</link>
+    <description>Recent content in Docker-Compose on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 14 Mar 2021 17:30:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FreshRSS docker-compose.yml 教程</title>
+      <link>http://localhost:1313/478.html/</link>
+      <pubDate>Sun, 14 Mar 2021 17:30:38 +0000</pubDate>
+      <guid>http://localhost:1313/478.html/</guid>
+      <description>&lt;p&gt;创建docker-compose.yml文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir /home/FreshRSS &amp;amp;&amp;amp; cd /home/FreshRSS
+nano docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;填入以下内容 内容来源于&lt;a href=&#34;https://github.com/FreshRSS/FreshRSS/blob/master/Docker/docker-compose.yml&#34;&gt;官方GIthub&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;version: &amp;#34;3&amp;#34;
+
+services:
+  freshrss-db:
+    image: postgres:12-alpine
+    container_name: freshrss-db
+    hostname: freshrss-db
+    restart: unless-stopped
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: freshrss
+      POSTGRES_PASSWORD: freshrss
+      POSTGRES_DB: freshrss
+
+  freshrss-app:
+    image: freshrss/freshrss:latest
+    container_name: freshrss-app
+    hostname: freshrss-app
+    restart: unless-stopped
+    ports:
+      - &amp;#34;8080:80&amp;#34;
+    depends_on:
+      - freshrss-db
+    volumes:
+      - ./data:/var/www/FreshRSS/data
+      - ./extensions:/var/www/FreshRSS/extensions
+    environment:
+      CRON_MIN: &amp;#39;*/20&amp;#39;
+      TZ: Asia/Shanghai
+
+volumes:
+  db:
+  data:
+  extensions:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;打开浏览器访问http://IP:8080进入安装界面 支持中文&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据库选择postgres&lt;/li&gt;
+&lt;li&gt;数据库地址填freshrss-db&lt;/li&gt;
+&lt;li&gt;数据库用户名为freshrss&lt;/li&gt;
+&lt;li&gt;数据库密码为freshrss&lt;/li&gt;
+&lt;li&gt;这些都是上面文件环境变量按需修改&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

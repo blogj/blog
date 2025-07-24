@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>域名 on 孤岛</title>
+    <link>http://localhost:1313/tags/%E5%9F%9F%E5%90%8D/</link>
+    <description>Recent content in 域名 on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 28 Jul 2021 13:39:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%9F%9F%E5%90%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
+      <link>http://localhost:1313/629.html/</link>
+      <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
+      <guid>http://localhost:1313/629.html/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;基本上这是最简单的方式，我通过 &lt;a href=&#34;tailscale.com&#34;&gt;tailscale&lt;/a&gt; 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能通过 IP地址 来访问服务，有没有一种办法可以通过域名的方式来访问，当然可以，最简单的方案如下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;win服务器版本自带dns服务器&lt;/li&gt;
+&lt;li&gt;群晖NAS系统自带dns解析套件&lt;/li&gt;
+&lt;li&gt;Adguardhome-dns去广告软件（也可以自定义域名解析）只是大部分人拿来去广告了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;流程&#34;&gt;流程&lt;/h1&gt;
+&lt;h2 id=&#34;docker配置&#34;&gt;docker配置&lt;/h2&gt;
+&lt;h3 id=&#34;host-网络模式&#34;&gt;Host 网络模式&lt;/h3&gt;
+&lt;p&gt;Host 网络模式直接使用宿主机的网络，没有网络隔离，不需要考虑容器端口的映射，在容器启动后可以自由调整被占用的端口。适合在本机使用 (lo­cal­host)&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run -d \
+    --name adguardhome \
+    --restart unless-stopped \
+    --log-opt max-size=1m \
+    --network host \
+    -v /root/adguardhome/work:/opt/adguardhome/work \
+    -v /roo/adguardhome/conf:/opt/adguardhome/conf \
+    adguard/adguardhome
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;复制启动&#34;&gt;复制启动&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;安装界面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2469298094.png&#34; title=&#34;安装界面&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;访问web&#34;&gt;访问web&lt;/h3&gt;
+&lt;p&gt;AdGuard Home 初始化设置&lt;br&gt;
+使用网页浏览器访问 IP + 3000 端口即可进入到 Ad­Guard Home 的初始化界面，比如 IP 是 &lt;code&gt;10.0.0.53&lt;/code&gt;，那么就访问 [&lt;a href=&#34;http://10.0.0.53&#34;&gt;http://10.0.0.53&lt;/a&gt;]:3000&lt;br&gt;
+我的是tailscale虚拟内网 ip &lt;code&gt;http://100.112.191.114:3000/&lt;/code&gt;&lt;br&gt;
+&lt;img alt=&#34;安装界面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3284010322.png&#34; title=&#34;安装界面&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安装步骤来&lt;/p&gt;
+&lt;h4 id=&#34;改一下端口防止冲突&#34;&gt;改一下端口防止冲突&lt;/h4&gt;
+&lt;p&gt;&lt;img alt=&#34;改端口&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/481378311.png&#34; title=&#34;改端口&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;添加域名&#34;&gt;添加域名&lt;/h2&gt;
+&lt;p&gt;在页面&lt;code&gt;过滤器&lt;/code&gt;-&amp;gt; &lt;code&gt;DNS重写&lt;/code&gt;&lt;br&gt;
+&lt;img alt=&#34;DNS重写&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3321944190.png&#34; title=&#34;DNS重写&#34;&gt;&lt;/p&gt;
+&lt;p&gt;添加dns重写&lt;br&gt;
+&lt;img alt=&#34;添加域名&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3108300146.png&#34; title=&#34;添加域名&#34;&gt;&lt;/p&gt;
+&lt;p&gt;域名对应iP点击&lt;code&gt;保存&lt;/code&gt;&lt;br&gt;
+&lt;img alt=&#34;域名对应IP&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/1219428542.png&#34; title=&#34;域名对应IP&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置客户端dns地址对应ip地址&lt;br&gt;
+&lt;img alt=&#34;设置客户端dns地址&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3535240638.png&#34; title=&#34;设置客户端dns地址&#34;&gt;&lt;br&gt;
+Ping测试&lt;br&gt;
+&lt;img alt=&#34;测试&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2372846563.png&#34; title=&#34;测试&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;结语&#34;&gt;结语&lt;/h1&gt;
+&lt;p&gt;一款非常棒的DNS服务器软件，不过有一点需要注意测试时候注意一下打开网页速度，慢了的话建议搭建在局域网，博主搭建在阿里云服务器上有一定的延迟，建议网上找一些资料，给局域网额外去广告也是不错的&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>阿里云域名 docker下申请泛域名</title>
+      <link>http://localhost:1313/578.html/</link>
+      <pubDate>Thu, 10 Jun 2021 15:54:00 +0000</pubDate>
+      <guid>http://localhost:1313/578.html/</guid>
+      <description>&lt;h1 id=&#34;构建&#34;&gt;构建&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Git pull https://github.com/monkeyWie/certbot-dns-aliyun.git
+cd docker
+docker build -t certbot-aliyun:latest .
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;启动容器&#34;&gt;启动容器&lt;/h1&gt;
+&lt;p&gt;docker官方仓库有这个镜像&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run \
+--name cert \
+-itd \
+-v /etc/letsencrypt:/etc/letsencrypt \
+-e ACCESS_KEY_ID=XXX \
+-e ACCESS_KEY_SECRET=XXX \
+liwei2633/certbot-aliyun
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;首次创建证书根据命令提示输入多个域名用隔开&#34;&gt;首次创建证书，根据命令提示输入，多个域名用,隔开&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec -it cert ./create.sh *.pdown.org
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;续签&#34;&gt;续签&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec cert ./renew.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;记录申请通配符的流程&#34;&gt;记录申请通配符的流程&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/06/2021-06-08_171602.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;证书路径&#34;&gt;证书路径&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/gao4.top/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/gao4.top/privkey.pem
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on 孤岛</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 11 Oct 2024 14:30:50 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manjaro发行版本远程桌面方案2024 </title>
+      <link>http://localhost:1313/20241011.html/</link>
+      <pubDate>Fri, 11 Oct 2024 14:30:50 +0800</pubDate>
+      <guid>http://localhost:1313/20241011.html/</guid>
+      <description>&lt;h2 id=&#34;预览图&#34;&gt;预览图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt=&#34;预览图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/manjaro/Snipaste_2024-10-11_14-31-42.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;一直在全网寻找一个不卡的远程桌面方案所以就找到到了这一个远程游戏的解决方法非常合适win去远程Linux发行版本&lt;/p&gt;
+&lt;h2 id=&#34;优点&#34;&gt;优点&lt;/h2&gt;
+&lt;p&gt;非常流程    非常流程   非常流程
+130公里 双边移动宽带ipv6 通过wg远程 1080 60fps  也就是说能做到60帧率基本上和副屏幕差不多了
+&lt;img alt=&#34;预览图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/manjaro/Snipaste_2024-10-11_14-36-50.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;manjaro下安装方法&#34;&gt;manjaro下安装方法&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;注意都是在root用户下执行下面命令&lt;/strong&gt;&lt;br&gt;
+直接去github去下载安装包是是启动不成功的，搜索引擎说可以安装sunshine-git版本，可惜我不会 提供一个网上的包 不放心可以去试试sunshine-git版本&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://0x0.st/XE4O.tar.zst&#34;&gt;https://0x0.st/XE4O.tar.zst&lt;/a&gt; 这是包（如果你不相信我，就不要使用它）&lt;/p&gt;
+&lt;p&gt;重命名为 sunshine-0.23.1-5-x86_64.pkg.tar.zst &lt;strong&gt;安装命令如下&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo pacman -U sunshine-0.23.1-5-x86_64.pkg.tar.zst
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;启动命令为&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sunshine
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;默认访问为本机访问所以需要ssh隧道 默认端口为https://localhost:47990/ 因为我们启动了ssh隧道就访问https://localhost:47991/ 隧道设置如下图
+&lt;img alt=&#34;隧道&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/manjaro/Snipaste_2024-10-11_14-45-47.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;linux下自启动设置&#34;&gt;Linux下自启动设置&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.lizardbyte.dev/projects/sunshine/en/latest/about/setup.html#install&#34;&gt;官方文档&lt;/a&gt;
+编辑&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano /etc/systemd/system/sunshine.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;内容如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Unit]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Description=Sunshine self-hosted game stream host for Moonlight.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;StartLimitIntervalSec=500
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;StartLimitBurst=5
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Service]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ExecStart=/usr/bin/sunshine
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Restart=on-failure
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;RestartSec=5s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;#Flatpak Only
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;#ExecStop=flatpak kill dev.lizardbyte.sunshine
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Install]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;WantedBy=multi-user.target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在关闭软件情况下依次执行下面相关命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl daemon-reload
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl enable sunshine.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl start sunshine.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;注意事项&#34;&gt;注意事项&lt;/h3&gt;
+&lt;p&gt;注意客户端连接需要&lt;strong&gt;moonlight&lt;/strong&gt;这个软件 下载连接如下&lt;br&gt;
+&lt;a href=&#34;https://flowus.cn/lecheng/share/cf8b9092-8ac2-4dd9-bb81-701be6e2f196&#34;&gt;https://flowus.cn/lecheng/share/cf8b9092-8ac2-4dd9-bb81-701be6e2f196&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Arch 安装sshd问题</title>
+      <link>http://localhost:1313/196.html/</link>
+      <pubDate>Tue, 08 Sep 2020 08:35:26 +0000</pubDate>
+      <guid>http://localhost:1313/196.html/</guid>
+      <description>&lt;h2 id=&#34;启动ssh&#34;&gt;启动ssh&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;systemctl restart sshd
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;开机自启ssh&#34;&gt;开机自启ssh&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;systemctl enable ssh
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;设置root用户远程登陆&#34;&gt;设置root用户远程登陆&lt;/h2&gt;
+&lt;p&gt;arch 远程ssh默认是禁止登陆root的&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nano /etc/ssh/sshd.config
+# 添加下面一行配置
+PermitRootLogin yes
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;nano-文本编辑器使用&#34;&gt;nano 文本编辑器使用&lt;/h2&gt;
+&lt;h3 id=&#34;退出&#34;&gt;退出&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;按Ctrl+X&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你修改了文件，下面会询问你是否需要保存修改。输入Y确认保存，输入N不保存，按Ctrl+C取消返回。&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果输入了Y，下一步会让你输入想要保存的文件名。如果不需要修改文件名直接回车就行；若想要保存成别的名字（也就是另存为）则输入新名称然后确 定。这个时候也可用Ctrl+C来取消返回。&lt;/p&gt;&lt;/blockquote&gt;</description>
+    </item>
+  </channel>
+</rss>

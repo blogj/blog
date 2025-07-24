@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Docker on 孤岛</title>
+    <link>http://localhost:1313/tags/docker/</link>
+    <description>Recent content in Docker on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 28 Jul 2021 13:39:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
+      <link>http://localhost:1313/629.html/</link>
+      <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
+      <guid>http://localhost:1313/629.html/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;基本上这是最简单的方式，我通过 &lt;a href=&#34;tailscale.com&#34;&gt;tailscale&lt;/a&gt; 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能通过 IP地址 来访问服务，有没有一种办法可以通过域名的方式来访问，当然可以，最简单的方案如下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;win服务器版本自带dns服务器&lt;/li&gt;
+&lt;li&gt;群晖NAS系统自带dns解析套件&lt;/li&gt;
+&lt;li&gt;Adguardhome-dns去广告软件（也可以自定义域名解析）只是大部分人拿来去广告了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;流程&#34;&gt;流程&lt;/h1&gt;
+&lt;h2 id=&#34;docker配置&#34;&gt;docker配置&lt;/h2&gt;
+&lt;h3 id=&#34;host-网络模式&#34;&gt;Host 网络模式&lt;/h3&gt;
+&lt;p&gt;Host 网络模式直接使用宿主机的网络，没有网络隔离，不需要考虑容器端口的映射，在容器启动后可以自由调整被占用的端口。适合在本机使用 (lo­cal­host)&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run -d \
+    --name adguardhome \
+    --restart unless-stopped \
+    --log-opt max-size=1m \
+    --network host \
+    -v /root/adguardhome/work:/opt/adguardhome/work \
+    -v /roo/adguardhome/conf:/opt/adguardhome/conf \
+    adguard/adguardhome
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;复制启动&#34;&gt;复制启动&lt;/h3&gt;
+&lt;p&gt;&lt;img alt=&#34;安装界面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2469298094.png&#34; title=&#34;安装界面&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;访问web&#34;&gt;访问web&lt;/h3&gt;
+&lt;p&gt;AdGuard Home 初始化设置&lt;br&gt;
+使用网页浏览器访问 IP + 3000 端口即可进入到 Ad­Guard Home 的初始化界面，比如 IP 是 &lt;code&gt;10.0.0.53&lt;/code&gt;，那么就访问 [&lt;a href=&#34;http://10.0.0.53&#34;&gt;http://10.0.0.53&lt;/a&gt;]:3000&lt;br&gt;
+我的是tailscale虚拟内网 ip &lt;code&gt;http://100.112.191.114:3000/&lt;/code&gt;&lt;br&gt;
+&lt;img alt=&#34;安装界面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3284010322.png&#34; title=&#34;安装界面&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安装步骤来&lt;/p&gt;
+&lt;h4 id=&#34;改一下端口防止冲突&#34;&gt;改一下端口防止冲突&lt;/h4&gt;
+&lt;p&gt;&lt;img alt=&#34;改端口&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/481378311.png&#34; title=&#34;改端口&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;添加域名&#34;&gt;添加域名&lt;/h2&gt;
+&lt;p&gt;在页面&lt;code&gt;过滤器&lt;/code&gt;-&amp;gt; &lt;code&gt;DNS重写&lt;/code&gt;&lt;br&gt;
+&lt;img alt=&#34;DNS重写&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3321944190.png&#34; title=&#34;DNS重写&#34;&gt;&lt;/p&gt;
+&lt;p&gt;添加dns重写&lt;br&gt;
+&lt;img alt=&#34;添加域名&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3108300146.png&#34; title=&#34;添加域名&#34;&gt;&lt;/p&gt;
+&lt;p&gt;域名对应iP点击&lt;code&gt;保存&lt;/code&gt;&lt;br&gt;
+&lt;img alt=&#34;域名对应IP&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/1219428542.png&#34; title=&#34;域名对应IP&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置客户端dns地址对应ip地址&lt;br&gt;
+&lt;img alt=&#34;设置客户端dns地址&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3535240638.png&#34; title=&#34;设置客户端dns地址&#34;&gt;&lt;br&gt;
+Ping测试&lt;br&gt;
+&lt;img alt=&#34;测试&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2372846563.png&#34; title=&#34;测试&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;结语&#34;&gt;结语&lt;/h1&gt;
+&lt;p&gt;一款非常棒的DNS服务器软件，不过有一点需要注意测试时候注意一下打开网页速度，慢了的话建议搭建在局域网，博主搭建在阿里云服务器上有一定的延迟，建议网上找一些资料，给局域网额外去广告也是不错的&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Traefik系列二-docker搭建typecho-to-traefik</title>
+      <link>http://localhost:1313/615.html/</link>
+      <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
+      <guid>http://localhost:1313/615.html/</guid>
+      <description>&lt;h1 id=&#34;快速开始&#34;&gt;快速开始&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd /home
+git clone https://github.com/YianAndCode/typecho-in-docker.git
+cd /home/typecho-in-docker
+git clone https://github.com/typecho/typecho.git
+rm -r typecho/.git
+chown -R www-data:www-data typecho/
+docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;浏览器访问&lt;code&gt;http://IP:8001&lt;/code&gt;&lt;br&gt;
+如果GitHub下载过于慢的话可以替换为Github镜像地址&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd /home
+git clone https://github.com.cnpmjs.org/YianAndCode/typecho-in-docker.git
+cd /home/typecho-in-docker
+git clone https://github.com.cnpmjs.org/typecho/typecho.git
+chown -R www-data:www-data typecho/
+docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;配置邮件通知&lt;br&gt;
+&lt;a href=&#34;https://github.com/Stitch-June/CommentPush/releases&#34;&gt;Github下载地址&lt;/a&gt;&lt;br&gt;
+从&lt;strong&gt;1.7.2&lt;/strong&gt;版本开始支持php8版本，其他通知插件都没配置成功&lt;br&gt;
+&lt;img alt=&#34;配置截图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3947263831.png&#34; title=&#34;配置截图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;成功截图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2201639954.png&#34; title=&#34;成功截图&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;traefik配置&#34;&gt;Traefik配置&lt;/h1&gt;
+&lt;p&gt;待续&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>阿里云域名 docker下申请泛域名</title>
+      <link>http://localhost:1313/578.html/</link>
+      <pubDate>Thu, 10 Jun 2021 15:54:00 +0000</pubDate>
+      <guid>http://localhost:1313/578.html/</guid>
+      <description>&lt;h1 id=&#34;构建&#34;&gt;构建&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Git pull https://github.com/monkeyWie/certbot-dns-aliyun.git
+cd docker
+docker build -t certbot-aliyun:latest .
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;启动容器&#34;&gt;启动容器&lt;/h1&gt;
+&lt;p&gt;docker官方仓库有这个镜像&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run \
+--name cert \
+-itd \
+-v /etc/letsencrypt:/etc/letsencrypt \
+-e ACCESS_KEY_ID=XXX \
+-e ACCESS_KEY_SECRET=XXX \
+liwei2633/certbot-aliyun
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;首次创建证书根据命令提示输入多个域名用隔开&#34;&gt;首次创建证书，根据命令提示输入，多个域名用,隔开&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec -it cert ./create.sh *.pdown.org
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;续签&#34;&gt;续签&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker exec cert ./renew.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;记录申请通配符的流程&#34;&gt;记录申请通配符的流程&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/06/2021-06-08_171602.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;证书路径&#34;&gt;证书路径&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/gao4.top/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/gao4.top/privkey.pem
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>FreshRSS docker-compose.yml 教程</title>
+      <link>http://localhost:1313/478.html/</link>
+      <pubDate>Sun, 14 Mar 2021 17:30:38 +0000</pubDate>
+      <guid>http://localhost:1313/478.html/</guid>
+      <description>&lt;p&gt;创建docker-compose.yml文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir /home/FreshRSS &amp;amp;&amp;amp; cd /home/FreshRSS
+nano docker-compose.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;填入以下内容 内容来源于&lt;a href=&#34;https://github.com/FreshRSS/FreshRSS/blob/master/Docker/docker-compose.yml&#34;&gt;官方GIthub&lt;/a&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;version: &amp;#34;3&amp;#34;
+
+services:
+  freshrss-db:
+    image: postgres:12-alpine
+    container_name: freshrss-db
+    hostname: freshrss-db
+    restart: unless-stopped
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: freshrss
+      POSTGRES_PASSWORD: freshrss
+      POSTGRES_DB: freshrss
+
+  freshrss-app:
+    image: freshrss/freshrss:latest
+    container_name: freshrss-app
+    hostname: freshrss-app
+    restart: unless-stopped
+    ports:
+      - &amp;#34;8080:80&amp;#34;
+    depends_on:
+      - freshrss-db
+    volumes:
+      - ./data:/var/www/FreshRSS/data
+      - ./extensions:/var/www/FreshRSS/extensions
+    environment:
+      CRON_MIN: &amp;#39;*/20&amp;#39;
+      TZ: Asia/Shanghai
+
+volumes:
+  db:
+  data:
+  extensions:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;打开浏览器访问http://IP:8080进入安装界面 支持中文&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据库选择postgres&lt;/li&gt;
+&lt;li&gt;数据库地址填freshrss-db&lt;/li&gt;
+&lt;li&gt;数据库用户名为freshrss&lt;/li&gt;
+&lt;li&gt;数据库密码为freshrss&lt;/li&gt;
+&lt;li&gt;这些都是上面文件环境变量按需修改&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Debian国内服务器初始化</title>
+      <link>http://localhost:1313/109.html/</link>
+      <pubDate>Thu, 06 Aug 2020 18:56:43 +0000</pubDate>
+      <guid>http://localhost:1313/109.html/</guid>
+      <description>&lt;p&gt;乌班图服务器版本默认ssh居然没有sftp弃之 ， centos虽然很好但总感觉软件包陈旧，燧写这篇初始化操作&lt;/p&gt;
+&lt;h2 id=&#34;更新软件包&#34;&gt;更新软件包&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apt-get update
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;安装阿里云源docker&#34;&gt;安装阿里云源Docker&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;设置docker镜像源&#34;&gt;设置Docker镜像源&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json &amp;lt;&amp;lt;-&amp;#39;EOF&amp;#39;
+{
+  &amp;#34;registry-mirrors&amp;#34;: [&amp;#34;https://0z9mn9x7.mirror.aliyuncs.com&amp;#34;]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;docker-compose-国内镜像源安装&#34;&gt;docker-compose 国内镜像源安装&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -L https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>NPS on 孤岛</title>
+    <link>http://localhost:1313/tags/nps/</link>
+    <description>Recent content in NPS on 孤岛</description>
+    <image>
+      <title>孤岛</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 28 Dec 2020 10:44:52 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NPS内网穿透工具学习2-服务端搭建</title>
+      <link>http://localhost:1313/388.html/</link>
+      <pubDate>Mon, 28 Dec 2020 10:44:52 +0000</pubDate>
+      <guid>http://localhost:1313/388.html/</guid>
+      <description>&lt;h3 id=&#34;序言&#34;&gt;序言&lt;/h3&gt;
+&lt;p&gt;通俗约定您已经，通晓基本的Linux知识（解压复制粘贴移动）、了解基本的网络知识（知晓什么是公网IP什么是内网IP）登录已root用户为准&lt;/p&gt;
+&lt;h4 id=&#34;版本&#34;&gt;版本&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ehang-io/nps/releases/tag/v0.26.9&#34;&gt;v0.26.9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ehang-io/nps/releases/download/v0.26.9/linux_amd64_server.tar.gz&#34;&gt;linux_amd64_server.tar.gz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;centos7&lt;/li&gt;
+&lt;li&gt;已关闭Firewalld&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;下载解压安装&#34;&gt;下载解压安装&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mkdir /home/nps
+cd /home/nps
+wegt https://github.com/ehang-io/nps/releases/download/v0.26.9/linux_amd64_server.tar.gz
+tar -zxvf linux_amd64_server.tar.gz
+./nps install
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;撰写程序nps配置文件&#34;&gt;撰写程序NPS配置文件&lt;/h3&gt;
+&lt;p&gt;打开配置文件&lt;/p&gt;
+&lt;p&gt;vim /etc/nps/nps.conf&lt;/p&gt;
+&lt;h3 id=&#34;撰写systemd配置文件&#34;&gt;撰写&lt;strong&gt;systemd&lt;/strong&gt;配置文件&lt;/h3&gt;
+&lt;p&gt;vim创建service文件&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vim /usr/lib/systemd/system/nps.service
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;填入以下内容&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[Unit]
+Description=nps service
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nps start
+ExecStop=/usr/bin/nps stop
+
+[Install]
+WantedBy=multi-user.target
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;启动并设置开机自启动&#34;&gt;启动并设置开机自启动&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo systemctl start nps.service
+sudo systemctl enable nps.service
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;启动nps：&lt;code&gt;sudo systemctl start nps&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;打开自启动：&lt;code&gt;sudo systemctl enable nps&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;重启应用：&lt;code&gt;sudo systemctl restart nps&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;停止应用：&lt;code&gt;sudo systemctl stop nps&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看应用：&lt;code&gt;sudo systemctl status nps&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;访问设置&#34;&gt;访问设置&lt;/h3&gt;
+&lt;p&gt;关闭防火墙并设置关闭开机启动&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NPS 内网穿透工具学习记录</title>
+      <link>http://localhost:1313/368.html/</link>
+      <pubDate>Sun, 27 Dec 2020 22:48:12 +0000</pubDate>
+      <guid>http://localhost:1313/368.html/</guid>
+      <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;2021年5月18日更新&lt;/p&gt;
+&lt;p&gt;官方更新了docker安装方式，推荐用这个方法强烈推荐&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com/r/ffdfgdfg/nps&#34;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;nps是一款轻量级、高性能、功能强大的&lt;strong&gt;内网穿透&lt;/strong&gt;代理服务器。目前支持&lt;strong&gt;tcp、udp流量转发&lt;/strong&gt;，可支持任何&lt;strong&gt;tcp、udp&lt;/strong&gt;上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还&lt;strong&gt;支持内网http代理、内网socks5代理&lt;/strong&gt;、&lt;strong&gt;p2p等&lt;/strong&gt;，并带有功能强大的web管理端。支持中文&lt;/p&gt;
+&lt;h3 id=&#34;官方文档&#34;&gt;官方文档&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://ehang-io.github.io/nps/#/&#34;&gt;https://ehang-io.github.io/nps/#/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-39-28-1024x620.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;登录界面&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ehang-io/nps/releases&#34;&gt;https://github.com/ehang-io/nps/releases&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;去Github下载对应计算机架构系统版本的服务器包&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-46-16.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;部分架构包图&lt;/p&gt;
+&lt;h3 id=&#34;github加速下载&#34;&gt;Github加速下载&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://d.serctl.com/&#34;&gt;https://d.serctl.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装为系统服务&#34;&gt;安装为系统服务&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;./nps install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-53-47.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;注意事项&#34;&gt;注意事项&lt;/h3&gt;
+&lt;p&gt;看下面这句话&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_13-56-24.png&#34;&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;2020/12/27 13:52:08当前目录中的静态文件和配置文件将无用
+2020/12/27 13:52:08新的配置文件位于/etc/nps中，您可以对其进行编辑
+注意客户端与服务端版本一样
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;使用systemctl来控制启动服务端&#34;&gt;使用systemctl来控制启动服务端&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo vi /lib/systemd/system/nps.service
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;[Unit]
+Description=nps service
+After=network.target syslog.target
+Wants=network.target&lt;/p&gt;
+&lt;p&gt;[Service]
+Type=simple
+ExecStart=/usr/bin/nps start&lt;/p&gt;
+&lt;p&gt;[Install]
+WantedBy=multi-user.target&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+*   启动nps：`sudo systemctl start nps`
+*   打开自启动：`sudo systemctl enable nps`
+*   重启应用：`sudo systemctl restart nps`
+*   停止应用：`sudo systemctl stop nps`
+*   查看应用：`sudo systemctl status nps`
+
+### 注意事项
+
+现在NPS的配置文件在/etc/nps中，不用在当前目录配置 可以删除了
+
+### 默认端口
+
+*   nps默认配置文件使用了80，443，8080，8024端口
+*   80与443端口为域名解析模式默认端口
+*   8080为web管理访问端口
+*   8024为网桥端口，用于客户端与服务器通信
+
+访问web控制端
+--------
+
+http://公网ip:8080
+
+注意 需要开启防火墙端口，云服务器也需要安全组放行
+
+客户端安装与systemctl来控制启动
+--------------------
+
+### 注意事项
+
+[注意看官方文档](https://ehang-io.github.io/nps/#/use?id=%E6%B3%A8%E5%86%8C%E5%88%B0%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1)，很完善
+
+下面报错是因为systemctl找不到npc二进制启动文件，指定就行
+
+![](https://gao4.top/wp-content/uploads/2020/12/Snipaste_2020-12-27_22-38-23.png)
+
+启动报错
+
+安装客户端
+-----
+
+解压后执行
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;./npc install&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
