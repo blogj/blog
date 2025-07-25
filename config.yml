@@ -47,17 +47,17 @@ params:
   tocopen: false
 
   assets:
-    # disableHLJS: true # to disable highlight.js
+    disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
     favicon: "https://gao4.top/icons/16x16"
     favicon16x16: "https://gao4.top/icons/16x16"
     favicon32x32: "https://gao4.top/icons/32x32.png"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
+    apple_touch_icon: "https://gao4.top/icons/32x32.png"
+    safari_pinned_tab: "https://gao4.top/icons/32x32.png"
     
   label:
     text: "孤岛"
-    icon: /apple-touch-icon.png
+    icon: "https://gao4.top/icons/32x32.png"
     iconHeight: 35
 
   # profile-mode
@@ -136,9 +136,9 @@ menu:
       weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
-markup:
-  highlight:
-    noClasses: true
+#markup:
+#  highlight:
+    #noClasses: true
      #anchorLineNos: true
      #codeFences: true
      #guessSyntax: true
