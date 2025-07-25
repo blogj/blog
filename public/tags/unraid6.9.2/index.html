@@ -9,14 +9,16 @@
 系统盘制作 系统下载 分享云盘链接
 使用官方工具制作
 把下载的unRAIDServer-6.9.2-x86_64_fu11压缩包解压 运行Unraid.USB.Creator.Win32-1.6 Allow UEFI Boot 勾选 需要UEFI引导一定需要使用官方工具制作 使用UnraidTool制作UEFI引导的系统U盘不一定生效 生成密钥，复制UnraidTool.exe与keymaker.exe到U盘根目录 右击管理员身份运行 UnraidTool 点击第二个注册 系统制作完毕
-进入系统初始化操作 GitHub访问 1 echo "199.232.4.133 raw.githubusercontent.com" >> /etc/hosts Docker市场 1 https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg 安装中文语言包 在Docker市场点击 左边 Language找到中文语言包安装即可
+进入系统初始化操作 GitHub访问 echo "199.232.4.133 raw.githubusercontent.com" >> /etc/hosts Docker市场 https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg 安装中文语言包 在Docker市场点击 左边 Language找到中文语言包安装即可
 选择中文如何点击APPLY确定
 设置阵列自启 开启核显 安装CA CONFIG EDITOR`一个在线配置文件编辑器`
 点击插件
-1 2 3 modprobe i915 chown nobody:users /dev/dri chmod 0777 /dev/dri/* 必安装插件 User Scripts
+modprobe i915
+chown nobody:users /dev/dri
+chmod 0777 /dev/dri/* 必安装插件 User Scripts
 一款可以运行用户自定义脚本的插件。贴吧有人使用这个插件设置每次开机自动更换docker源。官方解释为：一个插件，可充当任何用户脚本的简单前端，使您无需输入命令行即可运行它们。
 rclone
-类似于rsync但是可以连通所有云服务器的命令行软件, 用它来做远程备份或者下载很方便.</p></div><footer class=entry-footer><span title='2021-08-01 22:07:00 +0000 +0000'>八月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;59 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unraid6.9.2安装及UEFI引导与初始化" href=http://localhost:1313/649.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+类似于rsync但是可以连通所有云服务器的命令行软件, 用它来做远程备份或者下载很方便.</p></div><footer class=entry-footer><span title='2021-08-01 22:07:00 +0000 +0000'>八月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;54 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unraid6.9.2安装及UEFI引导与初始化" href=http://localhost:1313/649.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

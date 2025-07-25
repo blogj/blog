@@ -2,8 +2,22 @@
 <svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
 <svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title=搜索><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=http://localhost:1313/>主页</a>&nbsp;»&nbsp;<a href=http://localhost:1313/tags/>Tags</a></div><h1>Syncthing
 <a href=/tags/syncthing/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Syncthing自动化接受设备与自动添加共享目录脚本</h2></header><div class=entry-content><p>序言 在当前2024/6/21参考官方论坛与github官方讨论，开发者不愿意开发自动接受设备与连接设备后自动添加共享目录，官方更愿意让使用者自己通过api构建程序脚本来增强相关功能。
-脚本 1 nano sync.sh 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #!/bin/bash api_key="YOUR_API_KEY_HERE" syncthing_url="http://localhost:8384" while : do device_id=$(curl -s -X GET -H "X-API-Key: ${api_key}" "${syncthing_url}/rest/cluster/pending/devices" | jq -r "keys[0]" ) time=$(date "+%Y-%m-%d %H:%M:%S") if [ "$device_id" = "null" ] || [ ${#device_id} -lt 5 ]; then echo $time "未找到待连接的设备" else curl -s -X PUT -H "X-API-Key: ${api_key}" -d "[{\"deviceID\": \"$device_id\"}]" ${syncthing_url}/rest/config/devices curl -s -X PATCH -H "X-API-Key: ${api_key}" -d "{ "\devices\":"[{\"deviceID\": \"$device_id\"}]}" ${syncthing_url}/rest/config/folders/9ecev-bio4v echo $time "$device_id 连接成功并添加共享文件夹" fi sleep 30 done 注意事项(必看) YOUR_API_KEY_HERE 在右上角 操作-设置-常规-API 密钥找到 jq命令必须安装这是解析设备id用的常规Linux发行版本可能没有带 开机启动脚本 因为每个发行版本可能不一样就偷懒不写了q.q
-...</p></div><footer class=entry-footer><span title='2024-06-21 09:22:44 +0800 CST'>六月 21, 2024</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;107 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Syncthing自动化接受设备与自动添加共享目录脚本" href=http://localhost:1313/20240621.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+脚本 nano sync.sh #!/bin/bash
+api_key="YOUR_API_KEY_HERE"
+syncthing_url="http://localhost:8384"
+while :
+do
+device_id=$(curl -s -X GET -H "X-API-Key: ${api_key}" "${syncthing_url}/rest/cluster/pending/devices" | jq -r "keys[0]" )
+time=$(date "+%Y-%m-%d %H:%M:%S")
+if [ "$device_id" = "null" ] || [ ${#device_id} -lt 5 ]; then
+echo $time "未找到待连接的设备"
+else
+curl -s -X PUT -H "X-API-Key: ${api_key}" -d "[{\"deviceID\": \"$device_id\"}]" ${syncthing_url}/rest/config/devices
+curl -s -X PATCH -H "X-API-Key: ${api_key}" -d "{ "\devices\":"[{\"deviceID\": \"$device_id\"}]}" ${syncthing_url}/rest/config/folders/9ecev-bio4v
+echo $time "$device_id 连接成功并添加共享文件夹"
+fi
+sleep 30 done 注意事项(必看) YOUR_API_KEY_HERE 在右上角 操作-设置-常规-API 密钥找到 jq命令必须安装这是解析设备id用的常规Linux发行版本可能没有带 开机启动脚本 因为每个发行版本可能不一样就偷懒不写了q.q
+...</p></div><footer class=entry-footer><span title='2024-06-21 09:22:44 +0800 CST'>六月 21, 2024</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;88 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Syncthing自动化接受设备与自动添加共享目录脚本" href=http://localhost:1313/20240621.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

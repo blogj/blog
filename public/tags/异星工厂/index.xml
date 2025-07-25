@@ -29,19 +29,10 @@
 &lt;p&gt;配置文件修改&lt;/p&gt;
 &lt;p&gt;\tower\appdata\factorio\config ## 配置文件地址&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-43-27.png&#34;&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;public”: true 改为 public”: false
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;requireuserverification”: true 改为requireuserverification”: false
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;不然客户端直连服务器不上
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;上传一份我的配置文件按需修改&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;public”: true 改为 public”: false
+requireuserverification”: true 改为requireuserverification”: false
+不然客户端直连服务器不上
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上传一份我的配置文件按需修改&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2021/01/4aad729c766ff05.zip&#34;&gt;server-settings&lt;/a&gt;&lt;a href=&#34;https://gao4.top/wp-content/uploads/2021/01/4aad729c766ff05.zip&#34;&gt;下载&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;运行&#34;&gt;运行&lt;/h2&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-33-06-1024x39.png&#34;&gt;&lt;/p&gt;</description>

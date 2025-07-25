@@ -6,10 +6,21 @@ wireguard原理就不多做解释了，我们只是人为的分客户端与服�
 2021年5月21日更新
 公网环境 wireguard实际是支持ipv6的而我的环境是ipv4动态公网就不多做关于ipv6的介绍了，在2018年CN已经全面覆盖改造ipv6了，至少移动手机端与家庭宽带都支持ipv6了。
 设备环境 OpenWrt R21.2.1 公网IPv4 移动手机端 openwrt端配置 软件源 系统-软件包-发行版软件源
-1 2 3 4 5 6 7 8 9 src/gz openwrt_core https://mirrors.cloud.tencent.com/lede/snapshots/targets/x86/64/packages src/gz openwrt_base https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/base src/gz openwrt_freifunk https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/freifunk src/gz openwrt_helloworld https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/helloworld src/gz openwrt_lienol https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/lienol src/gz openwrt_luci https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/x86_64/luci src/gz openwrt_packages https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/packages src/gz openwrt_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/routing src/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/telephony 安装WG
-1 2 opkg update opkg install wireguard luci-app-wireguard luci-i18n-wireguard-zh-cn wireguard-tools 生成密钥 可以在终端下生成 也可以在各客户端下生成 privatekey=私钥 publickey=公钥
-1 2 3 mkdir /etc/wireguard cd /etc/wireguard wg genkey | tee privatekey | wg pubkey > publickey 配置接口 依次找到网络->接口->添加新接口，设置内容如下
-...</p></div><footer class=entry-footer><span title='2021-02-24 15:01:46 +0000 +0000'>二月 24, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;259 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to openwrt通过wireguard组网" href=http://localhost:1313/444.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+src/gz openwrt_core https://mirrors.cloud.tencent.com/lede/snapshots/targets/x86/64/packages
+src/gz openwrt_base https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/base
+src/gz openwrt_freifunk https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/freifunk
+src/gz openwrt_helloworld https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/helloworld
+src/gz openwrt_lienol https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/lienol
+src/gz openwrt_luci https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/x86_64/luci
+src/gz openwrt_packages https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/packages
+src/gz openwrt_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/routing
+src/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/x86_64/telephony 安装WG
+opkg update
+opkg install wireguard luci-app-wireguard luci-i18n-wireguard-zh-cn wireguard-tools 生成密钥 可以在终端下生成 也可以在各客户端下生成 privatekey=私钥 publickey=公钥
+mkdir /etc/wireguard
+cd /etc/wireguard
+wg genkey | tee privatekey | wg pubkey > publickey 配置接口 依次找到网络->接口->添加新接口，设置内容如下
+...</p></div><footer class=entry-footer><span title='2021-02-24 15:01:46 +0000 +0000'>二月 24, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;234 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to openwrt通过wireguard组网" href=http://localhost:1313/444.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

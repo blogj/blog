@@ -3,18 +3,68 @@
 <svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title=搜索><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=http://localhost:1313/>主页</a>&nbsp;»&nbsp;<a href=http://localhost:1313/tags/>Tags</a></div><h1>NAS物语
 <a href=/tags/nas%E7%89%A9%E8%AF%AD/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Tailscale恢复官方控制器</h2></header><div class=entry-content><p>序言 在节点登录了第三方控制器后，想恢复官方控制器
 解决办法 命令行输入以下命令
-1 tailscale up --accept-dns=false --accept-routes --login-server=https://controlplane.tailscale.com --advertise-routes=192.168.100.0/24 重要的是--login-server=https://controlplane.tailscale.com
+tailscale up --accept-dns=false --accept-routes --login-server=https://controlplane.tailscale.com --advertise-routes=192.168.100.0/24 重要的是--login-server=https://controlplane.tailscale.com
 Window删除第三方tailscale用户 登录后节点有第三方用户的缓存可以尝试删除
-1 2 3 C:\ProgramData\Tailscale C:\Users%USERNAME%\AppData\Local\Tailscale C:\Windows\System32\config\systemprofile\AppData\Local\Tailscale 再重新安装登录
+C:\ProgramData\Tailscale
+C:\Users%USERNAME%\AppData\Local\Tailscale
+C:\Windows\System32\config\systemprofile\AppData\Local\Tailscale 再重新安装登录
 如果上面命令没反应 去注册表找到这个文件编辑
-1 HKEY_LOCAL_MACHINE\SOFTWARE\Tailscale IPN\LoginURL 修改控制器域名为https://controlplane.tailscale.com
-重启电脑 登录</p></div><footer class=entry-footer><span title='2023-11-05 18:24:03 +0800 CST'>十一月 5, 2023</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;29 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale恢复官方控制器" href=http://localhost:1313/1001.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>unattended Tailscale</h2></header><div class=entry-content><p>序言 解决 Windows 下 Tailscale 未登录桌面不启动问题 新版本的 ui 启动无人值守的选项run unattended mode已经去掉，所以只能命令行设置
+HKEY_LOCAL_MACHINE\SOFTWARE\Tailscale IPN\LoginURL 修改控制器域名为https://controlplane.tailscale.com
+重启电脑 登录</p></div><footer class=entry-footer><span title='2023-11-05 18:24:03 +0800 CST'>十一月 5, 2023</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;24 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale恢复官方控制器" href=http://localhost:1313/1001.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>unattended Tailscale</h2></header><div class=entry-content><p>序言 解决 Windows 下 Tailscale 未登录桌面不启动问题 新版本的 ui 启动无人值守的选项run unattended mode已经去掉，所以只能命令行设置
 研究资料 https://tailscale.com/kb/1080/cli/#login 官方文档来源
 解决办法 以管理员身份运行cmd 输入以下命令重新登录 tailscale
-1 tailscale login --unattended 测试 重新关机Window电脑，然后再开机不进入桌面 用手机登录管理后台发现Window节点已经在线</p></div><footer class=entry-footer><span title='2023-11-05 18:10:57 +0800 CST'>十一月 5, 2023</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;25 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unattended Tailscale" href=http://localhost:1313/1000.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>docker快速搭建MATRIX服务器synapse-2023</h2></header><div class=entry-content><p>docker 快速搭建 MATRIX 服务器 synapse
+tailscale login --unattended 测试 重新关机Window电脑，然后再开机不进入桌面 用手机登录管理后台发现Window节点已经在线</p></div><footer class=entry-footer><span title='2023-11-05 18:10:57 +0800 CST'>十一月 5, 2023</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;24 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unattended Tailscale" href=http://localhost:1313/1000.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>docker快速搭建MATRIX服务器synapse-2023</h2></header><div class=entry-content><p>docker 快速搭建 MATRIX 服务器 synapse
 环境 debian11 docker synapse:v1.83.0 postgres:12-alpine 域名一个 不能轻易修改 ipv6 地址 安装 新建一个文件夹建立 yml 文件nano docker-compose.yml内容如下注意自己 生成数据库密码
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 #也感谢糖喵提供的配置文件~ version: "3.4" services: synapse: hostname: matrix image: matrixdotorg/synapse:v1.83.0 restart: always container_name: matrix_server depends_on: - db - redis ports: - "127.0.0.1:8001:8008" volumes: - ./synapse/data:/data networks: - synapse_network - external_network healthcheck: test: ["CMD-SHELL", "curl -s localhost:8008/health || exit 1"] db: image: postgres:12-alpine restart: always container_name: matrix_db volumes: - ./synapse/db:/var/lib/postgresql/data environment: POSTGRES_USER: synapse POSTGRES_PASSWORD: 配置数据库密码 POSTGRES_DB: synapse POSTGRES_INITDB_ARGS: "--encoding='UTF8' --lc-collate='C' --lc-ctype='C'" networks: - synapse_network healthcheck: test: ["CMD", "pg_isready", "-U", "synapse"] redis: image: redis:6.0-alpine restart: always container_name: matrix_redis volumes: - ./synapse/redis:/data networks: - synapse_network healthcheck: test: ["CMD", "redis-cli", "ping"] networks: synapse_network: internal: true external_network: 运行如下内容进行生成配置文件
-...</p></div><footer class=entry-footer><span title='2023-09-11 13:31:00 +0000 +0000'>九月 11, 2023</span>&nbsp;·&nbsp;3 分钟&nbsp;·&nbsp;512 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to docker快速搭建MATRIX服务器synapse-2023" href=http://localhost:1313/227.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>华为2288H v2 DSM7.1 黑群晖实践</h2></header><div class=entry-content><p>黑群晖软件来源 https://www.openos.org/threads/2022810dsm7-x.3529/
+#也感谢糖喵提供的配置文件~
+version: "3.4"
+services:
+synapse:
+hostname: matrix
+image: matrixdotorg/synapse:v1.83.0
+restart: always
+container_name: matrix_server
+depends_on:
+- db
+- redis
+ports:
+- "127.0.0.1:8001:8008"
+volumes:
+- ./synapse/data:/data
+networks:
+- synapse_network
+- external_network
+healthcheck:
+test: ["CMD-SHELL", "curl -s localhost:8008/health || exit 1"]
+db:
+image: postgres:12-alpine
+restart: always
+container_name: matrix_db
+volumes:
+- ./synapse/db:/var/lib/postgresql/data
+environment:
+POSTGRES_USER: synapse
+POSTGRES_PASSWORD: 配置数据库密码
+POSTGRES_DB: synapse
+POSTGRES_INITDB_ARGS: "--encoding='UTF8' --lc-collate='C' --lc-ctype='C'"
+networks:
+- synapse_network
+healthcheck:
+test: ["CMD", "pg_isready", "-U", "synapse"]
+redis:
+image: redis:6.0-alpine
+restart: always
+container_name: matrix_redis
+volumes:
+- ./synapse/redis:/data
+networks:
+- synapse_network
+healthcheck:
+test: ["CMD", "redis-cli", "ping"]
+networks:
+synapse_network:
+internal: true
+external_network: 运行如下内容进行生成配置文件
+...</p></div><footer class=entry-footer><span title='2023-09-11 13:31:00 +0000 +0000'>九月 11, 2023</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;379 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to docker快速搭建MATRIX服务器synapse-2023" href=http://localhost:1313/227.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>华为2288H v2 DSM7.1 黑群晖实践</h2></header><div class=entry-content><p>黑群晖软件来源 https://www.openos.org/threads/2022810dsm7-x.3529/
 黑群晖版本
 引导类型为EFI 引导资源与系统安装分享 https://cloud.189.cn/t/yAfEjiRRbaMv (访问码:9c17)
 2288hv2服务器默认是支持网络唤醒的 Bios界面选项
@@ -30,27 +80,73 @@ LCP 响应故障阈值为 每隔 10 秒发送一次
 LCP 响应间隔为 未响应 10 次就断开链接重新拨号
 第二种 （冗余方案） 撰写脚本来只要断网就重启 WAN 口重新拨号
 第一步通过 ssh 登录 openwrt 后台复制下面命令回车执行
-1 vi /root/dwjb.sh 按i进入编辑模式
+vi /root/dwjb.sh 按i进入编辑模式
 第二步 复制下面脚本粘贴
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 #!/bin/sh tries=0 logger "my network watchdog start" while [[ $tries -lt 5 ]] do if /bin/ping -c 1 114.114.114.114 >/dev/null then logger "network pass, exit." exit 0 fi tries=$((tries+1)) sleep 10 done logger "network error, restart network" /sbin/ifup wan 粘贴完成 按【ESC】键跳到命令模式,然后再按【:】冒号键,最后再按【wq】,即可保存退出 vi 的编辑状态;
-...</p></div><footer class=entry-footer><span title='2022-09-06 11:55:13 +0000 +0000'>九月 6, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;117 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to 关于openwrt不定时断网研究与解决办法" href=http://localhost:1313/1114.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Tailscale安装到ARM openwrt上</h2></header><div class=entry-content><p>下载到tmp目录
-1 wget https://pkgs.tailscale.com/stable/tailscale_1.70.0_arm64.tgz -P /tmp 解压压缩包并移动二进制文件
-1 2 3 4 cd /tmp tar x -zvf tailscale_1.70.0_arm64.tgz cd tailscal_1.70.0_arm64 mv tailscale tailscaled /usr/sbin/ 安装依赖文件
-1 2 opkg update opkg install ca-bundle kmod-tun 创建守护脚本文件
-1 vim /etc/init.d/tailscale 写入如下代码
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 #!/bin/sh /etc/rc.common # Copyright 2020 Google LLC. # SPDX-License-Identifier: Apache-2.0 USE_PROCD=1 START=80 start_service() { /usr/sbin/tailscaled --cleanup procd_open_instance procd_set_param command /usr/sbin/tailscaled # Set the port to listen on for incoming VPN packets. # Remote nodes will automatically be informed about the new port number, # but you might want to configure this in order to set external firewall # settings. procd_append_param command --port 41641 # OpenWRT /var is a symlink to /tmp, so write persistent state elsewhere. procd_append_param command --state /etc/tailscale/tailscaled.state procd_set_param respawn procd_set_param stdout 1 procd_set_param stderr 1 procd_close_instance } stop_service() { /usr/sbin/tailscaled --cleanup } 收尾工作
-...</p></div><footer class=entry-footer><span title='2022-06-12 12:09:10 +0000 +0000'>六月 12, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;201 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale安装到ARM openwrt上" href=http://localhost:1313/1076.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Office LTSC 专业增强版 2021个人指南</h2></header><div class=entry-content><p>Office LTSC 专业增强版 2021个人指南 下载Office tool https://otp.landian.vip/zh-cn/
+#!/bin/sh
+tries=0
+logger "my network watchdog start"
+while [[ $tries -lt 5 ]]
+do
+if /bin/ping -c 1 114.114.114.114 >/dev/null
+then
+logger "network pass, exit."
+exit 0
+fi
+tries=$((tries+1))
+sleep 10
+done
+logger "network error, restart network"
+/sbin/ifup wan 粘贴完成 按【ESC】键跳到命令模式,然后再按【:】冒号键,最后再按【wq】,即可保存退出 vi 的编辑状态;
+...</p></div><footer class=entry-footer><span title='2022-09-06 11:55:13 +0000 +0000'>九月 6, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;100 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to 关于openwrt不定时断网研究与解决办法" href=http://localhost:1313/1114.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Tailscale安装到ARM openwrt上</h2></header><div class=entry-content><p>下载到tmp目录
+wget https://pkgs.tailscale.com/stable/tailscale_1.70.0_arm64.tgz -P /tmp 解压压缩包并移动二进制文件
+cd /tmp
+tar x -zvf tailscale_1.70.0_arm64.tgz
+cd tailscal_1.70.0_arm64
+mv tailscale tailscaled /usr/sbin/ 安装依赖文件
+opkg update
+opkg install ca-bundle kmod-tun 创建守护脚本文件
+vim /etc/init.d/tailscale 写入如下代码
+#!/bin/sh /etc/rc.common
+# Copyright 2020 Google LLC.
+# SPDX-License-Identifier: Apache-2.0
+USE_PROCD=1
+START=80
+start_service() {
+/usr/sbin/tailscaled --cleanup
+procd_open_instance procd_set_param command /usr/sbin/tailscaled
+# Set the port to listen on for incoming VPN packets.
+# Remote nodes will automatically be informed about the new port number,
+# but you might want to configure this in order to set external firewall
+# settings.
+procd_append_param command --port 41641
+# OpenWRT /var is a symlink to /tmp, so write persistent state elsewhere.
+procd_append_param command --state /etc/tailscale/tailscaled.state
+procd_set_param respawn
+procd_set_param stdout 1
+procd_set_param stderr 1
+procd_close_instance
+}
+stop_service() {
+/usr/sbin/tailscaled --cleanup
+} 收尾工作
+...</p></div><footer class=entry-footer><span title='2022-06-12 12:09:10 +0000 +0000'>六月 12, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;149 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale安装到ARM openwrt上" href=http://localhost:1313/1076.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Office LTSC 专业增强版 2021个人指南</h2></header><div class=entry-content><p>Office LTSC 专业增强版 2021个人指南 下载Office tool https://otp.landian.vip/zh-cn/
 推荐使用前三项以跳过安装 OTP 运行环境。解压使用
 安装 Office LTSC 专业增强版 2021 然后双击运行 Office Tool Plus.exe ，点击 安装 Office 后选择 Office LTSC 专业增强版 2021 - 批量许可证，激活设置 输入密钥 FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH 安装完毕后 主页面激活 KMS管理 输入kms.03k.org 大佬运行很久的地址 点击右上角激活
 密钥 Office LTSC 2021系列版本GVLK通用密钥：
 转自 https://www.landian.vip/download/91008.html
 GVLK即通用密钥，以下密钥均为微软公开密钥不涉任何版权问题，以下密钥仅用于企业KMS激活无法直接使用。
 版本名称：Office LTSC Professional Plus 2021 GVLK密钥： FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
-打包为ISO文件</p></div><footer class=entry-footer><span title='2022-05-26 18:22:00 +0000 +0000'>五月 26, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;52 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Office LTSC 专业增强版 2021个人指南" href=http://localhost:1313/762.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>更换ACME.sh的CA为ZeroSSL</h2></header><div class=entry-content><p>更换ACME.sh的CA为ZeroSSL 安装ACME 1 2 3 git clone https://github.com/acmesh-official/acme.sh.git cd acme.sh ./acme.sh --install -m my@example.com 1.访问账户注册页面注册一个ZeroSSL账户 传送门：https://app.zerossl.com/signup
-2.获取账户的EAB凭证，用来注册acme帐户 3.注册ACME帐户 1 2 3 acme.sh --register-account --server zerossl \ --eab-kid 你的eab-kid \ --eab-hmac-key 你的eab-hmac-key 4.切换acme.sh的默认CA为ZeroSSL 1 acme.sh --set-default-ca --server zerossl 5.设置阿里云访问密钥 1 2 3 一条一条执行 export Ali_Key="LTAIIJoxxxxxxxxxx" export Ali_Secret="mcSQ6Ab7KmEed5uNyyyyyyyyy" 6.签发通配符证书以阿里云dns验证方式 1 acme.sh --issue --dns dns_ali -d *.gao4.top</p></div><footer class=entry-footer><span title='2022-05-02 15:09:00 +0000 +0000'>五月 2, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;54 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to 更换ACME.sh的CA为ZeroSSL" href=http://localhost:1313/761.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Openwrt WireGuard连接局域网2022</h2></header><div class=entry-content><p>2022年lede固件默认编译的时候已经支持WireGuard进固件保持固件是最新即可
+打包为ISO文件</p></div><footer class=entry-footer><span title='2022-05-26 18:22:00 +0000 +0000'>五月 26, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;52 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Office LTSC 专业增强版 2021个人指南" href=http://localhost:1313/762.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>更换ACME.sh的CA为ZeroSSL</h2></header><div class=entry-content><p>更换ACME.sh的CA为ZeroSSL 安装ACME git clone https://github.com/acmesh-official/acme.sh.git
+cd acme.sh
+./acme.sh --install -m my@example.com 1.访问账户注册页面注册一个ZeroSSL账户 传送门：https://app.zerossl.com/signup
+2.获取账户的EAB凭证，用来注册acme帐户 3.注册ACME帐户 acme.sh --register-account --server zerossl \
+--eab-kid 你的eab-kid \
+--eab-hmac-key 你的eab-hmac-key 4.切换acme.sh的默认CA为ZeroSSL acme.sh --set-default-ca --server zerossl 5.设置阿里云访问密钥 一条一条执行
+export Ali_Key="LTAIIJoxxxxxxxxxx"
+export Ali_Secret="mcSQ6Ab7KmEed5uNyyyyyyyyy" 6.签发通配符证书以阿里云dns验证方式 acme.sh --issue --dns dns_ali -d *.gao4.top</p></div><footer class=entry-footer><span title='2022-05-02 15:09:00 +0000 +0000'>五月 2, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;43 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to 更换ACME.sh的CA为ZeroSSL" href=http://localhost:1313/761.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Openwrt WireGuard连接局域网2022</h2></header><div class=entry-content><p>2022年lede固件默认编译的时候已经支持WireGuard进固件保持固件是最新即可
 如果编译的时候取消了 后面安装是很麻烦的 因为内核不匹配，和仓库有兼容性问题
 最好的办法就是编译的时候就已经选择，后面也不要取消
-openwrt WireGuard 连接局域网 2022 下载客户端生成密钥 1 https://www.wireguard.com/install/ 我们生成两个隧道 一个作为服务端 一个作为客户端 没错逻辑和ssh一模一样。
+openwrt WireGuard 连接局域网 2022 下载客户端生成密钥 https://www.wireguard.com/install/ 我们生成两个隧道 一个作为服务端 一个作为客户端 没错逻辑和ssh一模一样。
 openwrt 服务端配置 然后我们就登录到OP的web界面找到网络-接口-添加新接口 添加一个名称为WG0 新接口协议
 为WireGuard VPN 然后我们点击提交
 然后到我们刚刚用客户端生成的1openwrt 点击编辑 把 PrivateKey私钥复制到基本设置-私钥
@@ -62,12 +158,50 @@ openwrt 服务端配置 然后我们就登录到OP的web界面找到网络-接�
 防火墙-通信规则-打开路由器端口 自定义名字WG0 协议选择UDP 外部端口选择4399 点击添加 在最下面点击保存&应用
 WIN客户端配置 点击编辑2win 复制下面参数 从Address开始复制 把Peer选项中PublicKey公钥 替换为1openwrt的公钥
 好好理解这段话 其实和ssh的过程一样 都是两个端之间交换公钥来互相通信，其中192.168.100.0/24为我局域网网段作用为远程访问openwrt lan下地址
-1 2 3 4 5 6 7 8 9 10 [Interface] PrivateKey = sAueVLI2sdRY42jmjcMoXDYFns4M1Qd/47GN0DpsA3E= Address = 10.0.0.2/24 DNS = 1.1.1.1 [Peer] PublicKey = H0DDIv4uZHKJ/BGG4Mqxp5734f/0cGtmZ7SOOzYMZig= AllowedIPs = 192.168.100.0/24, 10.0.0.0/24 Endpoint = x.gao4.top:4399 PersistentKeepalive = 25 点击保存 再点击连接进行测试 接受有流量就代表我们连接成功，反之没有流量显示已连接其实没有连接成功
-...</p></div><footer class=entry-footer><span title='2022-04-23 23:29:00 +0000 +0000'>四月 23, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;137 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Openwrt WireGuard连接局域网2022" href=http://localhost:1313/760.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Wg-Easy一个几分钟搞定访问局域网的wg面板</h2></header><div class=entry-content><p>前言 在前面博主比较推荐tailscale这款软件也是基于Wg协议的，但兜兜转转还是回归了wireguard，
+[Interface]
+PrivateKey = sAueVLI2sdRY42jmjcMoXDYFns4M1Qd/47GN0DpsA3E=
+Address = 10.0.0.2/24
+DNS = 1.1.1.1
+[Peer]
+PublicKey = H0DDIv4uZHKJ/BGG4Mqxp5734f/0cGtmZ7SOOzYMZig=
+AllowedIPs = 192.168.100.0/24, 10.0.0.0/24
+Endpoint = x.gao4.top:4399
+PersistentKeepalive = 25 点击保存 再点击连接进行测试 接受有流量就代表我们连接成功，反之没有流量显示已连接其实没有连接成功
+...</p></div><footer class=entry-footer><span title='2022-04-23 23:29:00 +0000 +0000'>四月 23, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;124 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Openwrt WireGuard连接局域网2022" href=http://localhost:1313/760.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Wg-Easy一个几分钟搞定访问局域网的wg面板</h2></header><div class=entry-content><p>前言 在前面博主比较推荐tailscale这款软件也是基于Wg协议的，但兜兜转转还是回归了wireguard，
 回归了传统的那种网络模型 ，或许网状形的模型成熟了再换也不迟，这面板就是快速让你部署后，并且能远程访问局域网地址
-快速搭建 1 2 3 mkdir /home/wg-easy cd /home/wg-easy nano /home/wg-easy/docker-compose.yml 内容如下
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 version: "3.3" services: wg-easy: environment: # ⚠️ Required: # Change this to your host's public address - WG_HOST=g.gao4.top # Optional: # - PASSWORD=foobar123 # - WG_PORT=51820 # - WG_DEFAULT_ADDRESS=10.8.0.x # - WG_DEFAULT_DNS=1.1.1.1 # - WG_MTU=1420 - WG_ALLOWED_IPS=192.168.100.0/24, 10.8.0.0/24 - WG_PERSISTENT_KEEPALIVE=25 image: weejewel/wg-easy container_name: wg-easy volumes: - .:/etc/wireguard ports: - "51820:51820/udp" - "51821:51821/tcp" restart: unless-stopped cap_add: - NET_ADMIN - SYS_MODULE sysctls: - net.ipv4.ip_forward=1 - net.ipv4.conf.all.src_valid_mark=1 需要配置的环境变量如下
-...</p></div><footer class=entry-footer><span title='2022-04-22 14:26:00 +0000 +0000'>四月 22, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;135 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Wg-Easy一个几分钟搞定访问局域网的wg面板" href=http://localhost:1313/759.html/></a></article><footer class=page-footer><nav class=pagination><a class=next href=http://localhost:1313/tags/nas%E7%89%A9%E8%AF%AD/page/2/>下一页&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+快速搭建 mkdir /home/wg-easy
+cd /home/wg-easy
+nano /home/wg-easy/docker-compose.yml 内容如下
+version: "3.3"
+services:
+wg-easy:
+environment:
+# ⚠️ Required:
+# Change this to your host's public address
+- WG_HOST=g.gao4.top
+# Optional:
+# - PASSWORD=foobar123
+# - WG_PORT=51820
+# - WG_DEFAULT_ADDRESS=10.8.0.x
+# - WG_DEFAULT_DNS=1.1.1.1
+# - WG_MTU=1420
+- WG_ALLOWED_IPS=192.168.100.0/24, 10.8.0.0/24
+- WG_PERSISTENT_KEEPALIVE=25
+image: weejewel/wg-easy
+container_name: wg-easy
+volumes:
+- .:/etc/wireguard
+ports:
+- "51820:51820/udp"
+- "51821:51821/tcp"
+restart: unless-stopped
+cap_add:
+- NET_ADMIN
+- SYS_MODULE
+sysctls:
+- net.ipv4.ip_forward=1
+- net.ipv4.conf.all.src_valid_mark=1 需要配置的环境变量如下
+...</p></div><footer class=entry-footer><span title='2022-04-22 14:26:00 +0000 +0000'>四月 22, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;101 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Wg-Easy一个几分钟搞定访问局域网的wg面板" href=http://localhost:1313/759.html/></a></article><footer class=page-footer><nav class=pagination><a class=next href=http://localhost:1313/tags/nas%E7%89%A9%E8%AF%AD/page/2/>下一页&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

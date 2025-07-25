@@ -13,13 +13,86 @@
 然后把需要开启SMB的文件夹依次添加进去</p></div><footer class=entry-footer><span title='2020-08-08 13:05:58 +0000 +0000'>八月 8, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;22 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to openmediavault SMB共享设置" href=http://localhost:1313/132.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>freenas创建匿名访问共享</h2></header><div class=entry-content><p>一、创建匿名访问共享#1.1 创建 进入Sharing ➞ Windows (SMB) Shares,然后点击ADD按钮界面如下图所示勾选Allow Guest Access直接按SAVE保存
 匿名共享图一
 注意事项 如果共享创建在根目录，没有任何权限处理，默认是只读的，要进一步控制权限，需要创建二级数据集，并设置权限。权限如下图：
-匿名共享图二</p></div><footer class=entry-footer><span title='2020-08-08 08:54:32 +0000 +0000'>八月 8, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;13 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to freenas创建匿名访问共享" href=http://localhost:1313/127.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Tinc全球虚拟局域网搭建记录</h2></header><div class=entry-content><p>安装 1 apt-get install tinc 开启IPv4转发 1 echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf && sysctl -p 创建一个名为imlala的虚拟网络 1 mkdir -p /etc/tinc/imlala && mkdir -p /etc/tinc/imlala/hosts 新建tinc.conf配置文件 1 vim.tiny /etc/tinc/imlala/tinc.conf 配置文件内容 1 2 3 4 5 Name=imlala Interface=vpn Cipher=aes-256-cbc Digest=sha512 ConnectTo=imlala 网络名就是imlala，网卡接口名vpn，以及加密方式
-建hosts文件 1 vim.tiny /etc/tinc/imlala/hosts/imlala 需要注意这个文件名必须和tinc.conf内的Name
-写入如下配置 1 2 Address = 你的VPS公网IP Subnet = 10.0.0.1/32 完成之后生成密匙对 1 tincd -n imlala -K4096 按两下回车全部保持默认配置，生成完成之后，对应的文件路径
-...</p></div><footer class=entry-footer><span title='2020-08-06 19:10:04 +0000 +0000'>八月 6, 2020</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;260 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tinc全球虚拟局域网搭建记录" href=http://localhost:1313/112.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>wordpress 搭建</h2></header><div class=entry-content><p>Github下载文件 1 git clone https://github.com/kefins/docker_wpress.git wpress 修改文件
-1 2 cd wpress vi docker-compose.yml 修改1个地方image: wordpress:php7.4-fpm
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 version: '3' services: mysql: image: mariadb container_name: mariadb ports: - '3306:3306' volumes: - ./sqldb:/var/lib/mysql environment: - MYSQL_ROOT_PASSWORD=UNJ^)-+566YYunfn - MYSQL_DATABASE=wordpress - MYSQL_USER=wordpress - MYSQL_PASSWORD=aqwe8662 networks: - backend restart: always wordpress: depends_on: - mysql image: wordpress:php7.4-fpm container_name: wordpress ports: - '9000:9000' volumes: #- ./php-fpm:/usr/local/etc/php-fpm.d - ./www:/var/www/html environment: - WORDPRESS_DB_NAME=wordpress - WORDPRESS_TABLE_PREFIX=wp_ - WORDPRESS_DB_HOST=mysql:3306 - WORDPRESS_DB_USER=wordpress - WORDPRESS_DB_PASSWORD=aqwe558123 links: - mysql networks: - frontend - backend restart: always nginx: image: nginx:latest container_name: nginx ports: - '80:80' - "443:443" volumes: - ./nginx:/etc/nginx/conf.d - ./logs/nginx:/var/log/nginx - ./www:/var/www/html - /var/run/docker.sock:/tmp/docker.sock:ro links: - wordpress networks: - frontend restart: always networks: frontend: #name: frontend driver: bridge backend: #name: backend driver: bridge 启动容器
-...</p></div><footer class=entry-footer><span title='2020-07-31 20:10:08 +0000 +0000'>七月 31, 2020</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;229 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to wordpress 搭建" href=http://localhost:1313/27.html/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=http://localhost:1313/tags/%E8%BD%AC%E8%BD%BD%E5%AD%A6%E4%B9%A0/>«&nbsp;上一页&nbsp;</a></nav></footer></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+匿名共享图二</p></div><footer class=entry-footer><span title='2020-08-08 08:54:32 +0000 +0000'>八月 8, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;13 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to freenas创建匿名访问共享" href=http://localhost:1313/127.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Tinc全球虚拟局域网搭建记录</h2></header><div class=entry-content><p>安装 apt-get install tinc 开启IPv4转发 echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf && sysctl -p 创建一个名为imlala的虚拟网络 mkdir -p /etc/tinc/imlala && mkdir -p /etc/tinc/imlala/hosts 新建tinc.conf配置文件 vim.tiny /etc/tinc/imlala/tinc.conf 配置文件内容 Name=imlala
+Interface=vpn
+Cipher=aes-256-cbc
+Digest=sha512
+ConnectTo=imlala 网络名就是imlala，网卡接口名vpn，以及加密方式
+建hosts文件 vim.tiny /etc/tinc/imlala/hosts/imlala 需要注意这个文件名必须和tinc.conf内的Name
+写入如下配置 Address = 你的VPS公网IP
+Subnet = 10.0.0.1/32 完成之后生成密匙对 tincd -n imlala -K4096 按两下回车全部保持默认配置，生成完成之后，对应的文件路径
+/etc/tinc/imlala/rsa_key.priv # 私钥
+/etc/tinc/imlala/hosts/imlala # 公钥 配置虚拟网卡tinc-up echo 'ip addr add 10.0.0.1/24 dev $INTERFACE' > /etc/tinc/imlala/tinc-up echo ‘ip link set $INTERFACE up’ » /etc/tinc/imlala/tinc-up
+给执行权限
+----- chmod +x /etc/tinc/imlala/tinc-*
+启动
+-- systemctl start tinc@imlala systemctl enable tinc@imlala
+...</p></div><footer class=entry-footer><span title='2020-08-06 19:10:04 +0000 +0000'>八月 6, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;185 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tinc全球虚拟局域网搭建记录" href=http://localhost:1313/112.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>wordpress 搭建</h2></header><div class=entry-content><p>Github下载文件 git clone https://github.com/kefins/docker_wpress.git wpress 修改文件
+cd wpress
+vi docker-compose.yml 修改1个地方image: wordpress:php7.4-fpm
+version: '3'
+services:
+mysql:
+image: mariadb
+container_name: mariadb
+ports:
+- '3306:3306'
+volumes:
+- ./sqldb:/var/lib/mysql
+environment:
+- MYSQL_ROOT_PASSWORD=UNJ^)-+566YYunfn
+- MYSQL_DATABASE=wordpress
+- MYSQL_USER=wordpress
+- MYSQL_PASSWORD=aqwe8662
+networks:
+- backend
+restart: always
+wordpress:
+depends_on:
+- mysql
+image: wordpress:php7.4-fpm
+container_name: wordpress
+ports:
+- '9000:9000'
+volumes:
+#- ./php-fpm:/usr/local/etc/php-fpm.d
+- ./www:/var/www/html
+environment:
+- WORDPRESS_DB_NAME=wordpress
+- WORDPRESS_TABLE_PREFIX=wp_
+- WORDPRESS_DB_HOST=mysql:3306
+- WORDPRESS_DB_USER=wordpress
+- WORDPRESS_DB_PASSWORD=aqwe558123
+links:
+- mysql
+networks:
+- frontend
+- backend
+restart: always
+nginx:
+image: nginx:latest
+container_name: nginx
+ports:
+- '80:80'
+- "443:443"
+volumes:
+- ./nginx:/etc/nginx/conf.d
+- ./logs/nginx:/var/log/nginx
+- ./www:/var/www/html
+- /var/run/docker.sock:/tmp/docker.sock:ro
+links:
+- wordpress
+networks:
+- frontend
+restart: always
+networks:
+frontend:
+#name: frontend
+driver: bridge
+backend:
+#name: backend
+driver: bridge 启动容器
+...</p></div><footer class=entry-footer><span title='2020-07-31 20:10:08 +0000 +0000'>七月 31, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;138 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to wordpress 搭建" href=http://localhost:1313/27.html/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=http://localhost:1313/tags/%E8%BD%AC%E8%BD%BD%E5%AD%A6%E4%B9%A0/>«&nbsp;上一页&nbsp;</a></nav></footer></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

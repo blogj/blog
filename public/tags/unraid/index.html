@@ -13,28 +13,32 @@
 剩下的操作跟 rclone 命令行下进行配置一模一样
 rclone官网也有相应的模板
 rclone使用 在终端下运行
-1 rclone config No remotes found - make a new one n) New remote s) Set configuration password q) Quit config n/s/q> n #选择n新建名称 name> aliyun #名字对应下面挂载 Type of storage to configure. Choose a number from below, or type in your own value [snip] XX / Webdav \ “webdav” [snip] Storage> webdav #选择协议 URL of http host to connect to Choose a number from below, or type in your own value 1 / Connect to example.com \ “https://example.com” url> http://192.168.100.4:8082/ 设置webdav服务器地址注意需要加http Name of the Webdav site/service/software you are using Choose a number from below, or type in your own value 1 / Nextcloud \ “nextcloud” 2 / Owncloud \ “owncloud” 3 / Sharepoint Online, authenticated by Microsoft account. \ “sharepoint” 4 / Sharepoint with NTLM authentication. Usually self-hosted or on-premises. \ “sharepoint-ntlm” 5 / Other site/service or software \ “other” vendor> 5 #选择第五个 User name user> user #设置用户名 Password. y) Yes type in my own password g) Generate random password n) No leave this optional password blank y/g/n> y #设置密码默认2次都不显示 Enter the password: password: Confirm the password: password: Bearer token instead of user/pass (e.g. a Macaroon) bearer_token> Remote config [aliyun] type = webdav url = http://192.168.100.4:8082/ vendor = other user = user pass = *** ENCRYPTED *** bearer_token = y) Yes this is OK e) Edit this remote d) Delete this remote y/e/d> y #输入y保存配置文件
-...</p></div><footer class=entry-footer><span title='2021-08-04 21:43:00 +0000 +0000'>八月 4, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;294 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unraid 挂载webdav为本地目录" href=http://localhost:1313/662.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>unraid6.9.2安装及UEFI引导与初始化</h2></header><div class=entry-content><p>前言 系统包来源于俄罗斯论坛
+rclone config No remotes found - make a new one n) New remote s) Set configuration password q) Quit config n/s/q> n #选择n新建名称 name> aliyun #名字对应下面挂载 Type of storage to configure. Choose a number from below, or type in your own value [snip] XX / Webdav \ “webdav” [snip] Storage> webdav #选择协议 URL of http host to connect to Choose a number from below, or type in your own value 1 / Connect to example.com \ “https://example.com” url> http://192.168.100.4:8082/ 设置webdav服务器地址注意需要加http Name of the Webdav site/service/software you are using Choose a number from below, or type in your own value 1 / Nextcloud \ “nextcloud” 2 / Owncloud \ “owncloud” 3 / Sharepoint Online, authenticated by Microsoft account. \ “sharepoint” 4 / Sharepoint with NTLM authentication. Usually self-hosted or on-premises. \ “sharepoint-ntlm” 5 / Other site/service or software \ “other” vendor> 5 #选择第五个 User name user> user #设置用户名 Password. y) Yes type in my own password g) Generate random password n) No leave this optional password blank y/g/n> y #设置密码默认2次都不显示 Enter the password: password: Confirm the password: password: Bearer token instead of user/pass (e.g. a Macaroon) bearer_token> Remote config [aliyun] type = webdav url = http://192.168.100.4:8082/ vendor = other user = user pass = *** ENCRYPTED *** bearer_token = y) Yes this is OK e) Edit this remote d) Delete this remote y/e/d> y #输入y保存配置文件
+...</p></div><footer class=entry-footer><span title='2021-08-04 21:43:00 +0000 +0000'>八月 4, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;275 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unraid 挂载webdav为本地目录" href=http://localhost:1313/662.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>unraid6.9.2安装及UEFI引导与初始化</h2></header><div class=entry-content><p>前言 系统包来源于俄罗斯论坛
 系统盘制作 系统下载 分享云盘链接
 使用官方工具制作
 把下载的unRAIDServer-6.9.2-x86_64_fu11压缩包解压 运行Unraid.USB.Creator.Win32-1.6 Allow UEFI Boot 勾选 需要UEFI引导一定需要使用官方工具制作 使用UnraidTool制作UEFI引导的系统U盘不一定生效 生成密钥，复制UnraidTool.exe与keymaker.exe到U盘根目录 右击管理员身份运行 UnraidTool 点击第二个注册 系统制作完毕
-进入系统初始化操作 GitHub访问 1 echo "199.232.4.133 raw.githubusercontent.com" >> /etc/hosts Docker市场 1 https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg 安装中文语言包 在Docker市场点击 左边 Language找到中文语言包安装即可
+进入系统初始化操作 GitHub访问 echo "199.232.4.133 raw.githubusercontent.com" >> /etc/hosts Docker市场 https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg 安装中文语言包 在Docker市场点击 左边 Language找到中文语言包安装即可
 选择中文如何点击APPLY确定
 设置阵列自启 开启核显 安装CA CONFIG EDITOR`一个在线配置文件编辑器`
 点击插件
-1 2 3 modprobe i915 chown nobody:users /dev/dri chmod 0777 /dev/dri/* 必安装插件 User Scripts
+modprobe i915
+chown nobody:users /dev/dri
+chmod 0777 /dev/dri/* 必安装插件 User Scripts
 一款可以运行用户自定义脚本的插件。贴吧有人使用这个插件设置每次开机自动更换docker源。官方解释为：一个插件，可充当任何用户脚本的简单前端，使您无需输入命令行即可运行它们。
 rclone
-类似于rsync但是可以连通所有云服务器的命令行软件, 用它来做远程备份或者下载很方便.</p></div><footer class=entry-footer><span title='2021-08-01 22:07:00 +0000 +0000'>八月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;59 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unraid6.9.2安装及UEFI引导与初始化" href=http://localhost:1313/649.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Unarid 安装异星工厂并指定存档</h2></header><div class=entry-content><p>0-1搜索factorio并添加环境变量指定存档 搜索镜像
+类似于rsync但是可以连通所有云服务器的命令行软件, 用它来做远程备份或者下载很方便.</p></div><footer class=entry-footer><span title='2021-08-01 22:07:00 +0000 +0000'>八月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;54 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unraid6.9.2安装及UEFI引导与初始化" href=http://localhost:1313/649.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Unarid 安装异星工厂并指定存档</h2></header><div class=entry-content><p>0-1搜索factorio并添加环境变量指定存档 搜索镜像
 添加相关环境变量
 注意C1存档已经上传到saves目录
 存档地址
 配置文件修改
 \tower\appdata\factorio\config ## 配置文件地址
-1 2 3 public”: true 改为 public”: false requireuserverification”: true 改为requireuserverification”: false 不然客户端直连服务器不上 上传一份我的配置文件按需修改
+public”: true 改为 public”: false
+requireuserverification”: true 改为requireuserverification”: false
+不然客户端直连服务器不上 上传一份我的配置文件按需修改
 server-settings下载
-运行</p></div><footer class=entry-footer><span title='2021-01-24 13:46:44 +0000 +0000'>一月 24, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;25 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Unarid 安装异星工厂并指定存档" href=http://localhost:1313/415.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>UNraid 安装后注意事项常见操作</h2></header><div class=entry-content><p>引导模式 UnRaid如果不能成功引导试试换传统引导模式
-修改访问iP地址 1 如果引导成功后访问不了，可能是局域网没有dhcp服务器，试试在Unraid引导选择界面选择启动桌面修改IP地址 修改ip界面
+运行</p></div><footer class=entry-footer><span title='2021-01-24 13:46:44 +0000 +0000'>一月 24, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;22 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Unarid 安装异星工厂并指定存档" href=http://localhost:1313/415.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>UNraid 安装后注意事项常见操作</h2></header><div class=entry-content><p>引导模式 UnRaid如果不能成功引导试试换传统引导模式
+修改访问iP地址 如果引导成功后访问不了，可能是局域网没有dhcp服务器，试试在Unraid引导选择界面选择启动桌面修改IP地址 修改ip界面
 修改主机时间 修改主机时间为Beijing
 步骤1
 步骤2
@@ -56,7 +60,12 @@ echo “199.232.4.133 raw.githubusercontent.com” » /etc/hosts
 key
 安装CA CONFIG EDITOR 一个在线配置文件编辑器
 编辑go文件
-1 2 3 4 5 6 #!/bin/bash # Start the Management Utility /usr/local/sbin/emhttp & modprobe i915 chown nobody:users /dev/dri chmod 0777 /dev/dri/*</p></div><footer class=entry-footer><span title='2020-08-31 13:18:41 +0000 +0000'>八月 31, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;66 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to UNraid 安装后注意事项常见操作" href=http://localhost:1313/234.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+#!/bin/bash
+# Start the Management Utility
+/usr/local/sbin/emhttp &
+modprobe i915
+chown nobody:users /dev/dri
+chmod 0777 /dev/dri/*</p></div><footer class=entry-footer><span title='2020-08-31 13:18:41 +0000 +0000'>八月 31, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;59 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to UNraid 安装后注意事项常见操作" href=http://localhost:1313/234.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

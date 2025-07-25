@@ -4,11 +4,33 @@
 <a href=/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Caddy安装反向代理Hugo</h2></header><div class=entry-content><p>前言 记录个人的blog相关的配置 其实我就是在腾讯云服务器上安装caddy然后再反向代理各种服务
 caddy安装 使用的https://teddysun.com/610.html 秋水编译版本
 下载并重命名
-1 2 3 wget https://dl.lamp.sh/files/caddy_linux_amd64 mv caddy_linux_amd64 caddy mv caddy /usr/local/bin/ 放置配置文件 反向代理了两个网站 一个是本地目录另一个是启动的本地容器端口83 很好的理解
+wget https://dl.lamp.sh/files/caddy_linux_amd64
+mv caddy_linux_amd64 caddy mv caddy /usr/local/bin/ 放置配置文件 反向代理了两个网站 一个是本地目录另一个是启动的本地容器端口83 很好的理解
 nano /etc/caddy/Caddyfile
-1 2 3 4 5 6 7 8 9 10 gao4.top { gzip root /home/docker/hugo/blog/public } https://b.gao4.top { proxy / http://127.0.0.1:83 } caddy的caddy.service文件 nano /etc/systemd/system/caddy.service
-1 2 3 4 5 6 7 8 9 10 11 12 13 [Unit] Description=Caddy HTTP/2 web server After=syslog.target After=network.target [Service] User=root Group=root LimitNOFILE=64000 ExecStart=/usr/local/bin/caddy --conf=/etc/caddy/Caddyfile Restart=on-failure [Install] caddy 配置管理 1 2 3 4 5 6 systemctl enable caddy.service # 开机启动 systemctl start caddy.service # 启动 systemctl stop caddy.service # 停止 systemctl restart caddy.service # 重启 systemctl status caddy.service # 查看状态 systemctl daemon-reload # 重载配置 hugo 安装 hugo安装很简单直接去GitHub网站下载二进制文件就好，一般下载扩展版 用来支持主题需要
-...</p></div><footer class=entry-footer><span title='2022-03-27 19:59:00 +0000 +0000'>三月 27, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;183 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Caddy安装反向代理Hugo" href=http://localhost:1313/757.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+gao4.top {
+gzip
+root /home/docker/hugo/blog/public
+}
+https://b.gao4.top {
+proxy / http://127.0.0.1:83
+} caddy的caddy.service文件 nano /etc/systemd/system/caddy.service
+[Unit]
+Description=Caddy HTTP/2 web server
+After=syslog.target
+After=network.target
+[Service]
+User=root
+Group=root
+LimitNOFILE=64000
+ExecStart=/usr/local/bin/caddy --conf=/etc/caddy/Caddyfile
+Restart=on-failure
+[Install] caddy 配置管理 systemctl enable caddy.service # 开机启动
+systemctl start caddy.service # 启动
+systemctl stop caddy.service # 停止
+systemctl restart caddy.service # 重启
+systemctl status caddy.service # 查看状态
+systemctl daemon-reload # 重载配置 hugo 安装 hugo安装很简单直接去GitHub网站下载二进制文件就好，一般下载扩展版 用来支持主题需要
+...</p></div><footer class=entry-footer><span title='2022-03-27 19:59:00 +0000 +0000'>三月 27, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;125 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Caddy安装反向代理Hugo" href=http://localhost:1313/757.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

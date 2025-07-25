@@ -29,35 +29,37 @@
 &lt;h2 id=&#34;docker配置&#34;&gt;docker配置&lt;/h2&gt;
 &lt;h3 id=&#34;host-网络模式&#34;&gt;Host 网络模式&lt;/h3&gt;
 &lt;p&gt;Host 网络模式直接使用宿主机的网络，没有网络隔离，不需要考虑容器端口的映射，在容器启动后可以自由调整被占用的端口。适合在本机使用 (lo­cal­host)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d \
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    --name adguardhome \
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    --restart unless-stopped \
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    --log-opt max-size=1m \
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    --network host \
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -v /root/adguardhome/work:/opt/adguardhome/work \
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    -v /roo/adguardhome/conf:/opt/adguardhome/conf \
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    adguard/adguardhome
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;复制启动&#34;&gt;复制启动&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run -d \
+    --name adguardhome \
+    --restart unless-stopped \
+    --log-opt max-size=1m \
+    --network host \
+    -v /root/adguardhome/work:/opt/adguardhome/work \
+    -v /roo/adguardhome/conf:/opt/adguardhome/conf \
+    adguard/adguardhome
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;复制启动&#34;&gt;复制启动&lt;/h3&gt;
 &lt;p&gt;&lt;img alt=&#34;安装界面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2469298094.png&#34; title=&#34;安装界面&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;访问web&#34;&gt;访问web&lt;/h3&gt;
 &lt;p&gt;AdGuard Home 初始化设置&lt;br&gt;
 使用网页浏览器访问 IP + 3000 端口即可进入到 Ad­Guard Home 的初始化界面，比如 IP 是 &lt;code&gt;10.0.0.53&lt;/code&gt;，那么就访问 [&lt;a href=&#34;http://10.0.0.53&#34;&gt;http://10.0.0.53&lt;/a&gt;]:3000&lt;br&gt;
 我的是tailscale虚拟内网 ip &lt;code&gt;http://100.112.191.114:3000/&lt;/code&gt;&lt;br&gt;
-&lt;img alt=&#34;安装界面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3284010322.png&#34; title=&#34;安装界面&#34;&gt;&lt;/p&gt;</description>
+&lt;img alt=&#34;安装界面&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3284010322.png&#34; title=&#34;安装界面&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安装步骤来&lt;/p&gt;
+&lt;h4 id=&#34;改一下端口防止冲突&#34;&gt;改一下端口防止冲突&lt;/h4&gt;
+&lt;p&gt;&lt;img alt=&#34;改端口&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/481378311.png&#34; title=&#34;改端口&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;添加域名&#34;&gt;添加域名&lt;/h2&gt;
+&lt;p&gt;在页面&lt;code&gt;过滤器&lt;/code&gt;-&amp;gt; &lt;code&gt;DNS重写&lt;/code&gt;&lt;br&gt;
+&lt;img alt=&#34;DNS重写&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3321944190.png&#34; title=&#34;DNS重写&#34;&gt;&lt;/p&gt;
+&lt;p&gt;添加dns重写&lt;br&gt;
+&lt;img alt=&#34;添加域名&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3108300146.png&#34; title=&#34;添加域名&#34;&gt;&lt;/p&gt;
+&lt;p&gt;域名对应iP点击&lt;code&gt;保存&lt;/code&gt;&lt;br&gt;
+&lt;img alt=&#34;域名对应IP&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/1219428542.png&#34; title=&#34;域名对应IP&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置客户端dns地址对应ip地址&lt;br&gt;
+&lt;img alt=&#34;设置客户端dns地址&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/3535240638.png&#34; title=&#34;设置客户端dns地址&#34;&gt;&lt;br&gt;
+Ping测试&lt;br&gt;
+&lt;img alt=&#34;测试&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/07/2372846563.png&#34; title=&#34;测试&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;结语&#34;&gt;结语&lt;/h1&gt;
+&lt;p&gt;一款非常棒的DNS服务器软件，不过有一点需要注意测试时候注意一下打开网页速度，慢了的话建议搭建在局域网，博主搭建在阿里云服务器上有一定的延迟，建议网上找一些资料，给局域网额外去广告也是不错的&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
