@@ -11,6 +11,12 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-07-24T14:12:43+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/%E6%B5%8B%E8%AF%95%E6%A8%A1%E7%89%88.html/</loc>
+    <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/%E6%9C%AA%E5%91%BD%E5%90%8D-copy/</loc>
+    <lastmod>2025-07-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2024-10-11T14:30:50+08:00</lastmod>
   </url><url>
@@ -447,6 +453,10 @@
     <lastmod>2017-01-14T06:31:45+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/.html/</loc>
+  </url><url>
+    <loc>http://localhost:1313/.html/</loc>
+  </url><url>
+    <loc>http://localhost:1313/%E6%9C%AA%E5%91%BD%E5%90%8D/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>

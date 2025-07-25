@@ -14,11 +14,44 @@
     <lastBuildDate>Thu, 24 Jul 2025 14:12:43 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My New Post</title>
+      <title>hugo插入图片解决方案Typora </title>
       <link>http://localhost:1313/20250724.html/</link>
       <pubDate>Thu, 24 Jul 2025 14:12:43 +0800</pubDate>
       <guid>http://localhost:1313/20250724.html/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;image-20250724153324666&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/wp-content/uploads/2025/image-20250724153324666.png&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;参考链接&#34;&gt;参考链接&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://zahui.fan/posts/b4cf69c3/&#34;&gt;https://zahui.fan/posts/b4cf69c3/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1、在文章添加以下配置&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;文章配置&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/wp-content/uploads/2025/image-20250724154636881.png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;typora-root-url: ../../static
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;2、在typora设置，按照下面图片设置&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;typora设置&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/wp-content/uploads/2025/image-20250724154926925.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;3、图片复制粘贴进typora 是这样的&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image-20250724155106113&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/wp-content/uploads/2025/image-20250724155106113.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;4、实现效果，在typora撰写文章时候正常显示图片、在hugo server -D命令后访问网站也能正常显示&lt;/p&gt;
+&lt;p&gt;效果如下&lt;img alt=&#34;效果图&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/wp-content/uploads/2025/image-20250724155247913.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;5、模版创建hugo文章&lt;/p&gt;
+&lt;p&gt;编辑 hugo 目录下的 &lt;code&gt;archetypes/default.md&lt;/code&gt;,这个文件是默认创建的模版。在里面添加上上述内容。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>测试模版</title>
+      <link>http://localhost:1313/%E6%B5%8B%E8%AF%95%E6%A8%A1%E7%89%88.html/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/%E6%B5%8B%E8%AF%95%E6%A8%A1%E7%89%88.html/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>未命名-copy</title>
+      <link>http://localhost:1313/%E6%9C%AA%E5%91%BD%E5%90%8D-copy/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/%E6%9C%AA%E5%91%BD%E5%90%8D-copy/</guid>
+      <description></description>
     </item>
     <item>
       <title>Manjaro发行版本远程桌面方案2024 </title>
@@ -3942,6 +3975,13 @@ WantedBy=multi-user.target&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/.html/</guid>
       <description>&lt;p&gt;&lt;img alt=&#34;硬件&#34; loading=&#34;lazy&#34; src=&#34;../../static/wp-content/uploads/2025/image-20250724135646355.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/%E6%9C%AA%E5%91%BD%E5%90%8D/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/%E6%9C%AA%E5%91%BD%E5%90%8D/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
