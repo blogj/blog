@@ -138,7 +138,8 @@ menu:
 pygmentsUseClasses: true
 markup:
   markup.highlight:
-    noclasses: false
+    lineNos = true
+    style = "github"
 outputs:
     home:
         - HTML
