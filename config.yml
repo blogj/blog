@@ -136,14 +136,9 @@ menu:
       weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
-#markup:
-#  highlight:
- #   noClasses: true
-     #anchorLineNos: true
-     #codeFences: true
-     #guessSyntax: true
-     #lineNos: true
-    # style: monokai
+markup:
+  markup.highlight:
+    noclasses: false
 outputs:
     home:
         - HTML
