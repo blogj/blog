@@ -11,15 +11,16 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
 Subnet routers and traffic relay nodes · Tailscale
 流程 0x1 只支持Linux 下的设备，群晖与win端官方没有明确说支持
 0x2 在Linux 终端下输入下面命令
-sudo tailscale up --advertise-routes=10.0.0.0/24,10.0.1.0/24 按需选择自己的网段。
+1 sudo tailscale up --advertise-routes=10.0.0.0/24,10.0.1.0/24 按需选择自己的网段。
 注意是支持ipv6的
 我的设备是openwrt x86输入的命令是
-tailscale up --advertise-routes=192.168.100.0/24 0x3 在 tailscale web管理面板开启192.168.100.0这个网段
+1 tailscale up --advertise-routes=192.168.100.0/24 0x3 在 tailscale web管理面板开启192.168.100.0这个网段
 0x4 实际然后在任意taliscale客户端都应该可以访问到内网服务。如下，学校机房笔记本电脑连接手机热点，访问30公里之外的家openwrt。
 速度sftp测试 客户端网络为4G网络
 后言 这个软件在有公网ip下体验很不错，ipv6还没折腾。在没有公网ip下可以试试在虚拟局域网内加一个有公网的客户端。实际它为一个网状组网架构的
 我曾经在两边都是内网情况下，速度体验很差。
-这只是个人体验，有些像报告，并不像教程，有什么错误欢迎留言指出，感激不尽，学无止境。</p></div><footer class=entry-footer><span title='2021-09-13 09:35:00 +0000 +0000'>九月 13, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;66 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to tailscale 中继节点 搭建教程" href=http://localhost:1313/679.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+这只是个人体验，有些像报告，并不像教程，有什么错误欢迎留言指出，感激不尽，学无止境。
+...</p></div><footer class=entry-footer><span title='2021-09-13 09:35:00 +0000 +0000'>九月 13, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;68 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to tailscale 中继节点 搭建教程" href=http://localhost:1313/679.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

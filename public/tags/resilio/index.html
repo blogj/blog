@@ -7,34 +7,14 @@
 2021年5月4日更新 docker镜像网络问题
 经测试linuxserver/resilio-sync的安装方式如果网络是以端口转发的方式会对传输有影响，具体是走桥接中继传输数据
 解决办法是赋予容器一个独立ip或者走当前本地网络，下面是我的docker-compose.yml文件路径修改一下
-version: "2"
-services:
-resilio-sync:
-image: ghcr.io/linuxserver/resilio-sync
-container_name: resilio-sync
-environment:
-- PUID=1000
-- PGID=1000
-- TZ=Asia/Shanghai
-volumes:
-- /root/resilio/config:/config
-- //mnt/sda/resilio/downloads/:/downloads
-- /mnt/sda/resilio/Sync/:/sync
-network_mode: "host"
-restart: unless-stopped docker-compose下载
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 version: "2" services: resilio-sync: image: ghcr.io/linuxserver/resilio-sync container_name: resilio-sync environment: - PUID=1000 - PGID=1000 - TZ=Asia/Shanghai volumes: - /root/resilio/config:/config - //mnt/sda/resilio/downloads/:/downloads - /mnt/sda/resilio/Sync/:/sync network_mode: "host" restart: unless-stopped docker-compose下载
 2021年1月29日更新
 前面权限问题可以用下面方法解决，这个问题其实是白名单问题如果遇到下面问题就在配置文件里修改就行unraid docker镜像还是Linux下的问题都可以解决
 权限问题 安装后有一个权限问题，最快解决办法
 运行下面命令找到rslsync.service这个配置文件
-systemctl status rslsync.service 编辑rslsync.service配置文件
-sudo vim /usr/lib/systemd/system/rslsync.service 修改如下
-重新启动服务
-sudo systemctl restart rslsync.service 后续 猜测是系统启动了rslsync而不是用户启动这个服务，有条件的可以试试反正解决了问题，猜测来源如下图
-安装rslsync服务 arch
-yay -S rslsync systemctl enable rslsync systemctl start rslsync
-对于网络环境不好的时候，可以考虑使用离线安装包的方式来安装。官方给了两个包，分别是deb和rpm。
-DEB： sudo dpkg -i &lt;resilio-sync.deb>
-...</p></div><footer class=entry-footer><span title='2020-12-07 12:42:46 +0000 +0000'>十二月 7, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;99 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Linux 下resilio同步服务安装" href=http://localhost:1313/325.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+1 systemctl status rslsync.service 编辑rslsync.service配置文件
+1 sudo vim /usr/lib/systemd/system/rslsync.service 修改如下
+...</p></div><footer class=entry-footer><span title='2020-12-07 12:42:46 +0000 +0000'>十二月 7, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;152 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Linux 下resilio同步服务安装" href=http://localhost:1313/325.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

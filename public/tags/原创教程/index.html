@@ -3,56 +3,8 @@
 <svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title=搜索><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=http://localhost:1313/>主页</a>&nbsp;»&nbsp;<a href=http://localhost:1313/tags/>Tags</a></div><h1>原创教程
 <a href=/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>docker快速搭建MATRIX服务器synapse-2023</h2></header><div class=entry-content><p>docker 快速搭建 MATRIX 服务器 synapse
 环境 debian11 docker synapse:v1.83.0 postgres:12-alpine 域名一个 不能轻易修改 ipv6 地址 安装 新建一个文件夹建立 yml 文件nano docker-compose.yml内容如下注意自己 生成数据库密码
-#也感谢糖喵提供的配置文件~
-version: "3.4"
-services:
-synapse:
-hostname: matrix
-image: matrixdotorg/synapse:v1.83.0
-restart: always
-container_name: matrix_server
-depends_on:
-- db
-- redis
-ports:
-- "127.0.0.1:8001:8008"
-volumes:
-- ./synapse/data:/data
-networks:
-- synapse_network
-- external_network
-healthcheck:
-test: ["CMD-SHELL", "curl -s localhost:8008/health || exit 1"]
-db:
-image: postgres:12-alpine
-restart: always
-container_name: matrix_db
-volumes:
-- ./synapse/db:/var/lib/postgresql/data
-environment:
-POSTGRES_USER: synapse
-POSTGRES_PASSWORD: 配置数据库密码
-POSTGRES_DB: synapse
-POSTGRES_INITDB_ARGS: "--encoding='UTF8' --lc-collate='C' --lc-ctype='C'"
-networks:
-- synapse_network
-healthcheck:
-test: ["CMD", "pg_isready", "-U", "synapse"]
-redis:
-image: redis:6.0-alpine
-restart: always
-container_name: matrix_redis
-volumes:
-- ./synapse/redis:/data
-networks:
-- synapse_network
-healthcheck:
-test: ["CMD", "redis-cli", "ping"]
-networks:
-synapse_network:
-internal: true
-external_network: 运行如下内容进行生成配置文件
-...</p></div><footer class=entry-footer><span title='2023-09-11 13:31:00 +0000 +0000'>九月 11, 2023</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;379 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to docker快速搭建MATRIX服务器synapse-2023" href=http://localhost:1313/227.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Office LTSC 专业增强版 2021个人指南</h2></header><div class=entry-content><p>Office LTSC 专业增强版 2021个人指南 下载Office tool https://otp.landian.vip/zh-cn/
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 #也感谢糖喵提供的配置文件~ version: "3.4" services: synapse: hostname: matrix image: matrixdotorg/synapse:v1.83.0 restart: always container_name: matrix_server depends_on: - db - redis ports: - "127.0.0.1:8001:8008" volumes: - ./synapse/data:/data networks: - synapse_network - external_network healthcheck: test: ["CMD-SHELL", "curl -s localhost:8008/health || exit 1"] db: image: postgres:12-alpine restart: always container_name: matrix_db volumes: - ./synapse/db:/var/lib/postgresql/data environment: POSTGRES_USER: synapse POSTGRES_PASSWORD: 配置数据库密码 POSTGRES_DB: synapse POSTGRES_INITDB_ARGS: "--encoding='UTF8' --lc-collate='C' --lc-ctype='C'" networks: - synapse_network healthcheck: test: ["CMD", "pg_isready", "-U", "synapse"] redis: image: redis:6.0-alpine restart: always container_name: matrix_redis volumes: - ./synapse/redis:/data networks: - synapse_network healthcheck: test: ["CMD", "redis-cli", "ping"] networks: synapse_network: internal: true external_network: 运行如下内容进行生成配置文件
+...</p></div><footer class=entry-footer><span title='2023-09-11 13:31:00 +0000 +0000'>九月 11, 2023</span>&nbsp;·&nbsp;3 分钟&nbsp;·&nbsp;512 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to docker快速搭建MATRIX服务器synapse-2023" href=http://localhost:1313/227.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Office LTSC 专业增强版 2021个人指南</h2></header><div class=entry-content><p>Office LTSC 专业增强版 2021个人指南 下载Office tool https://otp.landian.vip/zh-cn/
 推荐使用前三项以跳过安装 OTP 运行环境。解压使用
 安装 Office LTSC 专业增强版 2021 然后双击运行 Office Tool Plus.exe ，点击 安装 Office 后选择 Office LTSC 专业增强版 2021 - 批量许可证，激活设置 输入密钥 FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH 安装完毕后 主页面激活 KMS管理 输入kms.03k.org 大佬运行很久的地址 点击右上角激活
 密钥 Office LTSC 2021系列版本GVLK通用密钥：
@@ -61,39 +13,9 @@ GVLK即通用密钥，以下密钥均为微软公开密钥不涉任何版权问�
 版本名称：Office LTSC Professional Plus 2021 GVLK密钥： FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
 打包为ISO文件</p></div><footer class=entry-footer><span title='2022-05-26 18:22:00 +0000 +0000'>五月 26, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;52 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Office LTSC 专业增强版 2021个人指南" href=http://localhost:1313/762.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Wg-Easy一个几分钟搞定访问局域网的wg面板</h2></header><div class=entry-content><p>前言 在前面博主比较推荐tailscale这款软件也是基于Wg协议的，但兜兜转转还是回归了wireguard，
 回归了传统的那种网络模型 ，或许网状形的模型成熟了再换也不迟，这面板就是快速让你部署后，并且能远程访问局域网地址
-快速搭建 mkdir /home/wg-easy
-cd /home/wg-easy
-nano /home/wg-easy/docker-compose.yml 内容如下
-version: "3.3"
-services:
-wg-easy:
-environment:
-# ⚠️ Required:
-# Change this to your host's public address
-- WG_HOST=g.gao4.top
-# Optional:
-# - PASSWORD=foobar123
-# - WG_PORT=51820
-# - WG_DEFAULT_ADDRESS=10.8.0.x
-# - WG_DEFAULT_DNS=1.1.1.1
-# - WG_MTU=1420
-- WG_ALLOWED_IPS=192.168.100.0/24, 10.8.0.0/24
-- WG_PERSISTENT_KEEPALIVE=25
-image: weejewel/wg-easy
-container_name: wg-easy
-volumes:
-- .:/etc/wireguard
-ports:
-- "51820:51820/udp"
-- "51821:51821/tcp"
-restart: unless-stopped
-cap_add:
-- NET_ADMIN
-- SYS_MODULE
-sysctls:
-- net.ipv4.ip_forward=1
-- net.ipv4.conf.all.src_valid_mark=1 需要配置的环境变量如下
-...</p></div><footer class=entry-footer><span title='2022-04-22 14:26:00 +0000 +0000'>四月 22, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;101 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Wg-Easy一个几分钟搞定访问局域网的wg面板" href=http://localhost:1313/759.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>RH 2288H v2 相关资源分享</h2></header><div class=entry-content><p>分享
+快速搭建 1 2 3 mkdir /home/wg-easy cd /home/wg-easy nano /home/wg-easy/docker-compose.yml 内容如下
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 version: "3.3" services: wg-easy: environment: # ⚠️ Required: # Change this to your host's public address - WG_HOST=g.gao4.top # Optional: # - PASSWORD=foobar123 # - WG_PORT=51820 # - WG_DEFAULT_ADDRESS=10.8.0.x # - WG_DEFAULT_DNS=1.1.1.1 # - WG_MTU=1420 - WG_ALLOWED_IPS=192.168.100.0/24, 10.8.0.0/24 - WG_PERSISTENT_KEEPALIVE=25 image: weejewel/wg-easy container_name: wg-easy volumes: - .:/etc/wireguard ports: - "51820:51820/udp" - "51821:51821/tcp" restart: unless-stopped cap_add: - NET_ADMIN - SYS_MODULE sysctls: - net.ipv4.ip_forward=1 - net.ipv4.conf.all.src_valid_mark=1 需要配置的环境变量如下
+...</p></div><footer class=entry-footer><span title='2022-04-22 14:26:00 +0000 +0000'>四月 22, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;135 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Wg-Easy一个几分钟搞定访问局域网的wg面板" href=http://localhost:1313/759.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>RH 2288H v2 相关资源分享</h2></header><div class=entry-content><p>分享
 远程java相关 点击远程控制 在win10下用ie浏览器可行
 jre-7u4-windows-i586
 kvm_client_windows
@@ -103,16 +25,13 @@ kvm_client_windows
 ESxi相关 亲测官网下载的esxi7.0u2能装上运行</p></div><footer class=entry-footer><span title='2021-12-22 15:27:00 +0000 +0000'>十二月 22, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;13 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to RH 2288H v2 相关资源分享" href=http://localhost:1313/720.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>netmaker 搭建教程 组建虚拟局域网</h2></header><div class=entry-content><p>前言 参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装
 官方文档地址
 过程 环境 腾讯云乌班图20.04版本无任何其他网站宝塔乱七八糟软件 1 安装环境
-sudo apt-get update
-sudo apt-get install -y docker.io docker-compose wireguard 2开放防火墙
-sudo ufw allow proto tcp from any to any port 443 && sudo ufw allow 53/udp && sudo ufw allow 53/tcp && sudo ufw allow 51821:51830/udp 开放云服务器端口切记 端口如下
+1 2 sudo apt-get update sudo apt-get install -y docker.io docker-compose wireguard 2开放防火墙
+1 sudo ufw allow proto tcp from any to any port 443 && sudo ufw allow 53/udp && sudo ufw allow 53/tcp && sudo ufw allow 51821:51830/udp 开放云服务器端口切记 端口如下
 allow 443/tcp from all allow 53/udp and 53/tcp from all allow 51821-51830/udp from all 3获取docker-compose文件并修改
-wget -O docker-compose.yml https://raw.githubusercontent.com/gravitl/netmaker/master/compose/docker-compose.contained.yml
-sed -i 's/NETMAKER_BASE_DOMAIN/&lt;your base domain>/g' docker-compose.yml
-sed -i 's/SERVER_PUBLIC_IP/&lt;your server ip>/g' docker-compose.yml 解释your base domain为泛域名your server ip为公网ip
+1 2 3 wget -O docker-compose.yml https://raw.githubusercontent.com/gravitl/netmaker/master/compose/docker-compose.contained.yml sed -i 's/NETMAKER_BASE_DOMAIN/&lt;your base domain>/g' docker-compose.yml sed -i 's/SERVER_PUBLIC_IP/&lt;your server ip>/g' docker-compose.yml 解释your base domain为泛域名your server ip为公网ip
 修改docker-compose56行把容器网络端口模式为本地网络模式
 4生成密钥并写入
-...</p></div><footer class=entry-footer><span title='2021-12-01 22:43:00 +0000 +0000'>十二月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;161 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to netmaker 搭建教程 组建虚拟局域网" href=http://localhost:1313/715.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>netmaker win10 手动添加节点</h2></header><div class=entry-content><p>https://github.com/gravitl/netmaker/releases
+...</p></div><footer class=entry-footer><span title='2021-12-01 22:43:00 +0000 +0000'>十二月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;174 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to netmaker 搭建教程 组建虚拟局域网" href=http://localhost:1313/715.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>netmaker win10 手动添加节点</h2></header><div class=entry-content><p>https://github.com/gravitl/netmaker/releases
 去下载netclient.exe
 放到D盘或者C盘管理员身份运行PowerShell</p></div><footer class=entry-footer><span title='2021-12-01 22:21:54 +0000 +0000'>十二月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;3 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to netmaker win10 手动添加节点" href=http://localhost:1313/711.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>unraid6.9.2 安装群晖DSM7.0.1</h2></header><div class=entry-content><p>序言 引导驱动来源openos论坛
 使用版本 DS3615xs_7.01-42218
@@ -136,16 +55,17 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
 Subnet routers and traffic relay nodes · Tailscale
 流程 0x1 只支持Linux 下的设备，群晖与win端官方没有明确说支持
 0x2 在Linux 终端下输入下面命令
-sudo tailscale up --advertise-routes=10.0.0.0/24,10.0.1.0/24 按需选择自己的网段。
+1 sudo tailscale up --advertise-routes=10.0.0.0/24,10.0.1.0/24 按需选择自己的网段。
 注意是支持ipv6的
 我的设备是openwrt x86输入的命令是
-tailscale up --advertise-routes=192.168.100.0/24 0x3 在 tailscale web管理面板开启192.168.100.0这个网段
+1 tailscale up --advertise-routes=192.168.100.0/24 0x3 在 tailscale web管理面板开启192.168.100.0这个网段
 0x4 实际然后在任意taliscale客户端都应该可以访问到内网服务。如下，学校机房笔记本电脑连接手机热点，访问30公里之外的家openwrt。
 速度sftp测试 客户端网络为4G网络
 后言 这个软件在有公网ip下体验很不错，ipv6还没折腾。在没有公网ip下可以试试在虚拟局域网内加一个有公网的客户端。实际它为一个网状组网架构的
 我曾经在两边都是内网情况下，速度体验很差。
-这只是个人体验，有些像报告，并不像教程，有什么错误欢迎留言指出，感激不尽，学无止境。</p></div><footer class=entry-footer><span title='2021-09-13 09:35:00 +0000 +0000'>九月 13, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;66 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to tailscale 中继节点 搭建教程" href=http://localhost:1313/679.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Mirai Dice QQ机器人-to-docker搭建记录</h2></header><div class=entry-content><p>前言 网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的问题
-推荐开始之前阅读官方教程 Mirai Dice官方文档（和上面教程不一样是使用文档） 流程 启动容器 sudo docker run -it --name qq -v /home/container -v /etc/localtime:/etc/localtime:ro suhuiw4123/mirai-dice 登录 在>符号下输入 login QQ号 密码
+这只是个人体验，有些像报告，并不像教程，有什么错误欢迎留言指出，感激不尽，学无止境。
+...</p></div><footer class=entry-footer><span title='2021-09-13 09:35:00 +0000 +0000'>九月 13, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;68 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to tailscale 中继节点 搭建教程" href=http://localhost:1313/679.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Mirai Dice QQ机器人-to-docker搭建记录</h2></header><div class=entry-content><p>前言 网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的问题
+推荐开始之前阅读官方教程 Mirai Dice官方文档（和上面教程不一样是使用文档） 流程 启动容器 1 sudo docker run -it --name qq -v /home/container -v /etc/localtime:/etc/localtime:ro suhuiw4123/mirai-dice 登录 在>符号下输入 login QQ号 密码
 示例>login 23421123 DSH12323
 QQ登录验证（重要） 沿用官方教程的话（建议看看官方教程）大部分人都卡死登录验证的步骤一定把下面的话看完一个字一个字理解
 如果你开启了设备锁（推荐开启，可减少被盗和封号概率）可能需要设备锁验证，点击链接打开浏览器，
@@ -162,7 +82,7 @@ QQ登录验证（重要） 沿用官方教程的话（建议看看官方教程�
 这个目录下
 注意
 下面命令会让宿主机目录覆盖容器目录
-...</p></div><footer class=entry-footer><span title='2021-08-31 17:20:00 +0000 +0000'>八月 31, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;111 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Mirai Dice QQ机器人-to-docker搭建记录" href=http://localhost:1313/639.html/></a></article><footer class=page-footer><nav class=pagination><a class=next href=http://localhost:1313/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B/page/2/>下一页&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+...</p></div><footer class=entry-footer><span title='2021-08-31 17:20:00 +0000 +0000'>八月 31, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;123 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Mirai Dice QQ机器人-to-docker搭建记录" href=http://localhost:1313/639.html/></a></article><footer class=page-footer><nav class=pagination><a class=next href=http://localhost:1313/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B/page/2/>下一页&nbsp;&nbsp;»</a></nav></footer></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

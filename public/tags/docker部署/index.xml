@@ -34,37 +34,51 @@
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;环境变量&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Ali_Key ： # 填 AccessKey
-
-Ali_Secret ： # 填 AccessKey Secret
-
-SYNO_Username ： # 登录群晖的用户名（建议使用管理员权限）
-
-SYNO_Password ： # 登录群晖的密码
-
-SYNO_Device_ID: #如果你用于登陆的账户启动了二次验证，还需要确定设备ID
-
-SYNO_Certificate ：&amp;#34;&amp;#34; # 空字符串（&amp;#34;&amp;#34;）为替换默认证书，这里输入任命名来区别于默认证书
-
-SYNO_Create：1 # 表示如果证书不存在，则创建该证书。
-
-SYNO_Port ： # 填入群晖内网的端口号（如果你修改过，默认是5000。）
-
-ACME_EAB_KID: #查看方法，登陆ZeroSSL -&amp;gt; Developer -&amp;gt; ZeroSSL API Key；
-
-ACME_EAB_HMAC_KEY: #查看方法，登陆ZeroSSL -&amp;gt; Developer -&amp;gt; ZeroSSL API Key；
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img alt=&#34;环境变量&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/heiqunhui7.2ssl/Snipaste_2024-06-04_23-41-32.png&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;网络类型与执行命令
-网络中勾选使用与 Docker Host 相同的网络
-执行命令 -&amp;gt; 在命令栏添加 -&amp;gt; &lt;code&gt;daemon&lt;/code&gt;
-&lt;img alt=&#34;环境变量&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/heiqunhui7.2ssl/Snipaste_2024-06-04_23-42-42.png&#34;&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;第三步&#34;&gt;第三步&lt;/h3&gt;
-&lt;p&gt;撰写脚本Autoupdatecert.sh
-路径为/volume1/docker/acme.sh/Autoupdatecert.sh
-注意执行脚本前， 容器acme-sh 为运行状态
-可通过ssh #模式下执行bash /volume1/docker/acme.sh/Autoupdatecert.sh看是否成功&lt;/p&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Ali_Key ： # 填 AccessKey
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Ali_Secret ： # 填 AccessKey Secret
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;SYNO_Username ： # 登录群晖的用户名（建议使用管理员权限）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;SYNO_Password ： # 登录群晖的密码
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;SYNO_Device_ID: #如果你用于登陆的账户启动了二次验证，还需要确定设备ID
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;SYNO_Certificate ：&amp;#34;&amp;#34; # 空字符串（&amp;#34;&amp;#34;）为替换默认证书，这里输入任命名来区别于默认证书
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;SYNO_Create：1 # 表示如果证书不存在，则创建该证书。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;SYNO_Port ： # 填入群晖内网的端口号（如果你修改过，默认是5000。）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ACME_EAB_KID: #查看方法，登陆ZeroSSL -&amp;gt; Developer -&amp;gt; ZeroSSL API Key；
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ACME_EAB_HMAC_KEY: #查看方法，登陆ZeroSSL -&amp;gt; Developer -&amp;gt; ZeroSSL API Key；
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;环境变量&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2024/heiqunhui7.2ssl/Snipaste_2024-06-04_23-41-32.png&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

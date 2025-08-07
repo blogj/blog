@@ -3,115 +3,43 @@
 <svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title=搜索><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=http://localhost:1313/>主页</a>&nbsp;»&nbsp;<a href=http://localhost:1313/tags/>Tags</a></div><h1>Tailscale
 <a href=/tags/tailscale/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Tailscale恢复官方控制器</h2></header><div class=entry-content><p>序言 在节点登录了第三方控制器后，想恢复官方控制器
 解决办法 命令行输入以下命令
-tailscale up --accept-dns=false --accept-routes --login-server=https://controlplane.tailscale.com --advertise-routes=192.168.100.0/24 重要的是--login-server=https://controlplane.tailscale.com
+1 tailscale up --accept-dns=false --accept-routes --login-server=https://controlplane.tailscale.com --advertise-routes=192.168.100.0/24 重要的是--login-server=https://controlplane.tailscale.com
 Window删除第三方tailscale用户 登录后节点有第三方用户的缓存可以尝试删除
-C:\ProgramData\Tailscale
-C:\Users%USERNAME%\AppData\Local\Tailscale
-C:\Windows\System32\config\systemprofile\AppData\Local\Tailscale 再重新安装登录
+1 2 3 C:\ProgramData\Tailscale C:\Users%USERNAME%\AppData\Local\Tailscale C:\Windows\System32\config\systemprofile\AppData\Local\Tailscale 再重新安装登录
 如果上面命令没反应 去注册表找到这个文件编辑
-HKEY_LOCAL_MACHINE\SOFTWARE\Tailscale IPN\LoginURL 修改控制器域名为https://controlplane.tailscale.com
-重启电脑 登录</p></div><footer class=entry-footer><span title='2023-11-05 18:24:03 +0800 CST'>十一月 5, 2023</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;24 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale恢复官方控制器" href=http://localhost:1313/1001.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>unattended Tailscale</h2></header><div class=entry-content><p>序言 解决 Windows 下 Tailscale 未登录桌面不启动问题 新版本的 ui 启动无人值守的选项run unattended mode已经去掉，所以只能命令行设置
+1 HKEY_LOCAL_MACHINE\SOFTWARE\Tailscale IPN\LoginURL 修改控制器域名为https://controlplane.tailscale.com
+重启电脑 登录</p></div><footer class=entry-footer><span title='2023-11-05 18:24:03 +0800 CST'>十一月 5, 2023</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;29 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale恢复官方控制器" href=http://localhost:1313/1001.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>unattended Tailscale</h2></header><div class=entry-content><p>序言 解决 Windows 下 Tailscale 未登录桌面不启动问题 新版本的 ui 启动无人值守的选项run unattended mode已经去掉，所以只能命令行设置
 研究资料 https://tailscale.com/kb/1080/cli/#login 官方文档来源
 解决办法 以管理员身份运行cmd 输入以下命令重新登录 tailscale
-tailscale login --unattended 测试 重新关机Window电脑，然后再开机不进入桌面 用手机登录管理后台发现Window节点已经在线</p></div><footer class=entry-footer><span title='2023-11-05 18:10:57 +0800 CST'>十一月 5, 2023</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;24 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unattended Tailscale" href=http://localhost:1313/1000.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Tailscale安装到ARM openwrt上</h2></header><div class=entry-content><p>下载到tmp目录
-wget https://pkgs.tailscale.com/stable/tailscale_1.70.0_arm64.tgz -P /tmp 解压压缩包并移动二进制文件
-cd /tmp
-tar x -zvf tailscale_1.70.0_arm64.tgz
-cd tailscal_1.70.0_arm64
-mv tailscale tailscaled /usr/sbin/ 安装依赖文件
-opkg update
-opkg install ca-bundle kmod-tun 创建守护脚本文件
-vim /etc/init.d/tailscale 写入如下代码
-#!/bin/sh /etc/rc.common
-# Copyright 2020 Google LLC.
-# SPDX-License-Identifier: Apache-2.0
-USE_PROCD=1
-START=80
-start_service() {
-/usr/sbin/tailscaled --cleanup
-procd_open_instance procd_set_param command /usr/sbin/tailscaled
-# Set the port to listen on for incoming VPN packets.
-# Remote nodes will automatically be informed about the new port number,
-# but you might want to configure this in order to set external firewall
-# settings.
-procd_append_param command --port 41641
-# OpenWRT /var is a symlink to /tmp, so write persistent state elsewhere.
-procd_append_param command --state /etc/tailscale/tailscaled.state
-procd_set_param respawn
-procd_set_param stdout 1
-procd_set_param stderr 1
-procd_close_instance
-}
-stop_service() {
-/usr/sbin/tailscaled --cleanup
-} 收尾工作
-...</p></div><footer class=entry-footer><span title='2022-06-12 12:09:10 +0000 +0000'>六月 12, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;149 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale安装到ARM openwrt上" href=http://localhost:1313/1076.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Headscale服务器搭建启用SSL证书</h2></header><div class=entry-content><p>20230705更新 systemd方式启动Headscale会有启动不成功现象 配置ssl证书后 推荐去官方页面抄nginx反向代理进行增加ssl 推测是因为权限原因，推荐测试时候全新安装不修改配置文件情况下来启动。
+1 tailscale login --unattended 测试 重新关机Window电脑，然后再开机不进入桌面 用手机登录管理后台发现Window节点已经在线</p></div><footer class=entry-footer><span title='2023-11-05 18:10:57 +0800 CST'>十一月 5, 2023</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;25 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unattended Tailscale" href=http://localhost:1313/1000.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Tailscale安装到ARM openwrt上</h2></header><div class=entry-content><p>下载到tmp目录
+1 wget https://pkgs.tailscale.com/stable/tailscale_1.70.0_arm64.tgz -P /tmp 解压压缩包并移动二进制文件
+1 2 3 4 cd /tmp tar x -zvf tailscale_1.70.0_arm64.tgz cd tailscal_1.70.0_arm64 mv tailscale tailscaled /usr/sbin/ 安装依赖文件
+1 2 opkg update opkg install ca-bundle kmod-tun 创建守护脚本文件
+1 vim /etc/init.d/tailscale 写入如下代码
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 #!/bin/sh /etc/rc.common # Copyright 2020 Google LLC. # SPDX-License-Identifier: Apache-2.0 USE_PROCD=1 START=80 start_service() { /usr/sbin/tailscaled --cleanup procd_open_instance procd_set_param command /usr/sbin/tailscaled # Set the port to listen on for incoming VPN packets. # Remote nodes will automatically be informed about the new port number, # but you might want to configure this in order to set external firewall # settings. procd_append_param command --port 41641 # OpenWRT /var is a symlink to /tmp, so write persistent state elsewhere. procd_append_param command --state /etc/tailscale/tailscaled.state procd_set_param respawn procd_set_param stdout 1 procd_set_param stderr 1 procd_close_instance } stop_service() { /usr/sbin/tailscaled --cleanup } 收尾工作
+...</p></div><footer class=entry-footer><span title='2022-06-12 12:09:10 +0000 +0000'>六月 12, 2022</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;201 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale安装到ARM openwrt上" href=http://localhost:1313/1076.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Headscale服务器搭建启用SSL证书</h2></header><div class=entry-content><p>20230705更新 systemd方式启动Headscale会有启动不成功现象 配置ssl证书后 推荐去官方页面抄nginx反向代理进行增加ssl 推测是因为权限原因，推荐测试时候全新安装不修改配置文件情况下来启动。
 前言 在前些日子，写了一篇文章关于headscale服务器的，这次有更深的理解，希望谷歌出来这篇文章的朋友有所帮助
 环境 系统debian11 并root用户登录
 开启端口 有用的就8080端口其他端口有需要开放
-## 服务器服务端口
-8080 安装headscale 创建相关目录与文件
-mkdir -p /etc/headscale
-mkdir -p /var/lib/headscale
-touch /var/lib/headscale/db.sqlite
-touch /etc/headscale/config.yaml headscale从 GitHub 的发布页面下载最新的二进制文件重命名为headscale
+1 2 ## 服务器服务端口 8080 安装headscale 创建相关目录与文件
+1 2 3 4 mkdir -p /etc/headscale mkdir -p /var/lib/headscale touch /var/lib/headscale/db.sqlite touch /etc/headscale/config.yaml headscale从 GitHub 的发布页面下载最新的二进制文件重命名为headscale
 上传到/root目录
-mv /root/headscale /usr/local/bin/
-chmod +x /usr/local/bin/headscale 复制Github仓库里的示例配置内容到config.yaml文件`
-nano /etc/headscale/config.yaml 配置文件修改内容 如下 证书配置绝对不要双引号直接配置为绝对路径
-server_url: http://127.0.0.1:8080
-修改为 这选项需要配置域名
-server_url: https://he.gao4.top:8080
-配置自定义本地证书
-tls_cert_path: ""
-tls_key_path: ""
-修改如下 tls_cert_path: /root/.acme.sh/he.gao4.top/fullchain.cer
-tls_key_path: /root/.acme.sh/he.gao4.top/he.gao4.top.key
-配置客户端证书模式
-tls_client_auth_mode: relaxed
-修改为
-tls_client_auth_mode: disabled 创建 SystemD service 配置文件
-nano /etc/systemd/system/headscale.service 内容如下
-[Unit]
-Description=headscale
-After=network.target
-[Service]
-WorkingDirectory=/etc/headscale
-ExecStart=/usr/local/bin/headscale serve
-# Disable debug mode
-Environment=GIN_MODE=release
-[Install]
-WantedBy=multi-user.target 重载SystemD配置文件
-...</p></div><footer class=entry-footer><span title='2022-04-12 18:35:00 +0000 +0000'>四月 12, 2022</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;219 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Headscale服务器搭建启用SSL证书" href=http://localhost:1313/758.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>headscale开源服务器搭建</h2></header><div class=entry-content><p>2022年1月5日更新 GitHub仓库的文档已更新，可正常运行。 配置文件里本地ssl证书设置好了后不起效果 前言 headscale是一款今年 2021 年出现的一款 Tailscale 控制服务器的开源实现。也是唯一的一款。望能发展壮大。
+1 2 mv /root/headscale /usr/local/bin/ chmod +x /usr/local/bin/headscale 复制Github仓库里的示例配置内容到config.yaml文件`
+1 nano /etc/headscale/config.yaml 配置文件修改内容 如下 证书配置绝对不要双引号直接配置为绝对路径
+1 2 3 4 5 6 7 8 9 10 11 12 13 server_url: http://127.0.0.1:8080 修改为 这选项需要配置域名 server_url: https://he.gao4.top:8080 配置自定义本地证书 tls_cert_path: "" tls_key_path: "" 修改如下 tls_cert_path: /root/.acme.sh/he.gao4.top/fullchain.cer tls_key_path: /root/.acme.sh/he.gao4.top/he.gao4.top.key 配置客户端证书模式 tls_client_auth_mode: relaxed 修改为 tls_client_auth_mode: disabled 创建 SystemD service 配置文件
+...</p></div><footer class=entry-footer><span title='2022-04-12 18:35:00 +0000 +0000'>四月 12, 2022</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;283 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Headscale服务器搭建启用SSL证书" href=http://localhost:1313/758.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>headscale开源服务器搭建</h2></header><div class=entry-content><p>2022年1月5日更新 GitHub仓库的文档已更新，可正常运行。 配置文件里本地ssl证书设置好了后不起效果 前言 headscale是一款今年 2021 年出现的一款 Tailscale 控制服务器的开源实现。也是唯一的一款。望能发展壮大。
 环境 Ubuntu 18.04.3（理论上正常支持systemctl的Linux发行版本都能搭建） 端口8080 版本为v0.11
 注意事项 官方的当前时间也是本文章撰写的时间。最新版本的配置文件不兼容版本号为v0.12.1
 搭建过程 下载二进制文件与源代码
 headscale_0.11.0_linux_amd64
 Source code (zip)
 上传headscale_0.11.0_linux_amd64文件到/usr/local/bin并重命名为headscale并赋予执行权限
-chmod 755 /usr/local/bin/headscale 登录服务器创建目录及文件
-mkdir /etc/headscale
-cd /etc/headscale
-touch db.sqlite
-touch config.yaml
-touch derp.yaml 注意在0.12版本已不需要生成密钥会自动生成,或许需要安装wireguard我们是0.11版本所以需要手动生成
-apt-get update
-apt-get install wireguard
-wg genkey > private.key 最后目录结构如下
-root@10-255-1-181:/etc/headscale# tree
-.
-├── config.yaml
-├── db.sqlite
-├── derp.yaml
-└── private.key
-0 directories, 4 files
-root@10-255-1-181:/etc/headscale# 填写config.yaml内容，内容来源于解压的v0.11.0.zip压缩包config-example.yaml内容
+1 chmod 755 /usr/local/bin/headscale 登录服务器创建目录及文件
+1 2 3 4 5 mkdir /etc/headscale cd /etc/headscale touch db.sqlite touch config.yaml touch derp.yaml 注意在0.12版本已不需要生成密钥会自动生成,或许需要安装wireguard我们是0.11版本所以需要手动生成
+1 2 3 apt-get update apt-get install wireguard wg genkey > private.key 最后目录结构如下
+1 2 3 4 5 6 7 8 9 root@10-255-1-181:/etc/headscale# tree . ├── config.yaml ├── db.sqlite ├── derp.yaml └── private.key 0 directories, 4 files root@10-255-1-181:/etc/headscale# 填写config.yaml内容，内容来源于解压的v0.11.0.zip压缩包config-example.yaml内容
 填写derp.yaml内容内容来源于解压的v0.11.0.zip压缩包derp-example.yaml内容
-撰写headscale.service
-nano /etc/systemd/system/headscale.service [Unit] Description=headscale After=network.target
-[Service] WorkingDirectory=/etc/headscale ExecStart=/usr/local/bin/headscale serve
-Disable debug mode Environment=GIN_MODE=release
-...</p></div><footer class=entry-footer><span title='2021-12-29 14:16:00 +0000 +0000'>十二月 29, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;218 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to headscale开源服务器搭建" href=http://localhost:1313/723.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>tailscale 中继节点 搭建教程</h2></header><div class=entry-content><p>2021年10月20日更新 标题设置得不太准确，应该是中继网关，中继内网网段。
+...</p></div><footer class=entry-footer><span title='2021-12-29 14:16:00 +0000 +0000'>十二月 29, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;285 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to headscale开源服务器搭建" href=http://localhost:1313/723.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>tailscale 中继节点 搭建教程</h2></header><div class=entry-content><p>2021年10月20日更新 标题设置得不太准确，应该是中继网关，中继内网网段。
 中继节点可看这篇文章
 社区为 Tailscale 的自定义 DERP 服务器构建的 Docker 镜像
 Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行您自己的 DERP 服务器
@@ -121,28 +49,27 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
 Subnet routers and traffic relay nodes · Tailscale
 流程 0x1 只支持Linux 下的设备，群晖与win端官方没有明确说支持
 0x2 在Linux 终端下输入下面命令
-sudo tailscale up --advertise-routes=10.0.0.0/24,10.0.1.0/24 按需选择自己的网段。
+1 sudo tailscale up --advertise-routes=10.0.0.0/24,10.0.1.0/24 按需选择自己的网段。
 注意是支持ipv6的
 我的设备是openwrt x86输入的命令是
-tailscale up --advertise-routes=192.168.100.0/24 0x3 在 tailscale web管理面板开启192.168.100.0这个网段
+1 tailscale up --advertise-routes=192.168.100.0/24 0x3 在 tailscale web管理面板开启192.168.100.0这个网段
 0x4 实际然后在任意taliscale客户端都应该可以访问到内网服务。如下，学校机房笔记本电脑连接手机热点，访问30公里之外的家openwrt。
 速度sftp测试 客户端网络为4G网络
 后言 这个软件在有公网ip下体验很不错，ipv6还没折腾。在没有公网ip下可以试试在虚拟局域网内加一个有公网的客户端。实际它为一个网状组网架构的
 我曾经在两边都是内网情况下，速度体验很差。
-这只是个人体验，有些像报告，并不像教程，有什么错误欢迎留言指出，感激不尽，学无止境。</p></div><footer class=entry-footer><span title='2021-09-13 09:35:00 +0000 +0000'>九月 13, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;66 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to tailscale 中继节点 搭建教程" href=http://localhost:1313/679.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>tailscale docker上安装搭建方法</h2></header><div class=entry-content><p>启动
-docker run -d --restart=always --name=tailscaled -v /var/lib:/var/lib -v /dev/net/tun:/dev/net/tun --network=host --privileged fastandfearless/tailscale 登录
-docker exec tailscaled tailscale up 查看状态
-docker exec tailscaled tailscale status 停止tailscale容器
-docker stop tailscaled 删除tailscale容器
-docker rm tailscaled 参考官方docker编译文件
-镜像地址</p></div><footer class=entry-footer><span title='2021-05-20 13:31:00 +0000 +0000'>五月 20, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;35 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to tailscale docker上安装搭建方法" href=http://localhost:1313/555.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Tailscale VPN初步安装体验</h2></header><div class=entry-content><p>序言 初步体验是一个基于wireguard的新的星形组网软件（功能之一），对比WGvpn最大的不同就是增加了公匙交换系统，免配置组网，只需要安装客户端登录账号就可以组网，支持p2p打洞，付费自建中继功能。支持基本上全平台支持Linux|群晖|Openrt|Window|Mac等常见客户端，docker也可以安装。
+这只是个人体验，有些像报告，并不像教程，有什么错误欢迎留言指出，感激不尽，学无止境。
+...</p></div><footer class=entry-footer><span title='2021-09-13 09:35:00 +0000 +0000'>九月 13, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;68 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to tailscale 中继节点 搭建教程" href=http://localhost:1313/679.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>tailscale docker上安装搭建方法</h2></header><div class=entry-content><p>启动
+1 docker run -d --restart=always --name=tailscaled -v /var/lib:/var/lib -v /dev/net/tun:/dev/net/tun --network=host --privileged fastandfearless/tailscale 登录
+1 docker exec tailscaled tailscale up 查看状态
+1 docker exec tailscaled tailscale status 停止tailscale容器
+1 docker stop tailscaled 删除tailscale容器
+1 docker rm tailscaled 参考官方docker编译文件
+镜像地址</p></div><footer class=entry-footer><span title='2021-05-20 13:31:00 +0000 +0000'>五月 20, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;40 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to tailscale docker上安装搭建方法" href=http://localhost:1313/555.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Tailscale VPN初步安装体验</h2></header><div class=entry-content><p>序言 初步体验是一个基于wireguard的新的星形组网软件（功能之一），对比WGvpn最大的不同就是增加了公匙交换系统，免配置组网，只需要安装客户端登录账号就可以组网，支持p2p打洞，付费自建中继功能。支持基本上全平台支持Linux|群晖|Openrt|Window|Mac等常见客户端，docker也可以安装。
 Openwrt X86上安装 2021年5月13日更新
 openwrt 仓库已经有了安装包直接更新一下仓库就可以搜索到如下图
 执行下面命令就可以安装
-opkg update
-opkg install tailscale Ps：在X86下扩容安装软件Overlay空间的教程亲测可用
-Openwrt arm上安装 opkg update
-opkg install tailscale PS:注意安装空间的大小，占满空间会保存不了Openwrt配置，一些定时任务失效
+1 2 opkg update opkg install tailscale Ps：在X86下扩容安装软件Overlay空间的教程亲测可用
+Openwrt arm上安装 1 2 opkg update opkg install tailscale PS:注意安装空间的大小，占满空间会保存不了Openwrt配置，一些定时任务失效
 tailscale-synolog群晖下安装 在Github上下载合适的版本上传到群晖安装即可，然后ssh登录群晖sudo tailscale up 即可
 Unraid下用docker安装 在APPS里搜索 然后按照正常启动容器就可以，不用修改什么
 然后点击图标双击第一个>_Console 在启动的命令行窗口输入命令tailscale up 获取登录链接就可以。
@@ -152,7 +79,7 @@ PS：遇到问题 0x1安卓下远程控制0x300005f错误代码
 arm重新恢复出厂设置吧
 0x3 openwert ssh登录不了问题 直接未指定就行
 ### win10升级win11后服务启动失败 解决办法 我可以确认我在从 Win10 升级到 Win11 后遇到了类似的问题，但结合了来自[@iball](https://github.com/iball)和[@DentonGentry 的](https://github.com/DentonGentry)两种解决方案。 * 卸载 Tailscale * 删除 %USERPROFILE%\AppData\Local\Tailscale * 重新安装尾鳞 现在需要重新登录Tailscale，登录后，Win11 中的Tailscale 效果很赞。
-...</p></div><footer class=entry-footer><span title='2021-05-13 16:13:00 +0000 +0000'>五月 13, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;65 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale VPN初步安装体验" href=http://localhost:1313/503.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+...</p></div><footer class=entry-footer><span title='2021-05-13 16:13:00 +0000 +0000'>五月 13, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;69 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale VPN初步安装体验" href=http://localhost:1313/503.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

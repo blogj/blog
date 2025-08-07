@@ -5,48 +5,17 @@
 系统盘制作 系统下载 分享云盘链接
 使用官方工具制作
 把下载的unRAIDServer-6.9.2-x86_64_fu11压缩包解压 运行Unraid.USB.Creator.Win32-1.6 Allow UEFI Boot 勾选 需要UEFI引导一定需要使用官方工具制作 使用UnraidTool制作UEFI引导的系统U盘不一定生效 生成密钥，复制UnraidTool.exe与keymaker.exe到U盘根目录 右击管理员身份运行 UnraidTool 点击第二个注册 系统制作完毕
-进入系统初始化操作 GitHub访问 echo "199.232.4.133 raw.githubusercontent.com" >> /etc/hosts Docker市场 https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg 安装中文语言包 在Docker市场点击 左边 Language找到中文语言包安装即可
+进入系统初始化操作 GitHub访问 1 echo "199.232.4.133 raw.githubusercontent.com" >> /etc/hosts Docker市场 1 https://raw.githubusercontent.com/Squidly271/community.applications/master/plugins/community.applications.plg 安装中文语言包 在Docker市场点击 左边 Language找到中文语言包安装即可
 选择中文如何点击APPLY确定
 设置阵列自启 开启核显 安装CA CONFIG EDITOR`一个在线配置文件编辑器`
 点击插件
-modprobe i915
-chown nobody:users /dev/dri
-chmod 0777 /dev/dri/* 必安装插件 User Scripts
+1 2 3 modprobe i915 chown nobody:users /dev/dri chmod 0777 /dev/dri/* 必安装插件 User Scripts
 一款可以运行用户自定义脚本的插件。贴吧有人使用这个插件设置每次开机自动更换docker源。官方解释为：一个插件，可充当任何用户脚本的简单前端，使您无需输入命令行即可运行它们。
 rclone
-类似于rsync但是可以连通所有云服务器的命令行软件, 用它来做远程备份或者下载很方便.</p></div><footer class=entry-footer><span title='2021-08-01 22:07:00 +0000 +0000'>八月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;54 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unraid6.9.2安装及UEFI引导与初始化" href=http://localhost:1313/649.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>NGINX 非443端口http跳转https</h2></header><div class=entry-content><p>关于Nginx这个web服务器软件在NAS上配置非443端口访问时候跳转https问题，默认80端口与443端口无法访问情况。
-error_page 497 301 =307 https://$host:9443$request_uri; 添加上面代码就行https端口为9443这样就不会出现访问http出现错误的问题
+类似于rsync但是可以连通所有云服务器的命令行软件, 用它来做远程备份或者下载很方便.</p></div><footer class=entry-footer><span title='2021-08-01 22:07:00 +0000 +0000'>八月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;59 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to unraid6.9.2安装及UEFI引导与初始化" href=http://localhost:1313/649.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>NGINX 非443端口http跳转https</h2></header><div class=entry-content><p>关于Nginx这个web服务器软件在NAS上配置非443端口访问时候跳转https问题，默认80端口与443端口无法访问情况。
+1 error_page 497 301 =307 https://$host:9443$request_uri; 添加上面代码就行https端口为9443这样就不会出现访问http出现错误的问题
 完整代码 容器部署nginx桥接443端口为9443 然后反向代理192.168.100.4:86用wallabag.gao4.top:9443访问服务并让http跳转https
-upstream dockername1 {
-server 192.168.100.4:86; # 端口改为docker容器提供的端口
-}
-server {
-listen 80;
-listen 443 default ssl;
-server_name wallabag.gao4.top;
-error_page 497 301 =307 https://$host:9443$request_uri;
-gzip on;
-ssl_certificate /ssl/fullchain1.pem;
-ssl_certificate_key /ssl/privkey1.pem;
-# access_log /var/log/nginx/dockername_access.log combined;
-# error_log /var/log/nginx/dockername_error.log;
-location / {
-proxy_redirect off;
-proxy_pass http://dockername1;
-proxy_set_header Host $http_host;
-proxy_set_header X-Real-IP $remote_addr;
-proxy_set_header X-Forwarded-Ssl on;
-proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-proxy_set_header X-Forwarded-Proto $scheme;
-proxy_set_header X-Frame-Options SAMEORIGIN;
-client_max_body_size 100m;
-client_body_buffer_size 128k;
-proxy_buffer_size 4k;
-proxy_buffers 4 32k;
-proxy_busy_buffers_size 64k;
-proxy_temp_file_write_size 64k;
-}
-}</p></div><footer class=entry-footer><span title='2021-06-24 10:32:00 +0000 +0000'>六月 24, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;86 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to NGINX 非443端口http跳转https" href=http://localhost:1313/600.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>TrueNAS-SCALE SMB共享设置</h2></header><div class=entry-content><p>1.打开win10 SMB1.0 SMB1.0功能 此电脑>卸载或更改程序>程序和功能>启用或关闭win功能 勾选?
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 upstream dockername1 { server 192.168.100.4:86; # 端口改为docker容器提供的端口 } server { listen 80; listen 443 default ssl; server_name wallabag.gao4.top; error_page 497 301 =307 https://$host:9443$request_uri; gzip on; ssl_certificate /ssl/fullchain1.pem; ssl_certificate_key /ssl/privkey1.pem; # access_log /var/log/nginx/dockername_access.log combined; # error_log /var/log/nginx/dockername_error.log; location / { proxy_redirect off; proxy_pass http://dockername1; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-Ssl on; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header X-Frame-Options SAMEORIGIN; client_max_body_size 100m; client_body_buffer_size 128k; proxy_buffer_size 4k; proxy_buffers 4 32k; proxy_busy_buffers_size 64k; proxy_temp_file_write_size 64k; } }</p></div><footer class=entry-footer><span title='2021-06-24 10:32:00 +0000 +0000'>六月 24, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;124 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to NGINX 非443端口http跳转https" href=http://localhost:1313/600.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>TrueNAS-SCALE SMB共享设置</h2></header><div class=entry-content><p>1.打开win10 SMB1.0 SMB1.0功能 此电脑>卸载或更改程序>程序和功能>启用或关闭win功能 勾选?
 勾选
 2.添加用户 登录TrueNAS 仪表盘>证书>Local Users>添加 添加一个用户user1修改密码，保持默认选项点击保存?
 添加用户
@@ -72,10 +41,8 @@ wireguard软件，全平台，没法动态更新ddns的域名，可以通过脚�
 Openwrt X86上安装 2021年5月13日更新
 openwrt 仓库已经有了安装包直接更新一下仓库就可以搜索到如下图
 执行下面命令就可以安装
-opkg update
-opkg install tailscale Ps：在X86下扩容安装软件Overlay空间的教程亲测可用
-Openwrt arm上安装 opkg update
-opkg install tailscale PS:注意安装空间的大小，占满空间会保存不了Openwrt配置，一些定时任务失效
+1 2 opkg update opkg install tailscale Ps：在X86下扩容安装软件Overlay空间的教程亲测可用
+Openwrt arm上安装 1 2 opkg update opkg install tailscale PS:注意安装空间的大小，占满空间会保存不了Openwrt配置，一些定时任务失效
 tailscale-synolog群晖下安装 在Github上下载合适的版本上传到群晖安装即可，然后ssh登录群晖sudo tailscale up 即可
 Unraid下用docker安装 在APPS里搜索 然后按照正常启动容器就可以，不用修改什么
 然后点击图标双击第一个>_Console 在启动的命令行窗口输入命令tailscale up 获取登录链接就可以。
@@ -85,20 +52,14 @@ PS：遇到问题 0x1安卓下远程控制0x300005f错误代码
 arm重新恢复出厂设置吧
 0x3 openwert ssh登录不了问题 直接未指定就行
 ### win10升级win11后服务启动失败 解决办法 我可以确认我在从 Win10 升级到 Win11 后遇到了类似的问题，但结合了来自[@iball](https://github.com/iball)和[@DentonGentry 的](https://github.com/DentonGentry)两种解决方案。 * 卸载 Tailscale * 删除 %USERPROFILE%\AppData\Local\Tailscale * 重新安装尾鳞 现在需要重新登录Tailscale，登录后，Win11 中的Tailscale 效果很赞。
-...</p></div><footer class=entry-footer><span title='2021-05-13 16:13:00 +0000 +0000'>五月 13, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;65 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale VPN初步安装体验" href=http://localhost:1313/503.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>ESXI 群晖下连接VPN网络报错解决</h2></header><div class=entry-content><p>前言
+...</p></div><footer class=entry-footer><span title='2021-05-13 16:13:00 +0000 +0000'>五月 13, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;69 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Tailscale VPN初步安装体验" href=http://localhost:1313/503.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>ESXI 群晖下连接VPN网络报错解决</h2></header><div class=entry-content><p>前言
 我的vpn服务端搭建在openwrt软路由上使用SoftEther作为相关软件，在群晖下出现
 群晖 l2tp连接失败 请检查。。。。解决办法如下勾选第二个选项就行
 啰嗦一下环境
 esxi6.5u2 DS3617XS MAC已修改 tun未开启 宿主机戴尔r410 网卡为博通网卡 为啥我判断是群晖的问题嘞，win10最新，正常连接 安卓10正常连接，白群晖正常连接</p></div><footer class=entry-footer><span title='2021-04-29 16:25:03 +0000 +0000'>四月 29, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;14 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to ESXI 群晖下连接VPN网络报错解决" href=http://localhost:1313/494.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>群晖开启tun模块驱动以支持tinc</h2></header><div class=entry-content><p>登陆群晖开启ssh，在终端依次用admin用户登陆再sudo -i 进入#管理员模式
-检查tun模块状态 lsmod | grep tun 如果结果为空，请尝试安装它 insmod /lib/modules/tun.ko 依次输入下列命令，确保tun.ko模块可以正常工作 mkdir /dev/net
-mknod /dev/net/tun c 10 200
-chmod 600 /dev/net/tun
-cat /dev/net/tun 命令结果
+检查tun模块状态 1 lsmod | grep tun 如果结果为空，请尝试安装它 1 insmod /lib/modules/tun.ko 依次输入下列命令，确保tun.ko模块可以正常工作 1 2 3 4 mkdir /dev/net mknod /dev/net/tun c 10 200 chmod 600 /dev/net/tun cat /dev/net/tun 命令结果
 持久化操作 模块开机自启动（不保证有效可以在群晖面板计划任务设置）
-cat &lt; /usr/local/etc/rc.d/tun.sh
-#!/bin/sh -e
-insmod /lib/modules/tun.ko
-EOF 赋予脚本启动权限 chmod a+x /usr/local/etc/rc.d/tun.sh tun/tap 驱动程序实现了虚拟网卡的功能，tun表示虚拟的是点对点设备，tap表示虚拟的是以太网设备，这两种设备针对网络包实施不同的封装。利用tun/tap 驱动，可以将tcp/ip协议栈处理好的网络分包传给任何一个使用tun/tap驱动的进程，由进程重新处理后再发到物理链路中。</p></div><footer class=entry-footer><span title='2020-08-09 09:27:29 +0000 +0000'>八月 9, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;42 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to 群晖开启tun模块驱动以支持tinc" href=http://localhost:1313/164.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+1 2 3 4 cat &lt; /usr/local/etc/rc.d/tun.sh #!/bin/sh -e insmod /lib/modules/tun.ko EOF 赋予脚本启动权限 1 chmod a+x /usr/local/etc/rc.d/tun.sh tun/tap 驱动程序实现了虚拟网卡的功能，tun表示虚拟的是点对点设备，tap表示虚拟的是以太网设备，这两种设备针对网络包实施不同的封装。利用tun/tap 驱动，可以将tcp/ip协议栈处理好的网络分包传给任何一个使用tun/tap驱动的进程，由进程重新处理后再发到物理链路中。</p></div><footer class=entry-footer><span title='2020-08-09 09:27:29 +0000 +0000'>八月 9, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;53 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to 群晖开启tun模块驱动以支持tinc" href=http://localhost:1313/164.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

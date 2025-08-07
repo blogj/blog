@@ -6,13 +6,11 @@
 直接去github去下载安装包是是启动不成功的，搜索引擎说可以安装sunshine-git版本，可惜我不会 提供一个网上的包 不放心可以去试试sunshine-git版本
 https://0x0.st/XE4O.tar.zst 这是包（如果你不相信我，就不要使用它）
 重命名为 sunshine-0.23.1-5-x86_64.pkg.tar.zst 安装命令如下
-sudo pacman -U sunshine-0.23.1-5-x86_64.pkg.tar.zst 启动命令为
-sunshine 默认访问为本机访问所以需要ssh隧道 默认端口为https://localhost:47990/ 因为我们启动了ssh隧道就访问https://localhost:47991/ 隧道设置如下图 Linux下自启动设置 官方文档 编辑
-nano /etc/systemd/system/sunshine.service 内容如下
-[Unit] Description=Sunshine self-hosted game stream host for Moonlight. StartLimitIntervalSec=500 StartLimitBurst=5 [Service] ExecStart=/usr/bin/sunshine Restart=on-failure RestartSec=5s #Flatpak Only #ExecStop=flatpak kill dev.lizardbyte.sunshine [Install] WantedBy=multi-user.target 在关闭软件情况下依次执行下面相关命令
-systemctl daemon-reload systemctl enable sunshine.service systemctl start sunshine.service 注意事项 注意客户端连接需要moonlight这个软件 下载连接如下
-https://flowus.cn/lecheng/share/cf8b9092-8ac2-4dd9-bb81-701be6e2f196
-...</p></div><footer class=entry-footer><span title='2024-10-11 14:30:50 +0800 CST'>十月 11, 2024</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;73 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Manjaro发行版本远程桌面方案2024 " href=http://localhost:1313/20241011.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+1 sudo pacman -U sunshine-0.23.1-5-x86_64.pkg.tar.zst 启动命令为
+1 sunshine 默认访问为本机访问所以需要ssh隧道 默认端口为https://localhost:47990/ 因为我们启动了ssh隧道就访问https://localhost:47991/ 隧道设置如下图 Linux下自启动设置 官方文档 编辑
+1 nano /etc/systemd/system/sunshine.service 内容如下
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 [Unit] Description=Sunshine self-hosted game stream host for Moonlight. StartLimitIntervalSec=500 StartLimitBurst=5 [Service] ExecStart=/usr/bin/sunshine Restart=on-failure RestartSec=5s #Flatpak Only #ExecStop=flatpak kill dev.lizardbyte.sunshine [Install] WantedBy=multi-user.target 在关闭软件情况下依次执行下面相关命令
+...</p></div><footer class=entry-footer><span title='2024-10-11 14:30:50 +0800 CST'>十月 11, 2024</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;93 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Manjaro发行版本远程桌面方案2024 " href=http://localhost:1313/20241011.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

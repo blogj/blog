@@ -3,24 +3,10 @@
 <svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title=搜索><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=http://localhost:1313/>主页</a>&nbsp;»&nbsp;<a href=http://localhost:1313/tags/>Tags</a></div><h1>自定义域名
 <a href=/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Adguardhome-to-docker 自建dns自定义域名解析</h2></header><div class=entry-content><p>前言 基本上这是最简单的方式，我通过 tailscale 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能通过 IP地址 来访问服务，有没有一种办法可以通过域名的方式来访问，当然可以，最简单的方案如下
 win服务器版本自带dns服务器 群晖NAS系统自带dns解析套件 Adguardhome-dns去广告软件（也可以自定义域名解析）只是大部分人拿来去广告了 流程 docker配置 Host 网络模式 Host 网络模式直接使用宿主机的网络，没有网络隔离，不需要考虑容器端口的映射，在容器启动后可以自由调整被占用的端口。适合在本机使用 (lo­cal­host)
-docker run -d \
---name adguardhome \
---restart unless-stopped \
---log-opt max-size=1m \
---network host \
--v /root/adguardhome/work:/opt/adguardhome/work \
--v /roo/adguardhome/conf:/opt/adguardhome/conf \
-adguard/adguardhome 复制启动 访问web AdGuard Home 初始化设置
+1 2 3 4 5 6 7 8 docker run -d \ --name adguardhome \ --restart unless-stopped \ --log-opt max-size=1m \ --network host \ -v /root/adguardhome/work:/opt/adguardhome/work \ -v /roo/adguardhome/conf:/opt/adguardhome/conf \ adguard/adguardhome 复制启动 访问web AdGuard Home 初始化设置
 使用网页浏览器访问 IP + 3000 端口即可进入到 Ad­Guard Home 的初始化界面，比如 IP 是 10.0.0.53，那么就访问 [http://10.0.0.53]:3000
 我的是tailscale虚拟内网 ip http://100.112.191.114:3000/
-安装步骤来
-改一下端口防止冲突 添加域名 在页面过滤器-> DNS重写
-添加dns重写
-域名对应iP点击保存
-设置客户端dns地址对应ip地址
-Ping测试
-结语 一款非常棒的DNS服务器软件，不过有一点需要注意测试时候注意一下打开网页速度，慢了的话建议搭建在局域网，博主搭建在阿里云服务器上有一定的延迟，建议网上找一些资料，给局域网额外去广告也是不错的
-...</p></div><footer class=entry-footer><span title='2021-07-28 13:39:00 +0000 +0000'>七月 28, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;71 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Adguardhome-to-docker 自建dns自定义域名解析" href=http://localhost:1313/629.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+...</p></div><footer class=entry-footer><span title='2021-07-28 13:39:00 +0000 +0000'>七月 28, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;79 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Adguardhome-to-docker 自建dns自定义域名解析" href=http://localhost:1313/629.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

@@ -4,16 +4,13 @@
 <a href=/tags/netmaker/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>netmaker 搭建教程 组建虚拟局域网</h2></header><div class=entry-content><p>前言 参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装
 官方文档地址
 过程 环境 腾讯云乌班图20.04版本无任何其他网站宝塔乱七八糟软件 1 安装环境
-sudo apt-get update
-sudo apt-get install -y docker.io docker-compose wireguard 2开放防火墙
-sudo ufw allow proto tcp from any to any port 443 && sudo ufw allow 53/udp && sudo ufw allow 53/tcp && sudo ufw allow 51821:51830/udp 开放云服务器端口切记 端口如下
+1 2 sudo apt-get update sudo apt-get install -y docker.io docker-compose wireguard 2开放防火墙
+1 sudo ufw allow proto tcp from any to any port 443 && sudo ufw allow 53/udp && sudo ufw allow 53/tcp && sudo ufw allow 51821:51830/udp 开放云服务器端口切记 端口如下
 allow 443/tcp from all allow 53/udp and 53/tcp from all allow 51821-51830/udp from all 3获取docker-compose文件并修改
-wget -O docker-compose.yml https://raw.githubusercontent.com/gravitl/netmaker/master/compose/docker-compose.contained.yml
-sed -i 's/NETMAKER_BASE_DOMAIN/&lt;your base domain>/g' docker-compose.yml
-sed -i 's/SERVER_PUBLIC_IP/&lt;your server ip>/g' docker-compose.yml 解释your base domain为泛域名your server ip为公网ip
+1 2 3 wget -O docker-compose.yml https://raw.githubusercontent.com/gravitl/netmaker/master/compose/docker-compose.contained.yml sed -i 's/NETMAKER_BASE_DOMAIN/&lt;your base domain>/g' docker-compose.yml sed -i 's/SERVER_PUBLIC_IP/&lt;your server ip>/g' docker-compose.yml 解释your base domain为泛域名your server ip为公网ip
 修改docker-compose56行把容器网络端口模式为本地网络模式
 4生成密钥并写入
-...</p></div><footer class=entry-footer><span title='2021-12-01 22:43:00 +0000 +0000'>十二月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;161 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to netmaker 搭建教程 组建虚拟局域网" href=http://localhost:1313/715.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>netmaker win10 手动添加节点</h2></header><div class=entry-content><p>https://github.com/gravitl/netmaker/releases
+...</p></div><footer class=entry-footer><span title='2021-12-01 22:43:00 +0000 +0000'>十二月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;174 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to netmaker 搭建教程 组建虚拟局域网" href=http://localhost:1313/715.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>netmaker win10 手动添加节点</h2></header><div class=entry-content><p>https://github.com/gravitl/netmaker/releases
 去下载netclient.exe
 放到D盘或者C盘管理员身份运行PowerShell</p></div><footer class=entry-footer><span title='2021-12-01 22:21:54 +0000 +0000'>十二月 1, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;3 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to netmaker win10 手动添加节点" href=http://localhost:1313/711.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by

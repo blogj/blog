@@ -3,96 +3,20 @@
 <svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=http://localhost:1313/search/ title=搜索><span>搜索</span></a></li></ul></nav></header><main class=main><header class=page-header><div class=breadcrumbs><a href=http://localhost:1313/>主页</a>&nbsp;»&nbsp;<a href=http://localhost:1313/tags/>Tags</a></div><h1>Docker
 <a href=/tags/docker/index.xml title=RSS aria-label=RSS><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></h1></header><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Adguardhome-to-docker 自建dns自定义域名解析</h2></header><div class=entry-content><p>前言 基本上这是最简单的方式，我通过 tailscale 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能通过 IP地址 来访问服务，有没有一种办法可以通过域名的方式来访问，当然可以，最简单的方案如下
 win服务器版本自带dns服务器 群晖NAS系统自带dns解析套件 Adguardhome-dns去广告软件（也可以自定义域名解析）只是大部分人拿来去广告了 流程 docker配置 Host 网络模式 Host 网络模式直接使用宿主机的网络，没有网络隔离，不需要考虑容器端口的映射，在容器启动后可以自由调整被占用的端口。适合在本机使用 (lo­cal­host)
-docker run -d \
---name adguardhome \
---restart unless-stopped \
---log-opt max-size=1m \
---network host \
--v /root/adguardhome/work:/opt/adguardhome/work \
--v /roo/adguardhome/conf:/opt/adguardhome/conf \
-adguard/adguardhome 复制启动 访问web AdGuard Home 初始化设置
+1 2 3 4 5 6 7 8 docker run -d \ --name adguardhome \ --restart unless-stopped \ --log-opt max-size=1m \ --network host \ -v /root/adguardhome/work:/opt/adguardhome/work \ -v /roo/adguardhome/conf:/opt/adguardhome/conf \ adguard/adguardhome 复制启动 访问web AdGuard Home 初始化设置
 使用网页浏览器访问 IP + 3000 端口即可进入到 Ad­Guard Home 的初始化界面，比如 IP 是 10.0.0.53，那么就访问 [http://10.0.0.53]:3000
 我的是tailscale虚拟内网 ip http://100.112.191.114:3000/
-安装步骤来
-改一下端口防止冲突 添加域名 在页面过滤器-> DNS重写
-添加dns重写
-域名对应iP点击保存
-设置客户端dns地址对应ip地址
-Ping测试
-结语 一款非常棒的DNS服务器软件，不过有一点需要注意测试时候注意一下打开网页速度，慢了的话建议搭建在局域网，博主搭建在阿里云服务器上有一定的延迟，建议网上找一些资料，给局域网额外去广告也是不错的
-...</p></div><footer class=entry-footer><span title='2021-07-28 13:39:00 +0000 +0000'>七月 28, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;71 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Adguardhome-to-docker 自建dns自定义域名解析" href=http://localhost:1313/629.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Traefik系列二-docker搭建typecho-to-traefik</h2></header><div class=entry-content><p>快速开始 cd /home
-git clone https://github.com/YianAndCode/typecho-in-docker.git
-cd /home/typecho-in-docker
-git clone https://github.com/typecho/typecho.git
-rm -r typecho/.git
-chown -R www-data:www-data typecho/
-docker-compose up -d 浏览器访问http://IP:8001
+...</p></div><footer class=entry-footer><span title='2021-07-28 13:39:00 +0000 +0000'>七月 28, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;79 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Adguardhome-to-docker 自建dns自定义域名解析" href=http://localhost:1313/629.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Traefik系列二-docker搭建typecho-to-traefik</h2></header><div class=entry-content><p>快速开始 1 2 3 4 5 6 7 cd /home git clone https://github.com/YianAndCode/typecho-in-docker.git cd /home/typecho-in-docker git clone https://github.com/typecho/typecho.git rm -r typecho/.git chown -R www-data:www-data typecho/ docker-compose up -d 浏览器访问http://IP:8001
 如果GitHub下载过于慢的话可以替换为Github镜像地址
-cd /home
-git clone https://github.com.cnpmjs.org/YianAndCode/typecho-in-docker.git
-cd /home/typecho-in-docker
-git clone https://github.com.cnpmjs.org/typecho/typecho.git
-chown -R www-data:www-data typecho/
-docker-compose up -d 配置邮件通知
+1 2 3 4 5 6 cd /home git clone https://github.com.cnpmjs.org/YianAndCode/typecho-in-docker.git cd /home/typecho-in-docker git clone https://github.com.cnpmjs.org/typecho/typecho.git chown -R www-data:www-data typecho/ docker-compose up -d 配置邮件通知
 Github下载地址
 从1.7.2版本开始支持php8版本，其他通知插件都没配置成功
-Traefik配置 待续</p></div><footer class=entry-footer><span title='2021-07-14 22:47:00 +0000 +0000'>七月 14, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;45 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Traefik系列二-docker搭建typecho-to-traefik" href=http://localhost:1313/615.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>阿里云域名 docker下申请泛域名</h2></header><div class=entry-content><p>构建 Git pull https://github.com/monkeyWie/certbot-dns-aliyun.git
-cd docker
-docker build -t certbot-aliyun:latest . 启动容器 docker官方仓库有这个镜像
-docker run \
---name cert \
--itd \
--v /etc/letsencrypt:/etc/letsencrypt \
--e ACCESS_KEY_ID=XXX \
--e ACCESS_KEY_SECRET=XXX \
-liwei2633/certbot-aliyun 首次创建证书，根据命令提示输入，多个域名用,隔开 docker exec -it cert ./create.sh *.pdown.org 续签 docker exec cert ./renew.sh 记录申请通配符的流程 证书路径 - Congratulations! Your certificate and chain have been saved at:
-/etc/letsencrypt/live/gao4.top/fullchain.pem
-Your key file has been saved at:
-/etc/letsencrypt/live/gao4.top/privkey.pem</p></div><footer class=entry-footer><span title='2021-06-10 15:54:00 +0000 +0000'>六月 10, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;64 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to 阿里云域名 docker下申请泛域名" href=http://localhost:1313/578.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>FreshRSS docker-compose.yml 教程</h2></header><div class=entry-content><p>创建docker-compose.yml文件
-mkdir /home/FreshRSS && cd /home/FreshRSS
-nano docker-compose.yml 填入以下内容 内容来源于官方GIthub
-version: "3"
-services:
-freshrss-db:
-image: postgres:12-alpine
-container_name: freshrss-db
-hostname: freshrss-db
-restart: unless-stopped
-volumes:
-- ./db:/var/lib/postgresql/data
-environment:
-POSTGRES_USER: freshrss
-POSTGRES_PASSWORD: freshrss
-POSTGRES_DB: freshrss
-freshrss-app:
-image: freshrss/freshrss:latest
-container_name: freshrss-app
-hostname: freshrss-app
-restart: unless-stopped
-ports:
-- "8080:80"
-depends_on:
-- freshrss-db
-volumes:
-- ./data:/var/www/FreshRSS/data
-- ./extensions:/var/www/FreshRSS/extensions
-environment:
-CRON_MIN: '*/20'
-TZ: Asia/Shanghai
-volumes:
-db:
-data:
-extensions: 打开浏览器访问http://IP:8080进入安装界面 支持中文
-数据库选择postgres 数据库地址填freshrss-db 数据库用户名为freshrss 数据库密码为freshrss 这些都是上面文件环境变量按需修改</p></div><footer class=entry-footer><span title='2021-03-14 17:30:38 +0000 +0000'>三月 14, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;68 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to FreshRSS docker-compose.yml 教程" href=http://localhost:1313/478.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Debian国内服务器初始化</h2></header><div class=entry-content><p>乌班图服务器版本默认ssh居然没有sftp弃之 ， centos虽然很好但总感觉软件包陈旧，燧写这篇初始化操作
-更新软件包 apt-get update 安装阿里云源Docker curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun 设置Docker镜像源 sudo mkdir -p /etc/docker
-sudo tee /etc/docker/daemon.json &lt;&lt;-'EOF'
-{
-"registry-mirrors": ["https://0z9mn9x7.mirror.aliyuncs.com"]
-}
-EOF
-sudo systemctl daemon-reload
-sudo systemctl restart docker docker-compose 国内镜像源安装 curl -L https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose</p></div><footer class=entry-footer><span title='2020-08-06 18:56:43 +0000 +0000'>八月 6, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;49 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Debian国内服务器初始化" href=http://localhost:1313/109.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+Traefik配置 待续</p></div><footer class=entry-footer><span title='2021-07-14 22:47:00 +0000 +0000'>七月 14, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;58 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Traefik系列二-docker搭建typecho-to-traefik" href=http://localhost:1313/615.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>阿里云域名 docker下申请泛域名</h2></header><div class=entry-content><p>构建 1 2 3 Git pull https://github.com/monkeyWie/certbot-dns-aliyun.git cd docker docker build -t certbot-aliyun:latest . 启动容器 docker官方仓库有这个镜像
+1 2 3 4 5 6 7 docker run \ --name cert \ -itd \ -v /etc/letsencrypt:/etc/letsencrypt \ -e ACCESS_KEY_ID=XXX \ -e ACCESS_KEY_SECRET=XXX \ liwei2633/certbot-aliyun 首次创建证书，根据命令提示输入，多个域名用,隔开 1 docker exec -it cert ./create.sh *.pdown.org 续签 1 docker exec cert ./renew.sh 记录申请通配符的流程 证书路径 1 2 3 4 - Congratulations! Your certificate and chain have been saved at: /etc/letsencrypt/live/gao4.top/fullchain.pem Your key file has been saved at: /etc/letsencrypt/live/gao4.top/privkey.pem</p></div><footer class=entry-footer><span title='2021-06-10 15:54:00 +0000 +0000'>六月 10, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;80 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to 阿里云域名 docker下申请泛域名" href=http://localhost:1313/578.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>FreshRSS docker-compose.yml 教程</h2></header><div class=entry-content><p>创建docker-compose.yml文件
+1 2 mkdir /home/FreshRSS && cd /home/FreshRSS nano docker-compose.yml 填入以下内容 内容来源于官方GIthub
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 version: "3" services: freshrss-db: image: postgres:12-alpine container_name: freshrss-db hostname: freshrss-db restart: unless-stopped volumes: - ./db:/var/lib/postgresql/data environment: POSTGRES_USER: freshrss POSTGRES_PASSWORD: freshrss POSTGRES_DB: freshrss freshrss-app: image: freshrss/freshrss:latest container_name: freshrss-app hostname: freshrss-app restart: unless-stopped ports: - "8080:80" depends_on: - freshrss-db volumes: - ./data:/var/www/FreshRSS/data - ./extensions:/var/www/FreshRSS/extensions environment: CRON_MIN: '*/20' TZ: Asia/Shanghai volumes: db: data: extensions: 打开浏览器访问http://IP:8080进入安装界面 支持中文
+...</p></div><footer class=entry-footer><span title='2021-03-14 17:30:38 +0000 +0000'>三月 14, 2021</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;105 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to FreshRSS docker-compose.yml 教程" href=http://localhost:1313/478.html/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>Debian国内服务器初始化</h2></header><div class=entry-content><p>乌班图服务器版本默认ssh居然没有sftp弃之 ， centos虽然很好但总感觉软件包陈旧，燧写这篇初始化操作
+更新软件包 1 apt-get update 安装阿里云源Docker 1 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun 设置Docker镜像源 1 2 3 4 5 6 7 8 sudo mkdir -p /etc/docker sudo tee /etc/docker/daemon.json &lt;&lt;-'EOF' { "registry-mirrors": ["https://0z9mn9x7.mirror.aliyuncs.com"] } EOF sudo systemctl daemon-reload sudo systemctl restart docker docker-compose 国内镜像源安装 1 2 3 curl -L https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose chmod +x /usr/local/bin/docker-compose</p></div><footer class=entry-footer><span title='2020-08-06 18:56:43 +0000 +0000'>八月 6, 2020</span>&nbsp;·&nbsp;1 分钟&nbsp;·&nbsp;62 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to Debian国内服务器初始化" href=http://localhost:1313/109.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>

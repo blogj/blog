@@ -8,29 +8,12 @@
 headscale_0.11.0_linux_amd64
 Source code (zip)
 上传headscale_0.11.0_linux_amd64文件到/usr/local/bin并重命名为headscale并赋予执行权限
-chmod 755 /usr/local/bin/headscale 登录服务器创建目录及文件
-mkdir /etc/headscale
-cd /etc/headscale
-touch db.sqlite
-touch config.yaml
-touch derp.yaml 注意在0.12版本已不需要生成密钥会自动生成,或许需要安装wireguard我们是0.11版本所以需要手动生成
-apt-get update
-apt-get install wireguard
-wg genkey > private.key 最后目录结构如下
-root@10-255-1-181:/etc/headscale# tree
-.
-├── config.yaml
-├── db.sqlite
-├── derp.yaml
-└── private.key
-0 directories, 4 files
-root@10-255-1-181:/etc/headscale# 填写config.yaml内容，内容来源于解压的v0.11.0.zip压缩包config-example.yaml内容
+1 chmod 755 /usr/local/bin/headscale 登录服务器创建目录及文件
+1 2 3 4 5 mkdir /etc/headscale cd /etc/headscale touch db.sqlite touch config.yaml touch derp.yaml 注意在0.12版本已不需要生成密钥会自动生成,或许需要安装wireguard我们是0.11版本所以需要手动生成
+1 2 3 apt-get update apt-get install wireguard wg genkey > private.key 最后目录结构如下
+1 2 3 4 5 6 7 8 9 root@10-255-1-181:/etc/headscale# tree . ├── config.yaml ├── db.sqlite ├── derp.yaml └── private.key 0 directories, 4 files root@10-255-1-181:/etc/headscale# 填写config.yaml内容，内容来源于解压的v0.11.0.zip压缩包config-example.yaml内容
 填写derp.yaml内容内容来源于解压的v0.11.0.zip压缩包derp-example.yaml内容
-撰写headscale.service
-nano /etc/systemd/system/headscale.service [Unit] Description=headscale After=network.target
-[Service] WorkingDirectory=/etc/headscale ExecStart=/usr/local/bin/headscale serve
-Disable debug mode Environment=GIN_MODE=release
-...</p></div><footer class=entry-footer><span title='2021-12-29 14:16:00 +0000 +0000'>十二月 29, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;218 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to headscale开源服务器搭建" href=http://localhost:1313/723.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
+...</p></div><footer class=entry-footer><span title='2021-12-29 14:16:00 +0000 +0000'>十二月 29, 2021</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;285 字&nbsp;·&nbsp;白墨</footer><a class=entry-link aria-label="post link to headscale开源服务器搭建" href=http://localhost:1313/723.html/></a></article></main><footer class=footer><span>&copy; 2025 <a href=http://localhost:1313/>孤岛</a></span> ·
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
 <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
