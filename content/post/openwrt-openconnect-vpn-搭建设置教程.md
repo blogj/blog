@@ -5,7 +5,12 @@ slug: 293
 tags: ['NAS物语', 'Openwrt', 'VPN', '原创教程']
 ---
 
-\## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图 !\[流程图\](https://gao4.top/wp-content/uploads/2022/01/851998809.png) \`\`\`Unknown package 'luci-app-ocserv\*'. Collected errors: \* opkg\_install\_cmd: Cannot install package luci-app-ocserv\*. root@OpenWrt:~# wget https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel\_24kc/luci/luci-app-ocserv\_git-20.356.64372-1259bb1-1\_all.ipk --2022-01-04 12:01:53-- https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel\_24kc/luci/luci-app-ocserv\_git-20.356.64372-1259bb1-1\_all.ipk Resolving mirrors.cloud.tencent.com... 125.39.223.218, 42.63.50.204, 220.194.79.73, ... Connecting to mirrors.cloud.tencent.com|125.39.223.218|:443... connected. HTTP request sent, awaiting response... 200 OK Length: 5314 (5.2K) \[application/octet-stream\] Saving to: 'luci-app-ocserv\_git-20.356.64372-1259bb1-1\_all.ipk' luci-app-ocserv\_git-20.356.64372-1259bb1 100%\[================================================================================>\] 5.19K --.-KB/s in 0.001s 2022-01-04 12:01:56 (4.28 MB/s) - 'luci-app-ocserv\_git-20.356.64372-1259bb1-1\_all.ipk' saved \[5314/5314\] root@OpenWrt:~# ls luci-app-ocserv\_git-20.356.64372-1259bb1-1\_all.ipk root@OpenWrt:~# opkg install luci-app-ocserv\_git-20.356.64372-1259bb1-1\_all.ipk Installing luci-app-ocserv (git-20.356.64372-1259bb1-1) to root... Configuring luci-app-ocserv. root@OpenWrt:~# reboot root@OpenWrt:~# \`\`\` 怎么知道当前openwrt架构的软件源包去后台看看就好了 !\[复制浏览器搜索\](https://gao4.top/wp-content/uploads/2022/01/816834899.png)
+\## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图
+
+ ![流程图](https://gao4.top/wp-content/uploads/2022/01/851998809.png)
+
+怎么知道当前openwrt架构的软件源包去后台看看就好了
+ ![复制浏览器搜索](https://gao4.top/wp-content/uploads/2022/01/816834899.png)
 
 序言
 --
@@ -28,6 +33,8 @@ OpenConnect项目还提供与 AnyConnect 兼容的服务器**，ocserv**
 安装Ocserv服务端
 -----------
 
+如果web界面搜索不到安装用命令行安装
+
 ```
 opkg update
 opkg install ocserv luci-app-ocserv
@@ -45,7 +52,7 @@ iptables -I FORWARD -i vpns+ -s 192.168.100.0/24 -j ACCEPT
 iptables -I INPUT -i vpns+ -s 192.168.100.0/24 -j ACCEPT
 ```
 
-![](https://gao4.top/wp-content/uploads/2020/09/image.png)
+![自定义规则](https://gao4.top/wp-content/uploads/2020/09/image.png)
 
 第二步
 ---
@@ -115,6 +122,10 @@ win10客户端访问**ip地址加端口点击connect**
 
 客户端下载
 -----
+
+**第三方下载链接**（推荐）
+
+https://ocserv.yydy.link:2023/#/
 
 **Windows 10 操作系统**  
 AnyConnect Mobile 4.8.02045
