@@ -1619,7 +1619,51 @@ WantedBy=multi-user.target&lt;/p&gt;
       <link>http://localhost:1313/293.html/</link>
       <pubDate>Wed, 30 Sep 2020 13:52:00 +0000</pubDate>
       <guid>http://localhost:1313/293.html/</guid>
-      <description>&lt;p&gt;## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图 ![流程图](&lt;a href=&#34;https://gao4.top/wp-content/uploads/2022/01/851998809.png&#34;&gt;https://gao4.top/wp-content/uploads/2022/01/851998809.png&lt;/a&gt;) ```Unknown package &amp;rsquo;luci-app-ocserv*&amp;rsquo;. Collected errors: * opkg_install_cmd: Cannot install package luci-app-ocserv*. root@OpenWrt:&lt;del&gt;# wget &lt;a href=&#34;https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel&#34;&gt;https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel&lt;/a&gt;_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk &amp;ndash;2022-01-04 12:01:53&amp;ndash; &lt;a href=&#34;https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel&#34;&gt;https://mirrors.cloud.tencent.com/lede/releases/18.06.9/packages/mipsel&lt;/a&gt;_24kc/luci/luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Resolving mirrors.cloud.tencent.com&amp;hellip; 125.39.223.218, 42.63.50.204, 220.194.79.73, &amp;hellip; Connecting to mirrors.cloud.tencent.com|125.39.223.218|:443&amp;hellip; connected. HTTP request sent, awaiting response&amp;hellip; 200 OK Length: 5314 (5.2K) [application/octet-stream] Saving to: &amp;rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&amp;rsquo; luci-app-ocserv_git-20.356.64372-1259bb1 100%[================================================================================&amp;gt;] 5.19K &amp;ndash;.-KB/s in 0.001s 2022-01-04 12:01:56 (4.28 MB/s) - &amp;rsquo;luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk&amp;rsquo; saved [5314/5314] root@OpenWrt:&lt;/del&gt;# ls luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk root@OpenWrt:&lt;del&gt;# opkg install luci-app-ocserv_git-20.356.64372-1259bb1-1_all.ipk Installing luci-app-ocserv (git-20.356.64372-1259bb1-1) to root&amp;hellip; Configuring luci-app-ocserv. root@OpenWrt:&lt;/del&gt;# reboot root@OpenWrt:~# ``` 怎么知道当前openwrt架构的软件源包去后台看看就好了 ![复制浏览器搜索](&lt;a href=&#34;https://gao4.top/wp-content/uploads/2022/01/816834899.png&#34;&gt;https://gao4.top/wp-content/uploads/2022/01/816834899.png&lt;/a&gt;)&lt;/p&gt;</description>
+      <description>&lt;p&gt;## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;流程图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/851998809.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;怎么知道当前openwrt架构的软件源包去后台看看就好了
+&lt;img alt=&#34;复制浏览器搜索&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/816834899.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
+&lt;p&gt;本来这个需求基本上可以说是可以用其他vpn来解决的，可我ody勒就是不走寻常路，局域网随便一台有docker的Linux服务器开一个vpn服务不香吗，非需要在openwrt上折腾，而这方面的资料很少，而且国内对openwrt的软件服务器支持很糟糕。没有开全局基本上都是GG。固件来源是Github云编译的固件&lt;/p&gt;
+&lt;h4 id=&#34;需求&#34;&gt;需求&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;openwrt软路由承担服务&lt;/li&gt;
+&lt;li&gt;安全访问局域网&lt;/li&gt;
+&lt;li&gt;Udp加速访问&lt;/li&gt;
+&lt;li&gt;全平台客户端&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;软件了解&#34;&gt;软件了解&lt;/h4&gt;
+&lt;p&gt;OpenConnect是一个开源的应用程序最初是拿来做思科专有的Vpn客户端&lt;a href=&#34;https://en.wikipedia.org/wiki/AnyConnect&#34;&gt;AnyConnect&lt;/a&gt; 的开源替代品&lt;/p&gt;
+&lt;p&gt;OpenConnect项目还提供与 AnyConnect 兼容的服务器**，ocserv**&lt;/p&gt;
+&lt;h2 id=&#34;安装ocserv服务端&#34;&gt;安装Ocserv服务端&lt;/h2&gt;
+&lt;p&gt;如果web界面搜索不到安装用命令行安装&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;opkg update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;opkg install ocserv luci-app-ocserv
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;第一步&#34;&gt;第一步&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;OpenWRT - 网络 - 防火墙 - 自定义规则 添加防火墙规则&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -t nat -I POSTROUTING -s 192.168.100.0/24 -j MASQUERADE
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -I FORWARD -i vpns+ -s 192.168.100.0/24 -j ACCEPT
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iptables -I INPUT -i vpns+ -s 192.168.100.0/24 -j ACCEPT
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;自定义规则&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/09/image.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>UNraid 安装后注意事项常见操作</title>

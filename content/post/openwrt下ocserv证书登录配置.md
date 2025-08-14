@@ -2,8 +2,8 @@
 date: '2025-08-14T12:48:39+08:00'
 #draft: true
 draft: false
-slug: 20250814 
-title: 'Openwrt下ocserv证书登录配置let's encrypt'
+slug: 20250814
+title: 'Openwrt下ocserv证书登录配置letsencrypt'
 typora-root-url: ../../static
 ---
 
