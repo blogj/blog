@@ -5,7 +5,7 @@ theme: PaperMod
 languageCode: zh
 defaultContentLanguage: zh
 
-#自定义
+#自定
 permalinks:
   post: /:slug
 uglyURLs: true
