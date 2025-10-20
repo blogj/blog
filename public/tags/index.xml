@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on 孤岛</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>http://localhost:1313/tags/index.html</link>
     <description>Recent content in Tags on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,562 +15,562 @@
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>http://localhost:1313/tags/linux.html</link>
       <pubDate>Fri, 11 Oct 2024 14:30:50 +0800</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/linux.html</guid>
       <description></description>
     </item>
     <item>
       <title>Manjaro</title>
-      <link>http://localhost:1313/tags/manjaro/</link>
+      <link>http://localhost:1313/tags/manjaro.html</link>
       <pubDate>Fri, 11 Oct 2024 14:30:50 +0800</pubDate>
-      <guid>http://localhost:1313/tags/manjaro/</guid>
+      <guid>http://localhost:1313/tags/manjaro.html</guid>
       <description></description>
     </item>
     <item>
       <title>Sunshine</title>
-      <link>http://localhost:1313/tags/sunshine/</link>
+      <link>http://localhost:1313/tags/sunshine.html</link>
       <pubDate>Fri, 11 Oct 2024 14:30:50 +0800</pubDate>
-      <guid>http://localhost:1313/tags/sunshine/</guid>
+      <guid>http://localhost:1313/tags/sunshine.html</guid>
       <description></description>
     </item>
     <item>
       <title>远程桌面</title>
-      <link>http://localhost:1313/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</link>
+      <link>http://localhost:1313/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2.html</link>
       <pubDate>Fri, 11 Oct 2024 14:30:50 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/</guid>
+      <guid>http://localhost:1313/tags/%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2.html</guid>
       <description></description>
     </item>
     <item>
       <title>Ipv6</title>
-      <link>http://localhost:1313/tags/ipv6/</link>
+      <link>http://localhost:1313/tags/ipv6.html</link>
       <pubDate>Fri, 06 Sep 2024 09:20:02 +0800</pubDate>
-      <guid>http://localhost:1313/tags/ipv6/</guid>
+      <guid>http://localhost:1313/tags/ipv6.html</guid>
       <description></description>
     </item>
     <item>
       <title>Openwrt</title>
-      <link>http://localhost:1313/tags/openwrt/</link>
+      <link>http://localhost:1313/tags/openwrt.html</link>
       <pubDate>Fri, 06 Sep 2024 09:20:02 +0800</pubDate>
-      <guid>http://localhost:1313/tags/openwrt/</guid>
+      <guid>http://localhost:1313/tags/openwrt.html</guid>
       <description></description>
     </item>
     <item>
       <title>端口</title>
-      <link>http://localhost:1313/tags/%E7%AB%AF%E5%8F%A3/</link>
+      <link>http://localhost:1313/tags/%E7%AB%AF%E5%8F%A3.html</link>
       <pubDate>Fri, 06 Sep 2024 09:20:02 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E7%AB%AF%E5%8F%A3/</guid>
+      <guid>http://localhost:1313/tags/%E7%AB%AF%E5%8F%A3.html</guid>
       <description></description>
     </item>
     <item>
       <title>防火墙</title>
-      <link>http://localhost:1313/tags/%E9%98%B2%E7%81%AB%E5%A2%99/</link>
+      <link>http://localhost:1313/tags/%E9%98%B2%E7%81%AB%E5%A2%99.html</link>
       <pubDate>Fri, 06 Sep 2024 09:20:02 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E9%98%B2%E7%81%AB%E5%A2%99/</guid>
+      <guid>http://localhost:1313/tags/%E9%98%B2%E7%81%AB%E5%A2%99.html</guid>
       <description></description>
     </item>
     <item>
       <title>P2P共享</title>
-      <link>http://localhost:1313/tags/p2p%E5%85%B1%E4%BA%AB/</link>
+      <link>http://localhost:1313/tags/p2p%E5%85%B1%E4%BA%AB.html</link>
       <pubDate>Fri, 21 Jun 2024 09:22:44 +0800</pubDate>
-      <guid>http://localhost:1313/tags/p2p%E5%85%B1%E4%BA%AB/</guid>
+      <guid>http://localhost:1313/tags/p2p%E5%85%B1%E4%BA%AB.html</guid>
       <description></description>
     </item>
     <item>
       <title>Syncthing</title>
-      <link>http://localhost:1313/tags/syncthing/</link>
+      <link>http://localhost:1313/tags/syncthing.html</link>
       <pubDate>Fri, 21 Jun 2024 09:22:44 +0800</pubDate>
-      <guid>http://localhost:1313/tags/syncthing/</guid>
+      <guid>http://localhost:1313/tags/syncthing.html</guid>
       <description></description>
     </item>
     <item>
       <title>脚本</title>
-      <link>http://localhost:1313/tags/%E8%84%9A%E6%9C%AC/</link>
+      <link>http://localhost:1313/tags/%E8%84%9A%E6%9C%AC.html</link>
       <pubDate>Fri, 21 Jun 2024 09:22:44 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E8%84%9A%E6%9C%AC/</guid>
+      <guid>http://localhost:1313/tags/%E8%84%9A%E6%9C%AC.html</guid>
       <description></description>
     </item>
     <item>
       <title>自动化</title>
-      <link>http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+      <link>http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E5%8C%96.html</link>
       <pubDate>Fri, 21 Jun 2024 09:22:44 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
+      <guid>http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E5%8C%96.html</guid>
       <description></description>
     </item>
     <item>
       <title>7.2</title>
-      <link>http://localhost:1313/tags/7.2/</link>
+      <link>http://localhost:1313/tags/7.2.html</link>
       <pubDate>Tue, 04 Jun 2024 23:21:47 +0800</pubDate>
-      <guid>http://localhost:1313/tags/7.2/</guid>
+      <guid>http://localhost:1313/tags/7.2.html</guid>
       <description></description>
     </item>
     <item>
       <title>Docker部署</title>
-      <link>http://localhost:1313/tags/docker%E9%83%A8%E7%BD%B2/</link>
+      <link>http://localhost:1313/tags/docker%E9%83%A8%E7%BD%B2.html</link>
       <pubDate>Tue, 04 Jun 2024 23:21:47 +0800</pubDate>
-      <guid>http://localhost:1313/tags/docker%E9%83%A8%E7%BD%B2/</guid>
+      <guid>http://localhost:1313/tags/docker%E9%83%A8%E7%BD%B2.html</guid>
       <description></description>
     </item>
     <item>
       <title>Ssl证书</title>
-      <link>http://localhost:1313/tags/ssl%E8%AF%81%E4%B9%A6/</link>
+      <link>http://localhost:1313/tags/ssl%E8%AF%81%E4%B9%A6.html</link>
       <pubDate>Tue, 04 Jun 2024 23:21:47 +0800</pubDate>
-      <guid>http://localhost:1313/tags/ssl%E8%AF%81%E4%B9%A6/</guid>
+      <guid>http://localhost:1313/tags/ssl%E8%AF%81%E4%B9%A6.html</guid>
       <description></description>
     </item>
     <item>
       <title>群晖</title>
-      <link>http://localhost:1313/tags/%E7%BE%A4%E6%99%96/</link>
+      <link>http://localhost:1313/tags/%E7%BE%A4%E6%99%96.html</link>
       <pubDate>Tue, 04 Jun 2024 23:21:47 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E7%BE%A4%E6%99%96/</guid>
+      <guid>http://localhost:1313/tags/%E7%BE%A4%E6%99%96.html</guid>
       <description></description>
     </item>
     <item>
       <title>Tr300</title>
-      <link>http://localhost:1313/tags/tr300/</link>
+      <link>http://localhost:1313/tags/tr300.html</link>
       <pubDate>Tue, 07 May 2024 10:04:49 +0800</pubDate>
-      <guid>http://localhost:1313/tags/tr300/</guid>
+      <guid>http://localhost:1313/tags/tr300.html</guid>
       <description></description>
     </item>
     <item>
       <title>机车</title>
-      <link>http://localhost:1313/tags/%E6%9C%BA%E8%BD%A6/</link>
+      <link>http://localhost:1313/tags/%E6%9C%BA%E8%BD%A6.html</link>
       <pubDate>Tue, 07 May 2024 10:04:49 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E6%9C%BA%E8%BD%A6/</guid>
+      <guid>http://localhost:1313/tags/%E6%9C%BA%E8%BD%A6.html</guid>
       <description></description>
     </item>
     <item>
       <title>快充</title>
-      <link>http://localhost:1313/tags/%E5%BF%AB%E5%85%85/</link>
+      <link>http://localhost:1313/tags/%E5%BF%AB%E5%85%85.html</link>
       <pubDate>Tue, 07 May 2024 10:04:49 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E5%BF%AB%E5%85%85/</guid>
+      <guid>http://localhost:1313/tags/%E5%BF%AB%E5%85%85.html</guid>
       <description></description>
     </item>
     <item>
       <title>巡航</title>
-      <link>http://localhost:1313/tags/%E5%B7%A1%E8%88%AA/</link>
+      <link>http://localhost:1313/tags/%E5%B7%A1%E8%88%AA.html</link>
       <pubDate>Tue, 07 May 2024 10:04:49 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E5%B7%A1%E8%88%AA/</guid>
+      <guid>http://localhost:1313/tags/%E5%B7%A1%E8%88%AA.html</guid>
       <description></description>
     </item>
     <item>
       <title> 内网穿透</title>
-      <link>http://localhost:1313/tags/-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+      <link>http://localhost:1313/tags/-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F.html</link>
       <pubDate>Sun, 05 Nov 2023 18:24:03 +0800</pubDate>
-      <guid>http://localhost:1313/tags/-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
+      <guid>http://localhost:1313/tags/-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F.html</guid>
       <description></description>
     </item>
     <item>
       <title>NAS物语</title>
-      <link>http://localhost:1313/tags/nas%E7%89%A9%E8%AF%AD/</link>
+      <link>http://localhost:1313/tags/nas%E7%89%A9%E8%AF%AD.html</link>
       <pubDate>Sun, 05 Nov 2023 18:24:03 +0800</pubDate>
-      <guid>http://localhost:1313/tags/nas%E7%89%A9%E8%AF%AD/</guid>
+      <guid>http://localhost:1313/tags/nas%E7%89%A9%E8%AF%AD.html</guid>
       <description></description>
     </item>
     <item>
       <title>Tailscale</title>
-      <link>http://localhost:1313/tags/tailscale/</link>
+      <link>http://localhost:1313/tags/tailscale.html</link>
       <pubDate>Sun, 05 Nov 2023 18:24:03 +0800</pubDate>
-      <guid>http://localhost:1313/tags/tailscale/</guid>
+      <guid>http://localhost:1313/tags/tailscale.html</guid>
       <description></description>
     </item>
     <item>
       <title>资料</title>
-      <link>http://localhost:1313/tags/%E8%B5%84%E6%96%99/</link>
+      <link>http://localhost:1313/tags/%E8%B5%84%E6%96%99.html</link>
       <pubDate>Sun, 05 Nov 2023 18:24:03 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E8%B5%84%E6%96%99/</guid>
+      <guid>http://localhost:1313/tags/%E8%B5%84%E6%96%99.html</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
+      <link>http://localhost:1313/tags/windows.html</link>
       <pubDate>Sun, 05 Nov 2023 18:10:57 +0800</pubDate>
-      <guid>http://localhost:1313/tags/windows/</guid>
+      <guid>http://localhost:1313/tags/windows.html</guid>
       <description></description>
     </item>
     <item>
       <title>MATRIX</title>
-      <link>http://localhost:1313/tags/matrix/</link>
+      <link>http://localhost:1313/tags/matrix.html</link>
       <pubDate>Mon, 11 Sep 2023 13:31:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/matrix/</guid>
+      <guid>http://localhost:1313/tags/matrix.html</guid>
       <description></description>
     </item>
     <item>
       <title>VPN</title>
-      <link>http://localhost:1313/tags/vpn/</link>
+      <link>http://localhost:1313/tags/vpn.html</link>
       <pubDate>Mon, 11 Sep 2023 13:31:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vpn/</guid>
+      <guid>http://localhost:1313/tags/vpn.html</guid>
       <description></description>
     </item>
     <item>
       <title>原创教程</title>
-      <link>http://localhost:1313/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B/</link>
+      <link>http://localhost:1313/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B.html</link>
       <pubDate>Mon, 11 Sep 2023 13:31:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B/</guid>
+      <guid>http://localhost:1313/tags/%E5%8E%9F%E5%88%9B%E6%95%99%E7%A8%8B.html</guid>
       <description></description>
     </item>
     <item>
       <title>转载学习</title>
-      <link>http://localhost:1313/tags/%E8%BD%AC%E8%BD%BD%E5%AD%A6%E4%B9%A0/</link>
+      <link>http://localhost:1313/tags/%E8%BD%AC%E8%BD%BD%E5%AD%A6%E4%B9%A0.html</link>
       <pubDate>Mon, 02 May 2022 15:09:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E8%BD%AC%E8%BD%BD%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>http://localhost:1313/tags/%E8%BD%AC%E8%BD%BD%E5%AD%A6%E4%B9%A0.html</guid>
       <description></description>
     </item>
     <item>
       <title>WG</title>
-      <link>http://localhost:1313/tags/wg/</link>
+      <link>http://localhost:1313/tags/wg.html</link>
       <pubDate>Fri, 22 Apr 2022 14:26:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/wg/</guid>
+      <guid>http://localhost:1313/tags/wg.html</guid>
       <description></description>
     </item>
     <item>
       <title>Headscale</title>
-      <link>http://localhost:1313/tags/headscale/</link>
+      <link>http://localhost:1313/tags/headscale.html</link>
       <pubDate>Tue, 12 Apr 2022 18:35:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/headscale/</guid>
+      <guid>http://localhost:1313/tags/headscale.html</guid>
       <description></description>
     </item>
     <item>
       <title>Caddy</title>
-      <link>http://localhost:1313/tags/caddy/</link>
+      <link>http://localhost:1313/tags/caddy.html</link>
       <pubDate>Sun, 27 Mar 2022 19:59:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/caddy/</guid>
+      <guid>http://localhost:1313/tags/caddy.html</guid>
       <description></description>
     </item>
     <item>
       <title>反向代理</title>
-      <link>http://localhost:1313/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
+      <link>http://localhost:1313/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.html</link>
       <pubDate>Sun, 27 Mar 2022 19:59:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
+      <guid>http://localhost:1313/tags/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.html</guid>
       <description></description>
     </item>
     <item>
       <title>DSM</title>
-      <link>http://localhost:1313/tags/dsm/</link>
+      <link>http://localhost:1313/tags/dsm.html</link>
       <pubDate>Sat, 08 Jan 2022 15:02:27 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dsm/</guid>
+      <guid>http://localhost:1313/tags/dsm.html</guid>
       <description></description>
     </item>
     <item>
       <title>DSM7.0.1</title>
-      <link>http://localhost:1313/tags/dsm7.0.1/</link>
+      <link>http://localhost:1313/tags/dsm7.0.1.html</link>
       <pubDate>Sat, 08 Jan 2022 15:02:27 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dsm7.0.1/</guid>
+      <guid>http://localhost:1313/tags/dsm7.0.1.html</guid>
       <description></description>
     </item>
     <item>
       <title>Esxi</title>
-      <link>http://localhost:1313/tags/esxi/</link>
+      <link>http://localhost:1313/tags/esxi.html</link>
       <pubDate>Sat, 08 Jan 2022 15:02:27 +0000</pubDate>
-      <guid>http://localhost:1313/tags/esxi/</guid>
+      <guid>http://localhost:1313/tags/esxi.html</guid>
       <description></description>
     </item>
     <item>
       <title>Esxi7</title>
-      <link>http://localhost:1313/tags/esxi7/</link>
+      <link>http://localhost:1313/tags/esxi7.html</link>
       <pubDate>Sat, 08 Jan 2022 15:02:27 +0000</pubDate>
-      <guid>http://localhost:1313/tags/esxi7/</guid>
+      <guid>http://localhost:1313/tags/esxi7.html</guid>
       <description></description>
     </item>
     <item>
       <title>开源</title>
-      <link>http://localhost:1313/tags/%E5%BC%80%E6%BA%90/</link>
+      <link>http://localhost:1313/tags/%E5%BC%80%E6%BA%90.html</link>
       <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E5%BC%80%E6%BA%90/</guid>
+      <guid>http://localhost:1313/tags/%E5%BC%80%E6%BA%90.html</guid>
       <description></description>
     </item>
     <item>
       <title>RH 2288H V2</title>
-      <link>http://localhost:1313/tags/rh-2288h-v2/</link>
+      <link>http://localhost:1313/tags/rh-2288h-v2.html</link>
       <pubDate>Wed, 22 Dec 2021 15:27:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rh-2288h-v2/</guid>
+      <guid>http://localhost:1313/tags/rh-2288h-v2.html</guid>
       <description></description>
     </item>
     <item>
       <title>服务器</title>
-      <link>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
       <pubDate>Wed, 22 Dec 2021 15:27:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8.html</guid>
       <description></description>
     </item>
     <item>
       <title>资源</title>
-      <link>http://localhost:1313/tags/%E8%B5%84%E6%BA%90/</link>
+      <link>http://localhost:1313/tags/%E8%B5%84%E6%BA%90.html</link>
       <pubDate>Wed, 22 Dec 2021 15:27:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E8%B5%84%E6%BA%90/</guid>
+      <guid>http://localhost:1313/tags/%E8%B5%84%E6%BA%90.html</guid>
       <description></description>
     </item>
     <item>
       <title>Netmaker</title>
-      <link>http://localhost:1313/tags/netmaker/</link>
+      <link>http://localhost:1313/tags/netmaker.html</link>
       <pubDate>Wed, 01 Dec 2021 22:43:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/netmaker/</guid>
+      <guid>http://localhost:1313/tags/netmaker.html</guid>
       <description></description>
     </item>
     <item>
       <title>Unraid</title>
-      <link>http://localhost:1313/tags/unraid/</link>
+      <link>http://localhost:1313/tags/unraid.html</link>
       <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
-      <guid>http://localhost:1313/tags/unraid/</guid>
+      <guid>http://localhost:1313/tags/unraid.html</guid>
       <description></description>
     </item>
     <item>
       <title>Unraid6.9.2</title>
-      <link>http://localhost:1313/tags/unraid6.9.2/</link>
+      <link>http://localhost:1313/tags/unraid6.9.2.html</link>
       <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
-      <guid>http://localhost:1313/tags/unraid6.9.2/</guid>
+      <guid>http://localhost:1313/tags/unraid6.9.2.html</guid>
       <description></description>
     </item>
     <item>
       <title>软件</title>
-      <link>http://localhost:1313/tags/%E8%BD%AF%E4%BB%B6/</link>
+      <link>http://localhost:1313/tags/%E8%BD%AF%E4%BB%B6.html</link>
       <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E8%BD%AF%E4%BB%B6/</guid>
+      <guid>http://localhost:1313/tags/%E8%BD%AF%E4%BB%B6.html</guid>
       <description></description>
     </item>
     <item>
       <title>软路由</title>
-      <link>http://localhost:1313/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</link>
+      <link>http://localhost:1313/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1.html</link>
       <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</guid>
+      <guid>http://localhost:1313/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1.html</guid>
       <description></description>
     </item>
     <item>
       <title>虚拟局域网</title>
-      <link>http://localhost:1313/tags/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/</link>
+      <link>http://localhost:1313/tags/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91.html</link>
       <pubDate>Mon, 13 Sep 2021 09:35:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/</guid>
+      <guid>http://localhost:1313/tags/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91.html</guid>
       <description></description>
     </item>
     <item>
       <title>中继</title>
-      <link>http://localhost:1313/tags/%E4%B8%AD%E7%BB%A7/</link>
+      <link>http://localhost:1313/tags/%E4%B8%AD%E7%BB%A7.html</link>
       <pubDate>Mon, 13 Sep 2021 09:35:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E4%B8%AD%E7%BB%A7/</guid>
+      <guid>http://localhost:1313/tags/%E4%B8%AD%E7%BB%A7.html</guid>
       <description></description>
     </item>
     <item>
       <title>QQ</title>
-      <link>http://localhost:1313/tags/qq/</link>
+      <link>http://localhost:1313/tags/qq.html</link>
       <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/qq/</guid>
+      <guid>http://localhost:1313/tags/qq.html</guid>
       <description></description>
     </item>
     <item>
       <title>QQ机器人</title>
-      <link>http://localhost:1313/tags/qq%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
+      <link>http://localhost:1313/tags/qq%E6%9C%BA%E5%99%A8%E4%BA%BA.html</link>
       <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/qq%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
+      <guid>http://localhost:1313/tags/qq%E6%9C%BA%E5%99%A8%E4%BA%BA.html</guid>
       <description></description>
     </item>
     <item>
       <title>Webdav</title>
-      <link>http://localhost:1313/tags/webdav/</link>
+      <link>http://localhost:1313/tags/webdav.html</link>
       <pubDate>Wed, 04 Aug 2021 21:43:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/webdav/</guid>
+      <guid>http://localhost:1313/tags/webdav.html</guid>
       <description></description>
     </item>
     <item>
       <title>阿里云盘</title>
-      <link>http://localhost:1313/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/</link>
+      <link>http://localhost:1313/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98.html</link>
       <pubDate>Wed, 04 Aug 2021 21:43:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98/</guid>
+      <guid>http://localhost:1313/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E7%9B%98.html</guid>
       <description></description>
     </item>
     <item>
       <title>NAS</title>
-      <link>http://localhost:1313/tags/nas/</link>
+      <link>http://localhost:1313/tags/nas.html</link>
       <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/nas/</guid>
+      <guid>http://localhost:1313/tags/nas.html</guid>
       <description></description>
     </item>
     <item>
       <title>DNS</title>
-      <link>http://localhost:1313/tags/dns/</link>
+      <link>http://localhost:1313/tags/dns.html</link>
       <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dns/</guid>
+      <guid>http://localhost:1313/tags/dns.html</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/tags/docker/</link>
+      <link>http://localhost:1313/tags/docker.html</link>
       <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/docker/</guid>
+      <guid>http://localhost:1313/tags/docker.html</guid>
       <description></description>
     </item>
     <item>
       <title>域名</title>
-      <link>http://localhost:1313/tags/%E5%9F%9F%E5%90%8D/</link>
+      <link>http://localhost:1313/tags/%E5%9F%9F%E5%90%8D.html</link>
       <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E5%9F%9F%E5%90%8D/</guid>
+      <guid>http://localhost:1313/tags/%E5%9F%9F%E5%90%8D.html</guid>
       <description></description>
     </item>
     <item>
       <title>自定义域名</title>
-      <link>http://localhost:1313/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/</link>
+      <link>http://localhost:1313/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html</link>
       <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/</guid>
+      <guid>http://localhost:1313/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D.html</guid>
       <description></description>
     </item>
     <item>
       <title>Traefik</title>
-      <link>http://localhost:1313/tags/traefik/</link>
+      <link>http://localhost:1313/tags/traefik.html</link>
       <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/traefik/</guid>
+      <guid>http://localhost:1313/tags/traefik.html</guid>
       <description></description>
     </item>
     <item>
       <title>邮件</title>
-      <link>http://localhost:1313/tags/%E9%82%AE%E4%BB%B6/</link>
+      <link>http://localhost:1313/tags/%E9%82%AE%E4%BB%B6.html</link>
       <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E9%82%AE%E4%BB%B6/</guid>
+      <guid>http://localhost:1313/tags/%E9%82%AE%E4%BB%B6.html</guid>
       <description></description>
     </item>
     <item>
       <title>Nginx</title>
-      <link>http://localhost:1313/tags/nginx/</link>
+      <link>http://localhost:1313/tags/nginx.html</link>
       <pubDate>Thu, 24 Jun 2021 10:32:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/nginx/</guid>
+      <guid>http://localhost:1313/tags/nginx.html</guid>
       <description></description>
     </item>
     <item>
       <title>SMB</title>
-      <link>http://localhost:1313/tags/smb/</link>
+      <link>http://localhost:1313/tags/smb.html</link>
       <pubDate>Wed, 19 May 2021 01:51:32 +0000</pubDate>
-      <guid>http://localhost:1313/tags/smb/</guid>
+      <guid>http://localhost:1313/tags/smb.html</guid>
       <description></description>
     </item>
     <item>
       <title>TrueNAS</title>
-      <link>http://localhost:1313/tags/truenas/</link>
+      <link>http://localhost:1313/tags/truenas.html</link>
       <pubDate>Wed, 19 May 2021 01:51:32 +0000</pubDate>
-      <guid>http://localhost:1313/tags/truenas/</guid>
+      <guid>http://localhost:1313/tags/truenas.html</guid>
       <description></description>
     </item>
     <item>
       <title>Docker-Compose</title>
-      <link>http://localhost:1313/tags/docker-compose/</link>
+      <link>http://localhost:1313/tags/docker-compose.html</link>
       <pubDate>Sun, 14 Mar 2021 17:30:38 +0000</pubDate>
-      <guid>http://localhost:1313/tags/docker-compose/</guid>
+      <guid>http://localhost:1313/tags/docker-compose.html</guid>
       <description></description>
     </item>
     <item>
       <title>Freshrss</title>
-      <link>http://localhost:1313/tags/freshrss/</link>
+      <link>http://localhost:1313/tags/freshrss.html</link>
       <pubDate>Sun, 14 Mar 2021 17:30:38 +0000</pubDate>
-      <guid>http://localhost:1313/tags/freshrss/</guid>
+      <guid>http://localhost:1313/tags/freshrss.html</guid>
       <description></description>
     </item>
     <item>
       <title>Wireguard</title>
-      <link>http://localhost:1313/tags/wireguard/</link>
+      <link>http://localhost:1313/tags/wireguard.html</link>
       <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
-      <guid>http://localhost:1313/tags/wireguard/</guid>
+      <guid>http://localhost:1313/tags/wireguard.html</guid>
       <description></description>
     </item>
     <item>
       <title>异星工厂</title>
-      <link>http://localhost:1313/tags/%E5%BC%82%E6%98%9F%E5%B7%A5%E5%8E%82/</link>
+      <link>http://localhost:1313/tags/%E5%BC%82%E6%98%9F%E5%B7%A5%E5%8E%82.html</link>
       <pubDate>Sun, 24 Jan 2021 13:46:44 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E5%BC%82%E6%98%9F%E5%B7%A5%E5%8E%82/</guid>
+      <guid>http://localhost:1313/tags/%E5%BC%82%E6%98%9F%E5%B7%A5%E5%8E%82.html</guid>
       <description></description>
     </item>
     <item>
       <title>NPS</title>
-      <link>http://localhost:1313/tags/nps/</link>
+      <link>http://localhost:1313/tags/nps.html</link>
       <pubDate>Mon, 28 Dec 2020 10:44:52 +0000</pubDate>
-      <guid>http://localhost:1313/tags/nps/</guid>
+      <guid>http://localhost:1313/tags/nps.html</guid>
       <description></description>
     </item>
     <item>
       <title>内网穿透</title>
-      <link>http://localhost:1313/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+      <link>http://localhost:1313/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F.html</link>
       <pubDate>Mon, 28 Dec 2020 10:44:52 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
+      <guid>http://localhost:1313/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F.html</guid>
       <description></description>
     </item>
     <item>
       <title>NPC</title>
-      <link>http://localhost:1313/tags/npc/</link>
+      <link>http://localhost:1313/tags/npc.html</link>
       <pubDate>Sun, 27 Dec 2020 22:48:12 +0000</pubDate>
-      <guid>http://localhost:1313/tags/npc/</guid>
+      <guid>http://localhost:1313/tags/npc.html</guid>
       <description></description>
     </item>
     <item>
       <title>Arch</title>
-      <link>http://localhost:1313/tags/arch/</link>
+      <link>http://localhost:1313/tags/arch.html</link>
       <pubDate>Mon, 07 Dec 2020 12:42:46 +0000</pubDate>
-      <guid>http://localhost:1313/tags/arch/</guid>
+      <guid>http://localhost:1313/tags/arch.html</guid>
       <description></description>
     </item>
     <item>
       <title>Resilio</title>
-      <link>http://localhost:1313/tags/resilio/</link>
+      <link>http://localhost:1313/tags/resilio.html</link>
       <pubDate>Mon, 07 Dec 2020 12:42:46 +0000</pubDate>
-      <guid>http://localhost:1313/tags/resilio/</guid>
+      <guid>http://localhost:1313/tags/resilio.html</guid>
       <description></description>
     </item>
     <item>
       <title>FileRun</title>
-      <link>http://localhost:1313/tags/filerun/</link>
+      <link>http://localhost:1313/tags/filerun.html</link>
       <pubDate>Sun, 27 Sep 2020 12:17:45 +0000</pubDate>
-      <guid>http://localhost:1313/tags/filerun/</guid>
+      <guid>http://localhost:1313/tags/filerun.html</guid>
       <description></description>
     </item>
     <item>
       <title>同步</title>
-      <link>http://localhost:1313/tags/%E5%90%8C%E6%AD%A5/</link>
+      <link>http://localhost:1313/tags/%E5%90%8C%E6%AD%A5.html</link>
       <pubDate>Sun, 27 Sep 2020 12:17:45 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E5%90%8C%E6%AD%A5/</guid>
+      <guid>http://localhost:1313/tags/%E5%90%8C%E6%AD%A5.html</guid>
       <description></description>
     </item>
     <item>
       <title>网盘</title>
-      <link>http://localhost:1313/tags/%E7%BD%91%E7%9B%98/</link>
+      <link>http://localhost:1313/tags/%E7%BD%91%E7%9B%98.html</link>
       <pubDate>Sun, 27 Sep 2020 12:17:45 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E7%BD%91%E7%9B%98/</guid>
+      <guid>http://localhost:1313/tags/%E7%BD%91%E7%9B%98.html</guid>
       <description></description>
     </item>
     <item>
       <title>U盘启动</title>
-      <link>http://localhost:1313/tags/u%E7%9B%98%E5%90%AF%E5%8A%A8/</link>
+      <link>http://localhost:1313/tags/u%E7%9B%98%E5%90%AF%E5%8A%A8.html</link>
       <pubDate>Wed, 19 Aug 2020 09:02:57 +0000</pubDate>
-      <guid>http://localhost:1313/tags/u%E7%9B%98%E5%90%AF%E5%8A%A8/</guid>
+      <guid>http://localhost:1313/tags/u%E7%9B%98%E5%90%AF%E5%8A%A8.html</guid>
       <description></description>
     </item>
     <item>
       <title>Openmediavault</title>
-      <link>http://localhost:1313/tags/openmediavault/</link>
+      <link>http://localhost:1313/tags/openmediavault.html</link>
       <pubDate>Sat, 08 Aug 2020 15:10:17 +0000</pubDate>
-      <guid>http://localhost:1313/tags/openmediavault/</guid>
+      <guid>http://localhost:1313/tags/openmediavault.html</guid>
       <description></description>
     </item>
     <item>
       <title>Freenas</title>
-      <link>http://localhost:1313/tags/freenas/</link>
+      <link>http://localhost:1313/tags/freenas.html</link>
       <pubDate>Sat, 08 Aug 2020 08:54:32 +0000</pubDate>
-      <guid>http://localhost:1313/tags/freenas/</guid>
+      <guid>http://localhost:1313/tags/freenas.html</guid>
       <description></description>
     </item>
     <item>
       <title>Tinc</title>
-      <link>http://localhost:1313/tags/tinc/</link>
+      <link>http://localhost:1313/tags/tinc.html</link>
       <pubDate>Thu, 06 Aug 2020 19:10:04 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tinc/</guid>
+      <guid>http://localhost:1313/tags/tinc.html</guid>
       <description></description>
     </item>
     <item>
       <title>Debian</title>
-      <link>http://localhost:1313/tags/debian/</link>
+      <link>http://localhost:1313/tags/debian.html</link>
       <pubDate>Thu, 06 Aug 2020 18:56:43 +0000</pubDate>
-      <guid>http://localhost:1313/tags/debian/</guid>
+      <guid>http://localhost:1313/tags/debian.html</guid>
       <description></description>
     </item>
     <item>
       <title>Wordpress</title>
-      <link>http://localhost:1313/tags/wordpress/</link>
+      <link>http://localhost:1313/tags/wordpress.html</link>
       <pubDate>Fri, 31 Jul 2020 20:10:08 +0000</pubDate>
-      <guid>http://localhost:1313/tags/wordpress/</guid>
+      <guid>http://localhost:1313/tags/wordpress.html</guid>
       <description></description>
     </item>
   </channel>

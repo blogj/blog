@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>VPN on 孤岛</title>
-    <link>http://localhost:1313/tags/vpn/</link>
+    <link>http://localhost:1313/tags/vpn.html</link>
     <description>Recent content in VPN on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker快速搭建MATRIX服务器synapse-2023</title>
-      <link>http://localhost:1313/227.html/</link>
+      <link>http://localhost:1313/227.html.html</link>
       <pubDate>Mon, 11 Sep 2023 13:31:00 +0000</pubDate>
-      <guid>http://localhost:1313/227.html/</guid>
+      <guid>http://localhost:1313/227.html.html</guid>
       <description>&lt;p&gt;docker 快速搭建 MATRIX 服务器 synapse&lt;/p&gt;
 &lt;h2 id=&#34;环境&#34;&gt;环境&lt;/h2&gt;
 &lt;ul&gt;
@@ -146,9 +146,9 @@
     </item>
     <item>
       <title>headscale开源服务器搭建</title>
-      <link>http://localhost:1313/723.html/</link>
+      <link>http://localhost:1313/723.html.html</link>
       <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
-      <guid>http://localhost:1313/723.html/</guid>
+      <guid>http://localhost:1313/723.html.html</guid>
       <description>&lt;h2 id=&#34;2022年1月5日更新&#34;&gt;2022年1月5日更新&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;GitHub仓库的文档已更新，可正常运行。&lt;/li&gt;
@@ -241,9 +241,9 @@
     </item>
     <item>
       <title>折腾NAS中用的软件资源分享</title>
-      <link>http://localhost:1313/686.html/</link>
+      <link>http://localhost:1313/686.html.html</link>
       <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/686.html/</guid>
+      <guid>http://localhost:1313/686.html.html</guid>
       <description>&lt;h1 id=&#34;资源链接阿里云盘&#34;&gt;资源链接阿里云盘&lt;/h1&gt;
 &lt;p&gt;我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀&lt;br&gt;
 复制这段内容打开「阿里云盘」App 即可获取&lt;br&gt;
@@ -270,9 +270,9 @@
     </item>
     <item>
       <title>tailscale docker上安装搭建方法</title>
-      <link>http://localhost:1313/555.html/</link>
+      <link>http://localhost:1313/555.html.html</link>
       <pubDate>Thu, 20 May 2021 13:31:00 +0000</pubDate>
-      <guid>http://localhost:1313/555.html/</guid>
+      <guid>http://localhost:1313/555.html.html</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-16.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;启动&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -324,9 +324,9 @@
     </item>
     <item>
       <title>关于NAS的小折腾填坑</title>
-      <link>http://localhost:1313/530.html/</link>
+      <link>http://localhost:1313/530.html.html</link>
       <pubDate>Tue, 18 May 2021 11:38:59 +0000</pubDate>
-      <guid>http://localhost:1313/530.html/</guid>
+      <guid>http://localhost:1313/530.html.html</guid>
       <description>&lt;h1 id=&#34;关于nas的小折腾填坑&#34;&gt;关于NAS的小折腾填坑&lt;/h1&gt;
 &lt;p&gt;【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。&lt;/p&gt;
 &lt;h2 id=&#34;关于电信路由器&#34;&gt;关于电信路由器&lt;/h2&gt;
@@ -356,9 +356,9 @@
     </item>
     <item>
       <title>Tailscale VPN初步安装体验</title>
-      <link>http://localhost:1313/503.html/</link>
+      <link>http://localhost:1313/503.html.html</link>
       <pubDate>Thu, 13 May 2021 16:13:00 +0000</pubDate>
-      <guid>http://localhost:1313/503.html/</guid>
+      <guid>http://localhost:1313/503.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;初步体验是一个基于&lt;a href=&#34;http://wireguard.com&#34;&gt;wireguard&lt;/a&gt;的新的星形组网软件（功能之一），对比WGvpn最大的不同就是增加了公匙交换系统，免配置组网，只需要安装客户端登录账号就可以组网，支持p2p打洞，付费自建中继功能。支持基本上全平台支持Linux|群晖|Openrt|Window|Mac等常见客户端，docker也可以安装。&lt;/p&gt;
 &lt;h2 id=&#34;openwrt-x86上安装&#34;&gt;Openwrt X86上安装&lt;/h2&gt;
@@ -411,9 +411,9 @@
     </item>
     <item>
       <title>ESXI 群晖下连接VPN网络报错解决</title>
-      <link>http://localhost:1313/494.html/</link>
+      <link>http://localhost:1313/494.html.html</link>
       <pubDate>Thu, 29 Apr 2021 16:25:03 +0000</pubDate>
-      <guid>http://localhost:1313/494.html/</guid>
+      <guid>http://localhost:1313/494.html.html</guid>
       <description>&lt;p&gt;前言&lt;/p&gt;
 &lt;p&gt;我的vpn服务端搭建在openwrt软路由上使用SoftEther作为相关软件，在群晖下出现&lt;/p&gt;
 &lt;p&gt;群晖 l2tp连接失败 请检查。。。。解决办法如下勾选第二个选项就行&lt;/p&gt;
@@ -431,9 +431,9 @@
     </item>
     <item>
       <title>openwrt通过wireguard组网</title>
-      <link>http://localhost:1313/444.html/</link>
+      <link>http://localhost:1313/444.html.html</link>
       <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
-      <guid>http://localhost:1313/444.html/</guid>
+      <guid>http://localhost:1313/444.html.html</guid>
       <description>&lt;h2 id=&#34;概念&#34;&gt;概念&lt;/h2&gt;
 &lt;p&gt;网上找的图很好理解应该&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/02/Screenshot_2021-02-19-18-10-47-849_com.google.android.youtube-1024x473.jpg&#34;&gt;&lt;/p&gt;
@@ -504,9 +504,9 @@
     </item>
     <item>
       <title>Openwrt OpenConnect VPN 搭建设置教程</title>
-      <link>http://localhost:1313/293.html/</link>
+      <link>http://localhost:1313/293.html.html</link>
       <pubDate>Wed, 30 Sep 2020 13:52:00 +0000</pubDate>
-      <guid>http://localhost:1313/293.html/</guid>
+      <guid>http://localhost:1313/293.html.html</guid>
       <description>&lt;p&gt;## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;流程图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/851998809.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;怎么知道当前openwrt架构的软件源包去后台看看就好了

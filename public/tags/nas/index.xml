@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>NAS on 孤岛</title>
-    <link>http://localhost:1313/tags/nas/</link>
+    <link>http://localhost:1313/tags/nas.html</link>
     <description>Recent content in NAS on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/nas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>unraid6.9.2安装及UEFI引导与初始化</title>
-      <link>http://localhost:1313/649.html/</link>
+      <link>http://localhost:1313/649.html.html</link>
       <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
-      <guid>http://localhost:1313/649.html/</guid>
+      <guid>http://localhost:1313/649.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;系统包来源于俄罗斯论坛&lt;/p&gt;
 &lt;h1 id=&#34;系统盘制作&#34;&gt;系统盘制作&lt;/h1&gt;
@@ -93,9 +93,9 @@
     </item>
     <item>
       <title>NGINX 非443端口http跳转https</title>
-      <link>http://localhost:1313/600.html/</link>
+      <link>http://localhost:1313/600.html.html</link>
       <pubDate>Thu, 24 Jun 2021 10:32:00 +0000</pubDate>
-      <guid>http://localhost:1313/600.html/</guid>
+      <guid>http://localhost:1313/600.html.html</guid>
       <description>&lt;p&gt;关于Nginx这个web服务器软件在NAS上配置非443端口访问时候跳转https问题，默认80端口与443端口无法访问情况。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -192,9 +192,9 @@
     </item>
     <item>
       <title>TrueNAS-SCALE SMB共享设置</title>
-      <link>http://localhost:1313/538.html/</link>
+      <link>http://localhost:1313/538.html.html</link>
       <pubDate>Wed, 19 May 2021 01:51:32 +0000</pubDate>
-      <guid>http://localhost:1313/538.html/</guid>
+      <guid>http://localhost:1313/538.html.html</guid>
       <description>&lt;h4 id=&#34;1打开win10-smb10&#34;&gt;1.打开win10 SMB1.0&lt;/h4&gt;
 &lt;p&gt;SMB1.0功能 此电脑&amp;gt;卸载或更改程序&amp;gt;程序和功能&amp;gt;启用或关闭win功能 勾选?&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-8.png&#34;&gt;&lt;/p&gt;
@@ -221,9 +221,9 @@
     </item>
     <item>
       <title>关于NAS的小折腾填坑</title>
-      <link>http://localhost:1313/530.html/</link>
+      <link>http://localhost:1313/530.html.html</link>
       <pubDate>Tue, 18 May 2021 11:38:59 +0000</pubDate>
-      <guid>http://localhost:1313/530.html/</guid>
+      <guid>http://localhost:1313/530.html.html</guid>
       <description>&lt;h1 id=&#34;关于nas的小折腾填坑&#34;&gt;关于NAS的小折腾填坑&lt;/h1&gt;
 &lt;p&gt;【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。&lt;/p&gt;
 &lt;h2 id=&#34;关于电信路由器&#34;&gt;关于电信路由器&lt;/h2&gt;
@@ -253,9 +253,9 @@
     </item>
     <item>
       <title>Tailscale VPN初步安装体验</title>
-      <link>http://localhost:1313/503.html/</link>
+      <link>http://localhost:1313/503.html.html</link>
       <pubDate>Thu, 13 May 2021 16:13:00 +0000</pubDate>
-      <guid>http://localhost:1313/503.html/</guid>
+      <guid>http://localhost:1313/503.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;初步体验是一个基于&lt;a href=&#34;http://wireguard.com&#34;&gt;wireguard&lt;/a&gt;的新的星形组网软件（功能之一），对比WGvpn最大的不同就是增加了公匙交换系统，免配置组网，只需要安装客户端登录账号就可以组网，支持p2p打洞，付费自建中继功能。支持基本上全平台支持Linux|群晖|Openrt|Window|Mac等常见客户端，docker也可以安装。&lt;/p&gt;
 &lt;h2 id=&#34;openwrt-x86上安装&#34;&gt;Openwrt X86上安装&lt;/h2&gt;
@@ -308,9 +308,9 @@
     </item>
     <item>
       <title>ESXI 群晖下连接VPN网络报错解决</title>
-      <link>http://localhost:1313/494.html/</link>
+      <link>http://localhost:1313/494.html.html</link>
       <pubDate>Thu, 29 Apr 2021 16:25:03 +0000</pubDate>
-      <guid>http://localhost:1313/494.html/</guid>
+      <guid>http://localhost:1313/494.html.html</guid>
       <description>&lt;p&gt;前言&lt;/p&gt;
 &lt;p&gt;我的vpn服务端搭建在openwrt软路由上使用SoftEther作为相关软件，在群晖下出现&lt;/p&gt;
 &lt;p&gt;群晖 l2tp连接失败 请检查。。。。解决办法如下勾选第二个选项就行&lt;/p&gt;
@@ -328,9 +328,9 @@
     </item>
     <item>
       <title>群晖开启tun模块驱动以支持tinc</title>
-      <link>http://localhost:1313/164.html/</link>
+      <link>http://localhost:1313/164.html.html</link>
       <pubDate>Sun, 09 Aug 2020 09:27:29 +0000</pubDate>
-      <guid>http://localhost:1313/164.html/</guid>
+      <guid>http://localhost:1313/164.html.html</guid>
       <description>&lt;p&gt;登陆群晖开启ssh，在终端依次用admin用户登陆再sudo -i 进入#管理员模式&lt;/p&gt;
 &lt;h2 id=&#34;检查tun模块状态&#34;&gt;检查tun模块状态&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

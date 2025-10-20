@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Docker on 孤岛</title>
-    <link>http://localhost:1313/tags/docker/</link>
+    <link>http://localhost:1313/tags/docker.html</link>
     <description>Recent content in Docker on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
-      <link>http://localhost:1313/629.html/</link>
+      <link>http://localhost:1313/629.html.html</link>
       <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
-      <guid>http://localhost:1313/629.html/</guid>
+      <guid>http://localhost:1313/629.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;基本上这是最简单的方式，我通过 &lt;a href=&#34;tailscale.com&#34;&gt;tailscale&lt;/a&gt; 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能通过 IP地址 来访问服务，有没有一种办法可以通过域名的方式来访问，当然可以，最简单的方案如下&lt;/p&gt;
 &lt;ol&gt;
@@ -61,9 +61,9 @@
     </item>
     <item>
       <title>Traefik系列二-docker搭建typecho-to-traefik</title>
-      <link>http://localhost:1313/615.html/</link>
+      <link>http://localhost:1313/615.html.html</link>
       <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
-      <guid>http://localhost:1313/615.html/</guid>
+      <guid>http://localhost:1313/615.html.html</guid>
       <description>&lt;h1 id=&#34;快速开始&#34;&gt;快速开始&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -115,9 +115,9 @@
     </item>
     <item>
       <title>阿里云域名 docker下申请泛域名</title>
-      <link>http://localhost:1313/578.html/</link>
+      <link>http://localhost:1313/578.html.html</link>
       <pubDate>Thu, 10 Jun 2021 15:54:00 +0000</pubDate>
-      <guid>http://localhost:1313/578.html/</guid>
+      <guid>http://localhost:1313/578.html.html</guid>
       <description>&lt;h1 id=&#34;构建&#34;&gt;构建&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -192,9 +192,9 @@
     </item>
     <item>
       <title>FreshRSS docker-compose.yml 教程</title>
-      <link>http://localhost:1313/478.html/</link>
+      <link>http://localhost:1313/478.html.html</link>
       <pubDate>Sun, 14 Mar 2021 17:30:38 +0000</pubDate>
-      <guid>http://localhost:1313/478.html/</guid>
+      <guid>http://localhost:1313/478.html.html</guid>
       <description>&lt;p&gt;创建docker-compose.yml文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -287,9 +287,9 @@
     </item>
     <item>
       <title>Debian国内服务器初始化</title>
-      <link>http://localhost:1313/109.html/</link>
+      <link>http://localhost:1313/109.html.html</link>
       <pubDate>Thu, 06 Aug 2020 18:56:43 +0000</pubDate>
-      <guid>http://localhost:1313/109.html/</guid>
+      <guid>http://localhost:1313/109.html.html</guid>
       <description>&lt;p&gt;乌班图服务器版本默认ssh居然没有sftp弃之 ， centos虽然很好但总感觉软件包陈旧，燧写这篇初始化操作&lt;/p&gt;
 &lt;h2 id=&#34;更新软件包&#34;&gt;更新软件包&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

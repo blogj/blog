@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Webdav on 孤岛</title>
-    <link>http://localhost:1313/tags/webdav/</link>
+    <link>http://localhost:1313/tags/webdav.html</link>
     <description>Recent content in Webdav on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/webdav/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>unraid 挂载webdav为本地目录</title>
-      <link>http://localhost:1313/662.html/</link>
+      <link>http://localhost:1313/662.html.html</link>
       <pubDate>Wed, 04 Aug 2021 21:43:00 +0000</pubDate>
-      <guid>http://localhost:1313/662.html/</guid>
+      <guid>http://localhost:1313/662.html.html</guid>
       <description>&lt;h1 id=&#34;序言&#34;&gt;序言&lt;/h1&gt;
 &lt;p&gt;上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不稳定，就没有去了解，这次我们通过 rclone 这个软件来挂载webdav协议来实现把阿里云盘挂载到本地目录，这样就实现了让nas或者本地的主机无负担的有了一个大硬盘。&lt;/p&gt;
 &lt;h1 id=&#34;过程&#34;&gt;过程&lt;/h1&gt;

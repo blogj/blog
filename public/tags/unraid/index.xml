@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Unraid on 孤岛</title>
-    <link>http://localhost:1313/tags/unraid/</link>
+    <link>http://localhost:1313/tags/unraid.html</link>
     <description>Recent content in Unraid on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/unraid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>unraid6.9.2 安装群晖DSM7.0.1</title>
-      <link>http://localhost:1313/707.html/</link>
+      <link>http://localhost:1313/707.html.html</link>
       <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
-      <guid>http://localhost:1313/707.html/</guid>
+      <guid>http://localhost:1313/707.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.openos.org/threads/111ds3615ds918ds36157-x.3529/page-172#post-40022&#34;&gt;引导驱动来源openos论坛&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;使用版本 DS3615xs_7.01-42218&lt;/p&gt;
@@ -41,9 +41,9 @@
     </item>
     <item>
       <title>unraid 挂载webdav为本地目录</title>
-      <link>http://localhost:1313/662.html/</link>
+      <link>http://localhost:1313/662.html.html</link>
       <pubDate>Wed, 04 Aug 2021 21:43:00 +0000</pubDate>
-      <guid>http://localhost:1313/662.html/</guid>
+      <guid>http://localhost:1313/662.html.html</guid>
       <description>&lt;h1 id=&#34;序言&#34;&gt;序言&lt;/h1&gt;
 &lt;p&gt;上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不稳定，就没有去了解，这次我们通过 rclone 这个软件来挂载webdav协议来实现把阿里云盘挂载到本地目录，这样就实现了让nas或者本地的主机无负担的有了一个大硬盘。&lt;/p&gt;
 &lt;h1 id=&#34;过程&#34;&gt;过程&lt;/h1&gt;
@@ -126,9 +126,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>unraid6.9.2安装及UEFI引导与初始化</title>
-      <link>http://localhost:1313/649.html/</link>
+      <link>http://localhost:1313/649.html.html</link>
       <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
-      <guid>http://localhost:1313/649.html/</guid>
+      <guid>http://localhost:1313/649.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;系统包来源于俄罗斯论坛&lt;/p&gt;
 &lt;h1 id=&#34;系统盘制作&#34;&gt;系统盘制作&lt;/h1&gt;
@@ -204,9 +204,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unarid 安装异星工厂并指定存档</title>
-      <link>http://localhost:1313/415.html/</link>
+      <link>http://localhost:1313/415.html.html</link>
       <pubDate>Sun, 24 Jan 2021 13:46:44 +0000</pubDate>
-      <guid>http://localhost:1313/415.html/</guid>
+      <guid>http://localhost:1313/415.html.html</guid>
       <description>&lt;h2 id=&#34;0-1搜索factorio并添加环境变量指定存档&#34;&gt;0-1搜索factorio并添加环境变量指定存档&lt;/h2&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-34-50.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;搜索镜像&lt;/p&gt;
@@ -237,9 +237,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>UNraid 安装后注意事项常见操作</title>
-      <link>http://localhost:1313/234.html/</link>
+      <link>http://localhost:1313/234.html.html</link>
       <pubDate>Mon, 31 Aug 2020 13:18:41 +0000</pubDate>
-      <guid>http://localhost:1313/234.html/</guid>
+      <guid>http://localhost:1313/234.html.html</guid>
       <description>&lt;h2 id=&#34;引导模式&#34;&gt;引导模式&lt;/h2&gt;
 &lt;p&gt;UnRaid如果不能成功引导试试换传统引导模式&lt;/p&gt;
 &lt;h2 id=&#34;修改访问ip地址&#34;&gt;修改访问iP地址&lt;/h2&gt;

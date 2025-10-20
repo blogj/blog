@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>DNS on 孤岛</title>
-    <link>http://localhost:1313/tags/dns/</link>
+    <link>http://localhost:1313/tags/dns.html</link>
     <description>Recent content in DNS on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/dns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
-      <link>http://localhost:1313/629.html/</link>
+      <link>http://localhost:1313/629.html.html</link>
       <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
-      <guid>http://localhost:1313/629.html/</guid>
+      <guid>http://localhost:1313/629.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;基本上这是最简单的方式，我通过 &lt;a href=&#34;tailscale.com&#34;&gt;tailscale&lt;/a&gt; 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能通过 IP地址 来访问服务，有没有一种办法可以通过域名的方式来访问，当然可以，最简单的方案如下&lt;/p&gt;
 &lt;ol&gt;

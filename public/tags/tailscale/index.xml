@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tailscale on 孤岛</title>
-    <link>http://localhost:1313/tags/tailscale/</link>
+    <link>http://localhost:1313/tags/tailscale.html</link>
     <description>Recent content in Tailscale on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/tailscale/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tailscale恢复官方控制器</title>
-      <link>http://localhost:1313/1001.html/</link>
+      <link>http://localhost:1313/1001.html.html</link>
       <pubDate>Sun, 05 Nov 2023 18:24:03 +0800</pubDate>
-      <guid>http://localhost:1313/1001.html/</guid>
+      <guid>http://localhost:1313/1001.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;在节点登录了第三方控制器后，想恢复官方控制器&lt;/p&gt;
 &lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
@@ -61,9 +61,9 @@
     </item>
     <item>
       <title>unattended Tailscale</title>
-      <link>http://localhost:1313/1000.html/</link>
+      <link>http://localhost:1313/1000.html.html</link>
       <pubDate>Sun, 05 Nov 2023 18:10:57 +0800</pubDate>
-      <guid>http://localhost:1313/1000.html/</guid>
+      <guid>http://localhost:1313/1000.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;解决 Windows 下 Tailscale 未登录桌面不启动问题
 新版本的 ui 启动无人值守的选项&lt;code&gt;run unattended mode&lt;/code&gt;已经去掉，所以只能命令行设置&lt;/p&gt;
@@ -84,9 +84,9 @@
     </item>
     <item>
       <title>Tailscale安装到ARM openwrt上</title>
-      <link>http://localhost:1313/1076.html/</link>
+      <link>http://localhost:1313/1076.html.html</link>
       <pubDate>Sun, 12 Jun 2022 12:09:10 +0000</pubDate>
-      <guid>http://localhost:1313/1076.html/</guid>
+      <guid>http://localhost:1313/1076.html.html</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://gao4.top/wp-content/uploads/2022/06/FotoJet-1024x576.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;下载到tmp目录&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -209,9 +209,9 @@
     </item>
     <item>
       <title>Headscale服务器搭建启用SSL证书</title>
-      <link>http://localhost:1313/758.html/</link>
+      <link>http://localhost:1313/758.html.html</link>
       <pubDate>Tue, 12 Apr 2022 18:35:00 +0000</pubDate>
-      <guid>http://localhost:1313/758.html/</guid>
+      <guid>http://localhost:1313/758.html.html</guid>
       <description>&lt;h2 id=&#34;20230705更新&#34;&gt;20230705更新&lt;/h2&gt;
 &lt;p&gt;systemd方式启动Headscale会有启动不成功现象 配置ssl证书后 推荐去官方页面抄nginx反向代理进行增加ssl
 推测是因为权限原因，推荐测试时候全新安装不修改配置文件情况下来启动。&lt;/p&gt;
@@ -305,9 +305,9 @@
     </item>
     <item>
       <title>headscale开源服务器搭建</title>
-      <link>http://localhost:1313/723.html/</link>
+      <link>http://localhost:1313/723.html.html</link>
       <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
-      <guid>http://localhost:1313/723.html/</guid>
+      <guid>http://localhost:1313/723.html.html</guid>
       <description>&lt;h2 id=&#34;2022年1月5日更新&#34;&gt;2022年1月5日更新&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;GitHub仓库的文档已更新，可正常运行。&lt;/li&gt;
@@ -400,9 +400,9 @@
     </item>
     <item>
       <title>tailscale 中继节点 搭建教程</title>
-      <link>http://localhost:1313/679.html/</link>
+      <link>http://localhost:1313/679.html.html</link>
       <pubDate>Mon, 13 Sep 2021 09:35:00 +0000</pubDate>
-      <guid>http://localhost:1313/679.html/</guid>
+      <guid>http://localhost:1313/679.html.html</guid>
       <description>&lt;h2 id=&#34;2021年10月20日更新&#34;&gt;2021年10月20日更新&lt;/h2&gt;
 &lt;p&gt;标题设置得不太准确，应该是中继网关，中继内网网段。&lt;br&gt;
 &lt;strong&gt;中继节点可看这篇文章&lt;/strong&gt;&lt;br&gt;
@@ -456,9 +456,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>tailscale docker上安装搭建方法</title>
-      <link>http://localhost:1313/555.html/</link>
+      <link>http://localhost:1313/555.html.html</link>
       <pubDate>Thu, 20 May 2021 13:31:00 +0000</pubDate>
-      <guid>http://localhost:1313/555.html/</guid>
+      <guid>http://localhost:1313/555.html.html</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-16.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;启动&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -510,9 +510,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>Tailscale VPN初步安装体验</title>
-      <link>http://localhost:1313/503.html/</link>
+      <link>http://localhost:1313/503.html.html</link>
       <pubDate>Thu, 13 May 2021 16:13:00 +0000</pubDate>
-      <guid>http://localhost:1313/503.html/</guid>
+      <guid>http://localhost:1313/503.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;初步体验是一个基于&lt;a href=&#34;http://wireguard.com&#34;&gt;wireguard&lt;/a&gt;的新的星形组网软件（功能之一），对比WGvpn最大的不同就是增加了公匙交换系统，免配置组网，只需要安装客户端登录账号就可以组网，支持p2p打洞，付费自建中继功能。支持基本上全平台支持Linux|群晖|Openrt|Window|Mac等常见客户端，docker也可以安装。&lt;/p&gt;
 &lt;h2 id=&#34;openwrt-x86上安装&#34;&gt;Openwrt X86上安装&lt;/h2&gt;

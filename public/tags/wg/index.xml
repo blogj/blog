@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>WG on 孤岛</title>
-    <link>http://localhost:1313/tags/wg/</link>
+    <link>http://localhost:1313/tags/wg.html</link>
     <description>Recent content in WG on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/wg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wg-Easy一个几分钟搞定访问局域网的wg面板</title>
-      <link>http://localhost:1313/759.html/</link>
+      <link>http://localhost:1313/759.html.html</link>
       <pubDate>Fri, 22 Apr 2022 14:26:00 +0000</pubDate>
-      <guid>http://localhost:1313/759.html/</guid>
+      <guid>http://localhost:1313/759.html.html</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在前面博主比较推荐tailscale这款软件也是基于Wg协议的，但兜兜转转还是回归了wireguard，&lt;/p&gt;
 &lt;p&gt;回归了传统的那种网络模型 ，或许网状形的模型成熟了再换也不迟，这面板就是快速让你部署后，并且能远程访问局域网地址&lt;/p&gt;
@@ -107,9 +107,9 @@
     </item>
     <item>
       <title>openwrt通过wireguard组网</title>
-      <link>http://localhost:1313/444.html/</link>
+      <link>http://localhost:1313/444.html.html</link>
       <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
-      <guid>http://localhost:1313/444.html/</guid>
+      <guid>http://localhost:1313/444.html.html</guid>
       <description>&lt;h2 id=&#34;概念&#34;&gt;概念&lt;/h2&gt;
 &lt;p&gt;网上找的图很好理解应该&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/02/Screenshot_2021-02-19-18-10-47-849_com.google.android.youtube-1024x473.jpg&#34;&gt;&lt;/p&gt;

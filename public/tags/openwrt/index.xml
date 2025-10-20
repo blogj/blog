@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Openwrt on 孤岛</title>
-    <link>http://localhost:1313/tags/openwrt/</link>
+    <link>http://localhost:1313/tags/openwrt.html</link>
     <description>Recent content in Openwrt on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Openwrt系列之打开ipv6端口访问</title>
-      <link>http://localhost:1313/20240906.html/</link>
+      <link>http://localhost:1313/20240906.html.html</link>
       <pubDate>Fri, 06 Sep 2024 09:20:02 +0800</pubDate>
-      <guid>http://localhost:1313/20240906.html/</guid>
+      <guid>http://localhost:1313/20240906.html.html</guid>
       <description>&lt;h2 id=&#34;打开ipv6-访问&#34;&gt;打开ipv6 访问&lt;/h2&gt;
 &lt;p&gt;很简单只需要把防火墙打开就行就可以访问端口上的openwrt服务&lt;/p&gt;
 &lt;h3 id=&#34;第一步&#34;&gt;第一步&lt;/h3&gt;
@@ -29,9 +29,9 @@
     </item>
     <item>
       <title>Tailscale安装到ARM openwrt上</title>
-      <link>http://localhost:1313/1076.html/</link>
+      <link>http://localhost:1313/1076.html.html</link>
       <pubDate>Sun, 12 Jun 2022 12:09:10 +0000</pubDate>
-      <guid>http://localhost:1313/1076.html/</guid>
+      <guid>http://localhost:1313/1076.html.html</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://gao4.top/wp-content/uploads/2022/06/FotoJet-1024x576.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;下载到tmp目录&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -154,9 +154,9 @@
     </item>
     <item>
       <title>折腾NAS中用的软件资源分享</title>
-      <link>http://localhost:1313/686.html/</link>
+      <link>http://localhost:1313/686.html.html</link>
       <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/686.html/</guid>
+      <guid>http://localhost:1313/686.html.html</guid>
       <description>&lt;h1 id=&#34;资源链接阿里云盘&#34;&gt;资源链接阿里云盘&lt;/h1&gt;
 &lt;p&gt;我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀&lt;br&gt;
 复制这段内容打开「阿里云盘」App 即可获取&lt;br&gt;
@@ -183,9 +183,9 @@
     </item>
     <item>
       <title>openwrt通过wireguard组网</title>
-      <link>http://localhost:1313/444.html/</link>
+      <link>http://localhost:1313/444.html.html</link>
       <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
-      <guid>http://localhost:1313/444.html/</guid>
+      <guid>http://localhost:1313/444.html.html</guid>
       <description>&lt;h2 id=&#34;概念&#34;&gt;概念&lt;/h2&gt;
 &lt;p&gt;网上找的图很好理解应该&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/02/Screenshot_2021-02-19-18-10-47-849_com.google.android.youtube-1024x473.jpg&#34;&gt;&lt;/p&gt;
@@ -256,9 +256,9 @@
     </item>
     <item>
       <title>Openwrt OpenConnect VPN 搭建设置教程</title>
-      <link>http://localhost:1313/293.html/</link>
+      <link>http://localhost:1313/293.html.html</link>
       <pubDate>Wed, 30 Sep 2020 13:52:00 +0000</pubDate>
-      <guid>http://localhost:1313/293.html/</guid>
+      <guid>http://localhost:1313/293.html.html</guid>
       <description>&lt;p&gt;## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;流程图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/851998809.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;怎么知道当前openwrt架构的软件源包去后台看看就好了

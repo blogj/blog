@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Debian on 孤岛</title>
-    <link>http://localhost:1313/tags/debian/</link>
+    <link>http://localhost:1313/tags/debian.html</link>
     <description>Recent content in Debian on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debian国内服务器初始化</title>
-      <link>http://localhost:1313/109.html/</link>
+      <link>http://localhost:1313/109.html.html</link>
       <pubDate>Thu, 06 Aug 2020 18:56:43 +0000</pubDate>
-      <guid>http://localhost:1313/109.html/</guid>
+      <guid>http://localhost:1313/109.html.html</guid>
       <description>&lt;p&gt;乌班图服务器版本默认ssh居然没有sftp弃之 ， centos虽然很好但总感觉软件包陈旧，燧写这篇初始化操作&lt;/p&gt;
 &lt;h2 id=&#34;更新软件包&#34;&gt;更新软件包&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

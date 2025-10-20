@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>同步 on 孤岛</title>
-    <link>http://localhost:1313/tags/%E5%90%8C%E6%AD%A5/</link>
+    <link>http://localhost:1313/tags/%E5%90%8C%E6%AD%A5.html</link>
     <description>Recent content in 同步 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/%E5%90%8C%E6%AD%A5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FileRun docker-compose 安装搭建</title>
-      <link>http://localhost:1313/288.html/</link>
+      <link>http://localhost:1313/288.html.html</link>
       <pubDate>Sun, 27 Sep 2020 12:17:45 +0000</pubDate>
-      <guid>http://localhost:1313/288.html/</guid>
+      <guid>http://localhost:1313/288.html.html</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;先说一下结论，安装后感觉确实比nextcloud快，特别对于ody备份照片来说，但有一个需要注意，在2020年官方的安卓客户端已经暂停更新，现在用的是nextcloud的安卓客户端，但默认登陆进去会有一个@Home目录，没有直接进入/目录，对客户端有些不兼容。现还没找到解决办法，只能等官方更新&lt;/p&gt;&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Openmediavault on 孤岛</title>
-    <link>http://localhost:1313/tags/openmediavault/</link>
+    <link>http://localhost:1313/tags/openmediavault.html</link>
     <description>Recent content in Openmediavault on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/openmediavault/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>raw.githubusercontent.com拒绝访问解决办法</title>
-      <link>http://localhost:1313/142.html/</link>
+      <link>http://localhost:1313/142.html.html</link>
       <pubDate>Sat, 08 Aug 2020 15:10:17 +0000</pubDate>
-      <guid>http://localhost:1313/142.html/</guid>
+      <guid>http://localhost:1313/142.html.html</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_145930-1024x834.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;出现的错误&lt;/p&gt;
 &lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
@@ -50,9 +50,9 @@
     </item>
     <item>
       <title>openmediavault SMB共享设置</title>
-      <link>http://localhost:1313/132.html/</link>
+      <link>http://localhost:1313/132.html.html</link>
       <pubDate>Sat, 08 Aug 2020 13:05:58 +0000</pubDate>
-      <guid>http://localhost:1313/132.html/</guid>
+      <guid>http://localhost:1313/132.html.html</guid>
       <description>&lt;h2 id=&#34;创建用户&#34;&gt;创建用户&lt;/h2&gt;
 &lt;p&gt;默认的admin用户与root用户权限都设置完毕也不能登陆smb，创建一个用户就正常了&lt;/p&gt;
 &lt;p&gt;访问权限管理-用户-添加用户&lt;/p&gt;

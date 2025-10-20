@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Esxi7 on 孤岛</title>
-    <link>http://localhost:1313/tags/esxi7/</link>
+    <link>http://localhost:1313/tags/esxi7.html</link>
     <description>Recent content in Esxi7 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/esxi7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ESXI7.0 Update 2下黑群晖7.01安装</title>
-      <link>http://localhost:1313/738.html/</link>
+      <link>http://localhost:1313/738.html.html</link>
       <pubDate>Sat, 08 Jan 2022 15:02:27 +0000</pubDate>
-      <guid>http://localhost:1313/738.html/</guid>
+      <guid>http://localhost:1313/738.html.html</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;只是填坑把遇到的问题写出来&lt;/p&gt;
 &lt;h2 id=&#34;相关软件分享&#34;&gt;相关软件分享&lt;/h2&gt;

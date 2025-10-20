@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Wordpress on 孤岛</title>
-    <link>http://localhost:1313/tags/wordpress/</link>
+    <link>http://localhost:1313/tags/wordpress.html</link>
     <description>Recent content in Wordpress on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>wordpress 搭建</title>
-      <link>http://localhost:1313/27.html/</link>
+      <link>http://localhost:1313/27.html.html</link>
       <pubDate>Fri, 31 Jul 2020 20:10:08 +0000</pubDate>
-      <guid>http://localhost:1313/27.html/</guid>
+      <guid>http://localhost:1313/27.html.html</guid>
       <description>&lt;h2 id=&#34;github下载文件&#34;&gt;Github下载文件&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

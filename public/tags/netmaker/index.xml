@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Netmaker on 孤岛</title>
-    <link>http://localhost:1313/tags/netmaker/</link>
+    <link>http://localhost:1313/tags/netmaker.html</link>
     <description>Recent content in Netmaker on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/netmaker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>netmaker 搭建教程 组建虚拟局域网</title>
-      <link>http://localhost:1313/715.html/</link>
+      <link>http://localhost:1313/715.html.html</link>
       <pubDate>Wed, 01 Dec 2021 22:43:00 +0000</pubDate>
-      <guid>http://localhost:1313/715.html/</guid>
+      <guid>http://localhost:1313/715.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装&lt;br&gt;
 &lt;a href=&#34;https://docs.netmaker.org/quick-start.html&#34;&gt;官方文档地址&lt;/a&gt;&lt;/p&gt;
@@ -73,9 +73,9 @@
     </item>
     <item>
       <title>netmaker win10 手动添加节点</title>
-      <link>http://localhost:1313/711.html/</link>
+      <link>http://localhost:1313/711.html.html</link>
       <pubDate>Wed, 01 Dec 2021 22:21:54 +0000</pubDate>
-      <guid>http://localhost:1313/711.html/</guid>
+      <guid>http://localhost:1313/711.html.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/gravitl/netmaker/releases&#34;&gt;https://github.com/gravitl/netmaker/releases&lt;/a&gt;&lt;br&gt;
 去下载&lt;a href=&#34;https://github.com/gravitl/netmaker/releases/download/v0.9.0/netclient.exe&#34;&gt;&lt;strong&gt;netclient.exe&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;
 &lt;img alt=&#34;netclient.exe&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/273974275.png&#34; title=&#34;netclient.exe&#34;&gt;&lt;/p&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>脚本 on 孤岛</title>
-    <link>http://localhost:1313/tags/%E8%84%9A%E6%9C%AC/</link>
+    <link>http://localhost:1313/tags/%E8%84%9A%E6%9C%AC.html</link>
     <description>Recent content in 脚本 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/%E8%84%9A%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Syncthing自动化接受设备与自动添加共享目录脚本</title>
-      <link>http://localhost:1313/20240621.html/</link>
+      <link>http://localhost:1313/20240621.html.html</link>
       <pubDate>Fri, 21 Jun 2024 09:22:44 +0800</pubDate>
-      <guid>http://localhost:1313/20240621.html/</guid>
+      <guid>http://localhost:1313/20240621.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;在当前2024/6/21参考官方论坛与github官方讨论，开发者不愿意开发自动接受设备与连接设备后自动添加共享目录，官方更愿意让使用者自己通过api构建程序脚本来增强相关功能。&lt;/p&gt;
 &lt;h2 id=&#34;脚本&#34;&gt;脚本&lt;/h2&gt;

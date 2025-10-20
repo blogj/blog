@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>NAS物语 on 孤岛</title>
-    <link>http://localhost:1313/tags/nas%E7%89%A9%E8%AF%AD/</link>
+    <link>http://localhost:1313/tags/nas%E7%89%A9%E8%AF%AD.html</link>
     <description>Recent content in NAS物语 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/nas%E7%89%A9%E8%AF%AD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tailscale恢复官方控制器</title>
-      <link>http://localhost:1313/1001.html/</link>
+      <link>http://localhost:1313/1001.html.html</link>
       <pubDate>Sun, 05 Nov 2023 18:24:03 +0800</pubDate>
-      <guid>http://localhost:1313/1001.html/</guid>
+      <guid>http://localhost:1313/1001.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;在节点登录了第三方控制器后，想恢复官方控制器&lt;/p&gt;
 &lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
@@ -61,9 +61,9 @@
     </item>
     <item>
       <title>unattended Tailscale</title>
-      <link>http://localhost:1313/1000.html/</link>
+      <link>http://localhost:1313/1000.html.html</link>
       <pubDate>Sun, 05 Nov 2023 18:10:57 +0800</pubDate>
-      <guid>http://localhost:1313/1000.html/</guid>
+      <guid>http://localhost:1313/1000.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;解决 Windows 下 Tailscale 未登录桌面不启动问题
 新版本的 ui 启动无人值守的选项&lt;code&gt;run unattended mode&lt;/code&gt;已经去掉，所以只能命令行设置&lt;/p&gt;
@@ -84,9 +84,9 @@
     </item>
     <item>
       <title>docker快速搭建MATRIX服务器synapse-2023</title>
-      <link>http://localhost:1313/227.html/</link>
+      <link>http://localhost:1313/227.html.html</link>
       <pubDate>Mon, 11 Sep 2023 13:31:00 +0000</pubDate>
-      <guid>http://localhost:1313/227.html/</guid>
+      <guid>http://localhost:1313/227.html.html</guid>
       <description>&lt;p&gt;docker 快速搭建 MATRIX 服务器 synapse&lt;/p&gt;
 &lt;h2 id=&#34;环境&#34;&gt;环境&lt;/h2&gt;
 &lt;ul&gt;
@@ -215,9 +215,9 @@
     </item>
     <item>
       <title>华为2288H v2 DSM7.1 黑群晖实践</title>
-      <link>http://localhost:1313/1117.html/</link>
+      <link>http://localhost:1313/1117.html.html</link>
       <pubDate>Sun, 11 Sep 2022 08:11:34 +0000</pubDate>
-      <guid>http://localhost:1313/1117.html/</guid>
+      <guid>http://localhost:1313/1117.html.html</guid>
       <description>&lt;h2 id=&#34;黑群晖软件来源&#34;&gt;黑群晖软件来源&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.openos.org/threads/2022810dsm7-x.3529/&#34;&gt;https://www.openos.org/threads/2022810dsm7-x.3529/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/09/image-1.png&#34;&gt;&lt;/p&gt;
@@ -245,9 +245,9 @@
     </item>
     <item>
       <title>关于openwrt不定时断网研究与解决办法</title>
-      <link>http://localhost:1313/1114.html/</link>
+      <link>http://localhost:1313/1114.html.html</link>
       <pubDate>Tue, 06 Sep 2022 11:55:13 +0000</pubDate>
-      <guid>http://localhost:1313/1114.html/</guid>
+      <guid>http://localhost:1313/1114.html.html</guid>
       <description>&lt;h2 id=&#34;三种解决断网方法&#34;&gt;三种解决断网方法&lt;/h2&gt;
 &lt;p&gt;选择任意一种看能不能解决刷了 openwrt 后光猫桥接 openwrt 当主路由不定时断网问题。&lt;/p&gt;
 &lt;h3 id=&#34;第一种推荐&#34;&gt;第一种（推荐）&lt;/h3&gt;
@@ -308,9 +308,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Tailscale安装到ARM openwrt上</title>
-      <link>http://localhost:1313/1076.html/</link>
+      <link>http://localhost:1313/1076.html.html</link>
       <pubDate>Sun, 12 Jun 2022 12:09:10 +0000</pubDate>
-      <guid>http://localhost:1313/1076.html/</guid>
+      <guid>http://localhost:1313/1076.html.html</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://gao4.top/wp-content/uploads/2022/06/FotoJet-1024x576.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;下载到tmp目录&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -433,9 +433,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Office LTSC 专业增强版 2021个人指南</title>
-      <link>http://localhost:1313/762.html/</link>
+      <link>http://localhost:1313/762.html.html</link>
       <pubDate>Thu, 26 May 2022 18:22:00 +0000</pubDate>
-      <guid>http://localhost:1313/762.html/</guid>
+      <guid>http://localhost:1313/762.html.html</guid>
       <description>&lt;h1 id=&#34;office-ltsc-专业增强版-2021个人指南&#34;&gt;Office LTSC 专业增强版 2021个人指南&lt;/h1&gt;
 &lt;h3 id=&#34;下载office-tool&#34;&gt;下载Office tool&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://otp.landian.vip/zh-cn/&#34;&gt;https://otp.landian.vip/zh-cn/&lt;/a&gt;&lt;/p&gt;
@@ -453,9 +453,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>更换ACME.sh的CA为ZeroSSL</title>
-      <link>http://localhost:1313/761.html/</link>
+      <link>http://localhost:1313/761.html.html</link>
       <pubDate>Mon, 02 May 2022 15:09:00 +0000</pubDate>
-      <guid>http://localhost:1313/761.html/</guid>
+      <guid>http://localhost:1313/761.html.html</guid>
       <description>&lt;h2 id=&#34;更换acmesh的ca为zerossl&#34;&gt;更换ACME.sh的CA为ZeroSSL&lt;/h2&gt;
 &lt;h2 id=&#34;安装acme&#34;&gt;安装ACME&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -522,9 +522,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Openwrt WireGuard连接局域网2022</title>
-      <link>http://localhost:1313/760.html/</link>
+      <link>http://localhost:1313/760.html.html</link>
       <pubDate>Sat, 23 Apr 2022 23:29:00 +0000</pubDate>
-      <guid>http://localhost:1313/760.html/</guid>
+      <guid>http://localhost:1313/760.html.html</guid>
       <description>&lt;p&gt;2022年lede固件默认编译的时候已经支持WireGuard进固件保持固件是最新即可&lt;br&gt;
 如果编译的时候取消了 后面安装是很麻烦的 因为内核不匹配，和仓库有兼容性问题&lt;br&gt;
 最好的办法就是编译的时候就已经选择，后面也不要取消&lt;/p&gt;
@@ -593,9 +593,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Wg-Easy一个几分钟搞定访问局域网的wg面板</title>
-      <link>http://localhost:1313/759.html/</link>
+      <link>http://localhost:1313/759.html.html</link>
       <pubDate>Fri, 22 Apr 2022 14:26:00 +0000</pubDate>
-      <guid>http://localhost:1313/759.html/</guid>
+      <guid>http://localhost:1313/759.html.html</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在前面博主比较推荐tailscale这款软件也是基于Wg协议的，但兜兜转转还是回归了wireguard，&lt;/p&gt;
 &lt;p&gt;回归了传统的那种网络模型 ，或许网状形的模型成熟了再换也不迟，这面板就是快速让你部署后，并且能远程访问局域网地址&lt;/p&gt;
@@ -685,9 +685,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Headscale服务器搭建启用SSL证书</title>
-      <link>http://localhost:1313/758.html/</link>
+      <link>http://localhost:1313/758.html.html</link>
       <pubDate>Tue, 12 Apr 2022 18:35:00 +0000</pubDate>
-      <guid>http://localhost:1313/758.html/</guid>
+      <guid>http://localhost:1313/758.html.html</guid>
       <description>&lt;h2 id=&#34;20230705更新&#34;&gt;20230705更新&lt;/h2&gt;
 &lt;p&gt;systemd方式启动Headscale会有启动不成功现象 配置ssl证书后 推荐去官方页面抄nginx反向代理进行增加ssl
 推测是因为权限原因，推荐测试时候全新安装不修改配置文件情况下来启动。&lt;/p&gt;
@@ -781,9 +781,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Caddy安装反向代理Hugo</title>
-      <link>http://localhost:1313/757.html/</link>
+      <link>http://localhost:1313/757.html.html</link>
       <pubDate>Sun, 27 Mar 2022 19:59:00 +0000</pubDate>
-      <guid>http://localhost:1313/757.html/</guid>
+      <guid>http://localhost:1313/757.html.html</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;记录个人的blog相关的配置 其实我就是在腾讯云服务器上安装caddy然后再反向代理各种服务&lt;/p&gt;
 &lt;h2 id=&#34;caddy安装&#34;&gt;caddy安装&lt;/h2&gt;
@@ -888,9 +888,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>全能推送 openwrt插件</title>
-      <link>http://localhost:1313/751.html/</link>
+      <link>http://localhost:1313/751.html.html</link>
       <pubDate>Mon, 21 Mar 2022 16:59:00 +0000</pubDate>
-      <guid>http://localhost:1313/751.html/</guid>
+      <guid>http://localhost:1313/751.html.html</guid>
       <description>&lt;p&gt;一款推送软路由openwrt当期运行状态的插件&lt;br&gt;
 推送至钉钉&lt;/p&gt;
 &lt;p&gt;现在推送信息生态最好的就是Server酱，可在大量使用后作者也不得不走向了收费，免费额度有限，这也是我不得不转向替代品的寻找。&lt;/p&gt;
@@ -939,9 +939,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>2022年Resilio Sync在Linux安装搭建</title>
-      <link>http://localhost:1313/743.html/</link>
+      <link>http://localhost:1313/743.html.html</link>
       <pubDate>Mon, 14 Feb 2022 15:57:00 +0000</pubDate>
-      <guid>http://localhost:1313/743.html/</guid>
+      <guid>http://localhost:1313/743.html.html</guid>
       <description>&lt;p&gt;2022年7月6日更新&lt;/p&gt;
 &lt;p&gt;修复配置保存问题&lt;/p&gt;
 &lt;p&gt;修复长时间运行保存问题&lt;/p&gt;
@@ -1045,9 +1045,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>ESXI7.0 Update 2下黑群晖7.01安装</title>
-      <link>http://localhost:1313/738.html/</link>
+      <link>http://localhost:1313/738.html.html</link>
       <pubDate>Sat, 08 Jan 2022 15:02:27 +0000</pubDate>
-      <guid>http://localhost:1313/738.html/</guid>
+      <guid>http://localhost:1313/738.html.html</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;只是填坑把遇到的问题写出来&lt;/p&gt;
 &lt;h2 id=&#34;相关软件分享&#34;&gt;相关软件分享&lt;/h2&gt;
@@ -1069,9 +1069,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>headscale开源服务器搭建</title>
-      <link>http://localhost:1313/723.html/</link>
+      <link>http://localhost:1313/723.html.html</link>
       <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
-      <guid>http://localhost:1313/723.html/</guid>
+      <guid>http://localhost:1313/723.html.html</guid>
       <description>&lt;h2 id=&#34;2022年1月5日更新&#34;&gt;2022年1月5日更新&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;GitHub仓库的文档已更新，可正常运行。&lt;/li&gt;
@@ -1164,9 +1164,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>RH 2288H v2 相关资源分享</title>
-      <link>http://localhost:1313/720.html/</link>
+      <link>http://localhost:1313/720.html.html</link>
       <pubDate>Wed, 22 Dec 2021 15:27:00 +0000</pubDate>
-      <guid>http://localhost:1313/720.html/</guid>
+      <guid>http://localhost:1313/720.html.html</guid>
       <description>&lt;p&gt;分享&lt;br&gt;
 &lt;img alt=&#34;相关&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/3078162299.png&#34; title=&#34;相关&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;远程java相关&#34;&gt;远程java相关&lt;/h2&gt;
@@ -1181,9 +1181,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>netmaker 搭建教程 组建虚拟局域网</title>
-      <link>http://localhost:1313/715.html/</link>
+      <link>http://localhost:1313/715.html.html</link>
       <pubDate>Wed, 01 Dec 2021 22:43:00 +0000</pubDate>
-      <guid>http://localhost:1313/715.html/</guid>
+      <guid>http://localhost:1313/715.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装&lt;br&gt;
 &lt;a href=&#34;https://docs.netmaker.org/quick-start.html&#34;&gt;官方文档地址&lt;/a&gt;&lt;/p&gt;
@@ -1239,9 +1239,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>netmaker win10 手动添加节点</title>
-      <link>http://localhost:1313/711.html/</link>
+      <link>http://localhost:1313/711.html.html</link>
       <pubDate>Wed, 01 Dec 2021 22:21:54 +0000</pubDate>
-      <guid>http://localhost:1313/711.html/</guid>
+      <guid>http://localhost:1313/711.html.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/gravitl/netmaker/releases&#34;&gt;https://github.com/gravitl/netmaker/releases&lt;/a&gt;&lt;br&gt;
 去下载&lt;a href=&#34;https://github.com/gravitl/netmaker/releases/download/v0.9.0/netclient.exe&#34;&gt;&lt;strong&gt;netclient.exe&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;
 &lt;img alt=&#34;netclient.exe&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/273974275.png&#34; title=&#34;netclient.exe&#34;&gt;&lt;/p&gt;
@@ -1250,9 +1250,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>unraid6.9.2 安装群晖DSM7.0.1</title>
-      <link>http://localhost:1313/707.html/</link>
+      <link>http://localhost:1313/707.html.html</link>
       <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
-      <guid>http://localhost:1313/707.html/</guid>
+      <guid>http://localhost:1313/707.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.openos.org/threads/111ds3615ds918ds36157-x.3529/page-172#post-40022&#34;&gt;引导驱动来源openos论坛&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;使用版本 DS3615xs_7.01-42218&lt;/p&gt;
@@ -1276,9 +1276,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>折腾NAS中用的软件资源分享</title>
-      <link>http://localhost:1313/686.html/</link>
+      <link>http://localhost:1313/686.html.html</link>
       <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/686.html/</guid>
+      <guid>http://localhost:1313/686.html.html</guid>
       <description>&lt;h1 id=&#34;资源链接阿里云盘&#34;&gt;资源链接阿里云盘&lt;/h1&gt;
 &lt;p&gt;我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀&lt;br&gt;
 复制这段内容打开「阿里云盘」App 即可获取&lt;br&gt;
@@ -1305,9 +1305,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>tailscale 中继节点 搭建教程</title>
-      <link>http://localhost:1313/679.html/</link>
+      <link>http://localhost:1313/679.html.html</link>
       <pubDate>Mon, 13 Sep 2021 09:35:00 +0000</pubDate>
-      <guid>http://localhost:1313/679.html/</guid>
+      <guid>http://localhost:1313/679.html.html</guid>
       <description>&lt;h2 id=&#34;2021年10月20日更新&#34;&gt;2021年10月20日更新&lt;/h2&gt;
 &lt;p&gt;标题设置得不太准确，应该是中继网关，中继内网网段。&lt;br&gt;
 &lt;strong&gt;中继节点可看这篇文章&lt;/strong&gt;&lt;br&gt;
@@ -1361,9 +1361,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>Mirai Dice QQ机器人-to-docker搭建记录</title>
-      <link>http://localhost:1313/639.html/</link>
+      <link>http://localhost:1313/639.html.html</link>
       <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
-      <guid>http://localhost:1313/639.html/</guid>
+      <guid>http://localhost:1313/639.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的问题&lt;/p&gt;
 &lt;ol&gt;
@@ -1418,9 +1418,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>unraid 挂载webdav为本地目录</title>
-      <link>http://localhost:1313/662.html/</link>
+      <link>http://localhost:1313/662.html.html</link>
       <pubDate>Wed, 04 Aug 2021 21:43:00 +0000</pubDate>
-      <guid>http://localhost:1313/662.html/</guid>
+      <guid>http://localhost:1313/662.html.html</guid>
       <description>&lt;h1 id=&#34;序言&#34;&gt;序言&lt;/h1&gt;
 &lt;p&gt;上上篇我通过tg上交流发现GitHub webdav-aliyundriver这个项目，其实早在smzdm上已经有过有人分享，但当时它说不稳定，就没有去了解，这次我们通过 rclone 这个软件来挂载webdav协议来实现把阿里云盘挂载到本地目录，这样就实现了让nas或者本地的主机无负担的有了一个大硬盘。&lt;/p&gt;
 &lt;h1 id=&#34;过程&#34;&gt;过程&lt;/h1&gt;
@@ -1503,9 +1503,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>unraid6.9.2安装及UEFI引导与初始化</title>
-      <link>http://localhost:1313/649.html/</link>
+      <link>http://localhost:1313/649.html.html</link>
       <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
-      <guid>http://localhost:1313/649.html/</guid>
+      <guid>http://localhost:1313/649.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;系统包来源于俄罗斯论坛&lt;/p&gt;
 &lt;h1 id=&#34;系统盘制作&#34;&gt;系统盘制作&lt;/h1&gt;
@@ -1581,9 +1581,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
-      <link>http://localhost:1313/629.html/</link>
+      <link>http://localhost:1313/629.html.html</link>
       <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
-      <guid>http://localhost:1313/629.html/</guid>
+      <guid>http://localhost:1313/629.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;基本上这是最简单的方式，我通过 &lt;a href=&#34;tailscale.com&#34;&gt;tailscale&lt;/a&gt; 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能通过 IP地址 来访问服务，有没有一种办法可以通过域名的方式来访问，当然可以，最简单的方案如下&lt;/p&gt;
 &lt;ol&gt;
@@ -1627,9 +1627,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>Traefik系列二-docker搭建typecho-to-traefik</title>
-      <link>http://localhost:1313/615.html/</link>
+      <link>http://localhost:1313/615.html.html</link>
       <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
-      <guid>http://localhost:1313/615.html/</guid>
+      <guid>http://localhost:1313/615.html.html</guid>
       <description>&lt;h1 id=&#34;快速开始&#34;&gt;快速开始&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1681,9 +1681,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>NGINX 非443端口http跳转https</title>
-      <link>http://localhost:1313/600.html/</link>
+      <link>http://localhost:1313/600.html.html</link>
       <pubDate>Thu, 24 Jun 2021 10:32:00 +0000</pubDate>
-      <guid>http://localhost:1313/600.html/</guid>
+      <guid>http://localhost:1313/600.html.html</guid>
       <description>&lt;p&gt;关于Nginx这个web服务器软件在NAS上配置非443端口访问时候跳转https问题，默认80端口与443端口无法访问情况。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1780,9 +1780,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>阿里云域名 docker下申请泛域名</title>
-      <link>http://localhost:1313/578.html/</link>
+      <link>http://localhost:1313/578.html.html</link>
       <pubDate>Thu, 10 Jun 2021 15:54:00 +0000</pubDate>
-      <guid>http://localhost:1313/578.html/</guid>
+      <guid>http://localhost:1313/578.html.html</guid>
       <description>&lt;h1 id=&#34;构建&#34;&gt;构建&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1857,9 +1857,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>tailscale docker上安装搭建方法</title>
-      <link>http://localhost:1313/555.html/</link>
+      <link>http://localhost:1313/555.html.html</link>
       <pubDate>Thu, 20 May 2021 13:31:00 +0000</pubDate>
-      <guid>http://localhost:1313/555.html/</guid>
+      <guid>http://localhost:1313/555.html.html</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-16.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;启动&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1911,9 +1911,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>TrueNAS-SCALE SMB共享设置</title>
-      <link>http://localhost:1313/538.html/</link>
+      <link>http://localhost:1313/538.html.html</link>
       <pubDate>Wed, 19 May 2021 01:51:32 +0000</pubDate>
-      <guid>http://localhost:1313/538.html/</guid>
+      <guid>http://localhost:1313/538.html.html</guid>
       <description>&lt;h4 id=&#34;1打开win10-smb10&#34;&gt;1.打开win10 SMB1.0&lt;/h4&gt;
 &lt;p&gt;SMB1.0功能 此电脑&amp;gt;卸载或更改程序&amp;gt;程序和功能&amp;gt;启用或关闭win功能 勾选?&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/05/image-8.png&#34;&gt;&lt;/p&gt;
@@ -1940,9 +1940,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于NAS的小折腾填坑</title>
-      <link>http://localhost:1313/530.html/</link>
+      <link>http://localhost:1313/530.html.html</link>
       <pubDate>Tue, 18 May 2021 11:38:59 +0000</pubDate>
-      <guid>http://localhost:1313/530.html/</guid>
+      <guid>http://localhost:1313/530.html.html</guid>
       <description>&lt;h1 id=&#34;关于nas的小折腾填坑&#34;&gt;关于NAS的小折腾填坑&lt;/h1&gt;
 &lt;p&gt;【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。&lt;/p&gt;
 &lt;h2 id=&#34;关于电信路由器&#34;&gt;关于电信路由器&lt;/h2&gt;
@@ -1972,9 +1972,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tailscale VPN初步安装体验</title>
-      <link>http://localhost:1313/503.html/</link>
+      <link>http://localhost:1313/503.html.html</link>
       <pubDate>Thu, 13 May 2021 16:13:00 +0000</pubDate>
-      <guid>http://localhost:1313/503.html/</guid>
+      <guid>http://localhost:1313/503.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;初步体验是一个基于&lt;a href=&#34;http://wireguard.com&#34;&gt;wireguard&lt;/a&gt;的新的星形组网软件（功能之一），对比WGvpn最大的不同就是增加了公匙交换系统，免配置组网，只需要安装客户端登录账号就可以组网，支持p2p打洞，付费自建中继功能。支持基本上全平台支持Linux|群晖|Openrt|Window|Mac等常见客户端，docker也可以安装。&lt;/p&gt;
 &lt;h2 id=&#34;openwrt-x86上安装&#34;&gt;Openwrt X86上安装&lt;/h2&gt;
@@ -2027,9 +2027,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>ESXI 群晖下连接VPN网络报错解决</title>
-      <link>http://localhost:1313/494.html/</link>
+      <link>http://localhost:1313/494.html.html</link>
       <pubDate>Thu, 29 Apr 2021 16:25:03 +0000</pubDate>
-      <guid>http://localhost:1313/494.html/</guid>
+      <guid>http://localhost:1313/494.html.html</guid>
       <description>&lt;p&gt;前言&lt;/p&gt;
 &lt;p&gt;我的vpn服务端搭建在openwrt软路由上使用SoftEther作为相关软件，在群晖下出现&lt;/p&gt;
 &lt;p&gt;群晖 l2tp连接失败 请检查。。。。解决办法如下勾选第二个选项就行&lt;/p&gt;
@@ -2047,9 +2047,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>FreshRSS docker-compose.yml 教程</title>
-      <link>http://localhost:1313/478.html/</link>
+      <link>http://localhost:1313/478.html.html</link>
       <pubDate>Sun, 14 Mar 2021 17:30:38 +0000</pubDate>
-      <guid>http://localhost:1313/478.html/</guid>
+      <guid>http://localhost:1313/478.html.html</guid>
       <description>&lt;p&gt;创建docker-compose.yml文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2142,9 +2142,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>openwrt通过wireguard组网</title>
-      <link>http://localhost:1313/444.html/</link>
+      <link>http://localhost:1313/444.html.html</link>
       <pubDate>Wed, 24 Feb 2021 15:01:46 +0000</pubDate>
-      <guid>http://localhost:1313/444.html/</guid>
+      <guid>http://localhost:1313/444.html.html</guid>
       <description>&lt;h2 id=&#34;概念&#34;&gt;概念&lt;/h2&gt;
 &lt;p&gt;网上找的图很好理解应该&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/02/Screenshot_2021-02-19-18-10-47-849_com.google.android.youtube-1024x473.jpg&#34;&gt;&lt;/p&gt;
@@ -2215,9 +2215,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>Unarid 安装异星工厂并指定存档</title>
-      <link>http://localhost:1313/415.html/</link>
+      <link>http://localhost:1313/415.html.html</link>
       <pubDate>Sun, 24 Jan 2021 13:46:44 +0000</pubDate>
-      <guid>http://localhost:1313/415.html/</guid>
+      <guid>http://localhost:1313/415.html.html</guid>
       <description>&lt;h2 id=&#34;0-1搜索factorio并添加环境变量指定存档&#34;&gt;0-1搜索factorio并添加环境变量指定存档&lt;/h2&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/01/Snipaste_2021-01-24_13-34-50.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;搜索镜像&lt;/p&gt;
@@ -2248,9 +2248,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>Linux 下resilio同步服务安装</title>
-      <link>http://localhost:1313/325.html/</link>
+      <link>http://localhost:1313/325.html.html</link>
       <pubDate>Mon, 07 Dec 2020 12:42:46 +0000</pubDate>
-      <guid>http://localhost:1313/325.html/</guid>
+      <guid>http://localhost:1313/325.html.html</guid>
       <description>&lt;h2 id=&#34;参考常见问题&#34;&gt;参考常见问题&lt;/h2&gt;
 &lt;p&gt;2021年6月15日更新&lt;/p&gt;
 &lt;p&gt;网络传输速度测试一直不能满速跑，断断续续的传输，速度一直跑不上来，已弃坑&lt;/p&gt;
@@ -2324,9 +2324,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>Openwrt OpenConnect VPN 搭建设置教程</title>
-      <link>http://localhost:1313/293.html/</link>
+      <link>http://localhost:1313/293.html.html</link>
       <pubDate>Wed, 30 Sep 2020 13:52:00 +0000</pubDate>
-      <guid>http://localhost:1313/293.html/</guid>
+      <guid>http://localhost:1313/293.html.html</guid>
       <description>&lt;p&gt;## 2022年1月4日更新如果luci没有界面可以去软件源手动下载安装 流程如下图&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;流程图&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/01/851998809.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;怎么知道当前openwrt架构的软件源包去后台看看就好了
@@ -2375,9 +2375,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>UNraid 安装后注意事项常见操作</title>
-      <link>http://localhost:1313/234.html/</link>
+      <link>http://localhost:1313/234.html.html</link>
       <pubDate>Mon, 31 Aug 2020 13:18:41 +0000</pubDate>
-      <guid>http://localhost:1313/234.html/</guid>
+      <guid>http://localhost:1313/234.html.html</guid>
       <description>&lt;h2 id=&#34;引导模式&#34;&gt;引导模式&lt;/h2&gt;
 &lt;p&gt;UnRaid如果不能成功引导试试换传统引导模式&lt;/p&gt;
 &lt;h2 id=&#34;修改访问ip地址&#34;&gt;修改访问iP地址&lt;/h2&gt;
@@ -2450,9 +2450,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>群晖开启tun模块驱动以支持tinc</title>
-      <link>http://localhost:1313/164.html/</link>
+      <link>http://localhost:1313/164.html.html</link>
       <pubDate>Sun, 09 Aug 2020 09:27:29 +0000</pubDate>
-      <guid>http://localhost:1313/164.html/</guid>
+      <guid>http://localhost:1313/164.html.html</guid>
       <description>&lt;p&gt;登陆群晖开启ssh，在终端依次用admin用户登陆再sudo -i 进入#管理员模式&lt;/p&gt;
 &lt;h2 id=&#34;检查tun模块状态&#34;&gt;检查tun模块状态&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2519,9 +2519,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>raw.githubusercontent.com拒绝访问解决办法</title>
-      <link>http://localhost:1313/142.html/</link>
+      <link>http://localhost:1313/142.html.html</link>
       <pubDate>Sat, 08 Aug 2020 15:10:17 +0000</pubDate>
-      <guid>http://localhost:1313/142.html/</guid>
+      <guid>http://localhost:1313/142.html.html</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_145930-1024x834.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;出现的错误&lt;/p&gt;
 &lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
@@ -2554,9 +2554,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>openmediavault SMB共享设置</title>
-      <link>http://localhost:1313/132.html/</link>
+      <link>http://localhost:1313/132.html.html</link>
       <pubDate>Sat, 08 Aug 2020 13:05:58 +0000</pubDate>
-      <guid>http://localhost:1313/132.html/</guid>
+      <guid>http://localhost:1313/132.html.html</guid>
       <description>&lt;h2 id=&#34;创建用户&#34;&gt;创建用户&lt;/h2&gt;
 &lt;p&gt;默认的admin用户与root用户权限都设置完毕也不能登陆smb，创建一个用户就正常了&lt;/p&gt;
 &lt;p&gt;访问权限管理-用户-添加用户&lt;/p&gt;
@@ -2582,9 +2582,9 @@ y/e/d&amp;gt; y #输入y保存配置文件&lt;/p&gt;</description>
     </item>
     <item>
       <title>freenas创建匿名访问共享</title>
-      <link>http://localhost:1313/127.html/</link>
+      <link>http://localhost:1313/127.html.html</link>
       <pubDate>Sat, 08 Aug 2020 08:54:32 +0000</pubDate>
-      <guid>http://localhost:1313/127.html/</guid>
+      <guid>http://localhost:1313/127.html.html</guid>
       <description>&lt;h2 id=&#34;一创建匿名访问共享11-创建&#34;&gt;一、创建匿名访问共享#1.1 创建&lt;/h2&gt;
 &lt;p&gt;进入Sharing ➞ Windows (SMB) Shares,然后点击ADD按钮界面如下图所示勾选Allow Guest Access直接按SAVE保存&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/FreeNAS15.52.27-1024x367.png&#34;&gt;&lt;/p&gt;

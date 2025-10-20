@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Freenas on 孤岛</title>
-    <link>http://localhost:1313/tags/freenas/</link>
+    <link>http://localhost:1313/tags/freenas.html</link>
     <description>Recent content in Freenas on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/freenas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>freenas创建匿名访问共享</title>
-      <link>http://localhost:1313/127.html/</link>
+      <link>http://localhost:1313/127.html.html</link>
       <pubDate>Sat, 08 Aug 2020 08:54:32 +0000</pubDate>
-      <guid>http://localhost:1313/127.html/</guid>
+      <guid>http://localhost:1313/127.html.html</guid>
       <description>&lt;h2 id=&#34;一创建匿名访问共享11-创建&#34;&gt;一、创建匿名访问共享#1.1 创建&lt;/h2&gt;
 &lt;p&gt;进入Sharing ➞ Windows (SMB) Shares,然后点击ADD按钮界面如下图所示勾选Allow Guest Access直接按SAVE保存&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/FreeNAS15.52.27-1024x367.png&#34;&gt;&lt;/p&gt;

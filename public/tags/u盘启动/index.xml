@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>U盘启动 on 孤岛</title>
-    <link>http://localhost:1313/tags/u%E7%9B%98%E5%90%AF%E5%8A%A8/</link>
+    <link>http://localhost:1313/tags/u%E7%9B%98%E5%90%AF%E5%8A%A8.html</link>
     <description>Recent content in U盘启动 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/u%E7%9B%98%E5%90%AF%E5%8A%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ventoy启动工具分享</title>
-      <link>http://localhost:1313/201.html/</link>
+      <link>http://localhost:1313/201.html.html</link>
       <pubDate>Wed, 19 Aug 2020 09:02:57 +0000</pubDate>
-      <guid>http://localhost:1313/201.html/</guid>
+      <guid>http://localhost:1313/201.html.html</guid>
       <description>&lt;p&gt;Ventoy是一个制作可启动U盘的开源工具支持win与Linux。有了Ventoy你就无需反复地格式化U盘，你只需要把ISO文件拷贝到U盘里面就可以启动了，无需其他操作。 你可以一次性拷贝很多个不同类型的ISO文件，在启动时Ventoy会显示一个菜单来选择。 无差异支持Legacy BIOS和UEFI模式&lt;/p&gt;
 &lt;p&gt;官方网站&lt;a href=&#34;https://www.ventoy.net&#34;&gt;https://www.ventoy.net&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;中文使用文档&lt;a href=&#34;https://www.ventoy.net/cn/doc_start.html&#34;&gt;https://www.ventoy.net/cn/doc_start.html&lt;/a&gt;&lt;/p&gt;

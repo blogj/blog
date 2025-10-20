@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>MATRIX on 孤岛</title>
-    <link>http://localhost:1313/tags/matrix/</link>
+    <link>http://localhost:1313/tags/matrix.html</link>
     <description>Recent content in MATRIX on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/matrix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker快速搭建MATRIX服务器synapse-2023</title>
-      <link>http://localhost:1313/227.html/</link>
+      <link>http://localhost:1313/227.html.html</link>
       <pubDate>Mon, 11 Sep 2023 13:31:00 +0000</pubDate>
-      <guid>http://localhost:1313/227.html/</guid>
+      <guid>http://localhost:1313/227.html.html</guid>
       <description>&lt;p&gt;docker 快速搭建 MATRIX 服务器 synapse&lt;/p&gt;
 &lt;h2 id=&#34;环境&#34;&gt;环境&lt;/h2&gt;
 &lt;ul&gt;

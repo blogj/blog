@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>资料 on 孤岛</title>
-    <link>http://localhost:1313/tags/%E8%B5%84%E6%96%99/</link>
+    <link>http://localhost:1313/tags/%E8%B5%84%E6%96%99.html</link>
     <description>Recent content in 资料 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/%E8%B5%84%E6%96%99/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tailscale恢复官方控制器</title>
-      <link>http://localhost:1313/1001.html/</link>
+      <link>http://localhost:1313/1001.html.html</link>
       <pubDate>Sun, 05 Nov 2023 18:24:03 +0800</pubDate>
-      <guid>http://localhost:1313/1001.html/</guid>
+      <guid>http://localhost:1313/1001.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;在节点登录了第三方控制器后，想恢复官方控制器&lt;/p&gt;
 &lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
@@ -61,9 +61,9 @@
     </item>
     <item>
       <title>unattended Tailscale</title>
-      <link>http://localhost:1313/1000.html/</link>
+      <link>http://localhost:1313/1000.html.html</link>
       <pubDate>Sun, 05 Nov 2023 18:10:57 +0800</pubDate>
-      <guid>http://localhost:1313/1000.html/</guid>
+      <guid>http://localhost:1313/1000.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;解决 Windows 下 Tailscale 未登录桌面不启动问题
 新版本的 ui 启动无人值守的选项&lt;code&gt;run unattended mode&lt;/code&gt;已经去掉，所以只能命令行设置&lt;/p&gt;
@@ -84,9 +84,9 @@
     </item>
     <item>
       <title>华为2288H v2 DSM7.1 黑群晖实践</title>
-      <link>http://localhost:1313/1117.html/</link>
+      <link>http://localhost:1313/1117.html.html</link>
       <pubDate>Sun, 11 Sep 2022 08:11:34 +0000</pubDate>
-      <guid>http://localhost:1313/1117.html/</guid>
+      <guid>http://localhost:1313/1117.html.html</guid>
       <description>&lt;h2 id=&#34;黑群晖软件来源&#34;&gt;黑群晖软件来源&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.openos.org/threads/2022810dsm7-x.3529/&#34;&gt;https://www.openos.org/threads/2022810dsm7-x.3529/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2022/09/image-1.png&#34;&gt;&lt;/p&gt;
@@ -114,9 +114,9 @@
     </item>
     <item>
       <title>关于openwrt不定时断网研究与解决办法</title>
-      <link>http://localhost:1313/1114.html/</link>
+      <link>http://localhost:1313/1114.html.html</link>
       <pubDate>Tue, 06 Sep 2022 11:55:13 +0000</pubDate>
-      <guid>http://localhost:1313/1114.html/</guid>
+      <guid>http://localhost:1313/1114.html.html</guid>
       <description>&lt;h2 id=&#34;三种解决断网方法&#34;&gt;三种解决断网方法&lt;/h2&gt;
 &lt;p&gt;选择任意一种看能不能解决刷了 openwrt 后光猫桥接 openwrt 当主路由不定时断网问题。&lt;/p&gt;
 &lt;h3 id=&#34;第一种推荐&#34;&gt;第一种（推荐）&lt;/h3&gt;
@@ -177,9 +177,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Tailscale安装到ARM openwrt上</title>
-      <link>http://localhost:1313/1076.html/</link>
+      <link>http://localhost:1313/1076.html.html</link>
       <pubDate>Sun, 12 Jun 2022 12:09:10 +0000</pubDate>
-      <guid>http://localhost:1313/1076.html/</guid>
+      <guid>http://localhost:1313/1076.html.html</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://gao4.top/wp-content/uploads/2022/06/FotoJet-1024x576.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;下载到tmp目录&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -302,9 +302,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Office LTSC 专业增强版 2021个人指南</title>
-      <link>http://localhost:1313/762.html/</link>
+      <link>http://localhost:1313/762.html.html</link>
       <pubDate>Thu, 26 May 2022 18:22:00 +0000</pubDate>
-      <guid>http://localhost:1313/762.html/</guid>
+      <guid>http://localhost:1313/762.html.html</guid>
       <description>&lt;h1 id=&#34;office-ltsc-专业增强版-2021个人指南&#34;&gt;Office LTSC 专业增强版 2021个人指南&lt;/h1&gt;
 &lt;h3 id=&#34;下载office-tool&#34;&gt;下载Office tool&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://otp.landian.vip/zh-cn/&#34;&gt;https://otp.landian.vip/zh-cn/&lt;/a&gt;&lt;/p&gt;
@@ -322,9 +322,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>更换ACME.sh的CA为ZeroSSL</title>
-      <link>http://localhost:1313/761.html/</link>
+      <link>http://localhost:1313/761.html.html</link>
       <pubDate>Mon, 02 May 2022 15:09:00 +0000</pubDate>
-      <guid>http://localhost:1313/761.html/</guid>
+      <guid>http://localhost:1313/761.html.html</guid>
       <description>&lt;h2 id=&#34;更换acmesh的ca为zerossl&#34;&gt;更换ACME.sh的CA为ZeroSSL&lt;/h2&gt;
 &lt;h2 id=&#34;安装acme&#34;&gt;安装ACME&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -391,9 +391,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Wg-Easy一个几分钟搞定访问局域网的wg面板</title>
-      <link>http://localhost:1313/759.html/</link>
+      <link>http://localhost:1313/759.html.html</link>
       <pubDate>Fri, 22 Apr 2022 14:26:00 +0000</pubDate>
-      <guid>http://localhost:1313/759.html/</guid>
+      <guid>http://localhost:1313/759.html.html</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在前面博主比较推荐tailscale这款软件也是基于Wg协议的，但兜兜转转还是回归了wireguard，&lt;/p&gt;
 &lt;p&gt;回归了传统的那种网络模型 ，或许网状形的模型成熟了再换也不迟，这面板就是快速让你部署后，并且能远程访问局域网地址&lt;/p&gt;
@@ -483,9 +483,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Headscale服务器搭建启用SSL证书</title>
-      <link>http://localhost:1313/758.html/</link>
+      <link>http://localhost:1313/758.html.html</link>
       <pubDate>Tue, 12 Apr 2022 18:35:00 +0000</pubDate>
-      <guid>http://localhost:1313/758.html/</guid>
+      <guid>http://localhost:1313/758.html.html</guid>
       <description>&lt;h2 id=&#34;20230705更新&#34;&gt;20230705更新&lt;/h2&gt;
 &lt;p&gt;systemd方式启动Headscale会有启动不成功现象 配置ssl证书后 推荐去官方页面抄nginx反向代理进行增加ssl
 推测是因为权限原因，推荐测试时候全新安装不修改配置文件情况下来启动。&lt;/p&gt;
@@ -579,9 +579,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Caddy安装反向代理Hugo</title>
-      <link>http://localhost:1313/757.html/</link>
+      <link>http://localhost:1313/757.html.html</link>
       <pubDate>Sun, 27 Mar 2022 19:59:00 +0000</pubDate>
-      <guid>http://localhost:1313/757.html/</guid>
+      <guid>http://localhost:1313/757.html.html</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;记录个人的blog相关的配置 其实我就是在腾讯云服务器上安装caddy然后再反向代理各种服务&lt;/p&gt;
 &lt;h2 id=&#34;caddy安装&#34;&gt;caddy安装&lt;/h2&gt;
@@ -686,9 +686,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>headscale开源服务器搭建</title>
-      <link>http://localhost:1313/723.html/</link>
+      <link>http://localhost:1313/723.html.html</link>
       <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
-      <guid>http://localhost:1313/723.html/</guid>
+      <guid>http://localhost:1313/723.html.html</guid>
       <description>&lt;h2 id=&#34;2022年1月5日更新&#34;&gt;2022年1月5日更新&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;GitHub仓库的文档已更新，可正常运行。&lt;/li&gt;
@@ -781,9 +781,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>RH 2288H v2 相关资源分享</title>
-      <link>http://localhost:1313/720.html/</link>
+      <link>http://localhost:1313/720.html.html</link>
       <pubDate>Wed, 22 Dec 2021 15:27:00 +0000</pubDate>
-      <guid>http://localhost:1313/720.html/</guid>
+      <guid>http://localhost:1313/720.html.html</guid>
       <description>&lt;p&gt;分享&lt;br&gt;
 &lt;img alt=&#34;相关&#34; loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2021/12/3078162299.png&#34; title=&#34;相关&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;远程java相关&#34;&gt;远程java相关&lt;/h2&gt;
@@ -798,9 +798,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>netmaker 搭建教程 组建虚拟局域网</title>
-      <link>http://localhost:1313/715.html/</link>
+      <link>http://localhost:1313/715.html.html</link>
       <pubDate>Wed, 01 Dec 2021 22:43:00 +0000</pubDate>
-      <guid>http://localhost:1313/715.html/</guid>
+      <guid>http://localhost:1313/715.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装&lt;br&gt;
 &lt;a href=&#34;https://docs.netmaker.org/quick-start.html&#34;&gt;官方文档地址&lt;/a&gt;&lt;/p&gt;
@@ -856,9 +856,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>unraid6.9.2 安装群晖DSM7.0.1</title>
-      <link>http://localhost:1313/707.html/</link>
+      <link>http://localhost:1313/707.html.html</link>
       <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
-      <guid>http://localhost:1313/707.html/</guid>
+      <guid>http://localhost:1313/707.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.openos.org/threads/111ds3615ds918ds36157-x.3529/page-172#post-40022&#34;&gt;引导驱动来源openos论坛&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;使用版本 DS3615xs_7.01-42218&lt;/p&gt;
@@ -882,9 +882,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Mirai Dice QQ机器人-to-docker搭建记录</title>
-      <link>http://localhost:1313/639.html/</link>
+      <link>http://localhost:1313/639.html.html</link>
       <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
-      <guid>http://localhost:1313/639.html/</guid>
+      <guid>http://localhost:1313/639.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的问题&lt;/p&gt;
 &lt;ol&gt;
@@ -939,9 +939,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
-      <link>http://localhost:1313/629.html/</link>
+      <link>http://localhost:1313/629.html.html</link>
       <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
-      <guid>http://localhost:1313/629.html/</guid>
+      <guid>http://localhost:1313/629.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;基本上这是最简单的方式，我通过 &lt;a href=&#34;tailscale.com&#34;&gt;tailscale&lt;/a&gt; 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能通过 IP地址 来访问服务，有没有一种办法可以通过域名的方式来访问，当然可以，最简单的方案如下&lt;/p&gt;
 &lt;ol&gt;
@@ -985,9 +985,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Traefik系列二-docker搭建typecho-to-traefik</title>
-      <link>http://localhost:1313/615.html/</link>
+      <link>http://localhost:1313/615.html.html</link>
       <pubDate>Wed, 14 Jul 2021 22:47:00 +0000</pubDate>
-      <guid>http://localhost:1313/615.html/</guid>
+      <guid>http://localhost:1313/615.html.html</guid>
       <description>&lt;h1 id=&#34;快速开始&#34;&gt;快速开始&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1039,9 +1039,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>关于NAS的小折腾填坑</title>
-      <link>http://localhost:1313/530.html/</link>
+      <link>http://localhost:1313/530.html.html</link>
       <pubDate>Tue, 18 May 2021 11:38:59 +0000</pubDate>
-      <guid>http://localhost:1313/530.html/</guid>
+      <guid>http://localhost:1313/530.html.html</guid>
       <description>&lt;h1 id=&#34;关于nas的小折腾填坑&#34;&gt;关于NAS的小折腾填坑&lt;/h1&gt;
 &lt;p&gt;【写作说明】：此篇文章谨记折腾NAS途中的小问题可能对您有所帮助，因为每个人网络环境不一样，你可以参考一下。&lt;/p&gt;
 &lt;h2 id=&#34;关于电信路由器&#34;&gt;关于电信路由器&lt;/h2&gt;
@@ -1071,9 +1071,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>NPS内网穿透工具学习2-服务端搭建</title>
-      <link>http://localhost:1313/388.html/</link>
+      <link>http://localhost:1313/388.html.html</link>
       <pubDate>Mon, 28 Dec 2020 10:44:52 +0000</pubDate>
-      <guid>http://localhost:1313/388.html/</guid>
+      <guid>http://localhost:1313/388.html.html</guid>
       <description>&lt;h3 id=&#34;序言&#34;&gt;序言&lt;/h3&gt;
 &lt;p&gt;通俗约定您已经，通晓基本的Linux知识（解压复制粘贴移动）、了解基本的网络知识（知晓什么是公网IP什么是内网IP）登录已root用户为准&lt;/p&gt;
 &lt;h4 id=&#34;版本&#34;&gt;版本&lt;/h4&gt;
@@ -1167,9 +1167,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>FileRun docker-compose 安装搭建</title>
-      <link>http://localhost:1313/288.html/</link>
+      <link>http://localhost:1313/288.html.html</link>
       <pubDate>Sun, 27 Sep 2020 12:17:45 +0000</pubDate>
-      <guid>http://localhost:1313/288.html/</guid>
+      <guid>http://localhost:1313/288.html.html</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;先说一下结论，安装后感觉确实比nextcloud快，特别对于ody备份照片来说，但有一个需要注意，在2020年官方的安卓客户端已经暂停更新，现在用的是nextcloud的安卓客户端，但默认登陆进去会有一个@Home目录，没有直接进入/目录，对客户端有些不兼容。现还没找到解决办法，只能等官方更新&lt;/p&gt;&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1251,9 +1251,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>Arch 安装sshd问题</title>
-      <link>http://localhost:1313/196.html/</link>
+      <link>http://localhost:1313/196.html.html</link>
       <pubDate>Tue, 08 Sep 2020 08:35:26 +0000</pubDate>
-      <guid>http://localhost:1313/196.html/</guid>
+      <guid>http://localhost:1313/196.html.html</guid>
       <description>&lt;h2 id=&#34;启动ssh&#34;&gt;启动ssh&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1297,9 +1297,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>arch下网络设置2020年版本</title>
-      <link>http://localhost:1313/198.html/</link>
+      <link>http://localhost:1313/198.html.html</link>
       <pubDate>Wed, 19 Aug 2020 15:46:53 +0000</pubDate>
-      <guid>http://localhost:1313/198.html/</guid>
+      <guid>http://localhost:1313/198.html.html</guid>
       <description>&lt;h2 id=&#34;静态ip设置&#34;&gt;静态IP设置&lt;/h2&gt;
 &lt;h3 id=&#34;地址设置&#34;&gt;地址设置&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1381,9 +1381,9 @@ LCP 响应故障阈值为 每隔 10 秒发送一次&lt;/p&gt;
     </item>
     <item>
       <title>ventoy启动工具分享</title>
-      <link>http://localhost:1313/201.html/</link>
+      <link>http://localhost:1313/201.html.html</link>
       <pubDate>Wed, 19 Aug 2020 09:02:57 +0000</pubDate>
-      <guid>http://localhost:1313/201.html/</guid>
+      <guid>http://localhost:1313/201.html.html</guid>
       <description>&lt;p&gt;Ventoy是一个制作可启动U盘的开源工具支持win与Linux。有了Ventoy你就无需反复地格式化U盘，你只需要把ISO文件拷贝到U盘里面就可以启动了，无需其他操作。 你可以一次性拷贝很多个不同类型的ISO文件，在启动时Ventoy会显示一个菜单来选择。 无差异支持Legacy BIOS和UEFI模式&lt;/p&gt;
 &lt;p&gt;官方网站&lt;a href=&#34;https://www.ventoy.net&#34;&gt;https://www.ventoy.net&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;中文使用文档&lt;a href=&#34;https://www.ventoy.net/cn/doc_start.html&#34;&gt;https://www.ventoy.net/cn/doc_start.html&lt;/a&gt;&lt;/p&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>机车 on 孤岛</title>
-    <link>http://localhost:1313/tags/%E6%9C%BA%E8%BD%A6/</link>
+    <link>http://localhost:1313/tags/%E6%9C%BA%E8%BD%A6.html</link>
     <description>Recent content in 机车 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/%E6%9C%BA%E8%BD%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tr300预接口加装USB快充</title>
-      <link>http://localhost:1313/3700.html/</link>
+      <link>http://localhost:1313/3700.html.html</link>
       <pubDate>Tue, 07 May 2024 10:04:49 +0800</pubDate>
-      <guid>http://localhost:1313/3700.html/</guid>
+      <guid>http://localhost:1313/3700.html.html</guid>
       <description>&lt;h1 id=&#34;准备材料&#34;&gt;准备材料&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;USB快充&lt;/li&gt;

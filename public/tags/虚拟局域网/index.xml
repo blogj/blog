@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>虚拟局域网 on 孤岛</title>
-    <link>http://localhost:1313/tags/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/</link>
+    <link>http://localhost:1313/tags/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91.html</link>
     <description>Recent content in 虚拟局域网 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>tailscale 中继节点 搭建教程</title>
-      <link>http://localhost:1313/679.html/</link>
+      <link>http://localhost:1313/679.html.html</link>
       <pubDate>Mon, 13 Sep 2021 09:35:00 +0000</pubDate>
-      <guid>http://localhost:1313/679.html/</guid>
+      <guid>http://localhost:1313/679.html.html</guid>
       <description>&lt;h2 id=&#34;2021年10月20日更新&#34;&gt;2021年10月20日更新&lt;/h2&gt;
 &lt;p&gt;标题设置得不太准确，应该是中继网关，中继内网网段。&lt;br&gt;
 &lt;strong&gt;中继节点可看这篇文章&lt;/strong&gt;&lt;br&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Headscale on 孤岛</title>
-    <link>http://localhost:1313/tags/headscale/</link>
+    <link>http://localhost:1313/tags/headscale.html</link>
     <description>Recent content in Headscale on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/headscale/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Headscale服务器搭建启用SSL证书</title>
-      <link>http://localhost:1313/758.html/</link>
+      <link>http://localhost:1313/758.html.html</link>
       <pubDate>Tue, 12 Apr 2022 18:35:00 +0000</pubDate>
-      <guid>http://localhost:1313/758.html/</guid>
+      <guid>http://localhost:1313/758.html.html</guid>
       <description>&lt;h2 id=&#34;20230705更新&#34;&gt;20230705更新&lt;/h2&gt;
 &lt;p&gt;systemd方式启动Headscale会有启动不成功现象 配置ssl证书后 推荐去官方页面抄nginx反向代理进行增加ssl
 推测是因为权限原因，推荐测试时候全新安装不修改配置文件情况下来启动。&lt;/p&gt;
@@ -111,9 +111,9 @@
     </item>
     <item>
       <title>headscale开源服务器搭建</title>
-      <link>http://localhost:1313/723.html/</link>
+      <link>http://localhost:1313/723.html.html</link>
       <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
-      <guid>http://localhost:1313/723.html/</guid>
+      <guid>http://localhost:1313/723.html.html</guid>
       <description>&lt;h2 id=&#34;2022年1月5日更新&#34;&gt;2022年1月5日更新&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;GitHub仓库的文档已更新，可正常运行。&lt;/li&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Unraid6.9.2 on 孤岛</title>
-    <link>http://localhost:1313/tags/unraid6.9.2/</link>
+    <link>http://localhost:1313/tags/unraid6.9.2.html</link>
     <description>Recent content in Unraid6.9.2 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/unraid6.9.2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>unraid6.9.2 安装群晖DSM7.0.1</title>
-      <link>http://localhost:1313/707.html/</link>
+      <link>http://localhost:1313/707.html.html</link>
       <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
-      <guid>http://localhost:1313/707.html/</guid>
+      <guid>http://localhost:1313/707.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.openos.org/threads/111ds3615ds918ds36157-x.3529/page-172#post-40022&#34;&gt;引导驱动来源openos论坛&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;使用版本 DS3615xs_7.01-42218&lt;/p&gt;
@@ -41,9 +41,9 @@
     </item>
     <item>
       <title>unraid6.9.2安装及UEFI引导与初始化</title>
-      <link>http://localhost:1313/649.html/</link>
+      <link>http://localhost:1313/649.html.html</link>
       <pubDate>Sun, 01 Aug 2021 22:07:00 +0000</pubDate>
-      <guid>http://localhost:1313/649.html/</guid>
+      <guid>http://localhost:1313/649.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;系统包来源于俄罗斯论坛&lt;/p&gt;
 &lt;h1 id=&#34;系统盘制作&#34;&gt;系统盘制作&lt;/h1&gt;

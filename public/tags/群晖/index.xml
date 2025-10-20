@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>群晖 on 孤岛</title>
-    <link>http://localhost:1313/tags/%E7%BE%A4%E6%99%96/</link>
+    <link>http://localhost:1313/tags/%E7%BE%A4%E6%99%96.html</link>
     <description>Recent content in 群晖 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/%E7%BE%A4%E6%99%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DSM7.2 docker 下申请SSL泛域名证书 并切换切换ZeroSSL</title>
-      <link>http://localhost:1313/37200.html/</link>
+      <link>http://localhost:1313/37200.html.html</link>
       <pubDate>Tue, 04 Jun 2024 23:21:47 +0800</pubDate>
-      <guid>http://localhost:1313/37200.html/</guid>
+      <guid>http://localhost:1313/37200.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;pre&gt;&lt;code&gt;通过黑群晖7.2版本docker套件部署ssl证书 且是通过acme.sh切换ZeroSSL申请
 &lt;/code&gt;&lt;/pre&gt;
@@ -82,9 +82,9 @@
     </item>
     <item>
       <title>ESXI7.0 Update 2下黑群晖7.01安装</title>
-      <link>http://localhost:1313/738.html/</link>
+      <link>http://localhost:1313/738.html.html</link>
       <pubDate>Sat, 08 Jan 2022 15:02:27 +0000</pubDate>
-      <guid>http://localhost:1313/738.html/</guid>
+      <guid>http://localhost:1313/738.html.html</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;只是填坑把遇到的问题写出来&lt;/p&gt;
 &lt;h2 id=&#34;相关软件分享&#34;&gt;相关软件分享&lt;/h2&gt;
@@ -106,9 +106,9 @@
     </item>
     <item>
       <title>unraid6.9.2 安装群晖DSM7.0.1</title>
-      <link>http://localhost:1313/707.html/</link>
+      <link>http://localhost:1313/707.html.html</link>
       <pubDate>Wed, 24 Nov 2021 13:20:53 +0000</pubDate>
-      <guid>http://localhost:1313/707.html/</guid>
+      <guid>http://localhost:1313/707.html.html</guid>
       <description>&lt;h2 id=&#34;序言&#34;&gt;序言&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.openos.org/threads/111ds3615ds918ds36157-x.3529/page-172#post-40022&#34;&gt;引导驱动来源openos论坛&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;使用版本 DS3615xs_7.01-42218&lt;/p&gt;
@@ -132,9 +132,9 @@
     </item>
     <item>
       <title>ESXI 群晖下连接VPN网络报错解决</title>
-      <link>http://localhost:1313/494.html/</link>
+      <link>http://localhost:1313/494.html.html</link>
       <pubDate>Thu, 29 Apr 2021 16:25:03 +0000</pubDate>
-      <guid>http://localhost:1313/494.html/</guid>
+      <guid>http://localhost:1313/494.html.html</guid>
       <description>&lt;p&gt;前言&lt;/p&gt;
 &lt;p&gt;我的vpn服务端搭建在openwrt软路由上使用SoftEther作为相关软件，在群晖下出现&lt;/p&gt;
 &lt;p&gt;群晖 l2tp连接失败 请检查。。。。解决办法如下勾选第二个选项就行&lt;/p&gt;
@@ -152,9 +152,9 @@
     </item>
     <item>
       <title>群晖开启tun模块驱动以支持tinc</title>
-      <link>http://localhost:1313/164.html/</link>
+      <link>http://localhost:1313/164.html.html</link>
       <pubDate>Sun, 09 Aug 2020 09:27:29 +0000</pubDate>
-      <guid>http://localhost:1313/164.html/</guid>
+      <guid>http://localhost:1313/164.html.html</guid>
       <description>&lt;p&gt;登陆群晖开启ssh，在终端依次用admin用户登陆再sudo -i 进入#管理员模式&lt;/p&gt;
 &lt;h2 id=&#34;检查tun模块状态&#34;&gt;检查tun模块状态&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

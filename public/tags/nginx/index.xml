@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Nginx on 孤岛</title>
-    <link>http://localhost:1313/tags/nginx/</link>
+    <link>http://localhost:1313/tags/nginx.html</link>
     <description>Recent content in Nginx on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NGINX 非443端口http跳转https</title>
-      <link>http://localhost:1313/600.html/</link>
+      <link>http://localhost:1313/600.html.html</link>
       <pubDate>Thu, 24 Jun 2021 10:32:00 +0000</pubDate>
-      <guid>http://localhost:1313/600.html/</guid>
+      <guid>http://localhost:1313/600.html.html</guid>
       <description>&lt;p&gt;关于Nginx这个web服务器软件在NAS上配置非443端口访问时候跳转https问题，默认80端口与443端口无法访问情况。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

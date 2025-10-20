@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>转载学习 on 孤岛</title>
-    <link>http://localhost:1313/tags/%E8%BD%AC%E8%BD%BD%E5%AD%A6%E4%B9%A0/</link>
+    <link>http://localhost:1313/tags/%E8%BD%AC%E8%BD%BD%E5%AD%A6%E4%B9%A0.html</link>
     <description>Recent content in 转载学习 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/%E8%BD%AC%E8%BD%BD%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>更换ACME.sh的CA为ZeroSSL</title>
-      <link>http://localhost:1313/761.html/</link>
+      <link>http://localhost:1313/761.html.html</link>
       <pubDate>Mon, 02 May 2022 15:09:00 +0000</pubDate>
-      <guid>http://localhost:1313/761.html/</guid>
+      <guid>http://localhost:1313/761.html.html</guid>
       <description>&lt;h2 id=&#34;更换acmesh的ca为zerossl&#34;&gt;更换ACME.sh的CA为ZeroSSL&lt;/h2&gt;
 &lt;h2 id=&#34;安装acme&#34;&gt;安装ACME&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -84,9 +84,9 @@
     </item>
     <item>
       <title>headscale开源服务器搭建</title>
-      <link>http://localhost:1313/723.html/</link>
+      <link>http://localhost:1313/723.html.html</link>
       <pubDate>Wed, 29 Dec 2021 14:16:00 +0000</pubDate>
-      <guid>http://localhost:1313/723.html/</guid>
+      <guid>http://localhost:1313/723.html.html</guid>
       <description>&lt;h2 id=&#34;2022年1月5日更新&#34;&gt;2022年1月5日更新&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;GitHub仓库的文档已更新，可正常运行。&lt;/li&gt;
@@ -179,9 +179,9 @@
     </item>
     <item>
       <title>netmaker 搭建教程 组建虚拟局域网</title>
-      <link>http://localhost:1313/715.html/</link>
+      <link>http://localhost:1313/715.html.html</link>
       <pubDate>Wed, 01 Dec 2021 22:43:00 +0000</pubDate>
-      <guid>http://localhost:1313/715.html/</guid>
+      <guid>http://localhost:1313/715.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;参考了官方教程与国内的 2 篇文章，但主要还是官方教程为主，以docker-compose方式安装&lt;br&gt;
 &lt;a href=&#34;https://docs.netmaker.org/quick-start.html&#34;&gt;官方文档地址&lt;/a&gt;&lt;/p&gt;
@@ -237,9 +237,9 @@
     </item>
     <item>
       <title>tailscale 中继节点 搭建教程</title>
-      <link>http://localhost:1313/679.html/</link>
+      <link>http://localhost:1313/679.html.html</link>
       <pubDate>Mon, 13 Sep 2021 09:35:00 +0000</pubDate>
-      <guid>http://localhost:1313/679.html/</guid>
+      <guid>http://localhost:1313/679.html.html</guid>
       <description>&lt;h2 id=&#34;2021年10月20日更新&#34;&gt;2021年10月20日更新&lt;/h2&gt;
 &lt;p&gt;标题设置得不太准确，应该是中继网关，中继内网网段。&lt;br&gt;
 &lt;strong&gt;中继节点可看这篇文章&lt;/strong&gt;&lt;br&gt;
@@ -293,9 +293,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>Mirai Dice QQ机器人-to-docker搭建记录</title>
-      <link>http://localhost:1313/639.html/</link>
+      <link>http://localhost:1313/639.html.html</link>
       <pubDate>Tue, 31 Aug 2021 17:20:00 +0000</pubDate>
-      <guid>http://localhost:1313/639.html/</guid>
+      <guid>http://localhost:1313/639.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;网上看到这个机器人框架docker镜像也是最近推送到docker仓库，官方教程就一条命令不是很完善，本篇文章谨记个人搭建过程中一些遇到的问题&lt;/p&gt;
 &lt;ol&gt;
@@ -350,9 +350,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>Adguardhome-to-docker 自建dns自定义域名解析</title>
-      <link>http://localhost:1313/629.html/</link>
+      <link>http://localhost:1313/629.html.html</link>
       <pubDate>Wed, 28 Jul 2021 13:39:00 +0000</pubDate>
-      <guid>http://localhost:1313/629.html/</guid>
+      <guid>http://localhost:1313/629.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;基本上这是最简单的方式，我通过 &lt;a href=&#34;tailscale.com&#34;&gt;tailscale&lt;/a&gt; 把所有设备组建成 一个虚拟局域网然后这样就可以通过虚拟局域网访问我所有服务，但这样有一个不方便的地方。只能通过 IP地址 来访问服务，有没有一种办法可以通过域名的方式来访问，当然可以，最简单的方案如下&lt;/p&gt;
 &lt;ol&gt;
@@ -396,9 +396,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>FileRun docker-compose 安装搭建</title>
-      <link>http://localhost:1313/288.html/</link>
+      <link>http://localhost:1313/288.html.html</link>
       <pubDate>Sun, 27 Sep 2020 12:17:45 +0000</pubDate>
-      <guid>http://localhost:1313/288.html/</guid>
+      <guid>http://localhost:1313/288.html.html</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;先说一下结论，安装后感觉确实比nextcloud快，特别对于ody备份照片来说，但有一个需要注意，在2020年官方的安卓客户端已经暂停更新，现在用的是nextcloud的安卓客户端，但默认登陆进去会有一个@Home目录，没有直接进入/目录，对客户端有些不兼容。现还没找到解决办法，只能等官方更新&lt;/p&gt;&lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -480,9 +480,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>Arch 安装sshd问题</title>
-      <link>http://localhost:1313/196.html/</link>
+      <link>http://localhost:1313/196.html.html</link>
       <pubDate>Tue, 08 Sep 2020 08:35:26 +0000</pubDate>
-      <guid>http://localhost:1313/196.html/</guid>
+      <guid>http://localhost:1313/196.html.html</guid>
       <description>&lt;h2 id=&#34;启动ssh&#34;&gt;启动ssh&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -526,9 +526,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>群晖开启tun模块驱动以支持tinc</title>
-      <link>http://localhost:1313/164.html/</link>
+      <link>http://localhost:1313/164.html.html</link>
       <pubDate>Sun, 09 Aug 2020 09:27:29 +0000</pubDate>
-      <guid>http://localhost:1313/164.html/</guid>
+      <guid>http://localhost:1313/164.html.html</guid>
       <description>&lt;p&gt;登陆群晖开启ssh，在终端依次用admin用户登陆再sudo -i 进入#管理员模式&lt;/p&gt;
 &lt;h2 id=&#34;检查tun模块状态&#34;&gt;检查tun模块状态&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -595,9 +595,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>raw.githubusercontent.com拒绝访问解决办法</title>
-      <link>http://localhost:1313/142.html/</link>
+      <link>http://localhost:1313/142.html.html</link>
       <pubDate>Sat, 08 Aug 2020 15:10:17 +0000</pubDate>
-      <guid>http://localhost:1313/142.html/</guid>
+      <guid>http://localhost:1313/142.html.html</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/IMG_20200808_145930-1024x834.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;出现的错误&lt;/p&gt;
 &lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;
@@ -630,9 +630,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>openmediavault SMB共享设置</title>
-      <link>http://localhost:1313/132.html/</link>
+      <link>http://localhost:1313/132.html.html</link>
       <pubDate>Sat, 08 Aug 2020 13:05:58 +0000</pubDate>
-      <guid>http://localhost:1313/132.html/</guid>
+      <guid>http://localhost:1313/132.html.html</guid>
       <description>&lt;h2 id=&#34;创建用户&#34;&gt;创建用户&lt;/h2&gt;
 &lt;p&gt;默认的admin用户与root用户权限都设置完毕也不能登陆smb，创建一个用户就正常了&lt;/p&gt;
 &lt;p&gt;访问权限管理-用户-添加用户&lt;/p&gt;
@@ -658,9 +658,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>freenas创建匿名访问共享</title>
-      <link>http://localhost:1313/127.html/</link>
+      <link>http://localhost:1313/127.html.html</link>
       <pubDate>Sat, 08 Aug 2020 08:54:32 +0000</pubDate>
-      <guid>http://localhost:1313/127.html/</guid>
+      <guid>http://localhost:1313/127.html.html</guid>
       <description>&lt;h2 id=&#34;一创建匿名访问共享11-创建&#34;&gt;一、创建匿名访问共享#1.1 创建&lt;/h2&gt;
 &lt;p&gt;进入Sharing ➞ Windows (SMB) Shares,然后点击ADD按钮界面如下图所示勾选Allow Guest Access直接按SAVE保存&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://gao4.top/wp-content/uploads/2020/08/FreeNAS15.52.27-1024x367.png&#34;&gt;&lt;/p&gt;
@@ -671,9 +671,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>Tinc全球虚拟局域网搭建记录</title>
-      <link>http://localhost:1313/112.html/</link>
+      <link>http://localhost:1313/112.html.html</link>
       <pubDate>Thu, 06 Aug 2020 19:10:04 +0000</pubDate>
-      <guid>http://localhost:1313/112.html/</guid>
+      <guid>http://localhost:1313/112.html.html</guid>
       <description>&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -762,9 +762,9 @@ Fred Liang 分享了一个 Tailscale docker 镜像，用于在 GitHub 上运行�
     </item>
     <item>
       <title>wordpress 搭建</title>
-      <link>http://localhost:1313/27.html/</link>
+      <link>http://localhost:1313/27.html.html</link>
       <pubDate>Fri, 31 Jul 2020 20:10:08 +0000</pubDate>
-      <guid>http://localhost:1313/27.html/</guid>
+      <guid>http://localhost:1313/27.html.html</guid>
       <description>&lt;h2 id=&#34;github下载文件&#34;&gt;Github下载文件&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

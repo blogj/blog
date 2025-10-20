@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Docker部署 on 孤岛</title>
-    <link>http://localhost:1313/tags/docker%E9%83%A8%E7%BD%B2/</link>
+    <link>http://localhost:1313/tags/docker%E9%83%A8%E7%BD%B2.html</link>
     <description>Recent content in Docker部署 on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/docker%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DSM7.2 docker 下申请SSL泛域名证书 并切换切换ZeroSSL</title>
-      <link>http://localhost:1313/37200.html/</link>
+      <link>http://localhost:1313/37200.html.html</link>
       <pubDate>Tue, 04 Jun 2024 23:21:47 +0800</pubDate>
-      <guid>http://localhost:1313/37200.html/</guid>
+      <guid>http://localhost:1313/37200.html.html</guid>
       <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;pre&gt;&lt;code&gt;通过黑群晖7.2版本docker套件部署ssl证书 且是通过acme.sh切换ZeroSSL申请
 &lt;/code&gt;&lt;/pre&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Esxi on 孤岛</title>
-    <link>http://localhost:1313/tags/esxi/</link>
+    <link>http://localhost:1313/tags/esxi.html</link>
     <description>Recent content in Esxi on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/esxi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ESXI7.0 Update 2下黑群晖7.01安装</title>
-      <link>http://localhost:1313/738.html/</link>
+      <link>http://localhost:1313/738.html.html</link>
       <pubDate>Sat, 08 Jan 2022 15:02:27 +0000</pubDate>
-      <guid>http://localhost:1313/738.html/</guid>
+      <guid>http://localhost:1313/738.html.html</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;只是填坑把遇到的问题写出来&lt;/p&gt;
 &lt;h2 id=&#34;相关软件分享&#34;&gt;相关软件分享&lt;/h2&gt;
@@ -39,9 +39,9 @@
     </item>
     <item>
       <title>折腾NAS中用的软件资源分享</title>
-      <link>http://localhost:1313/686.html/</link>
+      <link>http://localhost:1313/686.html.html</link>
       <pubDate>Sun, 24 Oct 2021 18:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/686.html/</guid>
+      <guid>http://localhost:1313/686.html.html</guid>
       <description>&lt;h1 id=&#34;资源链接阿里云盘&#34;&gt;资源链接阿里云盘&lt;/h1&gt;
 &lt;p&gt;我用阿里云盘分享了「NAS常用软件引导软件系统镜像」，你可以不限速下载🚀&lt;br&gt;
 复制这段内容打开「阿里云盘」App 即可获取&lt;br&gt;

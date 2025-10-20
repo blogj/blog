@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Arch on 孤岛</title>
-    <link>http://localhost:1313/tags/arch/</link>
+    <link>http://localhost:1313/tags/arch.html</link>
     <description>Recent content in Arch on 孤岛</description>
     <image>
       <title>孤岛</title>
@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/arch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux 下resilio同步服务安装</title>
-      <link>http://localhost:1313/325.html/</link>
+      <link>http://localhost:1313/325.html.html</link>
       <pubDate>Mon, 07 Dec 2020 12:42:46 +0000</pubDate>
-      <guid>http://localhost:1313/325.html/</guid>
+      <guid>http://localhost:1313/325.html.html</guid>
       <description>&lt;h2 id=&#34;参考常见问题&#34;&gt;参考常见问题&lt;/h2&gt;
 &lt;p&gt;2021年6月15日更新&lt;/p&gt;
 &lt;p&gt;网络传输速度测试一直不能满速跑，断断续续的传输，速度一直跑不上来，已弃坑&lt;/p&gt;
@@ -91,9 +91,9 @@
     </item>
     <item>
       <title>Arch 安装sshd问题</title>
-      <link>http://localhost:1313/196.html/</link>
+      <link>http://localhost:1313/196.html.html</link>
       <pubDate>Tue, 08 Sep 2020 08:35:26 +0000</pubDate>
-      <guid>http://localhost:1313/196.html/</guid>
+      <guid>http://localhost:1313/196.html.html</guid>
       <description>&lt;h2 id=&#34;启动ssh&#34;&gt;启动ssh&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -137,9 +137,9 @@
     </item>
     <item>
       <title>arch下网络设置2020年版本</title>
-      <link>http://localhost:1313/198.html/</link>
+      <link>http://localhost:1313/198.html.html</link>
       <pubDate>Wed, 19 Aug 2020 15:46:53 +0000</pubDate>
-      <guid>http://localhost:1313/198.html/</guid>
+      <guid>http://localhost:1313/198.html.html</guid>
       <description>&lt;h2 id=&#34;静态ip设置&#34;&gt;静态IP设置&lt;/h2&gt;
 &lt;h3 id=&#34;地址设置&#34;&gt;地址设置&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
