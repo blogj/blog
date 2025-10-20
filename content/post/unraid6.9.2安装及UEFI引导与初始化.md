@@ -17,7 +17,7 @@ tags: ['NAS', 'NAS物语', 'Unraid', 'unraid6.9.2', '原创教程']
 系统下载
 ----
 
-分享[云盘链接](https://www.aliyundrive.com/s/xt2ZVqBRGxw)
+分享俄罗斯版本[链接](https://softoroom.org/topic89043.html)
 
 使用官方工具制作
 
