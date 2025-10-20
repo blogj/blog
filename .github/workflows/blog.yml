@@ -25,7 +25,7 @@ jobs:
                 hugo-version: '0.148.0'
                 extended: true
 
-            - name: Build Hug
+            - name: Build Hugo
               run: hugo
               
             - name: Deploy
