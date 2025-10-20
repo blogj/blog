@@ -8,6 +8,7 @@ defaultContentLanguage: zh
 #自定
 permalinks:
   post: /:slug
+uglyURLs: true
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
