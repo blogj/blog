@@ -2,7 +2,7 @@
 date: '2025-08-07T08:50:17+08:00'
 #draft: true
 draft: false
-slug: 20250807
+slug: 202508071
 title: '当前使用的nas方案小记录'
 typora-root-url: ../../static
 ---
