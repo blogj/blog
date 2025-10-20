@@ -8,7 +8,7 @@ defaultContentLanguage: zh
 #自定义
 permalinks:
   post: /:slug.html
-
+uglyURLs: true
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
