@@ -31,8 +31,8 @@ jobs:
             - name: Deploy
               uses: her-cat/upyun-deployer@v1.0.3
               with:
-              bucket: ${{ secrets.UPYUN_BUCKET }}
-              operator: ${{ secrets.UPYUN_OPERATOR_NAME }}
-              password: ${{ secrets.UPYUN_OPERATOR_PWD }}
-              dir: 'public'
-              publish_dir: 'myblog'
+                bucket: ${{ secrets.UPYUN_BUCKET }}
+                operator: ${{ secrets.UPYUN_OPERATOR_NAME }}
+                password: ${{ secrets.UPYUN_OPERATOR_PWD }}
+                dir: 'public'
+                publish_dir: 'myblog'
