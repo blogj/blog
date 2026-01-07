@@ -11,15 +11,15 @@ tags: ['NAS物语', '资料', 'openwrt', 'Tailscale']
 下载到tmp目录
 
 ```
-wget https://pkgs.tailscale.com/stable/tailscale_1.70.0_arm64.tgz -P /tmp
+wget https://pkgs.tailscale.com/stable/tailscale_1.92.5_arm64.tgz -P /tmp
 ```
 
 解压压缩包并移动二进制文件
 
 ```
 cd /tmp
-tar x -zvf tailscale_1.70.0_arm64.tgz
-cd tailscal_1.70.0_arm64
+tar x -zvf tailscale_1.92.5_arm64.tgz
+cd tailscal_1.92.5_arm64
 mv tailscale tailscaled /usr/sbin/
 ```
 
